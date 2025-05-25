@@ -1,6 +1,6 @@
 
 :::info
-Please consider sharing your new nodes with us, and with your permission we might add them to Coollab 💜.<br/>
+Please consider sharing your new nodes with us, and with your permission we might add them to Coollab 💜<br/>
 
 [Submission link](https://github.com/Coollab-Art/Coollab/issues/new?assignees=&labels=enhancement&projects=&template=add-node.yaml&title=%5BNew+node%5D+).
 :::
