@@ -2,7 +2,7 @@
 
 INPUT int 'Seed';
 
-float main(float X)
+float main()
 {
-    return hash_0_to_1_2D_to_1D(vec2(X, 'Seed'));
+    return hash_0_to_1_1D_to_1D('Seed');
 }

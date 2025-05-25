@@ -12,7 +12,7 @@ Coollab can be used for VJing, exporting videos, creating interactive installati
 
 [Here are some tutorials to help you get started.](https://youtu.be/swMZGsGje4E?list=PLuMMMaL5kN3mG6fSeSYTqC-sc_OTX3unQ)
 
-## Dev
+## For Developers
 
 ### Clone
 
@@ -174,7 +174,7 @@ If you want to see the code you need to call to create a given widget, use the *
 
 See [*Dear ImGui's FAQ about IDs*](https://github.com/ocornut/imgui/blob/master/docs/FAQ.md#q-about-the-id-stack-system).
 
-## ImGui Extras
+### ImGui Extras
 
 We have quite a few additional custom widgets available in [`<Cool/ImGui/ImGuiExtras.h>`](https://github.com/Coollab-Art/Cool/blob/main/src/Cool/ImGui/ImGuiExtras.h).
 

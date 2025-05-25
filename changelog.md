@@ -1,5 +1,13 @@
 # Changelog
 
+##
+
+- 🟦 Added a "Random" node that gives a single random number (as opposed to Random1D which gives an entire strip of random numbers)
+- 🟦 Added a *colored* "Dithering" node
+- 🟦 Renamed "Voronoise" as "Noise Voronoi"
+- 🟦 Removed "Noise Cellular" (was doing the same thing as "Noise Voronoi")
+- Removed noise monochrome now takes a greyscale image 
+
 ## 1.2.0 MacOS
 
 - 💥 [**YOU NEED TO INSTALL THE LATEST VERSION OF THE LAUNCHER (2.0.0)**](https://coollab-art.com/Download). We had a nasty bug that could cause some projects to not appear properly in the launcher. We fixed it but this means all projects created with new versions of Coollab will not work well with the old launcher. We are sorry to add this annoying breaking change, but we decided to do it now while we don't have too many users, and while you don't have too many projects, rather than having the bug break some projects randomly in the future. 
@@ -201,8 +209,8 @@ After:
 - ✨ Added the "Paint" blend mode.
 
 | ![image](https://github.com/Coollab-Art/.github/assets/45451201/6f57a43d-a422-4056-81e1-c691e4c85d84) | ![image](https://github.com/Coollab-Art/.github/assets/45451201/9b12b5bf-7f15-408b-93e9-552e0caa30ea) |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| "Light" mode (what was already there in Coollab)                                                   | "Paint" mode (the new blend mode)                                                                  |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| "Light" mode (what was already there in Coollab)                                                      | "Paint" mode (the new blend mode)                                                                     |
 
 - ✨ Added an Output window that you can project during live shows, while still having your View window on your screen to move the camera and the widgets. To open this window, go in the `Commands` menu and select `Open output window`.
 ![image](https://github.com/Coollab-Art/.github/assets/45451201/3d6a14ec-69ca-44b1-81e0-1d4139b72544)
