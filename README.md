@@ -36,6 +36,10 @@ it most likely means you forgot the submodules. To grab them after having cloned
 git submodule update --init --recursive
 ```
 
+### Dependencies
+
+If you are on Linux you might need to install some dependencies, see [here](https://github.com/Coollab-Art/Coollab/blob/8bf3e36c92f070aac7934a50fba4f001279975df/.github/workflows/build_and_run_tests.yml#L102) for a list of the dependencies.
+
 ### Build
 
 Coollab is built using CMake. If you don't know how to install and use it, [here is a tutorial](https://github.com/JulesFouchy/Simple-Cpp-Setup?tab=readme-ov-file#simple-cpp-setup).
