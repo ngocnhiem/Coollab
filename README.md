@@ -4,6 +4,8 @@
 
 **Coollab is a node-based software to create visual effects and generative-art, similar to TouchDesigner.**
 
+
+
 [Check out our website](https://coollab-art.com/)!
 
 Coollab's main goal is to be as intuitive and easy to use as possible. Effects are high-level and they just work out of the box! You don't need to know any math or programming to make your own very cool effects! (Although having those skills allows you to do some advanced stuff).<br/>
@@ -12,76 +14,61 @@ Coollab can be used for VJing, exporting videos, creating interactive installati
 
 [Here are some tutorials to help you get started.](https://youtu.be/swMZGsGje4E?list=PLuMMMaL5kN3mG6fSeSYTqC-sc_OTX3unQ)
 
+## Contributions
+
+Coollab is made possible by the work of all these lovely people.
+If you wanna be part of us, check out the [many vvarious ways you could contriibute](TODO), and then get in touch with us 
+:
+
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://julesfouchy.github.io/"><img src="https://avatars.githubusercontent.com/u/45451201?v=4?s=100" width="100px;" alt="Jules Fouchy"/><br /><sub><b>Jules Fouchy</b></sub></a><br /><a href="https://github.com/Coollab-Art/Coollab/commits?author=JulesFouchy" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/TaliaKah"><img src="https://avatars.githubusercontent.com/u/77100260?v=4?s=100" width="100px;" alt="taliakah"/><br /><sub><b>taliakah</b></sub></a><br /><a href="https://github.com/Coollab-Art/Coollab/commits?author=TaliaKah" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MeucheRoume"><img src="https://avatars.githubusercontent.com/u/77018137?v=4?s=100" width="100px;" alt="MeucheRoume"/><br /><sub><b>MeucheRoume</b></sub></a><br /><a href="https://github.com/Coollab-Art/Coollab/commits?author=MeucheRoume" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td align="center" size="13px" colspan="7">
+        <img src="https://raw.githubusercontent.com/all-contributors/all-contributors-cli/1b8533af435da9854653492b1327a23a4dbd0a10/assets/logo-small.svg">
+          <a href="https://all-contributors.js.org/docs/en/bot/usage">Add your contributions</a>
+        </img>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+
 ## For Developers
+### When starting to work on something
 
-### Clone
+Fork for devs not part of the org
 
-⚠ Since we use Git submodules you need to clone them alongside the project. The easiest way is to use the command:
-```
-git clone --recursive https://github.com/Coollab-Art/Coollab
-```
+**Never commit on the *main* branch!**
+We always work on branches, and then create pull requests that must be reviewed by others before merging them into main.
 
-If later on while compiling you get an error like:
-```
-[cmake] CMake Error at CMakeLists.txt:44 (add_subdirectory):
-[cmake]   The source directory
-[cmake] 
-[cmake]     C:/Users/fouch/Downloads/Coollab/Cool
-[cmake] 
-[cmake]   does not contain a CMakeLists.txt file.
-```
-
-it most likely means you forgot the submodules. To grab them after having cloned the project, use:
-```
-git submodule update --init --recursive
-```
-
-### Dependencies
-
-If you are on Linux you might need to install some dependencies, see [here](https://github.com/Coollab-Art/Coollab/blob/8bf3e36c92f070aac7934a50fba4f001279975df/.github/workflows/build_and_run_tests.yml#L102) for a list of the dependencies.
-
-### Build
-
-Coollab is built using CMake. If you don't know how to install and use it, [here is a tutorial](https://github.com/JulesFouchy/Simple-Cpp-Setup?tab=readme-ov-file#simple-cpp-setup).
-
-### Important tools
-
-Install [clang-format](https://julesfouchy.github.io/Learn--Clean-Code-With-Cpp/lessons/formatting-tool/) and [clang-tidy](https://julesfouchy.github.io/Learn--Clean-Code-With-Cpp/lessons/static-analysers/). Clang-format will format your code automatically, and clang-tidy will warn you when you make programming mistakes. These are two very important tools!
-
-### Our philosophy
-
-#### Easy to use
-
-We can't produce as many cool features as big softwares, so we should embrace our minimalistic essence and produce few but polished and intuitive features. Our tool might only be useful for a few use cases, but we want it to be the best for those use cases.
-
-#### Prefer Visual Quality to Performance
-
-We are not building a game engine; even though performance is important because we want to be able to visualize our changes in real time, visual quality is and should remain our main focus.
-
-#### Be cross-platform
-
-Refuse any solution that would reduce accessibility to the software, especially when cross-platform solutions exist.
-
-Examples of such technologies are Cuda (Nvidia only, can be replaced by Vulkan's compute shaders) and OpenGL 4.0 and greater (not suported on MacOS, can be replaced by Vulkan or WebGPU).
-
-#### Build great debug tools
-
-They will help you a lot later down the road. And they can also be helpful to users, so keep them in the final build: for example to view the history, or the registries.
-
-### Working with submodules
-
-- Whenever you change branch on Lab, go to Cool and make sure to exit the "Detached HEAD" mode.
-- When creating a branch : create one branch on Lab and one on Cool, with the same names
-- When merging main into your branch : Lab first, then Cool and commit, then go back to Lab and commit only once Cool is at the right version
-- When merging PR : merge Cool first, then go to Lab and update it so that it points to the main branch of Cool, then you can merge the Lab PR.
+- Create a branch on *Cool*, and a branch on *Lab*. **They should both have the same name**.
+- Switching between your branch and main is annoying because we use submodules and you would have two branches to switch and it can be painful. This is why we **strongly** recommend that you clone the repository twice, and you always leave one of them on main, and the other on your branch.
 
 ### Dev Tips
 
 - TODO create a page explaining how to edit the Default User Data (imgui.ini, color_config.json, etc)
 - If you add a third-party library, check its license and, if it requires it, make sure we install the license in the CMake:
 ```cmake
-# LICENSE
-set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}\\\\LICENSE")
 install(FILES "lib/cpp-httplib/LICENSE" DESTINATION license/cpp-httplib)
 ```
 
@@ -96,41 +83,6 @@ install(FILES "lib/cpp-httplib/LICENSE" DESTINATION license/cpp-httplib)
 
 Or at least write them down [in our To-Do list](https://github.com/Coollab-Art/Coollab/issues/127).<br/>
 No codebase is perfect and bugs and poor code exist everywhere. If you think you just spotted one, take a deeper look into it. Try to fix it or at least raise other people's attention about it.
-
-### Never use std::filesystem functions directly, use Cool::File instead
-
-We wrap the std::filesystem functions and handle exceptions.
-Note that using the types are fine (e.g. you can freely use `std::filesystem::path`)
-
-### Use trailing return types
-
-:::danger Don't
-```cpp
-bool do_something();
-```
-:::
-
-:::tip Do
-```cpp
-auto do_something() -> bool;
-```
-:::
-
-:::tip Do
-```cpp
-void do_something();
-```
-:::
-
-### When starting to work on something
-
-:::tip
-**Never commit on the *main* branch!**<br/>
-We always work on branches, and then create pull requests that must be reviewed by others before merging them into main.
-:::
-
-- Create a branch on *Cool*, and a branch on *CoolLab*. **They should both have the same name**.
-- Switching between your branch and main is annoying because we use submodules and you would have two branches to switch and it can be painful. This is why we **strongly** recommend that you clone the repository twice, and you always leave one of them on main, and the other on your branch.
 
 ### Gitmoji
 
@@ -152,35 +104,6 @@ Before you submit your PR for review:
 - Look for duplicated code and refactor it away.
 - Make sure the code will be easy to change in the future.
 
-### Our UI library, Dear ImGui
-
-#### The Demo Window
-
-The Demo window is a very useful tool that will show you everything that is possible to do with *Dear ImGui*. It can be opened from the "Debug" menu:
-
-![toggle_imgui_demo_window](https://github.com/user-attachments/assets/570cb30a-40e6-4d9a-bf4f-6a030f1a8a49)
-
-#### The Item Picker
-
-If you want to see the code you need to call to create a given widget, use the **"Item Picker"** from the Demo window. Just click on any widget and it will take you to the corresponding piece of code in your IDE! (Make sure you are launching your programmer with a debugger, otherwise it will just crash)
-
-![](./img/imgui_item_picker.png)
-
-#### Important *Dear ImGui* functions
-
-##### `Begin()` / `End()` to create a window
-
-##### `SameLine()`
-
-##### `Separator()`
-
-##### `PushID()` / `PopID()`
-
-See [*Dear ImGui's FAQ about IDs*](https://github.com/ocornut/imgui/blob/master/docs/FAQ.md#q-about-the-id-stack-system).
-
-### ImGui Extras
-
-We have quite a few additional custom widgets available in [`<Cool/ImGui/ImGuiExtras.h>`](https://github.com/Coollab-Art/Cool/blob/main/src/Cool/ImGui/ImGuiExtras.h).
 
 ### Creating a new library
 
