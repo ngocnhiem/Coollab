@@ -2,6 +2,7 @@
 
 ##
 
+- Improved remaining time estimate when exporting video
 - 🟦 Added a "Random" node that gives a single random number (as opposed to Random1D which gives an entire strip of random numbers)
 - 🟦 Added a *colored* "Dithering" node
 - 🟦 Renamed "Voronoise" as "Noise Voronoi"

@@ -11,6 +11,7 @@
 #include "Cool/ImGui/Fonts.h"
 #include "Cool/ImGui/IcoMoonCodepoints.h"
 #include "Cool/ImGui/ImGuiExtras.h"
+#include "Cool/ImGui/ImGuiExtrasStyle.h"
 #include "Cool/ImGui/icon_fmt.h"
 #include "Cool/Image/SaveImage.h"
 #include "Cool/Input/CTRL_OR_CMD.hpp"
@@ -699,13 +700,14 @@ void App::imgui_menus()
     commands_menu();
 
     _project_manager.imgui_project_name_in_the_middle_of_the_menu_bar(make_window_title_setter());
-
-    ImGui::SetCursorPosX( // HACK while waiting for ImGui to support right-to-left layout. See issue https://github.com/ocornut/imgui/issues/5875
-        ImGui::GetWindowSize().x
-        - ImGui::CalcTextSize("AboutDebug").x
-        - 3.f * ImGui::GetStyle().ItemSpacing.x
-        - ImGui::GetStyle().WindowPadding.x
-    );
+    ImGui::Dummy({
+        // HACK while waiting for ImGui to support right-to-left layout. See issue https://github.com/ocornut/imgui/issues/5875
+        ImGui::GetContentRegionAvail().x
+            - ImGui::CalcTextSize("AboutDebug").x
+            - 4.f * Cool::ImGuiExtras::GetStyle().menu_bar_spacing.x
+            - std::max(Cool::ImGuiExtras::GetStyle().menu_bar_spacing.x - ImGui::GetStyle().WindowPadding.x, 0.f),
+        0.f,
+    });
     about_menu();
     debug_menu();
 }
