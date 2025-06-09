@@ -2,7 +2,11 @@
 
 ##
 
-- Improved remaining time estimate when exporting video
+- ⚡ Improved speed of video export
+- 🤏 Improved remaining time estimate when exporting video
+- Important internal change: we can now run as many tasks in parallel as we want
+- Upgraded UI library, which brings tons of improvements and fixes:
+  - Multiviexpor on Wayland
 - 🟦 Added a "Random" node that gives a single random number (as opposed to Random1D which gives an entire strip of random numbers)
 - 🟦 Added a *colored* "Dithering" node
 - 🟦 Renamed "Voronoise" as "Noise Voronoi"

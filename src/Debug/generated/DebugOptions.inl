@@ -24,7 +24,7 @@ public:
     {
         if (instance().show_history_window)
         {
-            ImGui::Begin(Cool::icon_fmt("History", ICOMOON_WRENCH).c_str(), &instance().show_history_window, ImGuiWindowFlags_NoFocusOnAppearing);
+            ImGui::Begin(Cool::icon_fmt("History", ICOMOON_WRENCH).c_str(), &instance().show_history_window, ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoCollapse);
             callback();
             ImGui::End();
             if (!instance().show_history_window) // Window has just been closed manually by the user
@@ -43,7 +43,7 @@ public:
     {
         if (instance().show_generated_shader_code)
         {
-            ImGui::Begin(Cool::icon_fmt("Nodes Code", ICOMOON_WRENCH).c_str(), &instance().show_generated_shader_code, ImGuiWindowFlags_NoFocusOnAppearing);
+            ImGui::Begin(Cool::icon_fmt("Nodes Code", ICOMOON_WRENCH).c_str(), &instance().show_generated_shader_code, ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoCollapse);
             callback();
             ImGui::End();
             if (!instance().show_generated_shader_code) // Window has just been closed manually by the user
@@ -54,7 +54,7 @@ public:
     {
         if (instance().test_shaders_compilation__window)
         {
-            ImGui::Begin(Cool::icon_fmt("Test Shaders Compilation", ICOMOON_WRENCH).c_str(), &instance().test_shaders_compilation__window, ImGuiWindowFlags_NoFocusOnAppearing);
+            ImGui::Begin(Cool::icon_fmt("Test Shaders Compilation", ICOMOON_WRENCH).c_str(), &instance().test_shaders_compilation__window, ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoCollapse);
             callback();
             ImGui::End();
             if (!instance().test_shaders_compilation__window) // Window has just been closed manually by the user
