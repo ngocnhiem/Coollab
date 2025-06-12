@@ -4,7 +4,9 @@
 
 **Coollab is a node-based software to create visual effects and generative-art, similar to TouchDesigner.**
 
-[Download it from our website!](https://coollab-art.com/)
+[Download it from our website!](https://coollab-art.com/) (*__Not__ from this GitHub's release page*[^1])
+
+[^1]: **NB:** You should use the launcher that you can download from [our website](https://coollab-art.com/Download) (or from the [launcher's GitHub](https://github.com/Coollab-Art/Launcher/releases/latest)). The launcher will then take care of installing the latest versions of Coollab as they get released. Downloading Coollab versions directly from GitHub works (provided you ignore the experimental pre-release ones), but you will not get updates automatically. The launcher also provides a list of recent projects, knows which version to use for which project, automatically upgrades a project to a newer version of Coollab if they are compatible, etc.
 
 Coollab's main goal is to be as intuitive and easy to use as possible. Effects are high-level and they just work out of the box! You don't need to know any math or programming to make your own very cool effects! (Although having those skills allows you to do some advanced stuff).<br/>
 Start with any image or shape, like your *Webcam*, add any modifier on top of it, like a *Kaleidoscope*, and you already have some cool results. You can then play with the 100s of effects to change the color, distort the image, add particles, react to audio, and much more!<br/>
