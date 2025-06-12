@@ -2,7 +2,7 @@
 
 <img alt="logo" src="./logo.png" width = 100px>
 
-**Coollab is a node-based software to create visual effects and generative-art, similar to TouchDesigner.**
+**Coollab is a node-based software to create visual effects and generative-art, designed to be simple and intuitive.**
 
 [Download it from our website!](https://coollab-art.com/) (*__Not__ from this GitHub's release page*[^1])
 
