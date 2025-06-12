@@ -43,3 +43,7 @@ Examples of such technologies are Cuda (Nvidia only, can be replaced by Vulkan's
 #### Build great debug tools
 
 They will help you a lot later down the road. And they can also be helpful to users, so keep them in the final build: for example to view the history, or the registries.
+
+#### Easy to use
+
+We can't produce as many cool features as big softwares, so we should embrace our minimalistic essence and produce few but polished and intuitive features. Our tool might only be useful for a few use cases, but we want it to be the best for those use cases.
