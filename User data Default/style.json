@@ -75,7 +75,7 @@
   "TabBarOverlineSize": 0.0,
   "TabBorderSize": 0.0,
   "TabCloseButtonMinWidthSelected": -1.0,
-  "TabCloseButtonMinWidthUnselected": -1.0,
+  "TabCloseButtonMinWidthUnselected": 0.0,
   "TabRounding": 3.0,
   "TableAngledHeadersAngle": 0.6108652949333191,
   "TableAngledHeadersTextAlign": {
