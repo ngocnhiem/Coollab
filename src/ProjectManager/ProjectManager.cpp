@@ -469,10 +469,8 @@ void ProjectManager::imgui_project_name_in_the_middle_of_the_menu_bar(SetWindowT
     });
     ImGui::SetNextItemWidth(width);
 
-    ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, Cool::ImGuiExtras::GetStyle().frame_padding);
     if (ImGui::InputText("##project_name", &project_name))
         _next_project_name = project_name;
-    ImGui::PopStyleVar();
 
     auto const name_validity_checks = NameValidityChecks{.allow_overwrite_existing_file = false};
     if (ImGui::IsItemDeactivatedAfterEdit())
