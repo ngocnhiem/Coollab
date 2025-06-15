@@ -24,6 +24,12 @@ git submodule update --init --recursive
 
 Coollab is built using CMake. If you don't know how to install and use it, [here is a tutorial](https://github.com/JulesFouchy/Simple-Cpp-Setup?tab=readme-ov-file#simple-cpp-setup).
 
+If you want some help with C++ tooling (compiler, IDE extensions etc.) : https://julesfouchy.github.io/Learn--Clean-Code-With-Cpp/lessons/install-a-compiler/
+
+I would recommend using the Cmake VS Code extension : cf this readme https://github.com/JulesFouchy/Simple-Cpp-Setup?tab=readme-ov-file#simple-cpp-setup
+
+
+
 ## Important tools
 
 Ideally, please install [clang-format](https://julesfouchy.github.io/Learn--Clean-Code-With-Cpp/lessons/formatting-tool/) and [clang-tidy](https://julesfouchy.github.io/Learn--Clean-Code-With-Cpp/lessons/static-analysers/). Clang-format will format your code automatically, and clang-tidy will warn you when you make programming mistakes. These are two very important tools!

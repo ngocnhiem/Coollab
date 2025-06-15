@@ -10,5 +10,7 @@
 
 ## Choosing a version name
 
+**IMPORTANT:** the version name must be a valid folder name, so don't use quotes or other special symbols.
+
 Our names look like "1.0.0 Launcher". There is a friendly name that should give users a good idea of the main feature added in this version (e.g. "Launcher", "Particles", "WebGPU", etc.). If the release only contains bug fixes / minor changes that don't need to be highlighted, then keep the same friendly name as the previous version, and just increment the patch number. If you changed the friendly name, then increase the minor number instead (or the major one if this is something really big that changes the way Coollab looks and feels).
 Our version numbers **DO NOT** reflect the (in)compatibilities between versions. We have *versions_compatibility.txt* for that. Instead the goal is to help users easily identify each version, and what changes between them.
