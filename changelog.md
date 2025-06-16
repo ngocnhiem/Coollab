@@ -2,6 +2,8 @@
 
 ##
 
+- ✨ Exposed the option to create your own color themes, go in the Settings:
+TODO gif
 - ⚡ Improved speed of video export
 - 🤏 Improved remaining time estimate when exporting video
 - Important internal change: we can now run as many tasks in parallel as we want

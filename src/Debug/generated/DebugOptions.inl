@@ -20,7 +20,7 @@ namespace Lab {
 
 class DebugOptions {
 public:
-    static void show_history_window(std::function<void()> callback)
+    static void show_history_window(std::function<void()> const& callback)
     {
         if (instance().show_history_window)
         {
@@ -31,15 +31,24 @@ public:
                 save();
         }
     }
-    [[nodiscard]] static auto show_nodes_and_links_registries() -> bool& { return instance().show_nodes_and_links_registries; }
-    [[nodiscard]] static auto force_rerender_every_frame() -> bool& { return instance().force_rerender_every_frame; }
-    [[nodiscard]] static auto log_when_rendering() -> bool& { return instance().log_when_rendering; }
-    [[nodiscard]] static auto log_when_updating_particles() -> bool& { return instance().log_when_updating_particles; }
-    [[nodiscard]] static auto log_when_compiling_nodes() -> bool& { return instance().log_when_compiling_nodes; }
-    [[nodiscard]] static auto log_when_parsing_node_definition() -> bool& { return instance().log_when_parsing_node_definition; }
-    [[nodiscard]] static auto log_when_executing_a_command() -> bool& { return instance().log_when_executing_a_command; }
-    [[nodiscard]] static auto log_project_related_events() -> bool& { return instance().log_project_related_events; }
-    static void               show_generated_shader_code(std::function<void()> callback)
+
+    [[nodiscard]] static auto show_nodes_and_links_registries() -> bool { return instance().show_nodes_and_links_registries; }
+
+    [[nodiscard]] static auto force_rerender_every_frame() -> bool { return instance().force_rerender_every_frame; }
+
+    [[nodiscard]] static auto log_when_rendering() -> bool { return instance().log_when_rendering; }
+
+    [[nodiscard]] static auto log_when_updating_particles() -> bool { return instance().log_when_updating_particles; }
+
+    [[nodiscard]] static auto log_when_compiling_nodes() -> bool { return instance().log_when_compiling_nodes; }
+
+    [[nodiscard]] static auto log_when_parsing_node_definition() -> bool { return instance().log_when_parsing_node_definition; }
+
+    [[nodiscard]] static auto log_when_executing_a_command() -> bool { return instance().log_when_executing_a_command; }
+
+    [[nodiscard]] static auto log_project_related_events() -> bool { return instance().log_project_related_events; }
+
+    static void show_generated_shader_code(std::function<void()> const& callback)
     {
         if (instance().show_generated_shader_code)
         {
@@ -50,7 +59,8 @@ public:
                 save();
         }
     }
-    static void test_shaders_compilation__window(std::function<void()> callback)
+
+    static void test_shaders_compilation__window(std::function<void()> const& callback)
     {
         if (instance().test_shaders_compilation__window)
         {
@@ -61,7 +71,106 @@ public:
                 save();
         }
     }
-    [[nodiscard]] static auto allow_user_to_open_any_file() -> bool& { return instance().allow_user_to_open_any_file; }
+
+    [[nodiscard]] static auto allow_user_to_open_any_file() -> bool { return instance().allow_user_to_open_any_file; }
+
+    struct Set {
+        static void show_history_window(bool val)
+        {
+            if (val == instance().show_history_window)
+                return;
+            instance().show_history_window = val;
+            save();
+        }
+
+        static void show_nodes_and_links_registries(bool val)
+        {
+            if (val == instance().show_nodes_and_links_registries)
+                return;
+            instance().show_nodes_and_links_registries = val;
+            save();
+        }
+
+        static void force_rerender_every_frame(bool val)
+        {
+            if (val == instance().force_rerender_every_frame)
+                return;
+            instance().force_rerender_every_frame = val;
+            save();
+        }
+
+        static void log_when_rendering(bool val)
+        {
+            if (val == instance().log_when_rendering)
+                return;
+            instance().log_when_rendering = val;
+            save();
+        }
+
+        static void log_when_updating_particles(bool val)
+        {
+            if (val == instance().log_when_updating_particles)
+                return;
+            instance().log_when_updating_particles = val;
+            save();
+        }
+
+        static void log_when_compiling_nodes(bool val)
+        {
+            if (val == instance().log_when_compiling_nodes)
+                return;
+            instance().log_when_compiling_nodes = val;
+            save();
+        }
+
+        static void log_when_parsing_node_definition(bool val)
+        {
+            if (val == instance().log_when_parsing_node_definition)
+                return;
+            instance().log_when_parsing_node_definition = val;
+            save();
+        }
+
+        static void log_when_executing_a_command(bool val)
+        {
+            if (val == instance().log_when_executing_a_command)
+                return;
+            instance().log_when_executing_a_command = val;
+            save();
+        }
+
+        static void log_project_related_events(bool val)
+        {
+            if (val == instance().log_project_related_events)
+                return;
+            instance().log_project_related_events = val;
+            save();
+        }
+
+        static void show_generated_shader_code(bool val)
+        {
+            if (val == instance().show_generated_shader_code)
+                return;
+            instance().show_generated_shader_code = val;
+            save();
+        }
+
+        static void test_shaders_compilation__window(bool val)
+        {
+            if (val == instance().test_shaders_compilation__window)
+                return;
+            instance().test_shaders_compilation__window = val;
+            save();
+        }
+
+        static void allow_user_to_open_any_file(bool val)
+        {
+            if (val == instance().allow_user_to_open_any_file)
+                return;
+            instance().allow_user_to_open_any_file = val;
+            save();
+        }
+    };
 
     static void save() { instance()._serializer.save(); }
 
