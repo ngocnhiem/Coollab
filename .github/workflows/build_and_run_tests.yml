@@ -57,7 +57,8 @@ jobs:
 
     steps:
       - name: "tes"
-        run: dpkg -l | grep libdecor
+        run: apt list --installed | grep libdecor
+
       - uses: actions/checkout@v3
         with:
           submodules: recursive
