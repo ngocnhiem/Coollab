@@ -1,19 +1,23 @@
 # Changelog
 
-##
+## 1.3.0 Color Themes
 
-- ✨ Exposed the option to create your own color themes, go in the Settings:
-TODO gif
-- ⚡ Improved speed of video export
-- 🤏 Improved remaining time estimate when exporting video
-- Important internal change: we can now run as many tasks in parallel as we want
-- Upgraded UI library, which brings tons of improvements and fixes:
-  - Multiviexpor on Wayland
-- 🟦 Added a "Random" node that gives a single random number (as opposed to Random1D which gives an entire strip of random numbers)
-- 🟦 Added a *colored* "Dithering" node
-- 🟦 Renamed "Voronoise" as "Noise Voronoi"
-- 🟦 Removed "Noise Cellular" (was doing the same thing as "Noise Voronoi")
-- Removed noise monochrome now takes a greyscale image 
+- ✨ We exposed the option to create your own color themes!
+![](https://github.com/user-attachments/assets/100088a9-3fdf-4e66-9683-33f262b4a794)
+- 🟦 Added a **colored** version of the "Dithering" node
+![](https://github.com/user-attachments/assets/a5d09fac-894b-4bff-933b-d63a91c7d8bf)
+- 🟦 Added a "Random" node that gives a single random number (as opposed to "Random 1D" which gives an entire strip of random numbers)
+![](https://github.com/user-attachments/assets/fa273c31-ae0c-47e1-a562-f61d6df0bf8a)
+- 🟦 Added a "Random 3D" node
+- 🟦 Renamed node "Random1D" as "Random 1D" and moved it to the "Greyscale" category. Same for "Random2D"
+- 🟦 Renamed node "Voronoise" as "Noise Voronoi"
+- 🟦 Removed node "Noise Cellular" (because it was doing the exact same thing as "Noise Voronoi")
+- ⚡ Slightly improved the speed of the video export
+- 🤏 Improved the remaining time estimation during video export, and made the progress bar update more smoothly instead of freezing and then jumping forward
+- 🐛 Fixed the app icon and name not showing on Linux
+- 🐛 Fixed the missing window decorations on Linux Wayland
+- 🐛 Fixed the UI being a bit buggy on Linux Wayland and clicks being offset
+- 👩‍💻 Important internal change: we can now run as many tasks in parallel as we want. This will prevent e.g. an image export to be stuck at 0% if we are already saturated with other tasks
 
 ## 1.2.0 MacOS
 
