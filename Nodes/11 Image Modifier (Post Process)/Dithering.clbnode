@@ -21,7 +21,7 @@ sRGB main(UV uv)
     vec2 id         = floor(gv);
     int  mod_x      = int(mod(id.x, 'Pattern X'));
     int  mod_y      = int(mod(id.y, 'Pattern Y'));
-    vec3 alpha_test = 'Image'(uv) + 'Spread' * bayer_matrix[mod_x][mod_y];
+    vec3 alpha_test = 'Image'(id / 'Scale') + 'Spread' * bayer_matrix[mod_x][mod_y];
     return vec3(
         alpha_test.r < 'Threshold' ? 0. : 1.,
         alpha_test.g < 'Threshold' ? 0. : 1.,
