@@ -14,9 +14,9 @@
 - 🟦 Removed node "Noise Cellular" (because it was doing the exact same thing as "Noise Voronoi")
 - ⚡ Slightly improved the speed of the video export
 - 🤏 Improved the remaining time estimation during video export, and made the progress bar update more smoothly instead of freezing and then jumping forward
-- 🐛 Fixed the app icon and name not showing on Linux
-- 🐛 Fixed the missing window decorations on Linux Wayland
 - 🐛 Fixed the UI being a bit buggy on Linux Wayland and clicks being offset
+- 🐛 Fixed the missing window decorations on Linux (by switching to X11 instead of Wayland)
+- 🐛 Fixed the ability to drag panels outside of the main window on Linux (by switching to X11 instead of Wayland)
 - 👩‍💻 Important internal change: we can now run as many tasks in parallel as we want. This will prevent e.g. an image export to be stuck at 0% if we are already saturated with other tasks
 
 ## 1.2.0 MacOS
