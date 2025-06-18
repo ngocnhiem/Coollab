@@ -7,6 +7,14 @@
 We wrap the std::filesystem functions and handle exceptions.
 Note that using the types are fine (e.g. you can freely use `std::filesystem::path`)
 
+### Never use std::getline
+
+Use Cool::getline instead
+
+std::getline will not remove the \r that is at the end of Windows files, which causes a problem on Linux
+
+// TODO add automatic checks in github action to make sure you didn't use std::getline or a std::filesystem function?
+
 ### Use trailing return types
 
 :::danger Don't
