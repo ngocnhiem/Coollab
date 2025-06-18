@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.3 Color Themes
+
+- 🐛 Fixed: a project created on Windows would fail to open on Linux
+
 ## 1.3.2 Color Themes
 
 - 🟦🐛 Fixed the Dithering nodes: they now render as a perfect grid of squares instead of letting the contours of the image show through

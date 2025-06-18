@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(Coollab)
-set(COOL_APP_VERSION "1.3.2 Color Themes")
+set(COOL_APP_VERSION "1.3.3 Color Themes")
 add_executable(${PROJECT_NAME})
 add_library(Coollab-Properties INTERFACE) # This is needed by both Coollab and its tests
 target_link_libraries(${PROJECT_NAME} PRIVATE Coollab-Properties)
