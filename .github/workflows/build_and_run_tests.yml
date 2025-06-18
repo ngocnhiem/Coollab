@@ -56,12 +56,6 @@ jobs:
           - Release
 
     steps:
-      - name: "tes"
-        run: |
-          sudo apt update
-          sudo apt install libdecor-0-dev
-          apt list --installed | grep libdecor
-
       - uses: actions/checkout@v3
         with:
           submodules: recursive
@@ -115,6 +109,7 @@ jobs:
           sudo apt-get install -y libavcodec-dev libavdevice-dev libavfilter-dev libavformat-dev libavutil-dev libpostproc-dev libswresample-dev libswscale-dev
           sudo apt-get install -y libdbus-1-dev
           sudo apt-get install -y libjpeg-dev
+          sudo apt-get install -y libdecor-0-dev
 
       - name: Install MacOS dependencies
         if: runner.os == 'MacOS'
