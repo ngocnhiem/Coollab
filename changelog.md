@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.2 Color Themes
+
+- 🟦🐛 Fixed the Dithering nodes: they now render as a perfect grid of squares instead of letting the contours of the image show through
+![](https://github.com/user-attachments/assets/04912870-b3d7-43a0-ae99-840a522c65dd)
+
 ## 1.3.1 Color Themes
 
 - 🐛 Fix missing padding on the left of the windows' title bars
