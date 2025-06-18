@@ -57,7 +57,10 @@ jobs:
 
     steps:
       - name: "tes"
-        run: apt list --installed | grep libdecor
+        run: |
+          sudo apt update
+          sudo apt install libdecor-0-dev
+          apt list --installed | grep libdecor
 
       - uses: actions/checkout@v3
         with:
