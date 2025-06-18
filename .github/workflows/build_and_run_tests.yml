@@ -56,6 +56,8 @@ jobs:
           - Release
 
     steps:
+      - name: "tes"
+        run: dpkg -l | grep libdecor
       - uses: actions/checkout@v3
         with:
           submodules: recursive
