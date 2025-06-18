@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1 Color Themes
+
+- 🐛 Fix missing padding on the left of the windows' title bars
+- 🤏 Add an icon for the "video export in progress" window
+
 ## 1.3.0 Color Themes
 
 - ✨ We exposed the option to create your own color themes!
