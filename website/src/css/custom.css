@@ -6,6 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  /* Template */
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -15,6 +16,14 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* Mockup */
+  --font-title: 'League Spartan', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  --coollab-gradient: linear-gradient(90deg, #F4AD7F 0%, #8656D7 50%, #30A7F5 100%);
+  --coollab-gradient-reverse: linear-gradient(90deg, #30A7F5 0%, #8656D7 50%, #F4AD7F 100%);
+  --coollab-primary-color: #1B1B1D;
+  --coollab-secondary-color: #27272A;
+  --coollab-light-color: #FFFF;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,6 +36,47 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+html,
+body {
+  font-family: var(--font-body);
+  background-color: var(--coollab-secondary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar {
+  font-family: var(--font-title);
+}
+
+/* Navbar */
+.navbar {
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  box-shadow: none;
+}
+
+.navbar__items {
+  padding-top:20px;
+  gap:25px;
+}
+
+.navbar__link {
+  color: var(--coollab-light-color);
+  font-weight:bold;
+  letter-spacing: 1px;
+  font-size:18px;
+}
+
+/* Footer */
+.footer, .footer-dark {
+  background-color: var(--coollab-secondary-color);
 }
 
 .footer__col {
@@ -58,8 +108,8 @@
   left: 105% !important;
 }
 
-.slider-left > div,
-.slider-right > div {
+.slider-left>div,
+.slider-right>div {
   background: var(--ifm-color-content);
   border: 0 !important;
   color: var(--ifm-color-content-inverse) !important;
@@ -67,7 +117,8 @@
 }
 
 .slider-single img {
-  background: black; /* Because some images are transparent and we don't want any transparency inside the slider */
+  background: black;
+  /* Because some images are transparent and we don't want any transparency inside the slider */
   height: var(--slider-height);
   min-width: 100%;
   object-fit: cover;
@@ -130,7 +181,8 @@
 }
 
 .gallery-frame:hover a {
-  pointer-events: all; /*Still can click on link in infos*/
+  pointer-events: all;
+  /*Still can click on link in infos*/
 }
 
 .gallery-frame:hover .gallery-img {
@@ -154,13 +206,15 @@
   align-items: center;
   background-color: #000000b8;
 
-  z-index: 500; /*To display over the navbar*/
+  z-index: 500;
+  /*To display over the navbar*/
 }
 
 @keyframes scale-up {
   0% {
     transform: scale(0.5);
   }
+
   100% {
     transform: scale(1);
   }
@@ -171,6 +225,7 @@
     transform: scale(1);
     filter: opacity(100%);
   }
+
   100% {
     transform: scale(0.5);
     filter: opacity(0%);
@@ -185,9 +240,9 @@
 
   background-image: url("../../static/img/transparent.png");
 
-  animation-name: scale-down; 
-  animation-duration: 0.5s; 
-  animation-iteration-count: 1; 
+  animation-name: scale-down;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
 }
 
 .full-image {
@@ -196,33 +251,33 @@
   max-width: 90vw;
   background-image: url("../../static/img/transparent.png");
 
-  animation-name: scale-up; 
-  animation-duration: 0.5s; 
+  animation-name: scale-up;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
 }
 
-.img-overlay > i {
+.img-overlay>i {
   position: absolute;
   color: white;
   font-size: 2rem;
   cursor: pointer;
 }
 
-.img-overlay > .close-button {
+.img-overlay>.close-button {
   margin: 1.5vh;
   top: 0;
   right: 2vw;
   z-index: 600;
 }
 
-.img-overlay > .prev-button {
+.img-overlay>.prev-button {
   margin: 1.5vh;
   top: 50%;
   left: 2vw;
   z-index: 600;
 }
 
-.img-overlay > .next-button {
+.img-overlay>.next-button {
   margin: 1.5vh;
   top: 50%;
   right: 2vw;

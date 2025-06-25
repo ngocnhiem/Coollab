@@ -1,0 +1,45 @@
+.section {
+  color: white;
+  text-align: center;
+}
+
+.svgTop {
+  position:relative;
+  width: 100%;
+  line-height: 0;
+  display: block;
+  margin-top:-20%;
+  z-index:3;
+}
+
+.content {
+  background-color: var(--coollab-primary-color);
+  padding-top:1000px;
+  padding-top: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.video {
+  max-width: 70% !important;
+  height: 500px;
+  margin: 0 auto 2rem auto;
+  border: 1px solid var(--coollab-light-color);
+  background-color: #29292C;
+}
+
+.primaryBtn {
+  display: inline-block;
+  background:none;
+  color: var(--coollab-light-color);
+  border:2px solid var(--coollab-light-color);
+  padding: .5rem 2rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  filter: brightness(1.2);
+}
