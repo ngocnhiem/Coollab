@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.0 Spout OUT
+
+- ✨ Added Spout output
+![](https://github.com/user-attachments/assets/0aed9b02-4302-4e1c-b303-64d230db2050)
+
 ## 1.3.3 Color Themes
 
 - 🐛 Fixed: a project created on Windows would fail to open on Linux
