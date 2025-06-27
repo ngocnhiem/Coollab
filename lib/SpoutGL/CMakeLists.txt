@@ -76,9 +76,9 @@ add_library(Spout SHARED ${SpoutSources} )
 target_link_libraries(Spout PRIVATE  ${SpoutLink} )
 target_compile_definitions(Spout PRIVATE SPOUT_BUILD_DLL)
 
-if(NOT MSVC)
-  target_compile_options(Spout_static PRIVATE -msse4)
-  target_compile_options(Spout PRIVATE -msse4)
+if(NOT CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    target_compile_options(Spout_static PRIVATE -mssse3)
+    target_compile_options(Spout PRIVATE -mssse3)
 endif()
 
 get_property(GeneratorisMultiConfig GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)

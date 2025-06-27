@@ -1,4 +1,3 @@
-#pragma once
 #include "SpoutOutManager.hpp"
 #include "Cool/ImGui/ImGuiExtras.h"
 
