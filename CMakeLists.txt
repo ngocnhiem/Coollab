@@ -46,11 +46,15 @@ target_link_libraries(Coollab-Properties INTERFACE Cool::Core)
 cool_setup(${PROJECT_NAME})
 Cool__set_app_icon(${PROJECT_NAME} "res/logo.png" "${CMAKE_SOURCE_DIR}/app-resources/icon.rc")
 
-# Include cmd
+# -----------------
+# ---cmd---
+# -----------------
 add_subdirectory(lib/cmd)
 target_link_libraries(Coollab-Properties INTERFACE cmd::cmd)
 
-# Include range-v3
+# -----------------
+# ---range-v3---
+# -----------------
 target_include_directories(Coollab-Properties SYSTEM INTERFACE lib/range-v3/include)
 install(FILES "lib/range-v3/LICENSE.txt" DESTINATION "license/range-v3")
 
@@ -74,6 +78,16 @@ add_subdirectory(lib/cpp-httplib)
 target_link_libraries(Coollab-Properties INTERFACE httplib)
 install(FILES "lib/cpp-httplib/LICENSE" DESTINATION "license/cpp-httplib")
 install(FILES "lib/openssl/LICENSE.txt" DESTINATION "license/openssl")
+
+# -----------------
+# ---Spout---
+# -----------------
+if(WIN32)
+    add_subdirectory(lib/SpoutGL)
+    target_link_libraries(Coollab-Properties INTERFACE Spout_static)
+    target_compile_definitions(Coollab-Properties INTERFACE COOLLAB_SPOUT)
+    install(FILES "lib/SpoutGL/licence.txt" DESTINATION "license/Spout")
+endif()
 
 # Grab all the source files
 file(GLOB_RECURSE COOLLAB_SOURCES CONFIGURE_DEPENDS src/*)

@@ -114,7 +114,9 @@ void App::update()
     if (!project().exporter.is_exporting())
     {
         project().clock.update();
-        auto const render_size = render_view().desired_image_size(project().view_constraint); // TODO(JF) Integrate the notion of View Constraint inside the TextureView ? But that's may be too much coupling
+        auto const render_size = spout_out_manager().is_active()
+                                     ? spout_out_manager().texture_size()
+                                     : render_view().desired_image_size(project().view_constraint); // TODO(JF) Integrate the notion of View Constraint inside the TextureView ? But that's may be too much coupling
         polaroid().render(render_size, project().clock.time(), project().clock.delta_time());
     }
     else
@@ -170,6 +172,9 @@ void App::on_project_loaded()
     project().view_constraint.set_shared_aspect_ratio(project().shared_aspect_ratio);
     project().exporter.set_shared_aspect_ratio(project().shared_aspect_ratio);
     _gallery_publisher.set_shared_aspect_ratio(project().shared_aspect_ratio);
+    spout_out_manager().set_shared_aspect_ratio(project().shared_aspect_ratio);
+
+    project().spout_out_manager.activate_ifn();
 
     auto const ctx = command_execution_context();
     for (auto& [_, node] : project().modules_graph->graph().nodes())
@@ -280,6 +285,9 @@ void App::render(img::Size size, Cool::Time time, Cool::Time delta_time)
         data_to_pass_to_shader(size, time, delta_time),
         data_to_generate_shader_code()
     );
+
+    if (spout_out_manager().is_active())
+        spout_out_manager().send_texture(project().modules_graph->final_texture());
 }
 
 void App::imgui_window_cameras()
@@ -472,6 +480,7 @@ void App::imgui_windows()
     imgui_window_view();
     imgui_window_exporter();
     imgui_window_console();
+    spout_out_manager().imgui_window();
     if (inputs_are_allowed())
         imgui_windows_only_when_inputs_are_allowed();
 }
@@ -662,6 +671,8 @@ void App::commands_menu()
             if (_output_view.is_open())
                 project().shared_aspect_ratio.fill_the_view = true;
         }
+        if (ImGui::Selectable(ICOMOON_IMAGE " Spout/Syphon OUT config"))
+            spout_out_manager().open_imgui_window();
         if (ImGui::Selectable(ICOMOON_FOLDER_OPEN " Open user-data folder"))
             Cool::open_folder_in_explorer(Cool::Path::user_data());
         ImGui::EndMenu();
