@@ -4,7 +4,9 @@
 #include "Cool/ImGui/IcoMoonCodepoints.h"
 #include "Cool/ImGui/ImGuiWindow.h"
 #include "Cool/ImGui/icon_fmt.h"
+#if defined(COOLLAB_SPOUT)
 #include "SpoutGL/SpoutSender.h"
+#endif
 
 namespace Lab {
 

@@ -1,6 +1,5 @@
 #pragma once
 #include "SpoutOutManager.hpp"
-#include <misc/cpp/imgui_stdlib.h>
 #include "Cool/ImGui/ImGuiExtras.h"
 
 namespace Lab {
