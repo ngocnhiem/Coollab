@@ -12,6 +12,8 @@ The Demo window is a very useful tool that will show you everything that is poss
 
 If you want to see the code you need to call to create a given widget, use the **"Item Picker"** from the Demo window. Just click on any widget and it will take you to the corresponding piece of code in your IDE! (Make sure you are launching your programmer with a debugger, otherwise it will just crash)
 
+TODO redirect to the Getting Started section about the item picker
+
 ![](./img/imgui_item_picker.png)
 
 #### Important *Dear ImGui* functions
