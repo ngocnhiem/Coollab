@@ -84,11 +84,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: "img/logo.png",
       colorMode: {
         defaultMode: "dark",
-        disableSwitch: false,
+        disableSwitch: true,
         respectPrefersColorScheme: false,
       },
       navbar: {
@@ -105,12 +104,6 @@ const config = {
             label: "Tutorials",
           },
           {
-            type: "doc",
-            docId: "Download/download",
-            position: "left",
-            label: "Download",
-          },
-          {
             to: "Gallery",
             position: "left",
             label: "Gallery",
@@ -123,14 +116,20 @@ const config = {
           {
             type: "doc",
             docId: "Articles/Alpaca/Alpaca",
-            position: "right",
+            position: "left",
             label: "Articles",
           },
           {
             type: "doc",
             docId: "About",
-            position: "right",
+            position: "left",
             label: "About",
+          },
+          {
+            type: "doc",
+            docId: "Download/download",
+            position: "right",
+            label: "Download",
           },
         ],
       },
