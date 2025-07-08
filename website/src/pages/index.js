@@ -11,6 +11,12 @@ export default function Home() {
       <main className={styles.heroSection}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>Coollab</h1>
+          <p className={styles.heroSubtitle}>
+            The coolest open-source generative art software
+          </p>
+          <a className={styles.secondaryBtn} href="/Tutorials/Discovery/Intro">
+            Get started
+          </a>
         </div>
       </main>
       <IntroductionShowcase />

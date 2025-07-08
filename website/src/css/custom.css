@@ -19,8 +19,8 @@
   /* ==== COLORS ==== */
   --coollab-gradient: linear-gradient(90deg, #F4AD7F 0%, #8656D7 50%, #30A7F5 100%);
   --coollab-gradient-reverse: linear-gradient(90deg, #30A7F5 0%, #8656D7 50%, #F4AD7F 100%);
-  --coollab-primary-color: #1B1B1D;
-  --coollab-secondary-color: #27272A;
+  --coollab-primary-color: #27272A;
+  --coollab-secondary-color:#1B1B1D;
   --coollab-light-color: #FFFF;
   /* ==== FONTS ==== */
   --font-title: 'League Spartan', sans-serif;
@@ -57,6 +57,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-title);
+  margin: 0;
 }
 
 /* Navbar */
