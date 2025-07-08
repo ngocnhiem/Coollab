@@ -83,6 +83,18 @@ h6,
   text-align: center;
 }
 
+.footer__links {
+    margin-bottom: 0;
+}
+
+.footer__title {
+  margin-bottom:0;
+}
+
+.footer__copyright {
+    font-size: 12px;
+}
+
 .image-in-text {
   width: 20px;
   vertical-align: middle;

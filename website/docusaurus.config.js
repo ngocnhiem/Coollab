@@ -60,9 +60,6 @@ const config = {
       }),
     ],
   ],
-
-  plugins: [require.resolve("docusaurus-lunr-search")],
-
   stylesheets: [
     {
       href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
@@ -77,6 +74,10 @@ const config = {
       integrity:
         "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN",
       crossorigin: "anonymous",
+    },
+    {
+      href: 'https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Roboto:wght@400;700&display=swap',
+      type: 'text/css',
     },
   ],
 
