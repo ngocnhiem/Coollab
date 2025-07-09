@@ -71,6 +71,8 @@ h6 {
   border-radius: var(--radius-max);
   box-shadow: none;
   z-index: 999;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar__items {
