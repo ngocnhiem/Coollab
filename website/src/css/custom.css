@@ -45,7 +45,7 @@
 html,
 body {
   font-family: var(--font-body);
-  background-color: var(--coollab-secondary-color);
+  background-color: var(--coollab-primary-color);
   box-sizing: border-box;
   max-width: 100%;
 }
@@ -83,7 +83,7 @@ h6 {
   letter-spacing: 1px;
   font-size:16px;
   letter-spacing: 10%;
-  padding:5px 25px;
+  padding:.3em 1.6em;
   transition:.2s ease-in;
 }
 
@@ -101,6 +101,11 @@ h6 {
 .navbar__link[href="/Download"]:hover {
   border-radius:var(--radius-max);
   filter:brightness(120%);
+}
+
+.navbar--scrolled {
+  background-color: rgba(27, 27, 29, 0.6);
+  transition: background-color 2s ease;
 }
 
 /* Footer */
@@ -223,7 +228,6 @@ h6 {
 
 .gallery-frame:hover a {
   pointer-events: all;
-  /*Still can click on link in infos*/
 }
 
 .gallery-frame:hover .gallery-img {

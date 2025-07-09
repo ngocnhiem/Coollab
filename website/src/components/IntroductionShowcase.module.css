@@ -12,9 +12,22 @@
   z-index:3;
 }
 
+.sectionTitle {
+  margin-top:1em;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  margin:1.5em 0 3em 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Roboto', sans-serif;
+}
+
 .content {
   background-color: var(--coollab-primary-color);
-  padding-top:1000px;
   padding-top: 0;
   z-index: 1;
   position: relative;
@@ -26,15 +39,15 @@
   margin: 0 auto 2rem auto;
   border: 1px solid var(--coollab-light-color);
   background-color: #29292C;
+  border-radius: 30px;
 }
 
 .primaryBtn {
   display: inline-block;
-  background:none;
   color: var(--coollab-light-color);
-  border:2px solid var(--coollab-light-color);
+  background: var(--coollab-gradient);
+  border-radius:var(--radius-mid);
   padding: .5rem 2rem;
-  border-radius: 3px;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
@@ -42,4 +55,7 @@
 
 .primaryBtn:hover {
   filter: brightness(1.2);
+  color: var(--coollab-light-color);
+  text-decoration: none;
+  border-radius:var(--radius-max);
 }

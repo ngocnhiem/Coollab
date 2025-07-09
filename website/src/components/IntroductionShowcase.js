@@ -13,12 +13,23 @@ export default function IntroductionShowcase() {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
         >
-          <path d="M928.556 199.183C1105.36 242.709 1389.58 122.585 1448 0.314806L1448 400.396L-24.9539 400.396L-37.3233 237.364C-19.8954 220.33 52.2068 157.038 123.937 195.043C231.559 252.064 349.098 287.775 485.829 232.773C622.559 177.771 696.571 142.069 928.556 199.183Z" fill="#1B1B1D" />
+          <path d="M928.556 199.183C1105.36 242.709 1389.58 122.585 1448 0.314806L1448 400.396L-24.9539 400.396L-37.3233 237.364C-19.8954 220.33 52.2068 157.038 123.937 195.043C231.559 252.064 349.098 287.775 485.829 232.773C622.559 177.771 696.571 142.069 928.556 199.183Z" fill="#27272A" />
         </svg>
       </div>
 
       <div className={styles.content}>
-   <YoutubeVideo id="dQw4w9WgXcQ"/>
+        <h2 className={styles.sectionTitle}>
+          The friendly and powerful alternative to TouchDesigner
+        </h2>
+        <p className={styles.sectionSubtitle}>
+          One shape and your creativity is all you need.
+        </p>
+
+        <YoutubeVideo id="jsjkjCQCPno" />
+
+         <h2 className={styles.sectionTitle}>
+         Coollab, the software you’ve been looking for
+        </h2>
         <a className={styles.primaryBtn} href="#">Download</a>
       </div>
     </section>
