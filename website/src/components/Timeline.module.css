@@ -1,0 +1,81 @@
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem auto;
+  width: 100%;
+  max-width: 900px;
+  padding: 2rem 1rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 75%;
+  top: 12%;
+  bottom: 0;
+  width: 4px;
+  background: var(--coollab-gradient-vertical);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 4rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.stepImageWrapper {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+
+.stepImage {
+  width: 300px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: var(--radius-max);
+  border: 1px solid;
+}
+
+.stepDot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.stepContent {
+  width: 50%;
+  padding-left: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+  text-align: left;
+}
+
+.stepNumber {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.stepLabel {
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  color: white;
+  font-weight:bold;
+  padding-left:.7em;
+}

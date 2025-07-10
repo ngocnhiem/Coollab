@@ -46,9 +46,10 @@ export default function IntroductionShowcase() {
               <p className={styles.cardText}>A powerful tool for <span style={{color:'#30A7F5'}}>Vjing</span> and so much more!</p>
             </div>
           </div>
-
-          <a className={styles.primaryBtn} href="#">Download</a>
+          <a className={styles.primaryBtn} href="/Download">Download</a>
         </div>
+
+        <YoutubeVideo id="jsjkjCQCPno" />
       </div>
     </section>
   );

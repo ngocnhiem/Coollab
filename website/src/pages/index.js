@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import IntroductionShowcase from '../components/IntroductionShowcase';
+import Timeline from '../components/Timeline';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         </div>
       </main>
       <IntroductionShowcase />
+      <Timeline />
     </Layout>
   );
 }
