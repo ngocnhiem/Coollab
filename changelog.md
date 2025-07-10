@@ -4,6 +4,8 @@
 
 - 🤏 In the color picker, RGB values now go from 0 to 255 instead of 0 to 1. HSL values go to respectively 360, 100 and 100
 - 🟦 Added a "Sharpen" node
+- 🟦 Improved "Make Displacement Map" node, added two parameters "Absolute Value" and "Precision"
+- 🟦 Added "Get X (Vec2)" and "Get Y (Vec2)" nodes
 
 ## 1.4.0 Spout OUT
 
