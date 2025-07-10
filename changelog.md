@@ -2,6 +2,7 @@
 
 ##
 
+- 🟦 Added a "Julia Fractal" node
 - Disable multi-viewport on all Linux by default, which should fix UI problems with clicks being offset in context menus
 - Fix turning output window fullscreen when multi-viewport is disabled
 
