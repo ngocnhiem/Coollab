@@ -2,6 +2,9 @@
 
 ##
 
+- Disable multi-viewport on all Linux by default, which should fix UI problems with clicks being offset in context menus
+- Fix turning output window fullscreen when multi-viewport is disabled
+
 ## 1.4.1 Spout OUT
 
 - 🟦 Added a "Sharpen" node
