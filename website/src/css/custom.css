@@ -61,6 +61,14 @@ h6 {
   margin: 0;
 }
 
+a {
+  color:var(--coollab-light-color);
+}
+
+a:hover {
+  color:var(--coollab-light-color);
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
