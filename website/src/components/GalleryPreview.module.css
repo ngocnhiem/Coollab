@@ -1,0 +1,26 @@
+.gallerySection {
+  padding: 4rem 2rem;
+  background-color: var(--coollab-primary-color);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-max);
+  object-fit: cover;
+  border: 1px solid var(--coollab-light-color);
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.03);
+}
