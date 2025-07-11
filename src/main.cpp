@@ -1,4 +1,5 @@
 #include "App.h"
+#include "Cool/Dump/set_extra_dump_info.hpp"
 #include "Cool/Path/PathsConfig.h"
 //
 #include <Cool/Core/run.h> // Must be included last otherwise it slows down compilation because it includes <ser20/archives/json.hpp>
@@ -13,6 +14,15 @@ public:
 
 auto main(int argc, char** argv) -> int
 {
+    Cool::set_extra_dump_info([](Cool::DumpStringGenerator& dump) {
+        dump.add("OpenSSL",
+#if CPPHTTPLIB_OPENSSL_SUPPORT
+                 "Enabled"
+#else
+                 "Disabled"
+#endif
+        );
+    });
     Cool::run<Lab::App, PathsConfig>(
         argc, argv,
         {
