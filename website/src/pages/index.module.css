@@ -101,9 +101,32 @@
   border-radius: var(--radius-max);
 }
 
-/* -- OS Section -- */
+.thirdBtn {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  padding: .5em 1.5em;
+  background: rgba(255,255,255,.14);
+  color: var(--coollab-light-color);
+  border-radius: var(--radius-mid);
+  text-decoration: none;
+  text-transform:uppercase;
+  letter-spacing: 11%;
+  transition: all 0.3s ease;
+}
 
-.osSection {
+.thirdBtn:hover {
+  text-decoration: none;
+  border-radius: var(--radius-max);
+}
+
+/* -- Follow Section -- */
+.followSection {
+  padding-top:4em;
+} 
+
+/* -- OS Section -- */
+.osSection, .followSection {
   text-align: center;
   padding-bottom:4em;
 }
@@ -112,7 +135,7 @@
   font-weight:bold;
 }
 
-.osButtons {
+.osButtons, .followButtons {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -127,7 +150,7 @@
   text-transform: uppercase;
 }
 
-.osIcon {
+.icon {
   width: 20px;
   height: 20px;
   display: inline-block;
