@@ -101,10 +101,11 @@
   border-radius: var(--radius-max);
 }
 
-/* -- Get Coollab Section -- */
+/* -- OS Section -- */
 
 .osSection {
   text-align: center;
+  padding-bottom:4em;
 }
 
 .osSection a {
