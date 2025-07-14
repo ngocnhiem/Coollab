@@ -6,14 +6,6 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  /* Template */
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   /* ==== COLORS ==== */
@@ -122,6 +114,7 @@ a:hover {
 /* Footer */
 .footer, .footer-dark {
   background-color: var(--coollab-secondary-color);
+  margin-top:3em;
 }
 
 .footer__col {
@@ -181,8 +174,42 @@ a:hover {
   object-fit: cover;
 }
 
-/* Gallery Impl */
+div[class*="docPage"] {
+  padding-top:6em;
+}
 
+.breadcrumbs__item--active .breadcrumbs__link {
+  color:var(--coollab-light-color);
+  font-weight:bold;
+  letter-spacing: 10%;
+}
+
+aside {
+  background-color:rgba(27, 27, 29, 0.3);
+}
+
+.menu__link:active, .menu__link--active {
+  color:var(--coollab-light-color) !important;
+  font-weight:bold;
+}
+
+.menu__link:hover, .menu__link--active {
+  border-radius: var(--radius-mid);
+  background-color: rgba(255,255,255,.14) !important;
+}
+
+.pagination-nav__link {
+  border-radius: var(--radius-mid);
+  border:2px solid rgba(255,255,255,.14);
+  transition:.2s ease-in;
+}
+
+.pagination-nav__link:hover {
+  border:2px solid rgba(255,255,255,.14);
+  background-color: rgba(255,255,255,.14);
+}
+
+/* Gallery Impl */
 .gallery {
   padding: 40px;
 }
@@ -261,9 +288,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   background-color: #000000b8;
-
   z-index: 500;
-  /*To display over the navbar*/
 }
 
 @keyframes scale-up {
