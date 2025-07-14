@@ -111,6 +111,7 @@ class GalleryImpl extends React.Component {
           className={styles.galleryImg}
           alt=""
           onClick={() => this.openImg(i)}
+          style={{ animationDelay: `${i * 100}ms` }}
         />
 
         <div className={styles.galleryInfos}>

@@ -18,7 +18,7 @@
 
 .galleryImpl {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 1rem;
 }
 
@@ -29,12 +29,25 @@
   cursor: pointer;
 }
 
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .galleryImg {
   width: 100%;
-  height: 280px;
+  height: 250px;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
+  animation: fadeInZoom 0.6s ease forwards;
+  opacity: 0; 
 }
 
 .galleryFrame:hover .galleryImg {
@@ -87,7 +100,6 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Fullscreen viewer styles remain unchanged */
 .imgOverlay {
   position: fixed;
   top: 0;
