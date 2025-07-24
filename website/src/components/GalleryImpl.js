@@ -13,6 +13,7 @@ class GalleryImpl extends React.Component {
       nextImageIndex: [],
       index: 0,
       animate: false,
+      transitionDirection: null,
     };
   }
 
@@ -57,11 +58,15 @@ class GalleryImpl extends React.Component {
   };
 
   setPrevFullScreenImage = () => {
-    this.setSurroundingsFullScreenImages(this.state.previousImageIndex);
+    this.setState({ transitionDirection: 'left' }, () => {
+      this.setSurroundingsFullScreenImages(this.state.previousImageIndex);
+    });
   };
 
   setNextFullScreenImage = () => {
-    this.setSurroundingsFullScreenImages(this.state.nextImageIndex);
+    this.setState({ transitionDirection: 'right' }, () => {
+      this.setSurroundingsFullScreenImages(this.state.nextImageIndex);
+    });
   };
 
   getCurrentFullScreenImage = () => {
@@ -86,19 +91,18 @@ class GalleryImpl extends React.Component {
 
   handleClick = (event) => {
     if (this.state.Opened) {
-      const openingImg = [...document.querySelectorAll(`.${styles.galleryImg}`)];
-      const leftButton = document.querySelector(".prev-button");
-      const rightButton = document.querySelector(".next-button");
-      const closeButton = document.querySelector(".close-button");
+      const overlay = document.querySelector(`.${styles.imgOverlay}`);
+      const isInsideOverlay = overlay && overlay.contains(event.target);
 
-      if (
-        openingImg.includes(event.target) ||
-        event.target === leftButton ||
-        event.target === rightButton ||
-        event.target === closeButton
-      ) {
+      const isButton =
+        event.target.closest(`.${styles.prevButton}`) ||
+        event.target.closest(`.${styles.nextButton}`) ||
+        event.target.closest(`.${styles.closeButton}`);
+
+      if (!isInsideOverlay || isButton) {
         return;
       }
+
       this.closeImg();
     }
   };
@@ -139,9 +143,7 @@ class GalleryImpl extends React.Component {
       <div className={styles.gallery}>
         <h2>Discover all of the community's incredible art!</h2>
         <h3>
-          <i>
-            Submit your own artwork with <Link to="/Download">Coollab️</Link> 🎨
-          </i>
+          Submit your own artwork with <Link to="/Download">Coollab️</Link> 🎨
         </h3>
 
         <div
@@ -151,20 +153,25 @@ class GalleryImpl extends React.Component {
           {images}
         </div>
 
+        <a className={styles.secondaryBtn} href="/Tutorials/Discovery/Intro">
+          Get started
+        </a>
+
         {this.state.Opened && (
           <div className={styles.imgOverlay}>
             <img
               src={this.getCurrentFullScreenImage()}
-              className={
-                this.state.animate
-                  ? styles.animateScaleDown
-                  : styles.fullImage
-              }
-              alt="Fullscreen"
+              className={`
+    ${styles.fullImage} 
+    ${this.state.transitionDirection === 'left' ? styles.slideLeftEnter : ''}
+    ${this.state.transitionDirection === 'right' ? styles.slideRightEnter : ''}
+    ${this.state.animate ? styles.animateScaleDown : ''}
+  `}
             />
-            <i className="close-button fa fa-times" onClick={this.closeImg}></i>
-            <i className="prev-button fa fa-arrow-left" onClick={this.setPrevFullScreenImage}></i>
-            <i className="next-button fa fa-arrow-right" onClick={this.setNextFullScreenImage}></i>
+            <i className={`fa fa-times ${styles.closeButton}`} onClick={this.closeImg}></i>
+            <i className={`fa fa-arrow-left ${styles.prevButton}`} onClick={this.setPrevFullScreenImage}></i>
+            <i className={`fa fa-arrow-right ${styles.nextButton}`} onClick={this.setNextFullScreenImage}></i>
+
           </div>
         )}
       </div>
