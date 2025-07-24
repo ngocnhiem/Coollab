@@ -13,14 +13,14 @@
   --coollab-gradient-vertical: linear-gradient(180deg, #F4AD7F 0%, #8656D7 50%, #30A7F5 100%);
   --coollab-gradient-reverse: linear-gradient(90deg, #30A7F5 0%, #8656D7 50%, #F4AD7F 100%);
   --coollab-primary-color: #27272A;
-  --coollab-secondary-color:#1B1B1D;
+  --coollab-secondary-color: #1B1B1D;
   --coollab-light-color: #FFFF;
   /* ==== FONTS ==== */
   --font-title: 'League Spartan', sans-serif;
   --font-body: 'Roboto', sans-serif;
   /* ==== RADIUS ==== */
-  --radius-mid:10px;
-  --radius-max:25px;
+  --radius-mid: 10px;
+  --radius-max: 25px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -54,11 +54,11 @@ h6 {
 }
 
 a {
-  color:var(--coollab-light-color);
+  color: var(--coollab-light-color);
 }
 
 a:hover {
-  color:var(--coollab-light-color);
+  color: var(--coollab-light-color);
 }
 
 /* Navbar */
@@ -77,33 +77,33 @@ a:hover {
 }
 
 .navbar__items {
-  gap:25px;
+  gap: 25px;
 }
 
 .navbar__link {
   color: var(--coollab-light-color);
-  font-weight:bold;
+  font-weight: bold;
   letter-spacing: 1px;
-  font-size:16px;
+  font-size: 16px;
   letter-spacing: 10%;
-  padding:.3em 1.6em;
-  transition:.2s ease-in;
+  padding: .3em 1.6em;
+  transition: .2s ease-in;
 }
 
 .navbar__link:hover {
   color: var(--coollab-light-color);
-  background-color: rgba(255,255,255,.2);
-  border-radius:var(--radius-max);
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: var(--radius-max);
 }
 
 .navbar__link[href="/Download"] {
   background: var(--coollab-gradient);
-  border-radius:var(--radius-mid);
+  border-radius: var(--radius-mid);
 }
 
 .navbar__link[href="/Download"]:hover {
-  border-radius:var(--radius-max);
-  filter:brightness(120%);
+  border-radius: var(--radius-max);
+  filter: brightness(120%);
 }
 
 .navbar--scrolled {
@@ -112,9 +112,9 @@ a:hover {
 }
 
 /* Footer */
-.footer, .footer-dark {
+.footer,
+.footer-dark {
   background-color: var(--coollab-secondary-color);
-  margin-top:3em;
 }
 
 .footer__col {
@@ -122,15 +122,15 @@ a:hover {
 }
 
 .footer__links {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .footer__title {
-  margin-bottom:0;
+  margin-bottom: 0;
 }
 
 .footer__copyright {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .image-in-text {
@@ -168,45 +168,46 @@ a:hover {
 
 .slider-single img {
   background: black;
-  /* Because some images are transparent and we don't want any transparency inside the slider */
   height: var(--slider-height);
   min-width: 100%;
   object-fit: cover;
 }
 
 div[class*="docPage"] {
-  padding-top:6em;
+  padding-top: 6em;
 }
 
 .breadcrumbs__item--active .breadcrumbs__link {
-  color:var(--coollab-light-color);
-  font-weight:bold;
+  color: var(--coollab-light-color);
+  font-weight: bold;
   letter-spacing: 10%;
 }
 
 aside {
-  background-color:rgba(27, 27, 29, 0.3);
+  background-color: rgba(27, 27, 29, 0.3);
 }
 
-.menu__link:active, .menu__link--active {
-  color:var(--coollab-light-color) !important;
-  font-weight:bold;
+.menu__link:active,
+.menu__link--active {
+  color: var(--coollab-light-color) !important;
+  font-weight: bold;
 }
 
-.menu__link:hover, .menu__link--active {
+.menu__link:hover,
+.menu__link--active {
   border-radius: var(--radius-mid);
-  background-color: rgba(255,255,255,.14) !important;
+  background-color: rgba(255, 255, 255, .14) !important;
 }
 
 .pagination-nav__link {
   border-radius: var(--radius-mid);
-  border:2px solid rgba(255,255,255,.14);
-  transition:.2s ease-in;
+  border: 2px solid rgba(255, 255, 255, .14);
+  transition: .2s ease-in;
 }
 
 .pagination-nav__link:hover {
-  border:2px solid rgba(255,255,255,.14);
-  background-color: rgba(255,255,255,.14);
+  border: 2px solid rgba(255, 255, 255, .14);
+  background-color: rgba(255, 255, 255, .14);
 }
 
 /* Gallery Impl */
@@ -363,4 +364,224 @@ aside {
   top: 50%;
   right: 2vw;
   z-index: 600;
+}
+
+/* ---- Download page ---- */
+.downloadPage {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: var(--coollab-primary-color);
+  color: white;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.licenseNote {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.markdown img {
+  border-radius: var(--radius-max);
+  overflow: hidden;
+}
+
+/* ---- Buttons ---- */
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  padding: 0.4em 1.5em;
+  background: white;
+  color: var(--coollab-primary-color);
+  border: 2px solid white;
+  border-radius: var(--radius-mid);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 11%;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.secondaryBtn:hover {
+  border-radius: var(--radius-max);
+  color: var(--coollab-primary-color);
+  text-decoration: none;
+}
+
+/* Download Right Layout */
+.downloadWrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.downloadVideo {
+  width: 50%;
+  position: relative;
+  background-color: var(--coollab-secondary-color);
+  border-radius: var(--radius-max);
+}
+
+.downloadVideo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.downloadContent {
+  width: 50%;
+  background-color: var(--coollab-primary-color);
+  border-radius: var(--max);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.downloadContent .sectionTitle {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.downloadContent .sectionSubtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.downloadContent .osButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.downloadContent .osButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-transform: uppercase;
+}
+
+.downloadContent .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.downloadContent .osSubtitle {
+  font-style: italic;
+  font-size: 0.8rem;
+  width: 60%;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+}
+
+.tooltipText {
+  visibility: hidden;
+  max-width: 280px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-align: left;
+  padding: 1.2em 1em;
+  border-radius: var(--radius-mid);
+  position: absolute;
+  z-index: 1000;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  text-transform: none;
+}
+
+.tooltipText a {
+  color: var(--coollab-light-color);
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.tooltip:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltipText::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+}
+
+.mobileAppImageNote {
+  display: none;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .downloadWrapper {
+    flex-direction: column;
+  }
+
+  .downloadVideo,
+  .downloadContent {
+    width: 100%;
+    height: 50vh;
+    text-align: center;
+  }
+
+  .downloadContent {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .downloadContent .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .downloadContent .osButtons {
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .downloadContent .secondaryBtn {
+    width: auto;
+    min-width: 180px;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .downloadContent .osSubtitle {
+    width: 100%;
+  }
+
+  .mobileAppImageNote {
+    display: block;
+  }
 }
