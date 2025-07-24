@@ -5,6 +5,8 @@
 - 🟦 Added a "Julia Fractal" node
 - Disable multi-viewport on all Linux by default, which should fix UI problems with clicks being offset in context menus
 - Fix turning output window fullscreen when multi-viewport is disabled
+- Fix missing default image when creating an Image node
+- Added a default video when creating a Video node
 
 ## 1.4.1 Spout OUT
 

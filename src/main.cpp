@@ -10,6 +10,10 @@ public:
     {
         return Cool::Path::root() / "res/images/logo.png";
     }
+    [[nodiscard]] auto default_video() const -> std::filesystem::path override
+    {
+        return Cool::Path::root() / "res/images/logo.gif";
+    }
 };
 
 auto main(int argc, char** argv) -> int
