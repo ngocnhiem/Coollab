@@ -1,0 +1,77 @@
+.contributeSection {
+  padding: 8rem 2rem 4em 2em;
+  background-color: var(--coollab-primary-color);
+  color: white;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-title);
+}
+
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  border-radius: var(--radius-max);
+  background-color: var(--coollab-secondary-color);
+  padding: .7rem;
+  transition:.2s ease-in-out;
+  cursor:pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card a {
+  text-decoration: none !important;
+}
+
+.cardIcon {
+  min-width: 60px;
+  height: 60px;
+  border-radius: var(--radius-max);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--coollab-primary-color);
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.cardText {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  color: white;
+}
+
+.cardText a {
+  color: white;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cardIcon {
+    margin: 0 0 1rem 0;
+  }
+
+  .cardText {
+    font-size: 0.95rem;
+  }
+}
