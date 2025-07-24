@@ -2,9 +2,7 @@
 title: ""
 slug: /
 ---
-import LabGallery from "@site/src/components/LabGallery"
 import YoutubeVideo from "@site/src/components/YoutubeVideo"
-import Download from "@site/src/components/_Download.md"
 import SmallImage from "@site/src/components/SmallImage.js"
 
 ## Coollab
