@@ -7,7 +7,9 @@
 - Fix turning output window fullscreen when multi-viewport is disabled
 - Fix missing default image when creating an Image node
 - Added a default video when creating a Video node
+- Renamed "Video from File" as "Video" // TODO semiincompatibility
 - Improved error message when we fail to open a project
+- Improved error message when we fail to read an image / video file or webcam
 
 ## 1.4.1 Spout OUT
 

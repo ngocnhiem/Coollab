@@ -71,18 +71,12 @@ static void set_uniform(Cool::OpenGL::Shader const& shader, Cool::SharedVariable
     // HACK to send an error message whenever a Texture variable has an invalid path
     if constexpr (std::is_base_of_v<Cool::TextureDescriptor, T>)
     {
-        auto const err = Cool::get_error(value.source);
-        if (err)
+        auto const notif = Cool::get_error_notification(value.source);
+        if (notif)
         {
             ImGuiNotify::send_or_change(
                 var.notification_id(),
-                {
-                    .type     = ImGuiNotify::Type::Error,
-                    .title    = "Missing Texture",
-                    .content  = err.value(),
-                    .duration = std::nullopt,
-                    .closable = false,
-                },
+                *notif,
                 false /*trigger_notification_callbacks_when_changed*/ // To avoid spamming the log file. Otherwise each time we rerender we would re-log the error
             );
         }
