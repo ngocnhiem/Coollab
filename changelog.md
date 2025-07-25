@@ -1,15 +1,16 @@
 # Changelog
 
-##
+## 1.4.2 Spout OUT
 
 - 🟦 Added a "Julia Fractal" node
-- Disable multi-viewport on all Linux by default, which should fix UI problems with clicks being offset in context menus
-- Fix turning output window fullscreen when multi-viewport is disabled
-- Fix missing default image when creating an Image node
-- Added a default video when creating a Video node
-- Renamed "Video from File" as "Video" // TODO semiincompatibility
-- Improved error message when we fail to open a project
-- Improved error message when we fail to read an image / video file or webcam
+![](https://github.com/user-attachments/assets/ad8f0ca0-bf28-4e87-8faa-e7bf36c41696)
+- 🟦 Renamed node "Video from File" as "Video"
+- 🐛 Disabled multi-viewport on all Linux distributions by default, which should fix UI problems with clicks being offset in context menus
+- 🐛 Fix turning output window fullscreen when multi-viewport is disabled
+- 🐛 Fix missing default image when creating an Image node
+- 🤏 Added a default video when creating a Video node
+- 🤏 Improved error message when we fail to open a project
+- 🤏 Improved error message when we fail to read an image / video file or webcam
 
 ## 1.4.1 Spout OUT
 
