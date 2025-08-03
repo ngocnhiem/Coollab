@@ -7,13 +7,13 @@
 #include "Cool/Midi/MidiManager.h"
 #include "Cool/OSC/OSCManager.h"
 #include "Cool/Server/ServerManager.hpp"
+#include "Cool/Spout/SpoutOutManager.hpp"
 #include "Cool/Time/Clock_Realtime.h"
 #include "Cool/Webcam/WebcamsConfigs.hpp"
 #include "Dependencies/Camera2DManager.h"
 #include "Dependencies/Camera3DManager.h"
 #include "Meshing/MeshingGui.hpp"
 #include "ModulesGraph/ModulesGraph.h"
-#include "Spout/SpoutOutManager.hpp"
 #include "output_view_ptr.hpp"
 
 namespace Lab {
@@ -32,7 +32,7 @@ struct Project {
     Cool::SharedAspectRatio       shared_aspect_ratio{};
     Cool::MeshExportSettings      mesh_export_settings{};
     MeshingGui                    meshing_gui{};
-    SpoutOutManager               spout_out_manager{};
+    Cool::SpoutOutManager         spout_out_manager{};
 
     [[nodiscard]] auto current_clock() const -> Cool::Clock const& { return exporter.is_exporting() ? exporter.clock() : clock; }
 
