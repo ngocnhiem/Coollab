@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(Coollab)
-set(COOL_APP_VERSION "1.4.0 Spout OUT")
+set(COOL_APP_VERSION "1.4.2 Spout OUT")
 add_executable(${PROJECT_NAME})
 add_library(Coollab-Properties INTERFACE) # This is needed by both Coollab and its tests
 target_link_libraries(${PROJECT_NAME} PRIVATE Coollab-Properties)
@@ -65,6 +65,7 @@ set(COOLLAB_REQUIRE_ALL_FEATURES OFF CACHE BOOL "Some features are optional, lik
 # -----------------
 set(OPENSSL_USE_STATIC_LIBS ON CACHE BOOL "" FORCE)
 set(HTTPLIB_INSTALL OFF CACHE BOOL "" FORCE)
+set(HTTPLIB_USE_ZSTD_IF_AVAILABLE OFF CACHE BOOL "" FORCE)
 
 if(COOLLAB_REQUIRE_ALL_FEATURES)
     set(HTTPLIB_REQUIRE_OPENSSL ON CACHE BOOL "" FORCE)

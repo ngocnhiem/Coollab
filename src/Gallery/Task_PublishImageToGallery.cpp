@@ -63,27 +63,27 @@ auto Task_PublishImageToGallery::execute() -> Cool::TaskCoroutine
     auto cli = httplib::SSLClient{"api.cloudinary.com"};
 
     // Create the multipart/form-data request
-    auto const items = httplib::MultipartFormDataItems{
+    auto const items = httplib::UploadFormDataItems{
         // Add the image file as a binary data item
-        httplib::MultipartFormData{
+        httplib::UploadFormData{
             .name         = "file",
             .content      = *image_png_data,
             .filename     = "image.png",
             .content_type = "image/png",
         },
-        httplib::MultipartFormData{
+        httplib::UploadFormData{
             .name         = "upload_preset",
             .content      = "gallery",
             .filename     = {},
             .content_type = {},
         },
-        httplib::MultipartFormData{
+        httplib::UploadFormData{
             .name         = "tags",
             .content      = "gallery",
             .filename     = {},
             .content_type = {},
         },
-        httplib::MultipartFormData{
+        httplib::UploadFormData{
             .name    = "context",
             .content = fmt::format(
                 "title={}|description={}|author_name={}|author_link={}|email={}|agreed_to_have_it_shared_on_our_instagram={}",
