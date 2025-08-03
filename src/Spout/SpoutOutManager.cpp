@@ -3,6 +3,8 @@
 
 namespace Lab {
 
+// TODO(Spout) Release sender in destructor
+
 auto SpoutOutManager::is_active() const -> bool
 {
 #if defined(COOLLAB_SPOUT)
