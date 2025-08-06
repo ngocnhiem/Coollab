@@ -80,16 +80,6 @@ target_link_libraries(Coollab-Properties INTERFACE httplib)
 install(FILES "lib/cpp-httplib/LICENSE" DESTINATION "license/cpp-httplib")
 install(FILES "lib/openssl/LICENSE.txt" DESTINATION "license/openssl")
 
-# -----------------
-# ---Spout---
-# -----------------
-if(WIN32)
-    add_subdirectory(lib/SpoutGL)
-    target_link_libraries(Coollab-Properties INTERFACE Spout_static)
-    target_compile_definitions(Coollab-Properties INTERFACE COOLLAB_SPOUT)
-    install(FILES "lib/SpoutGL/licence.txt" DESTINATION "license/Spout")
-endif()
-
 # Grab all the source files
 file(GLOB_RECURSE COOLLAB_SOURCES CONFIGURE_DEPENDS src/*)
 target_sources(${PROJECT_NAME} PRIVATE ${COOLLAB_SOURCES})
