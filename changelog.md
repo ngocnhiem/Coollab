@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.0 Spout IN
+
+- 🟦 Added "Spout/Syphon IN" node
+![](https://github.com/user-attachments/assets/2668feb8-f802-4931-8d6b-c5309cb82ba8)
+
 ## 1.4.2 Spout OUT
 
 - 🟦 Added a "Julia Fractal" node
