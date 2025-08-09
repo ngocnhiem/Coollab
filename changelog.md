@@ -1,5 +1,9 @@
 # Changelog
 
+##
+
+- 🐛 Fixed: clicking on a color ramp to add a mark did not work anymore
+
 ## 1.5.0 Spout IN
 
 - 🟦 Added "Spout/Syphon IN" node
