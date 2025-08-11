@@ -14,9 +14,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: center;
 }
 
-.card {
+.card, .cardLink {
   display: flex;
   align-items: center;
   border: 1px solid;
@@ -25,10 +26,12 @@
   padding: .7rem;
   transition:.2s ease-in-out;
   cursor:pointer;
+  color:inherit;
 }
 
-.card:hover {
+.card:hover, .cardLink:hover {
   transform: translateY(-5px);
+  text-decoration: none;
 }
 
 .card a {

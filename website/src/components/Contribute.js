@@ -9,7 +9,7 @@ const items = [
         icon: <FaBullhorn />,
         text: (
             <>
-                Tell your friends about <span style={{ fontWeight: 'bold' }}>Coollab</span>!
+                Tell your friends about <span style={{ fontWeight: 'bold' }}>Coollab</span> !
             </>
         ),
         link: "https://coollab-art.com/",
@@ -101,37 +101,40 @@ export default function Contribute() {
             <div className={styles.cardList}>
                 {items.map((item, i) => {
                     const accentColor = accentColors[i % 3];
-
-                    return (
-                        <div
-                            className={styles.card}
-                            key={i}
-                            style={{ borderColor: accentColor }}
-                        >
-                            <div
-                                className={styles.cardIcon}
-                            >
+                    const cardContent = (
+                        <>
+                            <div className={styles.cardIcon}>
                                 {item.icon}
                             </div>
                             <div className={styles.cardText}>
-                                {item.link ? (
-                                    <a href={item.link} target="_blank" rel="noopener noreferrer">
-                                        {React.cloneElement(item.text, {},
-                                            React.Children.map(item.text.props.children, child =>
-                                                typeof child === 'string' ? child :
-                                                    React.cloneElement(child, { style: { ...child.props.style, color: accentColor } })
-                                            )
-                                        )}
-                                    </a>
-                                ) : (
-                                    React.cloneElement(item.text, {},
-                                        React.Children.map(item.text.props.children, child =>
-                                            typeof child === 'string' ? child :
-                                                React.cloneElement(child, { style: { ...child.props.style, color: accentColor } })
-                                        )
+                                {React.cloneElement(item.text, {},
+                                    React.Children.map(item.text.props.children, child =>
+                                        typeof child === 'string' ? child :
+                                            React.cloneElement(child, { style: { ...child.props.style, color: accentColor } })
                                     )
                                 )}
                             </div>
+                        </>
+                    );
+
+                    return item.link ? (
+                        <a
+                            key={i}
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.cardLink}
+                            style={{ borderColor: accentColor }}
+                        >
+                            {cardContent}
+                        </a>
+                    ) : (
+                        <div
+                            key={i}
+                            className={styles.card}
+                            style={{ borderColor: accentColor }}
+                        >
+                            {cardContent}
                         </div>
                     );
                 })}
