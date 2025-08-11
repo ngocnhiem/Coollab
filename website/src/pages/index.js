@@ -32,19 +32,28 @@ export default function Home() {
           Select the OS of your choice.
         </p>
         <div className={styles.osButtons}>
-          <a className={`${styles.secondaryBtn} ${styles.osButton}`} href="#">
+          <a className={`${styles.secondaryBtn} ${styles.osButton}`} href="/assets/files/Coollab-Launcher-Windows-bdfc737ac333348eecae86fc5f7b8ec0.exe">
             <FaWindows className={styles.icon} />
             Windows
           </a>
-          <a className={`${styles.secondaryBtn} ${styles.osButton}`} href="#">
+          <a className={`${styles.secondaryBtn} ${styles.osButton}`} href="/assets/files/Coollab-Launcher-MacOS-c215423212151e41283d80f80bb6a83a.zip">
             <FaApple className={styles.icon} />
-            macOS
+            MacOS
           </a>
-          <a className={`${styles.secondaryBtn} ${styles.osButton}`} href="#">
-            <FaLinux className={styles.icon} />
-            Linux
+          <a className="secondaryBtn osButton tooltip" href="/assets/files/Coollab-Launcher-0debf2d7308f1dabc95d9fdbc5e8101a.AppImage">
+            <FaLinux className="icon" /> Linux
+            <span className="tooltipText">
+              If you need help running the AppImage,<br />
+              check out <a href="https://appimage.org/" target="_blank" rel="noopener noreferrer">the official AppImage website</a>.
+            </span>
           </a>
         </div>
+        <p className={`${styles.osSubtitle} ${styles.mobileAppImageNote}`}>
+          For Linux : if you need help running the AppImage, check out the official&nbsp;
+          <a href="https://appimage.org/" target="_blank" rel="noopener noreferrer">
+            AppImage website
+          </a>.
+        </p>
         <p className={styles.osSubtitle}>
           This software uses code of <a href="https://ffmpeg.org/" target="_blank" rel="noopener noreferrer">FFmpeg</a> licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer">GPLv3.0</a> and its source can be downloaded <a href="https://github.com/Coollab-Art/Coollab" target="_blank" rel="noopener noreferrer">here</a>.
         </p>
