@@ -15,6 +15,7 @@
   --coollab-primary-color: #27272A;
   --coollab-secondary-color: #1B1B1D;
   --coollab-light-color: #FFFF;
+  --coollab-accent-color: #F4AD7F;
   /* ==== FONTS ==== */
   --font-title: 'League Spartan', sans-serif;
   --font-body: 'Roboto', sans-serif;
@@ -54,11 +55,11 @@ h6 {
 }
 
 a {
-  color: var(--coollab-light-color);
+  color: var(--coollab-accent-color);
 }
 
 a:hover {
-  color: var(--coollab-light-color);
+  color: #30A7F5;
 }
 
 /* Navbar */
@@ -109,6 +110,17 @@ a:hover {
 .navbar--scrolled {
   background-color: rgba(27, 27, 29, 0.6);
   transition: background-color 2s ease;
+}
+
+.navbar__link--active {
+  color: var(--coollab-light-color);
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: var(--radius-max);
+}
+
+.navbar__link[href="/Download"].navbar__link--active {
+  border-radius: var(--radius-max);
+  filter: brightness(120%);
 }
 
 /* Footer */
