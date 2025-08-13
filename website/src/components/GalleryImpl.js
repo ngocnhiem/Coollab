@@ -45,7 +45,11 @@ class GalleryImpl extends React.Component {
 
   openImg = (index) => {
     this.setSurroundingsFullScreenImages(index);
-    this.setState({ Opened: true });
+    this.setState({
+      Opened: true,
+      transitionDirection: null,
+      animate: false,
+    });
   };
 
   setSurroundingsFullScreenImages = (index) => {
@@ -159,15 +163,21 @@ class GalleryImpl extends React.Component {
 
         {this.state.Opened && (
           <div className={styles.imgOverlay}>
-            <img
-              src={this.getCurrentFullScreenImage()}
-              className={`
-    ${styles.fullImage} 
-    ${this.state.transitionDirection === 'left' ? styles.slideLeftEnter : ''}
-    ${this.state.transitionDirection === 'right' ? styles.slideRightEnter : ''}
-    ${this.state.animate ? styles.animateScaleDown : ''}
-  `}
-            />
+<img
+  key={`${this.state.Opened}-${this.state.currentImageIndex}-${this.state.transitionDirection || 'open'}`}
+  src={this.getCurrentFullScreenImage()}
+  className={[
+    styles.fullImage,
+    this.state.animate
+      ? styles.animateScaleDown
+      : this.state.transitionDirection === 'left'
+      ? styles.slideLeftEnter
+      : this.state.transitionDirection === 'right'
+      ? styles.slideRightEnter
+      : styles.animateScaleUp,
+  ].join(' ')}
+  alt=""
+/>
             <i className={`fa fa-times ${styles.closeButton}`} onClick={this.closeImg}></i>
             <i className={`fa fa-arrow-left ${styles.prevButton}`} onClick={this.setPrevFullScreenImage}></i>
             <i className={`fa fa-arrow-right ${styles.nextButton}`} onClick={this.setNextFullScreenImage}></i>

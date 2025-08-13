@@ -126,9 +126,25 @@
   border: 1px solid var(--coollab-light-color);
 }
 
+.animateScaleUp {
+  animation: scaleIn 0.4s ease forwards;
+}
+
 .animateScaleDown {
   animation: scaleOut 0.4s ease forwards;
 }
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 
 @keyframes scaleOut {
   from {
