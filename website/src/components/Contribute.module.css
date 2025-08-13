@@ -85,11 +85,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--coollab-primary-color);
+  color: var(--coollab-light-color);
   font-size: 1.8rem;
   margin-right: 1rem;
   flex-shrink: 0;
-  background-color: rgba(255, 255, 255, .5);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  border:1px solid var(--coollab-light-color);
 }
 
 .cardText {
