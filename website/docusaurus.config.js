@@ -113,12 +113,13 @@ const config = {
             position: "left",
             label: "Contribute",
           },
-          {
-            type: "doc",
-            docId: "Articles/Alpaca/Alpaca",
-            position: "left",
-            label: "Articles",
-          },
+          // TODO(Website)
+          //   {
+          //     type: "doc",
+          //     docId: "Articles/Alpaca/Alpaca",
+          //     position: "left",
+          //     label: "Articles",
+          //   },
           {
             type: "doc",
             docId: "About",
