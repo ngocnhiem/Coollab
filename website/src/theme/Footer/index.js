@@ -19,7 +19,7 @@ export default function Footer() {
               className={styles.logo}
             />
             <p className={styles.tagline}>
-              A free, open-source generative art software.
+              A free, open-source generative art software
             </p>
             <div className={styles.socials}>
               <a
@@ -63,7 +63,6 @@ export default function Footer() {
               <h4>Explore</h4>
               <Link to="/Tutorials/Discovery/Intro">Tutorials</Link>
               <Link to="/Gallery">Gallery</Link>
-              <Link to="/About">About</Link>
               <Link to="/Contribute">Contribute</Link>
             </div>
             <div className={styles.col}>
@@ -142,26 +141,6 @@ export default function Footer() {
             >
               Docusaurus
             </a>
-            .
-          </p>
-          <p className={styles.credits}>
-            Icons by{" "}
-            <a
-              href="https://www.freepik.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Freepik
-            </a>{" "}
-            on{" "}
-            <a
-              href="https://www.flaticon.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Flaticon
-            </a>
-            .
           </p>
         </div>
       </div>
