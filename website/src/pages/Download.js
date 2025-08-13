@@ -53,7 +53,7 @@ export default function DownloadPage() {
             </a>
           </div>
           <p className="mobileAppImageNote osSubtitle">
-            For Linux : if you need help running the AppImage, check out the
+            For Linux: if you need help running the AppImage, check out the
             official&nbsp;
             <a
               href="https://appimage.org/"

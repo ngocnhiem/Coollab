@@ -99,7 +99,7 @@ export default function Home() {
           </a>
         </div>
         <p className={`${styles.osSubtitle} ${styles.mobileAppImageNote}`}>
-          For Linux : if you need help running the AppImage, check out the
+          For Linux: if you need help running the AppImage, check out the
           official&nbsp;
           <a
             href="https://appimage.org/"
