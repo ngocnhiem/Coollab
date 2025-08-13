@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import IntroductionShowcase from '../components/IntroductionShowcase';
+import FeaturesList from '../components/FeaturesList';
 import Timeline from '../components/Timeline';
 import GalleryPreview from '../components/GalleryPreview';
 import { FaWindows, FaApple, FaLinux, FaInstagram, FaDiscord, FaMastodon } from 'react-icons/fa';
@@ -23,6 +24,36 @@ export default function Home() {
         </div>
       </main>
       <IntroductionShowcase />
+            <div className={styles.followSection}>
+        <h2 className={styles.sectionTitle}>Follow us</h2>
+        <div className={styles.followButtons}>
+          <a
+            className={`${styles.secondaryBtn} ${styles.osButton}`}
+            href="https://www.instagram.com/coollab_art"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram className={styles.icon} /> Instagram
+          </a>
+          <a
+            className={`${styles.secondaryBtn} ${styles.osButton}`}
+            href="https://discord.com/invite/QEjqnEy4aT"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaDiscord className={styles.icon} /> Discord
+          </a>
+          <a
+            className={`${styles.secondaryBtn} ${styles.osButton}`}
+            href="https://mastodon.social/@Coollab"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaMastodon className={styles.icon} /> Mastodon
+          </a>
+        </div>
+      </div>
+      <FeaturesList />
       <Timeline />
       <div className={styles.osSection}>
         <h2 className={styles.sectionTitle}>
@@ -59,35 +90,6 @@ export default function Home() {
         </p>
       </div>
       <GalleryPreview />
-      <div className={styles.followSection}>
-        <h2 className={styles.sectionTitle}>Follow us</h2>
-        <div className={styles.followButtons}>
-          <a
-            className={`${styles.thirdBtn} ${styles.osButton}`}
-            href="https://www.instagram.com/coollab_art"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram className={styles.icon} /> Instagram
-          </a>
-          <a
-            className={`${styles.thirdBtn} ${styles.osButton}`}
-            href="https://discord.com/invite/QEjqnEy4aT"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaDiscord className={styles.icon} /> Discord
-          </a>
-          <a
-            className={`${styles.thirdBtn} ${styles.osButton}`}
-            href="https://mastodon.social/@Coollab"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaMastodon className={styles.icon} /> Mastodon
-          </a>
-        </div>
-      </div>
 
     </Layout>
   );

@@ -123,6 +123,32 @@ a:hover {
   filter: brightness(120%);
 }
 
+.navbar-socials {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  margin-right: .25rem;
+}
+
+.navbar .iconBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-max);
+  border: 1px solid rgba(255,255,255,.18);
+  color: white;
+  background: rgba(255,255,255,.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s ease;
+}
+
+.navbar .iconBtn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.12);
+}
+
 /* Footer */
 .footer,
 .footer-dark {
@@ -150,40 +176,7 @@ a:hover {
   vertical-align: middle;
 }
 
-/* Slider */
-
-.react-3d-carousel {
-  --slider-height: 60vh;
-  min-height: var(--slider-height);
-  margin: 30px 0;
-}
-
-.fa {
-  font-size: 15px;
-}
-
-.slider-left {
-  right: 105% !important;
-}
-
-.slider-right {
-  left: 105% !important;
-}
-
-.slider-left>div,
-.slider-right>div {
-  background: var(--ifm-color-content);
-  border: 0 !important;
-  color: var(--ifm-color-content-inverse) !important;
-  border-radius: 20px;
-}
-
-.slider-single img {
-  background: black;
-  height: var(--slider-height);
-  min-width: 100%;
-  object-fit: cover;
-}
+/* Docu */
 
 div[class*="docPage"] {
   padding-top: 6em;
