@@ -6,19 +6,19 @@ const steps = [
     number: 1,
     label: "Download Coollab",
     accent: "#F4AD7F",
-    img: "/img/placeholder1.png",
+    img: "/img/demo-horizontal.png",
   },
   {
     number: 2,
     label: "Explore Tutorials",
     accent: "#8656D7",
-    img: "/img/placeholder2.png",
+    img: "/img/demo-horizontal.png",
   },
   {
     number: 3,
     label: "Create Art",
     accent: "#30A7F5",
-    img: "/img/placeholder3.png",
+    img: "/img/demo-horizontal.png",
   },
 ]
 

@@ -80,11 +80,12 @@
   padding:.7em;
 }
 
-.cardImage {
+.cardImage img {
   width: 100%;
-  height: 200px;
-  background-color: #666;
+  height: 100%;
+  object-fit: cover;
   border-radius: var(--radius-max);
+  display: block;
 }
 
 .cardText {

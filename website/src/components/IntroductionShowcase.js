@@ -1,6 +1,6 @@
-import React from "react"
-import styles from "./IntroductionShowcase.module.css"
-import YoutubeVideo from "./YoutubeVideo"
+import React from "react";
+import styles from "./IntroductionShowcase.module.css";
+import YoutubeVideo from "./YoutubeVideo";
 
 export default function IntroductionShowcase() {
   return (
@@ -48,14 +48,18 @@ export default function IntroductionShowcase() {
               </p>
             </div>
             <div className={styles.card} style={{ borderColor: "#F4AD7F" }}>
-              <div className={styles.cardImage}></div>
+              <div className={styles.cardImage}>
+                <img src="/img/demo-horizontal.png"></img>
+              </div>
               <p className={styles.cardText}>
                 Free and <span style={{ color: "#F4AD7F" }}>Open-source</span>{" "}
                 software
               </p>
             </div>
             <div className={styles.card} style={{ borderColor: "#30A7F5" }}>
-              <div className={styles.cardImage}></div>
+              <div className={styles.cardImage}>
+                <img src="/img/demo-horizontal.png"></img>
+              </div>
               <p className={styles.cardText}>
                 A powerful tool for{" "}
                 <span style={{ color: "#30A7F5" }}>Vjing</span> and so much
@@ -71,5 +75,5 @@ export default function IntroductionShowcase() {
         <YoutubeVideo id="jsjkjCQCPno" />
       </div>
     </section>
-  )
+  );
 }

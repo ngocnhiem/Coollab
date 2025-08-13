@@ -12,8 +12,7 @@ export default function DownloadPage() {
       <main className="downloadWrapper">
         {/* Left: Background video */}
         <div className="downloadVideo">
-          <img src="/img/demo-vertical
-          .png"></img>
+          <img src="/img/demo-vertical.png"></img>
         </div>
 
         {/* Right: OS Section */}
