@@ -59,17 +59,10 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>
           Get Coollab now
         </h2>
-        <p className={styles.sectionSubtitle}>
-          Select the OS of your choice.
-        </p>
         <div className={styles.osButtons}>
           <a className={`${styles.secondaryBtn} ${styles.osButton}`} href="/assets/files/Coollab-Launcher-Windows-bdfc737ac333348eecae86fc5f7b8ec0.exe">
             <FaWindows className={styles.icon} />
             Windows
-          </a>
-          <a className={`${styles.secondaryBtn} ${styles.osButton}`} href="/assets/files/Coollab-Launcher-MacOS-c215423212151e41283d80f80bb6a83a.zip">
-            <FaApple className={styles.icon} />
-            MacOS
           </a>
           <a className="secondaryBtn osButton tooltip" href="/assets/files/Coollab-Launcher-0debf2d7308f1dabc95d9fdbc5e8101a.AppImage">
             <FaLinux className="icon" /> Linux
@@ -77,6 +70,10 @@ export default function Home() {
               If you need help running the AppImage,<br />
               check out <a href="https://appimage.org/" target="_blank" rel="noopener noreferrer">the official AppImage website</a>.
             </span>
+          </a>
+          <a className={`${styles.secondaryBtn} ${styles.osButton}`} href="/assets/files/Coollab-Launcher-MacOS-c215423212151e41283d80f80bb6a83a.zip">
+            <FaApple className={styles.icon} />
+            MacOS
           </a>
         </div>
         <p className={`${styles.osSubtitle} ${styles.mobileAppImageNote}`}>

@@ -17,14 +17,11 @@ export default function DownloadPage() {
 
                 {/* Right: OS Section */}
                 <div className="downloadContent">
-                    <h1 className="sectionTitle">Download Coollab</h1>
-                    <p className="sectionSubtitle">Select the OS of your choice.</p>
+                    <h1 className="sectionTitle">Install Coollab</h1>
+                    <p></p>
                     <div className="osButtons">
                         <a className="secondaryBtn osButton" href="/assets/files/Coollab-Launcher-Windows-bdfc737ac333348eecae86fc5f7b8ec0.exe">
                             <FaWindows className="icon" /> Windows
-                        </a>
-                        <a className="secondaryBtn osButton" href="/assets/files/Coollab-Launcher-MacOS-c215423212151e41283d80f80bb6a83a.zip">
-                            <FaApple className="icon" /> MacOS
                         </a>
                         <a className="secondaryBtn osButton tooltip" href="/assets/files/Coollab-Launcher-0debf2d7308f1dabc95d9fdbc5e8101a.AppImage">
                             <FaLinux className="icon" /> Linux
@@ -32,6 +29,9 @@ export default function DownloadPage() {
                                 If you need help running the AppImage,<br />
                                 check out <a href="https://appimage.org/" target="_blank" rel="noopener noreferrer">the official AppImage website</a>.
                             </span>
+                        </a>
+                        <a className="secondaryBtn osButton" href="/assets/files/Coollab-Launcher-MacOS-c215423212151e41283d80f80bb6a83a.zip">
+                            <FaApple className="icon" /> MacOS
                         </a>
                     </div>
                     <p className="mobileAppImageNote osSubtitle">

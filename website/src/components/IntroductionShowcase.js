@@ -35,7 +35,7 @@ export default function IntroductionShowcase() {
           <div className={styles.cardContainer}>
             <div className={styles.card} style={{ borderColor: '#8656D7' }}>
               <div className={styles.cardImage}></div>
-              <p className={styles.cardText}>Create cool visuals with no <span style={{color:'#8656D7'}}>code</span> in no time</p>
+              <p className={styles.cardText}><span style={{color:'#8656D7'}}>Simple</span> and <span style={{color:'#8656D7'}}>intuitive</span><br/>node-based effects</p>
             </div>
             <div className={styles.card} style={{ borderColor: '#F4AD7F' }}>
               <div className={styles.cardImage}></div>
