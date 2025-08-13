@@ -17,7 +17,7 @@ import Link from "@docusaurus/Link"
 
 export default function Home() {
   return (
-    <Layout title="Coollab" description="Logiciel open-source d'art génératif">
+    <Layout title="Coollab" description="Open-source generative-art software">
       <main className={styles.heroSection}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>Coollab</h1>
