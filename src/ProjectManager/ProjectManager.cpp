@@ -2,6 +2,7 @@
 #include <imgui.h>
 #include <ImGuiNotify/ImGuiNotify.hpp>
 #include <filesystem>
+#include <open/open.hpp>
 #include <reg/src/generate_uuid.hpp>
 #include "COOLLAB_FILE_EXTENSION.hpp"
 #include "CommandCore/execute_command.hpp"
@@ -131,7 +132,7 @@ void ProjectManager::open_project(std::filesystem::path const& file_path, OnProj
             ImGuiNotify::send({
                 .type     = ImGuiNotify::Type::Error,
                 .title    = "Failed to open project",
-                .content  = fmt::format("We failed to save the current project, so we didn't open the new one because we would have lost the changes to the current project.\n{}", Cool::File::weakly_canonical(file_path)),
+                .content  = fmt::format("We failed to save the current project, so we didn't open the new one because we would have lost the changes to the current project."),
                 .duration = std::nullopt,
             });
             return;
@@ -143,9 +144,13 @@ void ProjectManager::open_project(std::filesystem::path const& file_path, OnProj
     if (!maybe_project.has_value())
     {
         ImGuiNotify::send({
-            .type     = ImGuiNotify::Type::Error,
-            .title    = "Failed to open project",
-            .content  = maybe_project.error() + fmt::format("\n{}", Cool::File::weakly_canonical(file_path)),
+            .type                 = ImGuiNotify::Type::Error,
+            .title                = "Failed to open project",
+            .content              = maybe_project.error(),
+            .custom_imgui_content = [file_path]() {
+                if (ImGui::Button("Try to open in file explorer"))
+                    Cool::open_focused_in_explorer(Cool::File::weakly_canonical(file_path));
+            },
             .duration = std::nullopt,
         });
         create_new_project_in_folder(Cool::File::without_file_name(file_path), on_project_loaded, set_window_title);

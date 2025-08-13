@@ -2,9 +2,12 @@
 - Choose a name for the version and add it in *changelog.md*, *CMakeLists.txt* and *Info.plist* (in CFBundleVersion AND CFBundleShortVersionString)
 - At the top of *versions_compatibility.txt*, add the name of the version, and incompatibility markers if necessary (NB: skip this step for experimental versions, they should not be compatible with any version anyways)
 - Add gifs and images in the changelog to illustrate the changes. Add the names of all the contributors
-- Commit with the message "🔖 [version_name] Release" (make sure to replace with the right version name)
+- Consider adding new highlight features to the website (e.g. Spout, OSC, Particles, etc.)
+- Commit with the message "🔖 [versionName] Release" (make sure to replace with the right version name)
 - On GitHub, create a new release with the name of the version you just chose. Use a new tag with the same name as the version. As a description, use whatever is in the changelog for the new version
-- Once the version is out, find related issues in GitHub and the Discord forum and tell people that things have been fixed / improved, and close the issue / post
+- Once the version is out:
+  - If new libraries have been added, make sure that the license has been properly copied to the installation folder
+  - Find related issues in GitHub and the Discord forum and tell people that things have been fixed / improved, and close the issue / post
 
 ## Choosing a version name
 

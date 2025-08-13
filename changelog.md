@@ -1,5 +1,39 @@
 # Changelog
 
+##
+
+- 🐛 Fixed: clicking on a color ramp to add a mark did not work anymore
+
+## 1.5.0 Spout IN
+
+- 🟦 Added "Spout/Syphon IN" node
+![](https://github.com/user-attachments/assets/2668feb8-f802-4931-8d6b-c5309cb82ba8)
+
+## 1.4.2 Spout OUT
+
+- 🟦 Added a "Julia Fractal" node
+![](https://github.com/user-attachments/assets/ad8f0ca0-bf28-4e87-8faa-e7bf36c41696)
+- 🟦 Renamed node "Video from File" as "Video"
+- 🐛 Disabled multi-viewport on all Linux distributions by default, which should fix UI problems with clicks being offset in context menus
+- 🐛 Fix turning output window fullscreen when multi-viewport is disabled
+- 🐛 Fix missing default image when creating an Image node
+- 🤏 Added a default video when creating a Video node
+- 🤏 Improved error message when we fail to open a project
+- 🤏 Improved error message when we fail to read an image / video file or webcam
+
+## 1.4.1 Spout OUT
+
+- 🟦 Added a "Sharpen" node
+![](https://github.com/user-attachments/assets/f80ff011-e0fb-449d-a57c-2760bd7c7882)
+- 🟦 Improved "Make Displacement Map" node, added two parameters "Absolute Value" and "Precision"
+- 🟦 Added "Get X (Vec2)" and "Get Y (Vec2)" nodes
+- 🤏 In the color picker, RGB values now go from 0 to 255 instead of 0 to 1. HSL values go to respectively 360, 100 and 100
+
+## 1.4.0 Spout OUT
+
+- ✨ Added Spout output
+![](https://github.com/user-attachments/assets/0aed9b02-4302-4e1c-b303-64d230db2050)
+
 ## 1.3.3 Color Themes
 
 - 🐛 Fixed: a project created on Windows would fail to open on Linux
