@@ -1,6 +1,6 @@
-import React from 'react';
-import Layout from '@theme-original/Layout';
-import NavbarScrollEffect from '../../components/NavbarScrollEffect';
+import React from "react"
+import Layout from "@theme-original/Layout"
+import NavbarScrollEffect from "../../components/NavbarScrollEffect"
 
 export default function LayoutWrapper(props) {
   return (
@@ -8,5 +8,5 @@ export default function LayoutWrapper(props) {
       <Layout {...props} />
       <NavbarScrollEffect />
     </>
-  );
+  )
 }

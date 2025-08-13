@@ -6,22 +6,22 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background-image: url('/img/background/homepage-background-placeholder.png');
+  background-image: url("/img/background/homepage-background-placeholder.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius:var(--radius-max);
+  border-radius: var(--radius-max);
 }
 
 .heroSection::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background: var(--coollab-gradient);
-  opacity: .4;
+  opacity: 0.4;
   z-index: 1;
 }
 
@@ -30,7 +30,7 @@
   z-index: 10;
   max-width: 800px;
   color: white;
-  margin-top:-10vh;
+  margin-top: -10vh;
 }
 
 .heroTitle,
@@ -43,21 +43,21 @@
   font-weight: bold;
   color: white;
   text-transform: uppercase;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 .heroSubtitle {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 28px;
-  font-weight:bold;
-  margin-bottom:1em;
-  padding:0;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 0;
   color: white;
 }
 
 .sectionTitle {
-  margin-top:1em;
+  margin-top: 1em;
   font-size: 2.5rem;
   font-weight: bold;
   color: white;
@@ -82,15 +82,15 @@
 /* Buttons */
 .secondaryBtn {
   display: inline-block;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  padding: .4em 1.5em;
+  padding: 0.4em 1.5em;
   background: white;
   color: var(--coollab-primary-color);
   border: 2px solid white;
   border-radius: var(--radius-mid);
   text-decoration: none;
-  text-transform:uppercase;
+  text-transform: uppercase;
   letter-spacing: 11%;
   transition: all 0.3s ease;
 }
@@ -103,14 +103,14 @@
 
 .thirdBtn {
   display: inline-block;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  padding: .5em 1.5em;
-  background: rgba(255,255,255,.14);
+  padding: 0.5em 1.5em;
+  background: rgba(255, 255, 255, 0.14);
   color: var(--coollab-light-color);
   border-radius: var(--radius-mid);
   text-decoration: none;
-  text-transform:uppercase;
+  text-transform: uppercase;
   letter-spacing: 11%;
   transition: all 0.3s ease;
 }
@@ -122,20 +122,22 @@
 
 /* -- Follow Section -- */
 .followSection {
-  padding-top:4em;
-} 
+  padding-top: 4em;
+}
 
 /* -- OS Section -- */
-.osSection, .followSection {
+.osSection,
+.followSection {
   text-align: center;
-  padding-bottom:4em;
+  padding-bottom: 4em;
 }
 
 .osSection a {
-  font-weight:bold;
+  font-weight: bold;
 }
 
-.osButtons, .followButtons {
+.osButtons,
+.followButtons {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -144,9 +146,9 @@
 }
 
 .osButton {
-  display:flex;
+  display: flex;
   align-items: center;
-  gap:.5em;
+  gap: 0.5em;
   text-transform: uppercase;
 }
 
@@ -158,11 +160,11 @@
 }
 
 .osSubtitle {
-  width:30%;
-  font-style:italic;
-  font-size:.8rem;
-  margin:auto;
-  margin-top:2.4em;
+  width: 30%;
+  font-style: italic;
+  font-size: 0.8rem;
+  margin: auto;
+  margin-top: 2.4em;
 }
 
 /* Tooltip */
@@ -204,7 +206,7 @@
 }
 
 .tooltipText::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 100%;
   left: 50%;
@@ -215,7 +217,7 @@
 }
 
 .mobileAppImageNote {
-  margin-top:2em;
+  margin-top: 2em;
   display: none;
 }
 
@@ -226,6 +228,6 @@
   }
 
   .osSubtitle {
-  width:80%;
+    width: 80%;
   }
 }

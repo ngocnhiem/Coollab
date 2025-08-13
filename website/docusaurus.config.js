@@ -1,14 +1,14 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require("prism-react-renderer/themes/github")
+const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 
-const math = require("remark-math");
-const katex = require("rehype-katex");
+const math = require("remark-math")
+const katex = require("rehype-katex")
 
-const organizationName = "Coollab-Art";
-const projectName = "Lab";
+const organizationName = "Coollab-Art"
+const projectName = "Lab"
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -215,6 +215,6 @@ const config = {
         additionalLanguages: ["glsl", "cmake"],
       },
     }),
-};
+}
 
-module.exports = config;
+module.exports = config

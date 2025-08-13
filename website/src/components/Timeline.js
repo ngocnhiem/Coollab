@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './Timeline.module.css';
+import React from "react"
+import styles from "./Timeline.module.css"
 
 const steps = [
   {
@@ -20,7 +20,7 @@ const steps = [
     accent: "#30A7F5",
     img: "/img/placeholder3.png",
   },
-];
+]
 
 export default function Timeline() {
   return (
@@ -36,7 +36,10 @@ export default function Timeline() {
             />
           </div>
 
-          <div className={styles.stepDot} style={{ backgroundColor: step.accent }} />
+          <div
+            className={styles.stepDot}
+            style={{ backgroundColor: step.accent }}
+          />
 
           <div className={styles.stepContent}>
             <div className={styles.stepNumber} style={{ color: step.accent }}>
@@ -47,5 +50,5 @@ export default function Timeline() {
         </div>
       ))}
     </div>
-  );
+  )
 }
