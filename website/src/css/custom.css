@@ -460,7 +460,7 @@ aside {
   border-radius: var(--radius-max);
 }
 
-.downloadVideo video {
+.downloadVideo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
