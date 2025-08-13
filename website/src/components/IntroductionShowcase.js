@@ -1,6 +1,7 @@
-import React from "react";
-import styles from "./IntroductionShowcase.module.css";
-import YoutubeVideo from "./YoutubeVideo";
+import React from "react"
+import styles from "./IntroductionShowcase.module.css"
+import YoutubeVideo from "./YoutubeVideo"
+import Link from "@docusaurus/Link"
 
 export default function IntroductionShowcase() {
   return (
@@ -67,13 +68,13 @@ export default function IntroductionShowcase() {
               </p>
             </div>
           </div>
-          <a className={styles.primaryBtn} href="/Download">
+          <Link className={styles.primaryBtn} to="/Download">
             Download
-          </a>
+          </Link>
         </div>
 
         <YoutubeVideo id="jsjkjCQCPno" />
       </div>
     </section>
-  );
+  )
 }
