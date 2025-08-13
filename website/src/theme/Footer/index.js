@@ -63,7 +63,6 @@ export default function Footer() {
               <h4>Explore</h4>
               <Link to="/Tutorials/Discovery/Intro">Tutorials</Link>
               <Link to="/Gallery">Gallery</Link>
-              <Link to="/Articles/Alpaca/Alpaca">Articles</Link>
               <Link to="/About">About</Link>
               <Link to="/Contribute">Contribute</Link>
             </div>
