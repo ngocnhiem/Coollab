@@ -6,6 +6,7 @@ import FeaturesList from '../components/FeaturesList';
 import Timeline from '../components/Timeline';
 import GalleryPreview from '../components/GalleryPreview';
 import { FaWindows, FaApple, FaLinux, FaInstagram, FaDiscord, FaMastodon } from 'react-icons/fa';
+import Link from '@docusaurus/Link';
 
 export default function Home() {
   return (
@@ -18,9 +19,9 @@ export default function Home() {
           <p className={styles.heroSubtitle}>
             The coolest open-source generative art software
           </p>
-          <a className={styles.secondaryBtn} href="/Tutorials/Discovery/Intro">
+<Link className={styles.secondaryBtn} to="/Tutorials/Discovery/Intro">
             Get started
-          </a>
+          </Link>
         </div>
       </main>
       <IntroductionShowcase />

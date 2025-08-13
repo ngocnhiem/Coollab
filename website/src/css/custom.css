@@ -9,16 +9,31 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   /* ==== COLORS ==== */
-  --coollab-gradient: linear-gradient(90deg, #F4AD7F 0%, #8656D7 50%, #30A7F5 100%);
-  --coollab-gradient-vertical: linear-gradient(180deg, #F4AD7F 0%, #8656D7 50%, #30A7F5 100%);
-  --coollab-gradient-reverse: linear-gradient(90deg, #30A7F5 0%, #8656D7 50%, #F4AD7F 100%);
-  --coollab-primary-color: #27272A;
-  --coollab-secondary-color: #1B1B1D;
-  --coollab-light-color: #FFFF;
-  --coollab-accent-color: #F4AD7F;
+  --coollab-gradient: linear-gradient(
+    90deg,
+    #f4ad7f 0%,
+    #8656d7 50%,
+    #30a7f5 100%
+  );
+  --coollab-gradient-vertical: linear-gradient(
+    180deg,
+    #f4ad7f 0%,
+    #8656d7 50%,
+    #30a7f5 100%
+  );
+  --coollab-gradient-reverse: linear-gradient(
+    90deg,
+    #30a7f5 0%,
+    #8656d7 50%,
+    #f4ad7f 100%
+  );
+  --coollab-primary-color: #27272a;
+  --coollab-secondary-color: #1b1b1d;
+  --coollab-light-color: #ffff;
+  --coollab-accent-color: #f4ad7f;
   /* ==== FONTS ==== */
-  --font-title: 'League Spartan', sans-serif;
-  --font-body: 'Roboto', sans-serif;
+  --font-title: "League Spartan", sans-serif;
+  --font-body: "Roboto", sans-serif;
   /* ==== RADIUS ==== */
   --radius-mid: 10px;
   --radius-max: 25px;
@@ -59,7 +74,7 @@ a {
 }
 
 a:hover {
-  color: #30A7F5;
+  color: #30a7f5;
 }
 
 /* Navbar */
@@ -87,13 +102,13 @@ a:hover {
   letter-spacing: 1px;
   font-size: 16px;
   letter-spacing: 10%;
-  padding: .3em 1.6em;
-  transition: .2s ease-in;
+  padding: 0.3em 1.6em;
+  transition: 0.2s ease-in;
 }
 
 .navbar__link:hover {
   color: var(--coollab-light-color);
-  background-color: rgba(255, 255, 255, .2);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-max);
 }
 
@@ -114,7 +129,7 @@ a:hover {
 
 .navbar__link--active {
   color: var(--coollab-light-color);
-  background-color: rgba(255, 255, 255, .2);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-max);
 }
 
@@ -125,28 +140,33 @@ a:hover {
 
 .navbar-socials {
   display: flex;
-  gap: .6rem;
+  gap: 0.6rem;
   align-items: center;
-  margin-right: .25rem;
+  margin-right: 0.25rem;
 }
 
 .navbar .iconBtn {
   width: 34px;
   height: 34px;
   border-radius: var(--radius-max);
-  border: 1px solid rgba(255,255,255,.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: white;
-  background: rgba(255,255,255,.06);
+  background: rgba(255, 255, 255, 0.06);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: .2s ease;
+  transition: 0.2s ease;
 }
 
 .navbar .iconBtn:hover {
   filter: brightness(1.15);
   transform: translateY(-2px);
-  background: rgba(255,255,255,.12);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.navbar-socials .iconBtn svg {
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 /* Footer */
@@ -201,18 +221,18 @@ aside {
 .menu__link:hover,
 .menu__link--active {
   border-radius: var(--radius-mid);
-  background-color: rgba(255, 255, 255, .14) !important;
+  background-color: rgba(255, 255, 255, 0.14) !important;
 }
 
 .pagination-nav__link {
   border-radius: var(--radius-mid);
-  border: 2px solid rgba(255, 255, 255, .14);
-  transition: .2s ease-in;
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  transition: 0.2s ease-in;
 }
 
 .pagination-nav__link:hover {
-  border: 2px solid rgba(255, 255, 255, .14);
-  background-color: rgba(255, 255, 255, .14);
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  background-color: rgba(255, 255, 255, 0.14);
 }
 
 /* Gallery Impl */
@@ -343,28 +363,28 @@ aside {
   animation-iteration-count: 1;
 }
 
-.img-overlay>i {
+.img-overlay > i {
   position: absolute;
   color: white;
   font-size: 2rem;
   cursor: pointer;
 }
 
-.img-overlay>.close-button {
+.img-overlay > .close-button {
   margin: 1.5vh;
   top: 0;
   right: 2vw;
   z-index: 600;
 }
 
-.img-overlay>.prev-button {
+.img-overlay > .prev-button {
   margin: 1.5vh;
   top: 50%;
   left: 2vw;
   z-index: 600;
 }
 
-.img-overlay>.next-button {
+.img-overlay > .next-button {
   margin: 1.5vh;
   top: 50%;
   right: 2vw;
@@ -406,7 +426,7 @@ aside {
 .secondaryBtn {
   display: inline-flex;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   padding: 0.4em 1.5em;
   background: white;
@@ -533,7 +553,7 @@ aside {
 }
 
 .tooltipText::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 100%;
   left: 50%;
