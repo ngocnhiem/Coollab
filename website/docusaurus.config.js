@@ -121,12 +121,6 @@ const config = {
           //     label: "Articles",
           //   },
           {
-            type: "doc",
-            docId: "About",
-            position: "left",
-            label: "About",
-          },
-          {
             type: "html",
             position: "right",
             value: `
