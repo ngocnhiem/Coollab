@@ -152,8 +152,7 @@ const config = {
   `,
           },
           {
-            type: "doc",
-            docId: "Download/download",
+            to: "/Download",
             position: "right",
             label: "Download",
           },
