@@ -34,18 +34,6 @@ export default function DownloadButtons() {
           <FaApple className="icon" /> MacOS
         </a>
       </div>
-      <p className="mobileAppImageNote osSubtitle">
-        For Linux: if you need help running the AppImage, check out the
-        official&nbsp;
-        <a
-          href="https://appimage.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          AppImage website
-        </a>
-        .
-      </p>
     </span>
   )
 }
