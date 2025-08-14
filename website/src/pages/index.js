@@ -47,6 +47,7 @@ export default function Home() {
         {/* Trailer */}
         <YoutubeVideo id="jsjkjCQCPno" />
       </section>
+      <Timeline />
       <div className={styles.followSection}>
         <h2 className={styles.sectionTitle}>Follow us</h2>
         <SocialNetworksBigButtons />
