@@ -5,15 +5,9 @@ import IntroductionShowcase from "../components/IntroductionShowcase"
 import FeaturesList from "../components/FeaturesList"
 import Timeline from "../components/Timeline"
 import GalleryPreview from "../components/GalleryPreview"
-import {
-  FaWindows,
-  FaApple,
-  FaLinux,
-  FaInstagram,
-  FaDiscord,
-  FaMastodon,
-} from "react-icons/fa"
+import { FaInstagram, FaDiscord, FaMastodon } from "react-icons/fa"
 import Link from "@docusaurus/Link"
+import DownloadButtons from "../components/DownloadButtons"
 
 export default function Home() {
   return (
@@ -63,53 +57,7 @@ export default function Home() {
       <Timeline />
       <div className={styles.osSection}>
         <h2 className={styles.sectionTitle}>Get Coollab now</h2>
-        <div className={styles.osButtons}>
-          <a
-            className={`${styles.secondaryBtn} ${styles.osButton}`}
-            href="/Coollab-Launcher-Windows.exe"
-          >
-            <FaWindows className={styles.icon} />
-            Windows
-          </a>
-          <a
-            className="secondaryBtn osButton tooltip"
-            href="/Coollab-Launcher.AppImage"
-          >
-            <FaLinux className="icon" /> Linux
-            <span className="tooltipText">
-              If you need help running the AppImage,
-              <br />
-              check out{" "}
-              <a
-                href="https://appimage.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                the official AppImage website
-              </a>
-              .
-            </span>
-          </a>
-          <a
-            className={`${styles.secondaryBtn} ${styles.osButton}`}
-            href="/Coollab-Launcher-MacOS.zip"
-          >
-            <FaApple className={styles.icon} />
-            MacOS
-          </a>
-        </div>
-        <p className={`${styles.osSubtitle} ${styles.mobileAppImageNote}`}>
-          For Linux: if you need help running the AppImage, check out the
-          official&nbsp;
-          <a
-            href="https://appimage.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            AppImage website
-          </a>
-          .
-        </p>
+        <DownloadButtons />
         <p className={styles.osSubtitle}>
           This software uses code of{" "}
           <a
