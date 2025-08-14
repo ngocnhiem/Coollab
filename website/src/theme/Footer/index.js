@@ -66,34 +66,6 @@ export default function Footer() {
               <Link to="/Contribute">Contribute</Link>
             </div>
             <div className={styles.col}>
-              <h4>Download</h4>
-              <a href="/assets/files/Coollab-Launcher-Windows-bdfc737ac333348eecae86fc5f7b8ec0.exe">
-                Windows
-              </a>
-              <a
-                className="tooltip"
-                href="/assets/files/Coollab-Launcher-0debf2d7308f1dabc95d9fdbc5e8101a.AppImage"
-              >
-                Linux
-                <span className="tooltipText">
-                  If you need help running the AppImage,
-                  <br />
-                  check out{" "}
-                  <a
-                    href="https://appimage.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    the official AppImage website
-                  </a>
-                  .
-                </span>
-              </a>
-              <a href="/assets/files/Coollab-Launcher-MacOS-c215423212151e41283d80f80bb6a83a.zip">
-                MacOS
-              </a>
-            </div>
-            <div className={styles.col}>
               <h4>Community</h4>
               <a
                 href="https://linktr.ee/coollab_art"
