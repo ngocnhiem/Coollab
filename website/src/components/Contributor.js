@@ -2,7 +2,7 @@ import React from "react"
 
 export default ({ name, github_name, link, roles }) => {
   return (
-    <span>
+    <>
       <b>
         <a href={link} target="_blank">
           <img
@@ -13,6 +13,6 @@ export default ({ name, github_name, link, roles }) => {
         </a>
       </b>
       , <i>{roles.join(" | ")}</i>
-    </span>
+    </>
   )
 }

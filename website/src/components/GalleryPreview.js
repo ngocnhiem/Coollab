@@ -17,40 +17,29 @@ export default function GalleryPreview() {
   }
 
   return (
-    <>
-      <section className={styles.gallerySection}>
-        {rows.map((pair, rowIndex) => {
-          const isEven = rowIndex % 2 === 0
-          const firstImage = isEven ? pair[0] : pair[1]
-          const secondImage = isEven ? pair[1] : pair[0]
+    <section className={styles.gallerySection}>
+      {rows.map((pair, rowIndex) => {
+        const isEven = rowIndex % 2 === 0
+        const firstImage = isEven ? pair[0] : pair[1]
+        const secondImage = isEven ? pair[1] : pair[0]
 
-          return (
-            <div key={rowIndex} className={styles.row}>
-              <div
-                className={`${styles.imageTile} ${
-                  isEven ? styles.narrow : styles.wide
-                }`}
-                style={{ backgroundImage: `url(${firstImage})` }}
-              />
-              <div
-                className={`${styles.imageTile} ${
-                  isEven ? styles.wide : styles.narrow
-                }`}
-                style={{ backgroundImage: `url(${secondImage})` }}
-              />
-            </div>
-          )
-        })}
-      </section>
-      <div className={styles.buttonWrapper}>
-        <a
-          href="https://www.instagram.com/coollab_art/"
-          target="_blank"
-          className={styles.secondaryBtn}
-        >
-          See more
-        </a>
-      </div>
-    </>
+        return (
+          <div key={rowIndex} className={styles.row}>
+            <div
+              className={`${styles.imageTile} ${
+                isEven ? styles.narrow : styles.wide
+              }`}
+              style={{ backgroundImage: `url(${firstImage})` }}
+            />
+            <div
+              className={`${styles.imageTile} ${
+                isEven ? styles.wide : styles.narrow
+              }`}
+              style={{ backgroundImage: `url(${secondImage})` }}
+            />
+          </div>
+        )
+      })}
+    </section>
   )
 }

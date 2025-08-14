@@ -4,7 +4,7 @@ import styles from "../pages/index.module.css"
 
 export default function DownloadButtons() {
   return (
-    <span>
+    <>
       <div className="osButtons">
         <a
           className="secondaryBtn osButton"
@@ -58,6 +58,6 @@ export default function DownloadButtons() {
         </a>
         .
       </p>
-    </span>
+    </>
   )
 }

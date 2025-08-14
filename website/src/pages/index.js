@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "@theme/Layout"
 import styles from "./index.module.css"
 import styles2 from "../components/IntroductionShowcase.module.css"
+import styles3 from "../components/GalleryPreview.module.css"
 import FeaturesList from "../components/FeaturesList"
 import Timeline from "../components/Timeline"
 import GalleryPreview from "../components/GalleryPreview"
@@ -53,12 +54,21 @@ export default function Home() {
         <SocialNetworksBigButtons />
       </div>
       {/* <Timeline /> */}
-      <div className={styles.osSection}>
+      {/* <div className={styles.osSection}>
         <h2 className={styles.sectionTitle}>Get Coollab now</h2>
         <p></p>
         <DownloadButton />
-      </div>
+      </div> */}
       <GalleryPreview />
+      {/* <div className={styles3.buttonWrapper}>
+        <a
+          href="https://www.instagram.com/coollab_art/"
+          target="_blank"
+          className={styles3.secondaryBtn}
+        >
+          See more
+        </a>
+      </div> */}
     </Layout>
   )
 }

@@ -18,8 +18,8 @@ export default function ArgumentsCards() {
           <img src="/img/demo-horizontal.png"></img>
         </div>
         <p className={styles.cardText}>
-          Free and <span style={{ color: "#F4AD7F" }}>Open-source</span>{" "}
-          software
+          <span style={{ color: "#F4AD7F" }}>Free</span> and{" "}
+          <span style={{ color: "#F4AD7F" }}>Open-source</span> software
         </p>
       </div>
       <div className={styles.card} style={{ borderColor: "#30A7F5" }}>
