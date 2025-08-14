@@ -89,7 +89,7 @@ const items = [
         <span style={{ fontWeight: "bold" }}>nodes</span>.
       </>
     ),
-    link: "https://coollab-art.com/Tutorials/Writing%20Nodes/Intro",
+    link: "https://coollab-art.com/Tutorials/Writing%20Nodes/Intro", // TODO(Website) make it a relative link, and use <Link> instead of <a> for this one
   },
   {
     icon: <FaCode />,

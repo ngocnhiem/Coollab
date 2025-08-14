@@ -9,10 +9,8 @@ export default function ArgumentsCards() {
           <img src="/img/demo-horizontal.png"></img>
         </div>
         <p className={styles.cardText}>
-          <span style={{ color: "#8656D7" }}>Simple</span> and{" "}
+          Designed to be <span style={{ color: "#8656D7" }}>simple</span> and{" "}
           <span style={{ color: "#8656D7" }}>intuitive</span>
-          <br />
-          node-based effects
         </p>
       </div>
       <div className={styles.card} style={{ borderColor: "#F4AD7F" }}>
