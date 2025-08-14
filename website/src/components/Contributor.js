@@ -1,18 +1,19 @@
-import React from "react"
+import React from "react";
 
-export default ({ name, github_name, link, roles }) => {
+export default function Contributor({ name, github_name, link, roles }) {
   return (
-    <>
-      <b>
-        <a href={link} target="_blank">
-          <img
-            src={`https://avatars.githubusercontent.com/${github_name}`}
-            width={20}
-          />{" "}
-          {name}
-        </a>
-      </b>
-      , <i>{roles.join(" | ")}</i>
-    </>
-  )
+          <a href={link} target="_blank" rel="noopener noreferrer">
+    <div className="contributor-card">
+        <img
+          className="contributor-avatar"
+          src={`https://avatars.githubusercontent.com/${github_name}`}
+          alt={name}
+        />
+      <div>
+        <div className="contributor-name">{name}</div>
+        <div className="contributor-roles">{roles.join(" | ")}</div>
+      </div>
+    </div>
+    </a>
+  );
 }

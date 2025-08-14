@@ -63,16 +63,6 @@ const items = [
     ),
   },
   {
-    icon: <FaPaintBrush />,
-    text: (
-      <>
-        Share your <span style={{ fontWeight: "bold" }}>artworks</span> made
-        with Coollab!
-      </>
-    ),
-    link: "https://www.instagram.com/coollab_art/",
-  },
-  {
     icon: <FaChalkboardTeacher />,
     text: (
       <>
@@ -90,6 +80,16 @@ const items = [
       </>
     ),
     link: "https://coollab-art.com/Tutorials/Writing%20Nodes/Intro", // TODO(Website) make it a relative link, and use <Link> instead of <a> for this one
+  },
+    {
+    icon: <FaPaintBrush />,
+    text: (
+      <>
+        Share your <span style={{ fontWeight: "bold" }}>artworks</span> made
+        with Coollab!
+      </>
+    ),
+    link: "https://www.instagram.com/coollab_art/",
   },
   {
     icon: <FaCode />,

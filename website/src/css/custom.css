@@ -447,20 +447,23 @@ aside {
 }
 
 /* Download Right Layout */
-.downloadWrapper {
+.downloadWrapper,
+.contributeWrapper {
   display: flex;
   height: 100vh;
   overflow: hidden;
 }
 
-.downloadVideo {
+.downloadVideo,
+.contributeVideo {
   width: 50%;
   position: relative;
   background-color: var(--coollab-secondary-color);
   border-radius: var(--radius-max);
 }
 
-.downloadVideo img {
+.downloadVideo img,
+.contributeVideo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -557,7 +560,7 @@ aside {
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: 45%;
   transform: translateX(-50%);
   border-width: 6px;
   border-style: solid;
@@ -566,6 +569,15 @@ aside {
 
 .mobileAppImageNote {
   display: none;
+}
+
+/* Contribute / Contributors */
+.contributeContent {
+  width: 55%;
+}
+
+.contributorsSection {
+  padding: 4rem 2rem 4em 2em;
 }
 
 /* === Responsive === */
@@ -614,10 +626,10 @@ aside {
   .navbar {
     top: 0;
     left: 0;
-    position:absolute;
+    position: absolute;
     transform: none;
     width: 100%;
-    height:15vw;
+    height: 15vw;
     border-radius: var(--radius-max);
     backdrop-filter: none;
     background: none;
@@ -668,7 +680,7 @@ aside {
 
   .navbar.navbar-sidebar--show ~ .navbar-sidebar__backdrop {
     display: block !important;
-    background: rgba(0,0,0,.45);
+    background: rgba(0, 0, 0, 0.45);
   }
 
   .menu__list {
