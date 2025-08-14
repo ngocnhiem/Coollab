@@ -80,6 +80,11 @@
   align-items: center;
   max-width: 280px;
   padding: 0.7em;
+  transition:.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .cardImage img {
