@@ -2,10 +2,10 @@ import React from "react"
 import styles from "./GalleryPreview.module.css"
 
 const images = [
+  "/img/lab/1.png",
+  "/img/lab/3.png",
   "/img/lab/5.png",
-  "/img/lab/6.png",
   "/img/lab/10.png",
-  "/img/lab/11.png",
   "/img/lab/7.png",
   "/img/lab/9.png",
 ]

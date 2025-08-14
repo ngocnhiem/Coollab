@@ -74,7 +74,6 @@ const features = [
 export default function FeaturesList() {
   return (
     <section className={styles.featuresSection}>
-      <h2 className={styles.sectionTitle}>Our Features</h2>
       <div className={styles.cardList}>
         {features.map((item, i) => {
           const accentColor = accentColors[i % 3]

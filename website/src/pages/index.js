@@ -5,12 +5,12 @@ import styles2 from "../components/IntroductionShowcase.module.css"
 import FeaturesList from "../components/FeaturesList"
 import Timeline from "../components/Timeline"
 import GalleryPreview from "../components/GalleryPreview"
-import { FaInstagram, FaDiscord, FaMastodon } from "react-icons/fa"
 import Link from "@docusaurus/Link"
 import YoutubeVideo from "../components/YoutubeVideo"
 import ArgumentsCards from "../components/ArgumentsCards"
 import DownloadButton from "../components/DownloadButton"
 import DownloadButtons from "../components/DownloadButtons"
+import SocialNetworksBigButtons from "../components/SocialNetworksBigButtons"
 
 export default function Home() {
   return (
@@ -19,11 +19,8 @@ export default function Home() {
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>Coollab</h1>
           <p className={styles.heroSubtitle}>
-            The coolest open-source generative art software
+            A node-based software to create visual effects and generative-art
           </p>
-          <Link className={styles.secondaryBtn} to="/Tutorials/Discovery/Intro">
-            Get started
-          </Link>
         </div>
       </main>
       <section className={styles2.section}>
@@ -42,63 +39,23 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className={styles2.content}>
-          <h2 className={styles2.sectionTitle}>
-            The friendly and powerful alternative to TouchDesigner
-          </h2>
-          <p className={styles2.sectionSubtitle}>
-            One shape and your creativity is all you need.
-          </p>
-
-          {/* Trailer */}
-          <YoutubeVideo id="jsjkjCQCPno" />
-
-          <div className={styles2.cardSection}>
-            <h2 className={styles2.sectionTitle}>
-              Coollab, the software you’ve been looking for
-            </h2>
-
-            <ArgumentsCards />
-            <DownloadButton />
-          </div>
-
-          <YoutubeVideo id="jsjkjCQCPno" />
+        <div className={styles2.cardSection}>
+          <ArgumentsCards />
+          <FeaturesList />
+          {/* <DownloadButton /> */}
         </div>
+        {/* Trailer */}
+        <YoutubeVideo id="jsjkjCQCPno" />
       </section>
       <div className={styles.followSection}>
         <h2 className={styles.sectionTitle}>Follow us</h2>
-        <div className={styles.followButtons}>
-          <a
-            className={`${styles.secondaryBtn} ${styles.osButton}`}
-            href="https://www.instagram.com/coollab_art"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram className={styles.icon} /> Instagram
-          </a>
-          <a
-            className={`${styles.secondaryBtn} ${styles.osButton}`}
-            href="https://discord.com/invite/QEjqnEy4aT"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaDiscord className={styles.icon} /> Discord
-          </a>
-          <a
-            className={`${styles.secondaryBtn} ${styles.osButton}`}
-            href="https://mastodon.social/@Coollab"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaMastodon className={styles.icon} /> Mastodon
-          </a>
-        </div>
+        <SocialNetworksBigButtons />
       </div>
-      <FeaturesList />
-      <Timeline />
+      {/* <Timeline /> */}
       <div className={styles.osSection}>
         <h2 className={styles.sectionTitle}>Get Coollab now</h2>
-        <DownloadButtons />
+        <p></p>
+        <DownloadButton />
       </div>
       <GalleryPreview />
     </Layout>
