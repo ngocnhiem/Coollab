@@ -79,3 +79,24 @@
   font-weight:bold;
   padding-left:.7em;
 }
+
+@media (max-width: 768px) {
+  .timeline {
+    padding:0 2em;
+  }
+  .timeline::before {
+    height: 85%;
+    top: 8%;
+    bottom: 0;
+    width: 5px;
+  }
+  .step {
+    margin: 2.5rem 0;
+  }
+  .stepImageWrapper img {
+    height:100px;
+  }
+  .stepLabel {
+  font-size: 1.2rem;
+  }
+}
