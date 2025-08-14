@@ -160,10 +160,6 @@ class GalleryImpl extends React.Component {
           {images}
         </div>
 
-        <a className={styles.secondaryBtn} href="/Tutorials/Discovery/Intro">
-          Get started
-        </a>
-
         {this.state.Opened && (
           <div className={styles.imgOverlay}>
             <img

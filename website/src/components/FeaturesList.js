@@ -103,11 +103,6 @@ export default function FeaturesList() {
           )
         })}
       </div>
-      <div className={styles.buttonWrapper}>
-        <a href="/Tutorials/Discovery/Intro" className={styles.secondaryBtn}>
-          See more
-        </a>
-      </div>
     </section>
   )
 }
