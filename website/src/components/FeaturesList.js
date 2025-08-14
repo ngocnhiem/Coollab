@@ -61,6 +61,14 @@ const features = [
       </>
     ),
   },
+  {
+    icon: <FaKeyboard />,
+    text: (
+      <>
+        <span style={{ fontWeight: "bold" }}>Particles</span>
+      </>
+    ),
+  },
 ]
 
 export default function FeaturesList() {
