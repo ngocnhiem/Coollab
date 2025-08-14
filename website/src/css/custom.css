@@ -614,6 +614,7 @@ aside {
   .navbar {
     top: 0;
     left: 0;
+    position:absolute;
     transform: none;
     width: 100%;
     height:15vw;
