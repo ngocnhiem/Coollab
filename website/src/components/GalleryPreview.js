@@ -45,6 +45,7 @@ export default function GalleryPreview() {
       <div className={styles.buttonWrapper}>
         <a
           href="https://www.instagram.com/coollab_art/"
+          target="_blank"
           className={styles.secondaryBtn}
         >
           See more

@@ -12,8 +12,10 @@ export default function ContributePage() {
       <Contribute />
       <p>
         This project was initiated by{" "}
-        <a href="https://julesfouchy.github.io/">Jules Fouchy</a> and made
-        possible by all our lovely contributors:
+        <a href="https://julesfouchy.github.io/" target="_blank">
+          Jules Fouchy
+        </a>{" "}
+        and made possible by all our lovely contributors:
       </p>
       <Contributors />
     </Layout>
