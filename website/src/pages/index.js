@@ -26,6 +26,7 @@ export default function Home() {
         </div>
       </main>
       <section className={styles2.section}>
+        {/* SVG Wave / Do not touch */}
         <div className={styles2.svgTop}>
           <svg
             width="100%"

@@ -4,6 +4,16 @@ import Contribute from "../components/Contribute"
 import Contributors from "../components/Contributors"
 import styles from "../components/Contribute.module.css"
 
+/*
+Contribute page Architecture
+----------------------------
+- page/Contribute.js : full page including everything
+-- component/Contribute.js : container including contribute methods cards
+-- component/Contributors.js : container including the contributors list
+--- component/Contributor.js : contributor card format
+--- component/RandomizedList.js : function randomizing Contributors' appareance
+*/
+
 export default function ContributePage() {
   return (
     <Layout
