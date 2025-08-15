@@ -11,7 +11,7 @@ export default function Contributor({ name, github_name, link, roles }) {
         />
         <div>
           <div className="contributor-name">{name}</div>
-          <div className="contributor-roles">{roles.join(" | ")}</div>
+          <div className="contributor-roles">{roles.join(", ")}</div>
         </div>
       </div>
     </a>
