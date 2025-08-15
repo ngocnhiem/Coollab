@@ -81,7 +81,7 @@ const items = [
     ),
     link: "https://coollab-art.com/Tutorials/Writing%20Nodes/Intro", // TODO(Website) make it a relative link, and use <Link> instead of <a> for this one
   },
-    {
+  {
     icon: <FaPaintBrush />,
     text: (
       <>
@@ -115,52 +115,49 @@ const items = [
 
 export default function Contribute() {
   return (
-    <div className={styles.contributeSection}>
-      <h2 className={styles.title}>Contribute</h2>
-      <div className={styles.cardList}>
-        {items.map((item, i) => {
-          const accentColor = accentColors[i % 3]
-          const cardContent = (
-            <>
-              <div className={styles.cardIcon}>{item.icon}</div>
-              <div className={styles.cardText}>
-                {React.cloneElement(
-                  item.text,
-                  {},
-                  React.Children.map(item.text.props.children, (child) =>
-                    typeof child === "string"
-                      ? child
-                      : React.cloneElement(child, {
-                          style: { ...child.props.style, color: accentColor },
-                        })
-                  )
-                )}
-              </div>
-            </>
-          )
-
-          return item.link ? (
-            <a
-              key={i}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.cardLink}
-              style={{ borderColor: accentColor }}
-            >
-              {cardContent}
-            </a>
-          ) : (
-            <div
-              key={i}
-              className={styles.card}
-              style={{ borderColor: accentColor }}
-            >
-              {cardContent}
+    <div className={styles.cardList}>
+      {items.map((item, i) => {
+        const accentColor = accentColors[i % 3]
+        const cardContent = (
+          <>
+            <div className={styles.cardIcon}>{item.icon}</div>
+            <div className={styles.cardText}>
+              {React.cloneElement(
+                item.text,
+                {},
+                React.Children.map(item.text.props.children, (child) =>
+                  typeof child === "string"
+                    ? child
+                    : React.cloneElement(child, {
+                        style: { ...child.props.style, color: accentColor },
+                      })
+                )
+              )}
             </div>
-          )
-        })}
-      </div>
+          </>
+        )
+
+        return item.link ? (
+          <a
+            key={i}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.cardLink}
+            style={{ borderColor: accentColor }}
+          >
+            {cardContent}
+          </a>
+        ) : (
+          <div
+            key={i}
+            className={styles.card}
+            style={{ borderColor: accentColor }}
+          >
+            {cardContent}
+          </div>
+        )
+      })}
     </div>
   )
 }
