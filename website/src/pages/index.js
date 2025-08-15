@@ -18,7 +18,7 @@ export default function Home() {
     <Layout title="Coollab" description="Open-source generative-art software">
       <main className={styles.heroSection}>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>Coollab</h1>
+          <h1 className={styles.heroTitle}>COOLLAB</h1>
           <p className={styles.heroSubtitle}>
             A node-based software to create visual effects and generative-art
           </p>
