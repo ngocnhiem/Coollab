@@ -15,7 +15,6 @@ const config = {
   title: "Coollab",
   tagline: "A free generative-art software",
   favicon: "img/favicon.ico",
-
   // Set the production url of your site here
   url: `https://coollab-art.com/`,
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -39,6 +38,43 @@ const config = {
     locales: ["en"],
   },
 
+  plugins: [
+    function addMetaTags() {
+      return {
+        name: 'add-meta-tags',
+        injectHtmlTags() {
+          const siteUrl = 'https://coollab-art.com';
+          const title =
+            'Coollab — Open-source generative art software';
+          const description =
+            'A powerful FREE software for generating visual effects and motion graphics for installations, live performances, and VJing. Easy to learn, yet incredibly powerful.';
+          const image = `${siteUrl}/img/demo-horizontal.png`;
+
+          return {
+            headTags: [
+              // Open Graph
+              { tagName: 'meta', attributes: { property: 'og:type', content: 'website' } },
+              { tagName: 'meta', attributes: { property: 'og:site_name', content: 'Coollab' } },
+              { tagName: 'meta', attributes: { property: 'og:title', content: title } },
+              { tagName: 'meta', attributes: { property: 'og:description', content: description } },
+              { tagName: 'meta', attributes: { property: 'og:image', content: image } },
+              { tagName: 'meta', attributes: { property: 'og:url', content: siteUrl } },
+
+              // X
+              { tagName: 'meta', attributes: { name: 'twitter:card', content: 'summary_large_image' } },
+              { tagName: 'meta', attributes: { name: 'twitter:title', content: title } },
+              { tagName: 'meta', attributes: { name: 'twitter:description', content: description } },
+              { tagName: 'meta', attributes: { name: 'twitter:image', content: image } },
+
+              // Divers
+              { tagName: 'link', attributes: { rel: 'canonical', href: siteUrl } },
+              { tagName: 'meta', attributes: { name: 'theme-color', content: '#27272A' } },
+            ],
+          };
+        },
+      };
+    },
+  ],
   presets: [
     [
       "classic",
@@ -91,6 +127,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
+        hideOnScroll: false,
         title: "",
         logo: {
           alt: "Coollab Logo",
