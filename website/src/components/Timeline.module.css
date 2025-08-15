@@ -6,20 +6,29 @@
   margin: 5rem auto;
   width: 100%;
   max-width: 900px;
-  padding: 2rem 1rem 2em 1em;
+  padding: 2rem 1rem;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
   left: 50%;
-  height: 75%;
-  top: 12%;
-  bottom: 0;
+  top: 19%;
+  bottom: 19%;
   width: 4px;
   background: var(--coollab-gradient-vertical);
   transform: translateX(-50%);
   z-index: 0;
+}
+
+.stepDot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
 }
 
 .step {
@@ -36,24 +45,17 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 2rem;
+  flex: 0 0 auto;
 }
 
 .stepImage {
-  width: 300px;
+  display: block;
   height: 170px;
   object-fit: cover;
+  object-position: center;
   border-radius: var(--radius-max);
   border: 1px solid;
-}
-
-.stepDot {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  z-index: 2;
+  flex-shrink: 0;
 }
 
 .stepContent {
@@ -63,6 +65,10 @@
   justify-content: flex-start;
   align-items:center;
   text-align: left;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .stepNumber {
@@ -85,16 +91,16 @@
     padding:0 2em;
   }
   .timeline::before {
-    height: 85%;
-    top: 8%;
-    bottom: 0;
+    height: 65%;
+    top: 17%;
     width: 5px;
   }
   .step {
     margin: 2.5rem 0;
   }
-  .stepImageWrapper img {
-    height:100px;
+  .stepImage {
+    width: 220px;
+    height: 120px;
   }
   .stepLabel {
   font-size: 1.2rem;
