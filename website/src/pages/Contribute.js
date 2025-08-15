@@ -23,7 +23,11 @@ export default function ContributePage() {
         <h2 className="title">Contributors</h2>
         <p>
           This project was initiated by{" "}
-          <a href="https://julesfouchy.github.io/" target="_blank">
+          <a
+            href="https://julesfouchy.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Jules Fouchy
           </a>{" "}
           and made possible by all our lovely contributors:

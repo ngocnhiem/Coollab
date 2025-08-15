@@ -64,6 +64,7 @@ export default function Home() {
         <a
           href="https://www.instagram.com/coollab_art/"
           target="_blank"
+          rel="noopener noreferrer"
           className={styles3.secondaryBtn}
         >
           See more
