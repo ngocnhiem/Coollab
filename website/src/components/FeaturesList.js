@@ -1,4 +1,3 @@
-// src/components/FeaturesList.js
 import React from "react"
 import styles from "./Contribute.module.css"
 import {

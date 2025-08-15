@@ -21,6 +21,15 @@
 /* -- Features section -- */
 .featuresSection {
   text-align: center;
+  padding:1em 3em;
+}
+
+.featuresSection .cardList {
+  justify-content: center;
+}
+
+.featuresSection .cardText {
+  padding:0 .4em;
 }
 
 .buttonWrapper {
