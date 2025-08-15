@@ -90,10 +90,33 @@ a:hover {
   z-index: 999;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  padding: 0 2rem;
 }
 
 .navbar__items {
   gap: 25px;
+}
+
+.navbar__brand {
+  margin-left: 0;
+}
+
+.navbar__items--right > [class^="searchBox_"],
+.navbar__items--right > .navbar__search {
+  display: none !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbar__items--right {
+  gap: 0.6rem;
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}
+
+.navbar__items--right .navbar__link[href="/Download"] {
+  margin-right: 0 !important;
 }
 
 .navbar__link {
