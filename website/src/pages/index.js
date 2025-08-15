@@ -1,22 +1,23 @@
-import React from "react"
-import Layout from "@theme/Layout"
-import styles from "./index.module.css"
-import styles2 from "../components/IntroductionShowcase.module.css"
-import styles3 from "../components/GalleryPreview.module.css"
-import FeaturesList from "../components/FeaturesList"
-import Timeline from "../components/Timeline"
-import GalleryPreview from "../components/GalleryPreview"
-import Link from "@docusaurus/Link"
-import YoutubeVideo from "../components/YoutubeVideo"
-import ArgumentsCards from "../components/ArgumentsCards"
-import DownloadButton from "../components/DownloadButton"
-import DownloadButtons from "../components/DownloadButtons"
-import SocialNetworksBigButtons from "../components/SocialNetworksBigButtons"
+import React from "react";
+import Layout from "@theme/Layout";
+import styles from "./index.module.css";
+import styles2 from "../components/IntroductionShowcase.module.css";
+import styles3 from "../components/GalleryPreview.module.css";
+import FeaturesList from "../components/FeaturesList";
+import Timeline from "../components/Timeline";
+import GalleryPreview from "../components/GalleryPreview";
+import Link from "@docusaurus/Link";
+import YoutubeVideo from "../components/YoutubeVideo";
+import ArgumentsCards from "../components/ArgumentsCards";
+import DownloadButton from "../components/DownloadButton";
+import DownloadButtons from "../components/DownloadButtons";
+import SocialNetworksBigButtons from "../components/SocialNetworksBigButtons";
 
 export default function Home() {
   return (
     <Layout title="Coollab" description="Open-source generative-art software">
       <main className={styles.heroSection}>
+        <div className={styles.heroBackground}></div>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>COOLLAB</h1>
           <p className={styles.heroSubtitle}>
@@ -71,5 +72,5 @@ export default function Home() {
         </a>
       </div> */}
     </Layout>
-  )
+  );
 }
