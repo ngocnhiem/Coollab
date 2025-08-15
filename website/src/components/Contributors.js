@@ -1,7 +1,7 @@
-import React from "react";
-import Randomizedlist from "@site/src/components/RandomizedList";
-import Contributor from "@site/src/components/Contributor";
-import "@site/src/css/contributors.css";
+import React from "react"
+import Randomizedlist from "@site/src/components/RandomizedList"
+import Contributor from "@site/src/components/Contributor"
+import "@site/src/css/contributors.css"
 
 export default function Contributors() {
   return (
@@ -182,8 +182,26 @@ export default function Contributors() {
             link="https://github.com/smallboyc"
             roles={["Programmer (Launcher, Webcam)"]}
           />,
+          <Contributor
+            name="Anna-Maria Lannaud"
+            github_name="AM-XIX"
+            link="https://github.com/AM-XIX"
+            roles={["Website design and code"]}
+          />,
+          <Contributor
+            name="Elvin Kauffmann"
+            github_name="ShadowsHood"
+            link="https://github.com/ShadowsHood"
+            roles={["Programmer (Regression tests, Websocket API)"]}
+          />,
+          <Contributor
+            name="Anass Doublal"
+            github_name="AnassDoublal"
+            link="https://github.com/AnassDoublal"
+            roles={["Programmer (Launcher improvements)"]}
+          />,
         ]}
       />
     </div>
-  );
+  )
 }
