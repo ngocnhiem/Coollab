@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "@theme/Layout"
 import ContributeCards from "../components/ContributeCards"
-import Contributors from "../components/Contributors"
+import ContributorsList from "../components/ContributorsList"
 import styles from "../components/ContributeCards.module.css"
 
 /*
@@ -46,7 +46,7 @@ export default function ContributePage() {
           </a>{" "}
           and made possible by all our lovely contributors:
         </p>
-        <Contributors />
+        <ContributorsList />
       </div>
     </Layout>
   )

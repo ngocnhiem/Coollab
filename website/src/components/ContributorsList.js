@@ -3,7 +3,7 @@ import Randomizedlist from "@site/src/components/RandomizedList"
 import Contributor from "@site/src/components/Contributor"
 import "@site/src/css/contributors.css"
 
-export default function Contributors() {
+export default function ContributorsList() {
   return (
     <div className="contributors-list">
       <Randomizedlist
