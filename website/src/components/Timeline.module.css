@@ -67,9 +67,11 @@
   text-align: left;
 }
 
-a:hover {
+/* TODO(Website) nicer link for Timeline cards? */
+/* Attention ça enlève aussi l'underline sur les liens dans les tutos */
+/* a:hover {
   text-decoration: none;
-}
+} */
 
 .stepNumber {
   font-size: 4rem;
