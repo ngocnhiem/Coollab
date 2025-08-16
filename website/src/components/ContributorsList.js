@@ -1,12 +1,12 @@
 import React from "react"
-import Randomizedlist from "@site/src/components/RandomizedList"
-import Contributor from "@site/src/components/Contributor"
-import "@site/src/css/contributors.css"
+import RandomizedList from "./RandomizedList"
+import Contributor from "./Contributor"
+import style from "./ContributorsList.module.css"
 
 export default function ContributorsList() {
   return (
-    <div className="contributors-list">
-      <Randomizedlist
+    <div className={style.contributorsList}>
+      <RandomizedList
         elements={[
           <Contributor
             name="Jules Fouchy"

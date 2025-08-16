@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./ContributeCards.module.css"
+import style from "./ContributeCards.module.css"
 import {
   FaBullhorn,
   FaCommentDots,
@@ -115,13 +115,13 @@ const items = [
 
 export default function ContributeCards() {
   return (
-    <div className={styles.cardList}>
+    <div className={style.cardList}>
       {items.map((item, i) => {
         const accentColor = accentColors[i % 3]
         const cardContent = (
           <>
-            <div className={styles.cardIcon}>{item.icon}</div>
-            <div className={styles.cardText}>
+            <div className={style.cardIcon}>{item.icon}</div>
+            <div className={style.cardText}>
               {React.cloneElement(
                 item.text,
                 {},
@@ -143,7 +143,7 @@ export default function ContributeCards() {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.cardLink}
+            className={style.cardLink}
             style={{ borderColor: accentColor }}
           >
             {cardContent}
@@ -151,7 +151,7 @@ export default function ContributeCards() {
         ) : (
           <div
             key={i}
-            className={styles.card}
+            className={style.card}
             style={{ borderColor: accentColor }}
           >
             {cardContent}
