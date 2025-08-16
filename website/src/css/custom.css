@@ -539,13 +539,6 @@ aside {
   height: 20px;
 }
 
-.downloadContent .osSubtitle {
-  font-style: italic;
-  font-size: 0.8rem;
-  width: 60%;
-  color: rgba(255, 255, 255, 0.7);
-}
-
 /* Tooltip */
 .tooltip {
   position: relative;
@@ -652,10 +645,6 @@ aside {
     min-width: 180px;
     align-self: center;
     justify-content: center;
-  }
-
-  .downloadContent .osSubtitle {
-    width: 100%;
   }
 
   .mobileAppImageNote {

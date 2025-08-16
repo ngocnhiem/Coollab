@@ -35,7 +35,7 @@ export default function DownloadButtons() {
           <FaApple className="icon" /> MacOS
         </a>
       </div>{" "}
-      <p className={styles.osSubtitle}>
+      <p className={styles.ffmpegLegalNotice}>
         This software uses code of{" "}
         <a href="https://ffmpeg.org/" target="_blank" rel="noopener noreferrer">
           FFmpeg
@@ -56,7 +56,6 @@ export default function DownloadButtons() {
         >
           here
         </a>
-        .
       </p>
     </>
   )

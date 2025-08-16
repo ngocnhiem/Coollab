@@ -169,12 +169,11 @@
   vertical-align: middle;
 }
 
-.osSubtitle {
-  width: 30%;
+.ffmpegLegalNotice {
   font-style: italic;
   font-size: 0.8rem;
-  margin: auto;
-  margin-top: 2.4em;
+  width: 60%;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .mobileAppImageNote {
@@ -187,7 +186,7 @@
   .mobileAppImageNote {
     display: block;
   }
-  .osSubtitle {
+  .ffmpegLegalNotice {
     width: 80%;
     font-size: 0.7em;
   }
