@@ -106,56 +106,6 @@
   text-decoration: underline;
 }
 
-/* Tooltip */
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltipText {
-  visibility: hidden;
-  max-width: 300px;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-  text-align: left;
-  padding: 1.2em 1em;
-  border-radius: var(--radius-mid);
-  position: absolute;
-  z-index: 1000;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  word-wrap: break-word;
-  box-sizing: border-box;
-  text-transform: none;
-}
-
-.tooltipText a {
-  color: var(--coollab-light-color);
-  text-decoration: underline;
-  word-break: break-word;
-}
-
-.tooltip:hover .tooltipText {
-  visibility: visible;
-  opacity: 1;
-}
-
-.tooltipText::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
-}
-
 /* Responsive */
 @media (max-width: 900px) {
   .top {

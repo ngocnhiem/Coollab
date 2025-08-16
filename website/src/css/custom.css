@@ -584,6 +584,17 @@ aside {
   opacity: 1;
 }
 
+/* Invisible rect to capture mouse hovering and make sure the tooltip doesn't disappear when we move over the gap between the item and the tooltip */
+.tooltipText::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: transparent;
+}
+
 .tooltipText::after {
   content: "";
   position: absolute;
