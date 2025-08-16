@@ -12,91 +12,103 @@ export default function Contributors() {
             name="Jules Fouchy"
             github_name="julesfouchy"
             link="https://julesfouchy.github.io/"
-            roles={["Programmer", "Project Lead"]}
+            roles={["Project Lead", "Programmer"]}
           />,
           <Contributor
             name="Jolan Goulin"
             github_name="Jolan-Goulin"
             link="https://github.com/Jolan-Goulin"
-            roles={["Programmer (3D)"]}
+            roles={["Programmer (3D Shapes)"]}
           />,
           <Contributor
             name="Emma Pernin"
             github_name="Emma-prn"
             link="https://github.com/Emma-prn"
-            roles={["Programmer (3D)"]}
+            roles={["Programmer (3D Shapes)"]}
           />,
           <Contributor
             name="Théo Arnauld des Lions"
             github_name="Dyokiin"
             link="https://github.com/Dyokiin"
-            roles={["Programmer (3D)"]}
+            roles={["Programmer (3D Shapes)"]}
           />,
           <Contributor
             name="Quentin Mesquita"
             github_name="MesQuentin"
             link="https://github.com/MesQuentin"
-            roles={["Programmer (3D)"]}
+            roles={["Programmer (3D Shapes)"]}
           />,
           <Contributor
             name="Lucas David"
             github_name="MeucheRoume"
             link="http://lucasdavid.fr/"
-            roles={["Programmer"]}
+            roles={["Programmer (Search bar)"]}
           />,
           <Contributor
             name="Anaïs Sarata Gougne"
             github_name="TaliaKah"
             link="https://taliakah.gitlab.io/portfolio/"
-            roles={["Programmer"]}
+            roles={["Programmer (Color Ramp)", "Beta-Tester", "VJ", "Outreach"]}
           />,
           <Contributor
             name="Enguerrand de Smet"
             github_name="dsmtE"
             link="https://github.com/dsmtE"
-            roles={["Programmer", "R&D"]}
+            roles={["Programmer (3D Mesh Export (WIP))"]}
           />,
           <Contributor
             name="Jordan Roberty"
             github_name="JordanRoberty"
             link="https://github.com/JordanRoberty"
-            roles={["Programmer (MacOS port, Tests)"]}
+            roles={["Programmer (Porting Coollab to MacOS, CI scripts)"]}
           />,
           <Contributor
             name="Éva Benharira"
             github_name="EvaBien"
             link="https://www.linkedin.com/in/eva-benharira-ingenieure-creative/"
-            roles={["Community Management Advice"]}
+            roles={["Gave me some advice for Community Management"]}
           />,
           <Contributor
             name="Mattéo Leclercq"
             github_name="MatteoL-W"
             link="https://matteo-leclercq.fr/"
-            roles={["Programmer (Compositing)", "VFX Artist"]}
+            roles={["Programmer (2D Nodes)", "Made some nice demo images"]}
           />,
           <Contributor
             name="Wendy Gervais"
             github_name="kaugrv"
             link="https://linktr.ee/commandant.grant"
-            roles={["Programmer (Compositing)", "VFX Artist"]}
+            roles={[
+              "Programmer (2D Nodes)",
+              "Trailer",
+              "Made some nice demo images",
+            ]}
           />,
           <Contributor
             name="Romain Serres"
             github_name="Bouillon2Poulet"
             link="https://www.instagram.com/consomme2poyo/"
-            roles={["Programmer (Compositing)", "VFX Artist"]}
+            roles={["Programmer (2D Nodes)", "Made some nice demo images"]}
           />,
           <Contributor
             name="Lou Couard"
             github_name="Couloir00"
             link="https://loucouard.wixsite.com/website"
-            roles={["Programmer (Compositing)", "VFX Artist"]}
+            roles={[
+              "Programmer (2D Nodes)",
+              "Trailer",
+              "Made some nice demo images",
+            ]}
           />,
           <Contributor
             name="Tristan Debeaune"
             github_name="tristetemps666"
             link="https://github.com/tristetemps666"
-            roles={["Programmer (Webcam)", "VFX Artist"]}
+            roles={[
+              "Programmer (2D Nodes, Webcam)",
+              "Trailer",
+              "Made some nice demo images",
+            ]}
           />,
           <Contributor
             name="Amandine Kohlmuller"
@@ -108,13 +120,13 @@ export default function Contributors() {
             name="Aurore Lafaurie"
             github_name="Just-Kiel"
             link="https://github.com/Just-Kiel"
-            roles={["Programmer"]}
+            roles={['Programmer ("Did you know?" tips)']}
           />,
           <Contributor
             name="Théo Couard"
             github_name="TheoCrd"
             link="https://frankoo.artstation.com/"
-            roles={["Video tutorials maker"]}
+            roles={["Video tutorials"]}
           />,
           <Contributor
             name="Philippe Rosales"
@@ -126,7 +138,7 @@ export default function Contributors() {
             name="Bruce Lane"
             github_name="brucelane"
             link="https://www.linkedin.com/in/brucelane06/"
-            roles={["Programmer (MIDI)"]}
+            roles={["Programmer (Midi)"]}
           />,
           <Contributor
             name="Marianne Kerckhove"
@@ -162,7 +174,7 @@ export default function Contributors() {
             name="Agathe Jan"
             github_name="Agwathe"
             link="https://github.com/Agwathe"
-            roles={["Programmer (Webcam)", "Speed Art Videos"]}
+            roles={["Programmer (Webcam)", "Speed Art videos"]}
           />,
           <Contributor
             name="Aurélien Michaud"
@@ -174,7 +186,7 @@ export default function Contributors() {
             name="Marie Jacquelin"
             github_name="MarieJcqln"
             link="https://github.com/MarieJcqln"
-            roles={["Programmer (Webcam)", "Speed Art Videos"]}
+            roles={["Programmer (Webcam)", "Speed Art videos"]}
           />,
           <Contributor
             name="Maxence Dupuis"
@@ -191,7 +203,7 @@ export default function Contributors() {
           <Contributor
             name="Elvin Kauffmann"
             github_name="ShadowsHood"
-            link="https://github.com/ShadowsHood"
+            link="https://www.linkedin.com/in/elvin-kauffmann-754172213"
             roles={["Programmer (Regression tests, Websocket API)"]}
           />,
           <Contributor
