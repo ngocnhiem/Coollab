@@ -169,13 +169,6 @@
   vertical-align: middle;
 }
 
-.ffmpegLegalNotice {
-  font-style: italic;
-  font-size: 0.8rem;
-  width: 60%;
-  color: rgba(255, 255, 255, 0.7);
-}
-
 .mobileAppImageNote {
   margin-top: 2em;
   display: none;
@@ -185,10 +178,6 @@
 @media (max-width: 768px) {
   .mobileAppImageNote {
     display: block;
-  }
-  .ffmpegLegalNotice {
-    width: 80%;
-    font-size: 0.7em;
   }
   .heroSection {
     height: 95vh;
