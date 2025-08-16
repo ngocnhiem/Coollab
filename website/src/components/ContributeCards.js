@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./Contribute.module.css"
+import styles from "./ContributeCards.module.css"
 import {
   FaBullhorn,
   FaCommentDots,
@@ -113,7 +113,7 @@ const items = [
   },
 ]
 
-export default function Contribute() {
+export default function ContributeCards() {
   return (
     <div className={styles.cardList}>
       {items.map((item, i) => {

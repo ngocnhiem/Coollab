@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from "@theme/Layout"
-import Contribute from "../components/Contribute"
+import ContributeCards from "../components/ContributeCards"
 import Contributors from "../components/Contributors"
-import styles from "../components/Contribute.module.css"
+import styles from "../components/ContributeCards.module.css"
 
 /*
 Contribute page Architecture
@@ -29,7 +29,7 @@ export default function ContributePage() {
         <div className="contributeContent">
           <div className={styles.contributeSection}>
             <h2 className={styles.title}>How to contribute:</h2>
-            <Contribute />
+            <ContributeCards />
           </div>
         </div>
       </main>

@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./Contribute.module.css"
+import styles from "./ContributeCards.module.css"
 import {
   FaExchangeAlt,
   FaVideo,
