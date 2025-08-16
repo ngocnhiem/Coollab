@@ -24,7 +24,7 @@ export default function ArgumentsCards() {
       </div>
       <div className={styles.card} style={{ borderColor: "#30A7F5" }}>
         <div className={styles.cardImage}>
-          <img src="/img/demo-horizontal.png"></img>
+          <img src="/img/vj.jpg"></img>
         </div>
         <p className={styles.cardText}>
           A powerful tool for <span style={{ color: "#30A7F5" }}>Vjing</span>{" "}
