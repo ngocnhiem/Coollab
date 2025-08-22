@@ -95,6 +95,7 @@ To get its classes, inspect or check Docusaurus Documentation.*/
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 0 2rem;
+  transition: background-color 5s ease;
 }
 
 .navbar__items {
