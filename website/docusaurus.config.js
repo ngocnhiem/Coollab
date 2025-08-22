@@ -1,14 +1,14 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require("prism-react-renderer/themes/github")
+const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 
-const math = require("remark-math");
-const katex = require("rehype-katex");
+const math = require("remark-math")
+const katex = require("rehype-katex")
 
-const organizationName = "Coollab-Art";
-const projectName = "Lab";
+const organizationName = "Coollab-Art"
+const projectName = "Lab"
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -43,12 +43,10 @@ const config = {
       return {
         name: "add-meta-tags",
         injectHtmlTags() {
-          const siteUrl = "https://coollab-art.com";
-          const title = "Coollab — Open-source generative art software";
+          const siteUrl = "https://coollab-art.com"
+          const title = "Coollab — Open-source generative art software"
           const description =
-            "A powerful FREE software for generating visual effects and motion graphics for installations, live performances, and VJing. Easy to learn, yet incredibly powerful.";
-          // IMAGE DE PREVIEW (à remplacer)
-          const image = `${siteUrl}/img/demo-horizontal.png`;
+            "A powerful FREE software for generating visual effects and motion graphics for installations, live performances, and VJing. Easy to learn, yet incredibly powerful."
 
           return {
             headTags: [
@@ -74,10 +72,6 @@ const config = {
               },
               {
                 tagName: "meta",
-                attributes: { property: "og:image", content: image },
-              },
-              {
-                tagName: "meta",
                 attributes: { property: "og:url", content: siteUrl },
               },
 
@@ -100,10 +94,6 @@ const config = {
                   content: description,
                 },
               },
-              {
-                tagName: "meta",
-                attributes: { name: "twitter:image", content: image },
-              },
 
               // Divers
               {
@@ -115,9 +105,9 @@ const config = {
                 attributes: { name: "theme-color", content: "#27272A" },
               },
             ],
-          };
+          }
         },
-      };
+      }
     },
   ],
   presets: [
@@ -165,7 +155,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "img/logo.png",
+      image: "img/demo.png",
       colorMode: {
         defaultMode: "dark",
         disableSwitch: true,
@@ -244,6 +234,6 @@ const config = {
         additionalLanguages: ["glsl", "cmake"],
       },
     }),
-};
+}
 
-module.exports = config;
+module.exports = config
