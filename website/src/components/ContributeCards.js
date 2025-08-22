@@ -1,5 +1,6 @@
 import React from "react"
 import style from "./ContributeCards.module.css"
+import ExternalLink from "./ExternalLink"
 import {
   FaBullhorn,
   FaCommentDots,
@@ -79,7 +80,7 @@ const items = [
         <span style={{ fontWeight: "bold" }}>nodes</span>.
       </>
     ),
-    link: "https://coollab-art.com/Tutorials/Writing%20Nodes/Intro", // TODO(Website) make it a relative link, and use <Link> instead of <a> for this one
+    link: "https://coollab-art.com/Tutorials/Writing%20Nodes/Intro", // TODO(Website) make it a relative link, and use <Link> instead of <ExternalLink> for this one
   },
   {
     icon: <FaPaintBrush />,
@@ -138,16 +139,14 @@ export default function ContributeCards() {
         )
 
         return item.link ? (
-          <a
+          <ExternalLink
             key={i}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            to={item.link}
             className={style.cardLink}
             style={{ borderColor: accentColor }}
           >
             {cardContent}
-          </a>
+          </ExternalLink>
         ) : (
           <div
             key={i}

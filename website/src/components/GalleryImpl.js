@@ -1,6 +1,7 @@
 import React from "react"
 import Link from "@docusaurus/Link"
 import styles from "./GalleryImpl.module.css"
+import ExternalLink from "./ExternalLink"
 
 class GalleryImpl extends React.Component {
   constructor(props) {
@@ -128,13 +129,9 @@ class GalleryImpl extends React.Component {
               <span>
                 by{" "}
                 {image.author_link ? (
-                  <a
-                    href={image.author_link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <ExternalLink to={image.author_link}>
                     {image.author_name || "Unknown"}
-                  </a>
+                  </ExternalLink>
                 ) : (
                   image.author_name || "Unknown"
                 )}

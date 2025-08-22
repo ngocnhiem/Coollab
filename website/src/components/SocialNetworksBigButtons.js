@@ -2,34 +2,29 @@ import React from "react"
 import styles from "../pages/index.module.css"
 import Link from "@docusaurus/Link"
 import { FaInstagram, FaDiscord, FaMastodon } from "react-icons/fa"
+import ExternalLink from "./ExternalLink"
 
 export default function SocialNetworksBigButtons() {
   return (
     <div className={styles.followButtons}>
-      <a
+      <ExternalLink
         className={`${styles.secondaryBtn} ${styles.osButton}`}
-        href="https://www.instagram.com/coollab_art"
-        target="_blank"
-        rel="noopener noreferrer"
+        to="https://www.instagram.com/coollab_art"
       >
         <FaInstagram className={styles.icon} /> Instagram
-      </a>
-      <a
+      </ExternalLink>
+      <ExternalLink
         className={`${styles.secondaryBtn} ${styles.osButton}`}
-        href="https://discord.com/invite/QEjqnEy4aT"
-        target="_blank"
-        rel="noopener noreferrer"
+        to="https://discord.com/invite/QEjqnEy4aT"
       >
         <FaDiscord className={styles.icon} /> Discord
-      </a>
-      <a
+      </ExternalLink>
+      <ExternalLink
         className={`${styles.secondaryBtn} ${styles.osButton}`}
-        href="https://mastodon.social/@Coollab"
-        target="_blank"
-        rel="noopener noreferrer"
+        to="https://mastodon.social/@Coollab"
       >
         <FaMastodon className={styles.icon} /> Mastodon
-      </a>
+      </ExternalLink>
     </div>
   )
 }

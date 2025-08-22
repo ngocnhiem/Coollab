@@ -1,6 +1,7 @@
 import React from "react"
 import { FaWindows, FaApple, FaLinux } from "react-icons/fa"
 import FFmpegLegalNotice from "./FFmpegLegalNotice"
+import ExternalLink from "./ExternalLink"
 
 export default function DownloadButtons() {
   return (
@@ -25,13 +26,9 @@ export default function DownloadButtons() {
             If you need help running the AppImage,
             <br />
             check out{" "}
-            <a
-              href="https://appimage.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <ExternalLink to="https://appimage.org/">
               the official AppImage website
-            </a>
+            </ExternalLink>
           </span>
         </div>
         {/* MacOS */}

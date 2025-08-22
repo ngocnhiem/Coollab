@@ -3,6 +3,7 @@ import Layout from "@theme/Layout"
 import ContributeCards from "../components/ContributeCards"
 import ContributorsList from "../components/ContributorsList"
 import styles from "../components/ContributeCards.module.css"
+import ExternalLink from "../components/ExternalLink"
 
 /*
 Contribute page Architecture
@@ -37,13 +38,9 @@ export default function ContributePage() {
         <h2 className="title">Contributors</h2>
         <p>
           This project was initiated by{" "}
-          <a
-            href="https://julesfouchy.github.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <ExternalLink to="https://julesfouchy.github.io/">
             Jules Fouchy
-          </a>{" "}
+          </ExternalLink>{" "}
           and made possible by all our lovely contributors:
         </p>
         <ContributorsList />

@@ -1,17 +1,17 @@
-import React from "react";
-import Layout from "@theme/Layout";
-import styles from "./index.module.css";
-import styles2 from "../components/IntroductionShowcase.module.css";
-import styles3 from "../components/GalleryPreview.module.css";
-import FeaturesList from "../components/FeaturesList";
-import Timeline from "../components/Timeline";
-import GalleryPreview from "../components/GalleryPreview";
-import Link from "@docusaurus/Link";
-import YoutubeVideo from "../components/YoutubeVideo";
-import ArgumentsCards from "../components/ArgumentsCards";
-import DownloadButton from "../components/DownloadButton";
-import DownloadButtons from "../components/DownloadButtons";
-import SocialNetworksBigButtons from "../components/SocialNetworksBigButtons";
+import React from "react"
+import Layout from "@theme/Layout"
+import styles from "./index.module.css"
+import styles2 from "../components/IntroductionShowcase.module.css"
+import styles3 from "../components/GalleryPreview.module.css"
+import FeaturesList from "../components/FeaturesList"
+import Timeline from "../components/Timeline"
+import GalleryPreview from "../components/GalleryPreview"
+import Link from "@docusaurus/Link"
+import YoutubeVideo from "../components/YoutubeVideo"
+import ArgumentsCards from "../components/ArgumentsCards"
+import DownloadButton from "../components/DownloadButton"
+import DownloadButtons from "../components/DownloadButtons"
+import SocialNetworksBigButtons from "../components/SocialNetworksBigButtons"
 
 export default function Home() {
   return (
@@ -45,7 +45,6 @@ export default function Home() {
         <div className={styles2.cardSection}>
           <ArgumentsCards />
           <FeaturesList />
-          {/* <DownloadButton /> */}
         </div>
         {/* Trailer */}
         <YoutubeVideo id="jsjkjCQCPno" />
@@ -55,23 +54,7 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>Follow us</h2>
         <SocialNetworksBigButtons />
       </div>
-      {/* <Timeline /> */}
-      {/* <div className={styles.osSection}>
-        <h2 className={styles.sectionTitle}>Get Coollab now</h2>
-        <p></p>
-        <DownloadButton />
-      </div> */}
       <GalleryPreview />
-      {/* <div className={styles3.buttonWrapper}>
-        <a
-          href="https://www.instagram.com/coollab_art/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles3.secondaryBtn}
-        >
-          See more
-        </a>
-      </div> */}
     </Layout>
-  );
+  )
 }

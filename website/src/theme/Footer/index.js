@@ -2,6 +2,7 @@ import React from "react"
 import Link from "@docusaurus/Link"
 import styles from "./styles.module.css"
 import { FaDiscord, FaInstagram, FaMastodon, FaGithub } from "react-icons/fa"
+import ExternalLink from "../../components/ExternalLink"
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -22,38 +23,30 @@ export default function Footer() {
               A free, open-source generative art software
             </p>
             <div className={styles.socials}>
-              <a
-                href="https://discord.com/invite/QEjqnEy4aT"
-                target="_blank"
-                rel="noopener noreferrer"
+              <ExternalLink
+                to="https://discord.com/invite/QEjqnEy4aT"
                 className={styles.iconBtn}
               >
                 <FaDiscord />
-              </a>
-              <a
-                href="https://www.instagram.com/coollab_art"
-                target="_blank"
-                rel="noopener noreferrer"
+              </ExternalLink>
+              <ExternalLink
+                to="https://www.instagram.com/coollab_art"
                 className={styles.iconBtn}
               >
                 <FaInstagram />
-              </a>
-              <a
-                href="https://mastodon.social/@Coollab"
-                target="_blank"
-                rel="noopener noreferrer"
+              </ExternalLink>
+              <ExternalLink
+                to="https://mastodon.social/@Coollab"
                 className={styles.iconBtn}
               >
                 <FaMastodon />
-              </a>
-              <a
-                href="https://github.com/Coollab-Art/Coollab"
-                target="_blank"
-                rel="noopener noreferrer"
+              </ExternalLink>
+              <ExternalLink
+                to="https://github.com/Coollab-Art/Coollab"
                 className={styles.iconBtn}
               >
                 <FaGithub />
-              </a>
+              </ExternalLink>
             </div>
           </div>
 
@@ -67,34 +60,16 @@ export default function Footer() {
             </div>
             <div className={styles.col}>
               <h4>Community</h4>
-              <a
-                href="https://linktr.ee/coollab_art"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <ExternalLink to="https://linktr.ee/coollab_art">
                 Linktree
-              </a>
-              <a
-                href="https://github.com/Coollab-Art/Coollab/issues/new/choose"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </ExternalLink>
+              <ExternalLink to="https://github.com/Coollab-Art/Coollab/issues/new/choose">
                 Report an issue
-              </a>
-              <a
-                href="https://www.etsy.com/shop/CoollabArt"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </ExternalLink>
+              <ExternalLink to="https://www.etsy.com/shop/CoollabArt">
                 Merch
-              </a>
-              <a
-                href="https://utip.io/coollab/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Donate
-              </a>
+              </ExternalLink>
+              <ExternalLink to="https://utip.io/coollab/">Donate</ExternalLink>
             </div>
           </nav>
         </div>
@@ -106,13 +81,7 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p className={styles.copy}>
             © {year} Coollab. Built with{" "}
-            <a
-              href="https://docusaurus.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Docusaurus
-            </a>
+            <ExternalLink to="https://docusaurus.io/">Docusaurus</ExternalLink>
           </p>
         </div>
       </div>
