@@ -155,6 +155,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: "img/preview.png",
       colorMode: {
         defaultMode: "dark",
         disableSwitch: true,
