@@ -4,10 +4,7 @@ import DownloadButtons from "../components/DownloadButtons"
 
 export default function DownloadPage() {
   return (
-    <Layout
-      title="Download Coollab"
-      description="Download Coollab for your platform."
-    >
+    <Layout title="Download" description="Download Coollab for your platform.">
       <main className="downloadWrapper">
         {/* Left: Background video */}
         <div className="downloadVideo">

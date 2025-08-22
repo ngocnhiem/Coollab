@@ -15,7 +15,7 @@ import SocialNetworksBigButtons from "../components/SocialNetworksBigButtons"
 
 export default function Home() {
   return (
-    <Layout title="Coollab" description="Open-source generative-art software">
+    <Layout title="" description="Open-source generative-art software">
       <main className={styles.heroSection}>
         <div className={styles.heroBackground}></div>
         <div className={styles.heroContent}>

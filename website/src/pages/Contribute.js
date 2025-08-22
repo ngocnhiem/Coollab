@@ -17,10 +17,7 @@ Contribute page Architecture
 
 export default function ContributePage() {
   return (
-    <Layout
-      title="Contribute to Coollab"
-      description="How to help Coollab grow."
-    >
+    <Layout title="Contribute" description="How to help Coollab grow.">
       <main className="contributeWrapper">
         {/* Left: Background video */}
         <div className="contributeVideo">
