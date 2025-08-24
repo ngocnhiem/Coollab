@@ -1,3 +1,13 @@
+/* ---- Wave ---- */
+.svgTop {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  display: block;
+  margin-top: -20%;
+  z-index: 3;
+}
+
 .heroSection {
   position: relative;
   height: 110vh;
@@ -19,7 +29,7 @@
   width: 100%;
   background: var(--coollab-gradient);
   opacity: 0.5;
-  mix-blend-mode:screen;
+  mix-blend-mode: screen;
   z-index: 1;
 }
 
@@ -71,6 +81,44 @@
   font-weight: bold;
   color: white;
   padding: 0em 1em;
+}
+
+.section {
+  color: white;
+  text-align: center;
+}
+
+.sectionTitle {
+  margin-top: 1em;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  padding: 0em 1em;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  margin: 1.5em 0 3em 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Roboto", sans-serif;
+  padding: 0em 1em;
+}
+
+.content {
+  background-color: var(--coollab-primary-color);
+  padding-top: 0;
+  z-index: 1;
+  position: relative;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.7em;
+  }
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
 }
 
 /* -- Wave -- */

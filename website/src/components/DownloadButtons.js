@@ -3,7 +3,7 @@ import { FaWindows, FaApple, FaLinux } from "react-icons/fa"
 import FFmpegLegalNotice from "./FFmpegLegalNotice"
 import ExternalLink from "./ExternalLink"
 
-export default function DownloadButtons() {
+export default function () {
   return (
     <>
       <div className="osButtons">

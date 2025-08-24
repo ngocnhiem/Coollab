@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./Timeline.module.css";
-import Link from "@docusaurus/Link";
+import React from "react"
+import styles from "./Timeline.module.css"
+import Link from "@docusaurus/Link"
 
 const steps = [
   {
@@ -23,7 +23,7 @@ const steps = [
     accent: "#30A7F5",
     img: "/img/demo-horizontal.png",
   },
-];
+]
 
 export default function Timeline() {
   return (
@@ -54,7 +54,7 @@ export default function Timeline() {
               <div className={styles.stepLabel}>{step.label}</div>
             </div>
           </div>
-        );
+        )
 
         return step.link ? (
           <Link key={index} to={step.link} aria-label={step.label}>
@@ -62,8 +62,8 @@ export default function Timeline() {
           </Link>
         ) : (
           <div key={index}>{content}</div>
-        );
+        )
       })}
     </div>
-  );
+  )
 }

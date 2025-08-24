@@ -5,16 +5,6 @@ import ContributorsList from "../components/ContributorsList"
 import styles from "../components/ContributeCards.module.css"
 import ExternalLink from "../components/ExternalLink"
 
-/*
-Contribute page Architecture
-----------------------------
-- page/Contribute.js : full page including everything
--- component/Contribute.js : container including contribute methods cards
--- component/Contributors.js : container including the contributors list
---- component/Contributor.js : contributor card format
---- component/RandomizedList.js : function randomizing Contributors' appareance
-*/
-
 export default function ContributePage() {
   return (
     <Layout

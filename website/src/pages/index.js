@@ -1,16 +1,11 @@
 import React from "react"
 import Layout from "@theme/Layout"
 import styles from "./index.module.css"
-import styles2 from "../components/IntroductionShowcase.module.css"
-import styles3 from "../components/GalleryPreview.module.css"
 import FeaturesList from "../components/FeaturesList"
 import Timeline from "../components/Timeline"
 import GalleryPreview from "../components/GalleryPreview"
-import Link from "@docusaurus/Link"
 import YoutubeVideo from "../components/YoutubeVideo"
 import ArgumentsCards from "../components/ArgumentsCards"
-import DownloadButton from "../components/DownloadButton"
-import DownloadButtons from "../components/DownloadButtons"
 import SocialNetworksBigButtons from "../components/SocialNetworksBigButtons"
 
 export default function Home() {
@@ -28,9 +23,9 @@ export default function Home() {
           </p>
         </div>
       </main>
-      <section className={styles2.section}>
+      <section className={styles.section}>
         {/* SVG Wave / Do not touch */}
-        <div className={styles2.svgTop}>
+        <div className={styles.svgTop}>
           <svg
             width="100%"
             height="auto"
@@ -45,7 +40,7 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className={styles2.cardSection}>
+        <div className={styles.cardSection}>
           <ArgumentsCards />
           <FeaturesList />
         </div>
