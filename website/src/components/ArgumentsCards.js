@@ -9,8 +9,8 @@ export default function ArgumentsCards() {
           <img src="/img/demo-horizontal.png"></img>
         </div>
         <p className={style.cardText}>
-          Designed to be <span style={{ color: "#8656D7" }}>simple</span> and{" "}
-          <span style={{ color: "#8656D7" }}>intuitive</span>
+          DESIGNED TO BE <span style={{ color: "#8656D7" }}>SIMPLE</span> AND{" "}
+          <span style={{ color: "#8656D7" }}>INTUITIVE</span>
         </p>
       </div>
       <div className={style.card} style={{ borderColor: "#F4AD7F" }}>
@@ -18,8 +18,8 @@ export default function ArgumentsCards() {
           <img src="/img/demo-horizontal.png"></img>
         </div>
         <p className={style.cardText}>
-          <span style={{ color: "#F4AD7F" }}>Free</span> and{" "}
-          <span style={{ color: "#F4AD7F" }}>Open-source</span> forever
+          <span style={{ color: "#F4AD7F" }}>FREE</span> AND{" "}
+          <span style={{ color: "#F4AD7F" }}>OPEN-SOURCE</span> FOREVER
         </p>
       </div>
       <div className={style.card} style={{ borderColor: "#30A7F5" }}>
@@ -27,8 +27,10 @@ export default function ArgumentsCards() {
           <img src="/img/vj.jpg"></img>
         </div>
         <p className={style.cardText}>
-          A powerful tool for <span style={{ color: "#30A7F5" }}>Vjing</span>{" "}
-          and so much more!
+          {/* A powerful tool for <span style={{ color: "#30A7F5" }}>Vjing</span>{" "}
+          and so much more! */}
+          <span style={{ color: "#30A7F5" }}>100s</span> OF EFFECTS
+          <br /> <span style={{ color: "#30A7F5" }}>∞</span> COMBINATIONS
         </p>
       </div>
     </div>

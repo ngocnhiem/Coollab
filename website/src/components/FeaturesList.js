@@ -13,7 +13,7 @@ const accentColors = ["#F4AD7F", "#8656D7", "#30A7F5"]
 
 const features = [
   {
-    icon: <FaExchangeAlt />,
+    icon: <FaExchangeAlt />, // TODO(Website) use the official Spout logo ? put in white ?
     text: (
       <>
         <span style={{ fontWeight: "bold" }}>Spout</span> IN & OUT

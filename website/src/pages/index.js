@@ -12,14 +12,17 @@ export default function Home() {
   return (
     <Layout
       title=""
-      description="Open-source generative-art tool for VJs and artists"
+      description="Node-based creation for everyone
+VJs, coders, artists, and the like"
     >
       <main className={styles.heroSection}>
         <div className={styles.heroBackground}></div>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>COOLLAB</h1>
           <p className={styles.heroSubtitle}>
-            A node-based software to create visual effects and generative-art
+            Node-based creation for everyone
+            <br />
+            VJs, coders, artists, and the like
           </p>
         </div>
       </main>

@@ -29,7 +29,7 @@
   width: 100%;
   background: var(--coollab-gradient);
   opacity: 0.5;
-  mix-blend-mode: screen;
+  /* mix-blend-mode: screen; */ /* TODO(Website)? */
   z-index: 1;
 }
 
