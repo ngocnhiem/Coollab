@@ -66,29 +66,25 @@ export default function ContributorsList() {
             name="Éva Benharira"
             github_name="EvaBien"
             link="https://www.linkedin.com/in/eva-benharira-ingenieure-creative/"
-            roles={["Gave me some advice for Community Management"]}
+            roles={["Gave me some advice for community management"]}
           />,
           <Contributor
             name="Mattéo Leclercq"
             github_name="MatteoL-W"
             link="https://matteo-leclercq.fr/"
-            roles={["Programmer (2D Nodes)", "Made some nice demo images"]}
+            roles={["Programmer (2D Nodes)", "Demo projects"]}
           />,
           <Contributor
             name="Wendy Gervais"
             github_name="kaugrv"
             link="https://linktr.ee/commandant.grant"
-            roles={[
-              "Programmer (2D Nodes)",
-              "Trailer",
-              "Made some nice demo images",
-            ]}
+            roles={["Programmer (2D Nodes)", "1st Trailer", "Demo projects"]}
           />,
           <Contributor
             name="Romain Serres"
             github_name="Bouillon2Poulet"
             link="https://www.instagram.com/consomme2poyo/"
-            roles={["Programmer (2D Nodes)", "Made some nice demo images"]}
+            roles={["Programmer (2D Nodes)", "Demo projects"]}
           />,
           <Contributor
             name="Lou Couard"
@@ -96,8 +92,9 @@ export default function ContributorsList() {
             link="https://loucouard.wixsite.com/website"
             roles={[
               "Programmer (2D Nodes)",
-              "Trailer",
-              "Made some nice demo images",
+              "1st Trailer",
+              "2nd Trailer",
+              "Demo projects",
             ]}
           />,
           <Contributor
@@ -106,15 +103,15 @@ export default function ContributorsList() {
             link="https://github.com/tristetemps666"
             roles={[
               "Programmer (2D Nodes, Webcam)",
-              "Trailer",
-              "Made some nice demo images",
+              "1st Trailer",
+              "Demo projects",
             ]}
           />,
           <Contributor
             name="Amandine Kohlmuller"
             github_name="akohlmul"
             link="https://www.instagram.com/idnamaa/"
-            roles={["UI / UX Designer"]}
+            roles={["UI / UX Designer, Gave us some advice on Web Design"]}
           />,
           <Contributor
             name="Aurore Lafaurie"
@@ -126,7 +123,7 @@ export default function ContributorsList() {
             name="Théo Couard"
             github_name="TheoCrd"
             link="https://frankoo.artstation.com/"
-            roles={["Video tutorials"]}
+            roles={["Video tutorials (Discovery series)"]}
           />,
           <Contributor
             name="Philippe Rosales"
@@ -138,7 +135,7 @@ export default function ContributorsList() {
             name="Bruce Lane"
             github_name="brucelane"
             link="https://www.linkedin.com/in/brucelane06/"
-            roles={["Programmer (Midi)"]}
+            roles={["Programmer (MIDI)"]}
           />,
           <Contributor
             name="Marianne Kerckhove"
@@ -198,7 +195,7 @@ export default function ContributorsList() {
             name="Anna-Maria Lannaud"
             github_name="AM-XIX"
             link="https://github.com/AM-XIX"
-            roles={["Website design and code"]}
+            roles={["Website (Design and Code)"]}
           />,
           <Contributor
             name="Elvin Kauffmann"
