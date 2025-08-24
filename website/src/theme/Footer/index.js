@@ -20,7 +20,7 @@ export default function Footer() {
               className={styles.logo}
             />
             <p className={styles.tagline}>
-              A free, open-source generative art software
+              A free, open-source generative-art software
             </p>
             <div className={styles.socials}>
               <ExternalLink

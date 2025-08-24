@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <Layout
       title=""
-      description="Open-source generative-art software for VJs and artists"
+      description="Open-source generative-art tool for VJs and artists"
     >
       <main className={styles.heroSection}>
         <div className={styles.heroBackground}></div>

@@ -44,7 +44,7 @@ const config = {
         name: "add-meta-tags",
         injectHtmlTags() {
           const siteUrl = "https://coollab-art.com"
-          const title = "Coollab — Open-source generative art software"
+          const title = "Coollab — Open-source generative-art software"
           const description =
             "A powerful FREE software for generating visual effects and motion graphics for installations, live performances, and VJing. Easy to learn, yet incredibly powerful."
 
