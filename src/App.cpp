@@ -694,6 +694,7 @@ void App::about_menu()
     {
         if (ImGui::Button("Website"))
             Cool::open_link("https://coollab-art.com/");
+        ImGui::SetItemTooltip("%s", "https://coollab-art.com/");
         if (ImGui::Button("License"))
             _license_window_is_open = true;
 
