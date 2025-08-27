@@ -26,7 +26,7 @@
                             "index": 2,
                             "data": {
                                 "Name": "Precision",
-                                "Value": 1.0,
+                                "Value": 20.0,
                                 "Metadata": {
                                     "Bounds": {
                                         "Has min bound": true,

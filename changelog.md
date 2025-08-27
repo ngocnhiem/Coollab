@@ -3,6 +3,7 @@
 ##
 
 - 🐛 Fixed: clicking on a color ramp to add a mark did not work anymore
+- 🐛 Fix precision artifacts of Make Displacement Map
 
 ## 1.5.0 Spout IN
 
