@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "@theme/Layout"
 import ContributeCards from "../components/ContributeCards"
 import ContributorsList from "../components/ContributorsList"
-import style from "./Contribute.module.css"
 import LinkExternal from "../components/LinkExternal"
 import SectionTitle from "../components/SectionTitle"
 import Spacer from "../components/Spacer"
@@ -20,7 +19,7 @@ export default function ContributePage() {
         </div>
         {/* Right: Contribute Section */}
         <div className="contributeContent">
-          <div className={style.contributeSection}>
+          <div style={{ padding: "8rem 2rem 4em 2em" }}>
             <SectionTitle fontSize="3.5rem">How to contribute:</SectionTitle>
             <Spacer height="2rem"></Spacer>
             <ContributeCards />
