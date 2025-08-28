@@ -1,8 +1,8 @@
 import React from "react"
-import Link from "@docusaurus/Link"
 import styles from "./styles.module.css"
 import { FaDiscord, FaInstagram, FaMastodon, FaGithub } from "react-icons/fa"
-import ExternalLink from "../../components/ExternalLink"
+import LinkExternal from "../../components/LinkExternal"
+import LinkInternal from "../../components/LinkInternal"
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -23,30 +23,30 @@ export default function Footer() {
               A free, open-source generative-art software
             </p>
             <div className={styles.socials}>
-              <ExternalLink
+              <LinkExternal
                 to="https://discord.com/invite/QEjqnEy4aT"
                 className={styles.iconBtn}
               >
                 <FaDiscord />
-              </ExternalLink>
-              <ExternalLink
+              </LinkExternal>
+              <LinkExternal
                 to="https://www.instagram.com/coollab_art"
                 className={styles.iconBtn}
               >
                 <FaInstagram />
-              </ExternalLink>
-              <ExternalLink
+              </LinkExternal>
+              <LinkExternal
                 to="https://mastodon.social/@Coollab"
                 className={styles.iconBtn}
               >
                 <FaMastodon />
-              </ExternalLink>
-              <ExternalLink
+              </LinkExternal>
+              <LinkExternal
                 to="https://github.com/Coollab-Art/Coollab"
                 className={styles.iconBtn}
               >
                 <FaGithub />
-              </ExternalLink>
+              </LinkExternal>
             </div>
           </div>
 
@@ -54,22 +54,24 @@ export default function Footer() {
           <nav className={styles.links}>
             <div className={styles.col}>
               <h4>Explore</h4>
-              <Link to="/Tutorials/Discovery/Intro">Tutorials</Link>
-              <Link to="/Gallery">Gallery</Link>
-              <Link to="/Contribute">Contribute</Link>
+              <LinkInternal to="/Tutorials/Discovery/Intro">
+                Tutorials
+              </LinkInternal>
+              <LinkInternal to="/Gallery">Gallery</LinkInternal>
+              <LinkInternal to="/Contribute">Contribute</LinkInternal>
             </div>
             <div className={styles.col}>
               <h4>Community</h4>
-              <ExternalLink to="https://linktr.ee/coollab_art">
+              <LinkExternal to="https://linktr.ee/coollab_art">
                 Linktree
-              </ExternalLink>
-              <ExternalLink to="https://github.com/Coollab-Art/Coollab/issues/new/choose">
+              </LinkExternal>
+              <LinkExternal to="https://github.com/Coollab-Art/Coollab/issues/new/choose">
                 Report an issue
-              </ExternalLink>
-              <ExternalLink to="https://www.etsy.com/shop/CoollabArt">
+              </LinkExternal>
+              <LinkExternal to="https://www.etsy.com/shop/CoollabArt">
                 Merch
-              </ExternalLink>
-              <ExternalLink to="https://utip.io/coollab/">Donate</ExternalLink>
+              </LinkExternal>
+              <LinkExternal to="https://utip.io/coollab/">Donate</LinkExternal>
             </div>
           </nav>
         </div>
@@ -81,7 +83,7 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p className={styles.copy}>
             © {year} Coollab. Built with{" "}
-            <ExternalLink to="https://docusaurus.io/">Docusaurus</ExternalLink>
+            <LinkExternal to="https://docusaurus.io/">Docusaurus</LinkExternal>
           </p>
         </div>
       </div>

@@ -1,10 +1,10 @@
 import React from "react"
 import style from "./Contributor.module.css"
-import ExternalLink from "./ExternalLink"
+import LinkExternal from "./LinkExternal"
 
 export default function ({ name, github_name, link, roles }) {
   return (
-    <ExternalLink to={link}>
+    <LinkExternal to={link}>
       <div className={style.contributorCard}>
         <img
           className={style.contributorAvatar}
@@ -16,6 +16,6 @@ export default function ({ name, github_name, link, roles }) {
           <div className={style.contributorRoles}>{roles.join(", ")}</div>
         </div>
       </div>
-    </ExternalLink>
+    </LinkExternal>
   )
 }

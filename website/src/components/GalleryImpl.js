@@ -1,7 +1,7 @@
 import React from "react"
-import Link from "@docusaurus/Link"
 import styles from "./GalleryImpl.module.css"
-import ExternalLink from "./ExternalLink"
+import LinkExternal from "./LinkExternal"
+import LinkInternal from "./LinkInternal"
 
 class GalleryImpl extends React.Component {
   constructor(props) {
@@ -129,9 +129,9 @@ class GalleryImpl extends React.Component {
               <span>
                 by{" "}
                 {image.author_link ? (
-                  <ExternalLink to={image.author_link}>
+                  <LinkExternal to={image.author_link}>
                     {image.author_name || "Unknown"}
-                  </ExternalLink>
+                  </LinkExternal>
                 ) : (
                   image.author_name || "Unknown"
                 )}
@@ -147,7 +147,8 @@ class GalleryImpl extends React.Component {
       <div className={styles.gallery}>
         <h2>Discover all of the community's incredible art!</h2>
         <h3>
-          Submit your own artwork with <Link to="/Download">Coollab️</Link> 🎨
+          Submit your own artwork with{" "}
+          <LinkInternal to="/Download">Coollab️</LinkInternal> 🎨
         </h3>
 
         <div

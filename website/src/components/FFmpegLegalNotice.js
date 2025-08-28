@@ -1,20 +1,20 @@
 import React from "react"
 import styles from "./FFmpegLegalNotice.module.css"
-import ExternalLink from "./ExternalLink"
+import LinkExternal from "./LinkExternal"
 
 export default function FFmpegLegalNotice() {
   return (
     <p className={styles.ffmpegLegalNotice}>
       This software uses code of{" "}
-      <ExternalLink to="https://ffmpeg.org/">FFmpeg</ExternalLink> licensed
+      <LinkExternal to="https://ffmpeg.org/">FFmpeg</LinkExternal> licensed
       under the{" "}
-      <ExternalLink to="https://www.gnu.org/licenses/gpl-3.0.html">
+      <LinkExternal to="https://www.gnu.org/licenses/gpl-3.0.html">
         GPLv3.0
-      </ExternalLink>{" "}
+      </LinkExternal>{" "}
       and its source can be downloaded{" "}
-      <ExternalLink to="https://github.com/Coollab-Art/Coollab">
+      <LinkExternal to="https://github.com/Coollab-Art/Coollab">
         here
-      </ExternalLink>
+      </LinkExternal>
     </p>
   )
 }

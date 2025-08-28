@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./Timeline.module.css"
-import Link from "@docusaurus/Link"
+import LinkInternal from "./LinkInternal"
 import Spacer from "./Spacer"
 
 const steps = [
@@ -65,9 +65,9 @@ export default function Timeline() {
         )
 
         return step.link ? (
-          <Link key={index} to={step.link} aria-label={step.label}>
+          <LinkInternal key={index} to={step.link} aria-label={step.label}>
             {content}
-          </Link>
+          </LinkInternal>
         ) : (
           <div key={index}>{content}</div>
         )

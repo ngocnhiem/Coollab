@@ -1,7 +1,7 @@
 import React from "react"
 import style from "./CardList.module.css"
-import Link from "@docusaurus/Link"
-import ExternalLink from "./ExternalLink"
+import LinkExternal from "./LinkExternal"
+import LinkInternal from "./LinkInternal"
 
 // Only pass accentColor if you want to overwrite the one that will be set by CardList automatically
 export function Card({
@@ -34,13 +34,13 @@ export function Card({
   )
 
   return internalLink ? (
-    <Link to={internalLink} style={{ textDecoration: "none" }}>
+    <LinkInternal to={internalLink} style={{ textDecoration: "none" }}>
       {cardContent}
-    </Link>
+    </LinkInternal>
   ) : externalLink ? (
-    <ExternalLink to={externalLink} style={{ textDecoration: "none" }}>
+    <LinkExternal to={externalLink} style={{ textDecoration: "none" }}>
       {cardContent}
-    </ExternalLink>
+    </LinkExternal>
   ) : (
     <div>{cardContent}</div>
   )

@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function ExternalLink({ to, noDecoration, children, ...props }) {
+export default function ({ to, noDecoration, children, ...props }) {
   return (
     <a
       href={to}

@@ -1,11 +1,11 @@
 import React from "react"
 import style from "./GradientDownloadButton.module.css"
-import Link from "@docusaurus/Link"
+import LinkInternal from "./LinkInternal"
 
 export default function () {
   return (
-    <Link className={style.gradientDownloadButton} to="/Download">
+    <LinkInternal className={style.gradientDownloadButton} to="/Download">
       Download
-    </Link>
+    </LinkInternal>
   )
 }
