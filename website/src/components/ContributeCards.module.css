@@ -17,21 +17,6 @@
   color: white;
 }
 
-/* -- Features section -- */
-.featuresSection {
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.featuresSection .cardList {
-  justify-content: center;
-}
-
-.featuresSection .cardText {
-  padding: 0 0.4em;
-}
-
 .buttonWrapper {
   margin-top: 4em;
   text-align: center;
@@ -57,81 +42,4 @@
   color: var(--coollab-primary-color);
   text-decoration: none;
   border-radius: var(--radius-max);
-}
-
-.cardList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.card,
-.cardLink {
-  display: flex;
-  align-items: center;
-  border: 1px solid;
-  border-radius: var(--radius-max);
-  background-color: var(--coollab-secondary-color);
-  padding: 0.7rem;
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-  color: inherit;
-}
-
-.card:hover,
-.cardLink:hover {
-  transform: translateY(-5px);
-  text-decoration: none;
-}
-
-.card a {
-  text-decoration: none !important;
-}
-
-.cardIcon {
-  min-width: 60px;
-  height: 60px;
-  border-radius: var(--radius-max);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--coollab-light-color);
-  font-size: 1.8rem;
-  margin-right: 1rem;
-  flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--coollab-light-color);
-}
-
-.cardText {
-  font-size: 1rem;
-  font-family: "Roboto", sans-serif;
-  text-align: left;
-  color: white;
-}
-
-.cardText a {
-  color: white;
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .cardList {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card,
-  .cardLink {
-    align-items: center;
-  }
-  .cardIcon {
-    min-width: 50px;
-    height: 50px;
-    font-size: 1.4rem;
-    margin-right: 0.7rem;
-  }
-  .cardText {
-    font-size: 0.95rem;
-  }
 }

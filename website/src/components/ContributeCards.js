@@ -1,6 +1,5 @@
 import React from "react"
-import style from "./ContributeCards.module.css"
-import ExternalLink from "./ExternalLink"
+import { Card, CardList } from "./CardList"
 import {
   FaBullhorn,
   FaCommentDots,
@@ -13,150 +12,57 @@ import {
   FaDonate,
 } from "react-icons/fa"
 
-const accentColors = ["#F4AD7F", "#8656D7", "#30A7F5"]
-
-const items = [
-  {
-    icon: <FaBullhorn />,
-    text: (
-      <>
-        Tell your friends about{" "}
-        <span style={{ fontWeight: "bold" }}>Coollab</span> !
-      </>
-    ),
-    link: "https://coollab-art.com/",
-  },
-  {
-    icon: <FaCommentDots />,
-    text: (
-      <>
-        Share your <span style={{ fontWeight: "bold" }}>feedback</span> and{" "}
-        <span style={{ fontWeight: "bold" }}>ideas</span>.
-      </>
-    ),
-    link: "https://github.com/Coollab-Art/Coollab/issues/new?labels=enhancement",
-  },
-  {
-    icon: <FaBug />,
-    text: (
-      <>
-        Report <span style={{ fontWeight: "bold" }}>bugs</span> you encounter.
-      </>
-    ),
-    link: "https://github.com/Coollab-Art/Coollab/issues/new?labels=bug",
-  },
-  {
-    icon: <FaUserSecret />,
-    text: (
-      <>
-        Help us <span style={{ fontWeight: "bold" }}>beta-test</span> new
-        features.
-      </>
-    ),
-  },
-  {
-    icon: <FaCommentDots />,
-    text: (
-      <>
-        Give your <span style={{ fontWeight: "bold" }}>opinion</span> on design
-        questions.
-      </>
-    ),
-  },
-  {
-    icon: <FaChalkboardTeacher />,
-    text: (
-      <>
-        Make <span style={{ fontWeight: "bold" }}>tutorials</span> or{" "}
-        <span style={{ fontWeight: "bold" }}>quick tip</span> videos.
-      </>
-    ),
-  },
-  {
-    icon: <FaCodeBranch />,
-    text: (
-      <>
-        Write and share your own{" "}
-        <span style={{ fontWeight: "bold" }}>nodes</span>.
-      </>
-    ),
-    link: "https://coollab-art.com/Tutorials/Writing%20Nodes/Intro", // TODO(Website) make it a relative link, and use <Link> instead of <ExternalLink> for this one
-  },
-  {
-    icon: <FaPaintBrush />,
-    text: (
-      <>
-        Share your <span style={{ fontWeight: "bold" }}>artworks</span> made
-        with Coollab!
-      </>
-    ),
-    link: "https://www.instagram.com/coollab_art/",
-  },
-  {
-    icon: <FaCode />,
-    text: (
-      <>
-        Contribute to Coollab's{" "}
-        <span style={{ fontWeight: "bold" }}>codebase</span>.
-      </>
-    ),
-    link: "https://github.com/Coollab-Art/Coollab/issues?q=label%3A%22good+first+issue%22",
-  },
-  {
-    icon: <FaDonate />,
-    text: (
-      <>
-        <span style={{ fontWeight: "bold" }}>Support</span> us financially or
-        buy <span style={{ fontWeight: "bold" }}>T-shirts</span>.
-      </>
-    ),
-    link: "https://www.etsy.com/shop/CoollabArt",
-  },
-]
-
-export default function ContributeCards() {
+export default function () {
   return (
-    <div className={style.cardList}>
-      {items.map((item, i) => {
-        const accentColor = accentColors[i % 3]
-        const cardContent = (
-          <>
-            <div className={style.cardIcon}>{item.icon}</div>
-            <div className={style.cardText}>
-              {React.cloneElement(
-                item.text,
-                {},
-                React.Children.map(item.text.props.children, (child) =>
-                  typeof child === "string"
-                    ? child
-                    : React.cloneElement(child, {
-                        style: { ...child.props.style, color: accentColor },
-                      })
-                )
-              )}
-            </div>
-          </>
-        )
-
-        return item.link ? (
-          <ExternalLink
-            key={i}
-            to={item.link}
-            className={style.cardLink}
-            style={{ borderColor: accentColor }}
-          >
-            {cardContent}
-          </ExternalLink>
-        ) : (
-          <div
-            key={i}
-            className={style.card}
-            style={{ borderColor: accentColor }}
-          >
-            {cardContent}
-          </div>
-        )
-      })}
-    </div>
+    <CardList compactCards>
+      <Card icon={<FaBullhorn />} internalLink="/">
+        Tell your friends about <b>Coollab</b>!
+      </Card>
+      <Card
+        icon={<FaCommentDots />}
+        externalLink="https://github.com/Coollab-Art/Coollab/issues/new?labels=enhancement"
+      >
+        Share your <b>feedback</b> and <b>ideas</b>.
+      </Card>
+      <Card
+        icon={<FaBug />}
+        externalLink="https://github.com/Coollab-Art/Coollab/issues/new?labels=bug"
+      >
+        Report <b>bugs</b> you encounter.
+      </Card>
+      <Card icon={<FaUserSecret />}>
+        Help us <b>beta-test</b> new features.
+      </Card>
+      <Card icon={<FaCommentDots />}>
+        Give your <b>opinion</b> on design questions.
+      </Card>
+      <Card icon={<FaChalkboardTeacher />}>
+        Make <b>tutorials</b> or <b>quick tip</b> videos.
+      </Card>
+      <Card
+        icon={<FaCodeBranch />}
+        internalLink="/Tutorials/Writing%20Nodes/Intro"
+      >
+        Write and share your own <b>nodes</b>.
+      </Card>
+      <Card
+        icon={<FaPaintBrush />}
+        externalLink="https://www.instagram.com/coollab_art/"
+      >
+        Share your <b>artworks</b> made with Coollab!
+      </Card>
+      <Card
+        icon={<FaCode />}
+        externalLink="https://github.com/Coollab-Art/Coollab/issues?q=label%3A%22good+first+issue%22"
+      >
+        Contribute to Coollab's <b>codebase</b>.
+      </Card>
+      <Card
+        icon={<FaDonate />}
+        externalLink="https://www.etsy.com/shop/CoollabArt"
+      >
+        <b>Support</b> us financially or buy <b>T-shirts</b>.
+      </Card>
+    </CardList>
   )
 }

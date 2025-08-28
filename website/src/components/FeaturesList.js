@@ -1,6 +1,5 @@
 import React from "react"
-import styles from "./ContributeCards.module.css"
-import s from "./FeaturesList.module.css"
+import { Card, CardList } from "./CardList"
 import {
   FaExchangeAlt,
   FaVideo,
@@ -10,98 +9,36 @@ import {
   FaKeyboard,
 } from "react-icons/fa"
 
-const accentColors = ["#F4AD7F", "#8656D7", "#30A7F5"]
-
-const features = [
-  {
-    icon: <FaMusic />,
-    text: (
-      <>
-        <span style={{ fontWeight: "bold" }}>Audio</span> reactive visuals
-      </>
-    ),
-  },
-  {
-    icon: <FaVideo />,
-    text: (
-      <>
-        <span style={{ fontWeight: "bold" }}>Webcam</span> integration
-      </>
-    ),
-  },
-  {
-    icon: <FaKeyboard />,
-    text: (
-      <>
-        <span style={{ fontWeight: "bold" }}>Particles</span>
-      </>
-    ),
-  },
-  {
-    icon: <FaExchangeAlt />, // TODO(Website) use the official Spout logo ? put in white ?
-    text: (
-      <>
-        <span style={{ fontWeight: "bold" }}>Spout</span> IN & OUT
-      </>
-    ),
-  },
-  {
-    icon: <FaKeyboard />,
-    text: (
-      <>
-        <span style={{ fontWeight: "bold" }}>MIDI</span> control
-      </>
-    ),
-  },
-  {
-    icon: <FaWifi />,
-    text: (
-      <>
-        <span style={{ fontWeight: "bold" }}>OSC</span> support
-      </>
-    ),
-  },
-  {
-    icon: <FaCode />,
-    text: (
-      <>
-        Custom <span style={{ fontWeight: "bold" }}>Scripting</span>
-      </>
-    ),
-  },
-]
-
-export default function FeaturesList() {
+export default function () {
   return (
-    <section className={styles.featuresSection}>
-      <div className={styles.cardList}>
-        {features.map((item, i) => {
-          const accentColor = accentColors[i % 3]
-
-          return (
-            <div
-              key={i}
-              className={styles.card}
-              style={{ borderColor: accentColor }}
-            >
-              <div className={styles.cardIcon}>{item.icon}</div>
-              <div className={styles.cardText}>
-                {React.cloneElement(
-                  item.text,
-                  {},
-                  React.Children.map(item.text.props.children, (child) =>
-                    typeof child === "string"
-                      ? child
-                      : React.cloneElement(child, {
-                          style: { ...child.props.style, color: accentColor },
-                        })
-                  )
-                )}
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </section>
+    <div style={{ paddingLeft: "75px", paddingRight: "75px" }}>
+      <CardList centered>
+        <Card icon={<FaMusic />} internalLink="/Tutorials/Features/Audio">
+          <b>Audio</b> reactive visuals
+        </Card>
+        <Card icon={<FaVideo />}>
+          <b>Webcam</b> integration
+        </Card>
+        <Card icon={<FaKeyboard />}>
+          <b>Particles</b>
+        </Card>
+        <Card
+          icon={<FaExchangeAlt />}
+          internalLink="/Tutorials/VJing#spout-out"
+        >
+          {/* TODO(Website) use the official Spout logo ? put in white ? */}
+          <b>Spout</b> IN & OUT
+        </Card>
+        <Card icon={<FaKeyboard />}>
+          <b>MIDI</b> control
+        </Card>
+        <Card icon={<FaWifi />}>
+          <b>OSC</b> support
+        </Card>
+        <Card icon={<FaCode />} internalLink="/Tutorials/Writing Nodes/Intro">
+          Custom <b>GLSL</b> nodes
+        </Card>
+      </CardList>
+    </div>
   )
 }
