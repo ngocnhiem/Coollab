@@ -15,7 +15,7 @@ export default function () {
           </p>
         </div>
       </div>
-      <div /* SVG Wave */ className={style.svgTop}>
+      <div className={style.svgWave}>
         <svg
           width="100%"
           height="auto"
