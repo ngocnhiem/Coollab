@@ -1,5 +1,4 @@
 .sectionTitle {
-  margin-top: 1em;
   font-size: 2.5rem;
   font-weight: bold;
   color: white;
@@ -9,14 +8,6 @@
 .section {
   color: white;
   text-align: center;
-}
-
-.sectionTitle {
-  margin-top: 1em;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
-  padding: 0em 1em;
 }
 
 .sectionSubtitle {
@@ -32,16 +23,6 @@
   padding-top: 0;
   z-index: 1;
   position: relative;
-}
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .sectionTitle {
-    font-size: 1.7em;
-  }
-  .sectionSubtitle {
-    font-size: 1rem;
-  }
 }
 
 /* Buttons */
@@ -85,20 +66,8 @@
   border-radius: var(--radius-max);
 }
 
-/* -- Follow Section -- */
-.followSection {
-  margin-bottom: 2em;
-}
-
-/* -- OS Section -- */
-.osSection,
 .followSection {
   text-align: center;
-  padding-bottom: 4em;
-}
-
-.osSection a {
-  font-weight: bold;
 }
 
 .osButtons,
@@ -134,23 +103,10 @@
   .mobileAppImageNote {
     display: block;
   }
-  .heroSection {
-    height: 95vh;
-  }
-  .heroContent {
-    padding: 0em 2em;
-  }
-  .heroTitle {
-    font-size: 5em;
-    margin-top: 1em;
-  }
-  .heroSubtitle {
-    font-size: 1.3em;
-  }
-  .heroContent .secondaryBtn {
-    margin-top: 2em;
-  }
   .sectionTitle {
     font-size: 1.7rem;
+  }
+  .sectionSubtitle {
+    font-size: 1rem;
   }
 }

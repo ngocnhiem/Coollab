@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./Timeline.module.css"
 import Link from "@docusaurus/Link"
+import Spacer from "./Spacer"
 
 const steps = [
   {
@@ -29,31 +30,38 @@ export default function Timeline() {
   return (
     <div className={styles.timeline}>
       {steps.map((step, index) => {
+        const isLastStep = index === steps.length - 1
         const content = (
-          <div className={styles.step}>
-            <div className={styles.stepImageWrapper}>
-              <img
-                src={step.img}
-                alt=""
-                className={styles.stepImage}
-                style={{ borderColor: step.accent }}
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-
-            <div
-              className={styles.stepDot}
-              style={{ backgroundColor: step.accent }}
-            />
-
-            <div className={styles.stepContent}>
-              <div className={styles.stepNumber} style={{ color: step.accent }}>
-                {step.number}
+          <>
+            <div className={styles.step}>
+              <div className={styles.stepImageWrapper}>
+                <img
+                  src={step.img}
+                  alt=""
+                  className={styles.stepImage}
+                  style={{ borderColor: step.accent }}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div className={styles.stepLabel}>{step.label}</div>
+
+              <div
+                className={styles.stepDot}
+                style={{ backgroundColor: step.accent }}
+              />
+
+              <div className={styles.stepContent}>
+                <div
+                  className={styles.stepNumber}
+                  style={{ color: step.accent }}
+                >
+                  {step.number}
+                </div>
+                <div className={styles.stepLabel}>{step.label}</div>
+              </div>
             </div>
-          </div>
+            {!isLastStep && <Spacer height="8rem" />}
+          </>
         )
 
         return step.link ? (

@@ -3,18 +3,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5rem auto;
+  margin: 0 auto;
   width: 100%;
   max-width: 900px;
-  padding: 2rem 1rem;
 }
 
+/* Line connecting the dots */
 .timeline::before {
   content: "";
   position: absolute;
   left: 50%;
-  top: 19%;
-  bottom: 19%;
+  top: 10%;
+  bottom: 10%;
   width: 4px;
   background: var(--coollab-gradient-vertical);
   transform: translateX(-50%);
@@ -35,7 +35,6 @@
   display: flex;
   align-items: center;
   width: 100%;
-  margin: 4rem 0;
   position: relative;
   z-index: 1;
 }

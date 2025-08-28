@@ -1,26 +1,31 @@
 /* ---- Wave ---- */
 .svgTop {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   line-height: 0;
   display: block;
-  margin-top: -20%;
   z-index: 3;
 }
 
 .heroSection {
+  overflow: hidden;
+  position: relative;
+}
+
+.heroContent2 {
   position: relative;
   height: 110vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
   border-radius: var(--radius-max);
   box-sizing: border-box;
 }
 
-.heroSection::before {
+.heroContent2::before {
   content: "";
   position: absolute;
   top: 0;
@@ -73,4 +78,24 @@
   margin-bottom: 1em;
   padding: 0;
   color: white;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .heroSection {
+    height: 95vh;
+  }
+  .heroContent {
+    padding: 0em 2em;
+  }
+  .heroTitle {
+    font-size: 5em;
+    margin-top: 1em;
+  }
+  .heroSubtitle {
+    font-size: 1.3em;
+  }
+  .heroContent .secondaryBtn {
+    margin-top: 2em;
+  }
 }

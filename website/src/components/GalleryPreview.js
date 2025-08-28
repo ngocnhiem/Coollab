@@ -1,5 +1,6 @@
 import React from "react"
 import styles from "./GalleryPreview.module.css"
+import Spacer from "./Spacer"
 
 const images = [
   "/img/lab/1.png",
@@ -22,22 +23,26 @@ export default function GalleryPreview() {
         const isEven = rowIndex % 2 === 0
         const firstImage = isEven ? pair[0] : pair[1]
         const secondImage = isEven ? pair[1] : pair[0]
+        const isLastRow = rowIndex === rows.length - 1
 
         return (
-          <div key={rowIndex} className={styles.row}>
-            <div
-              className={`${styles.imageTile} ${
-                isEven ? styles.narrow : styles.wide
-              }`}
-              style={{ backgroundImage: `url(${firstImage})` }}
-            />
-            <div
-              className={`${styles.imageTile} ${
-                isEven ? styles.wide : styles.narrow
-              }`}
-              style={{ backgroundImage: `url(${secondImage})` }}
-            />
-          </div>
+          <>
+            <div key={rowIndex} className={styles.row}>
+              <div
+                className={`${styles.imageTile} ${
+                  isEven ? styles.narrow : styles.wide
+                }`}
+                style={{ backgroundImage: `url(${firstImage})` }}
+              />
+              <div
+                className={`${styles.imageTile} ${
+                  isEven ? styles.wide : styles.narrow
+                }`}
+                style={{ backgroundImage: `url(${secondImage})` }}
+              />
+            </div>
+            {!isLastRow && <Spacer height="2rem" />}
+          </>
         )
       })}
     </section>

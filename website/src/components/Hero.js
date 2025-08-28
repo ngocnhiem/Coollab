@@ -3,9 +3,9 @@ import style from "./Hero.module.css"
 
 export default function () {
   return (
-    <>
       <main className={style.heroSection}>
         <div className={style.heroBackground}></div>
+      <div className={style.heroContent2}>
         <div className={style.heroContent}>
           <h1 className={style.heroTitle}>COOLLAB</h1>
           <p className={style.heroSubtitle}>
@@ -14,13 +14,12 @@ export default function () {
             VJs, coders, artists, and the like
           </p>
         </div>
-      </main>
-      {/* SVG Wave */}
-      <div className={style.svgTop}>
+      </div>
+      <div /* SVG Wave */ className={style.svgTop}>
         <svg
           width="100%"
           height="auto"
-          viewBox="0 0 1440 401"
+          viewBox="0 0 1440 261"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
         >
@@ -30,6 +29,6 @@ export default function () {
           />
         </svg>
       </div>
-    </>
+    </main>
   )
 }
