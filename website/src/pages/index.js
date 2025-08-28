@@ -10,11 +10,7 @@ import SocialNetworksBigButtons from "../components/SocialNetworksBigButtons"
 
 export default function Home() {
   return (
-    <Layout
-      title=""
-      description="Node-based creation for everyone
-VJs, coders, artists, and the like"
-    >
+    <Layout title="" description="Node-based creation for everyone">
       <main className={styles.heroSection}>
         <div className={styles.heroBackground}></div>
         <div className={styles.heroContent}>

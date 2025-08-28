@@ -18,8 +18,9 @@ export default function ArgumentsCards() {
           <img src="/img/demo-horizontal.png"></img>
         </div>
         <p className={style.cardText}>
-          <span style={{ color: "#F4AD7F" }}>FREE</span> AND{" "}
-          <span style={{ color: "#F4AD7F" }}>OPEN-SOURCE</span> FOREVER
+          <span style={{ color: "#F4AD7F" }}>FREE</span> AND
+          <br /> <span style={{ color: "#F4AD7F" }}>OPEN-SOURCE</span>
+          {/*  FOREVER */}
         </p>
       </div>
       <div className={style.card} style={{ borderColor: "#30A7F5" }}>

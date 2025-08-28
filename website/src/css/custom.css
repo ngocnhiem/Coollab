@@ -541,6 +541,7 @@ aside {
 }
 
 /* Tooltip */
+/* TODO(Website) move to a dedicated css file */
 .tooltip {
   position: relative;
 }
@@ -583,10 +584,10 @@ aside {
 .tooltipText::before {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: -15px;
   left: 0;
   right: 0;
-  height: 10px;
+  height: 15px;
   background: transparent;
 }
 

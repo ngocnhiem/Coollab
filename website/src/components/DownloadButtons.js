@@ -2,6 +2,7 @@ import React from "react"
 import { FaWindows, FaApple, FaLinux } from "react-icons/fa"
 import FFmpegLegalNotice from "./FFmpegLegalNotice"
 import ExternalLink from "./ExternalLink"
+import CodeBlock from "@theme/CodeBlock"
 
 export default function () {
   return (
@@ -29,6 +30,10 @@ export default function () {
             <ExternalLink to="https://appimage.org/">
               the official AppImage website
             </ExternalLink>
+            <br />
+            <br />
+            Also, you might need to
+            <CodeBlock inline>sudo apt install libegl1-mesa-dev</CodeBlock>
           </span>
         </div>
         {/* MacOS */}
