@@ -4,6 +4,8 @@ import ContributeCards from "../components/ContributeCards"
 import ContributorsList from "../components/ContributorsList"
 import style from "./Contribute.module.css"
 import LinkExternal from "../components/LinkExternal"
+import SectionTitle from "../components/SectionTitle"
+import Spacer from "../components/Spacer"
 
 export default function ContributePage() {
   return (
@@ -19,13 +21,15 @@ export default function ContributePage() {
         {/* Right: Contribute Section */}
         <div className="contributeContent">
           <div className={style.contributeSection}>
-            <h2 className={style.title}>How to contribute:</h2>
+            <SectionTitle fontSize="3.5rem">How to contribute:</SectionTitle>
+            <Spacer height="2rem"></Spacer>
             <ContributeCards />
           </div>
         </div>
       </main>
       <div className="contributorsSection">
-        <h2 className="title">Contributors</h2>
+        <SectionTitle fontSize="3rem">Contributors</SectionTitle>
+        <Spacer height="2rem"></Spacer>
         <p>
           This project was initiated by{" "}
           <LinkExternal to="https://julesfouchy.github.io/">

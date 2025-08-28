@@ -65,7 +65,12 @@ export default function Timeline() {
         )
 
         return step.link ? (
-          <LinkInternal key={index} to={step.link} aria-label={step.label}>
+          <LinkInternal
+            key={index}
+            to={step.link}
+            aria-label={step.label}
+            // noDecoration // TODO(Website) no decoration?
+          >
             {content}
           </LinkInternal>
         ) : (

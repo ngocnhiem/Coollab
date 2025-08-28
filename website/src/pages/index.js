@@ -1,6 +1,6 @@
 import React from "react"
-import style from "./index.module.css"
 import Layout from "@theme/Layout"
+import Spacer from "../components/Spacer"
 import FeaturesList from "../components/FeaturesList"
 import Timeline from "../components/Timeline"
 import GalleryPreview from "../components/GalleryPreview"
@@ -8,7 +8,7 @@ import YoutubeVideo from "../components/YoutubeVideo"
 import ArgumentsCards from "../components/ArgumentsCards"
 import Hero from "../components/Hero"
 import SocialsBigButtons from "../components/SocialsBigButtons"
-import Spacer from "../components/Spacer"
+import SectionTitle from "../components/SectionTitle"
 
 export default function Home() {
   return (
@@ -24,7 +24,8 @@ export default function Home() {
       <Timeline />
       <Spacer height="5rem" />
       <div style={{ textAlign: "center" }}>
-        <h2 className={style.sectionTitle}>Follow us</h2>
+        <SectionTitle fontSize="2.5rem">Follow us</SectionTitle>
+        <Spacer height="2.4rem"></Spacer>
         <SocialsBigButtons />
       </div>
       <Spacer height="5rem" />
