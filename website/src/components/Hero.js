@@ -3,15 +3,15 @@ import style from "./Hero.module.css"
 
 export default function () {
   return (
-      <main className={style.heroSection}>
-        <div className={style.heroBackground}></div>
+    <main className={style.heroSection}>
+      <div className={style.heroBackground}></div>
       <div className={style.heroContent2}>
         <div className={style.heroContent}>
           <h1 className={style.heroTitle}>COOLLAB</h1>
           <p className={style.heroSubtitle}>
             Node-based creation for everyone
             <br />
-            VJs, coders, artists, and the like
+            VJs, Coders, Artists, and the like
           </p>
         </div>
       </div>
