@@ -14,24 +14,24 @@ export default function Home() {
   return (
     <Layout title="" description="Node-based creation for everyone">
       <Hero />
-      <Spacer height="4rem" />
+      <Spacer height="5rem" />
       <ArgumentsCards />
-      <Spacer height="4rem" />
+      <Spacer height="5rem" />
       <FeaturesList />
-      <Spacer height="4rem" />
+      <Spacer height="5rem" />
       <YoutubeVideo /* Trailer */ id="jsjkjCQCPno" />
-      <Spacer height="4rem" />
+      <Spacer height="5rem" />
       <Timeline />
-      <Spacer height="4rem" />
+      <Spacer height="5rem" />
       <div className={style.followSection}>
         <h2 className={style.sectionTitle}>Follow us</h2>
         <SocialNetworksBigButtons />
       </div>
-      <Spacer height="4rem" />
+      <Spacer height="5rem" />
       <GalleryPreview />
-      <Spacer height="4rem" />
+      <Spacer height="5rem" />
       <YoutubeVideo /* What is Coollab? */ id="nkKj_MTBBRI" />
-      <Spacer height="4rem" />
+      <Spacer height="5rem" />
     </Layout>
   )
 }
