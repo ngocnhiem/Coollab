@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "@theme/Layout"
 import ContributeCards from "../components/ContributeCards"
 import ContributorsList from "../components/ContributorsList"
-import styles from "../components/ContributeCards.module.css"
+import style from "./Contribute.module.css"
 import ExternalLink from "../components/ExternalLink"
 
 export default function ContributePage() {
@@ -18,8 +18,8 @@ export default function ContributePage() {
         </div>
         {/* Right: Contribute Section */}
         <div className="contributeContent">
-          <div className={styles.contributeSection}>
-            <h2 className={styles.title}>How to contribute:</h2>
+          <div className={style.contributeSection}>
+            <h2 className={style.title}>How to contribute:</h2>
             <ContributeCards />
           </div>
         </div>

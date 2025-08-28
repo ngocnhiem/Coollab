@@ -1,0 +1,11 @@
+.contributeSection {
+  padding: 8rem 2rem 4em 2em;
+  /* background-color: var(--coollab-primary-color); */
+  color: white;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-title);
+}
