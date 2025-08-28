@@ -15,9 +15,9 @@ export default function Home() {
     <Layout title="" description="Node-based creation for everyone">
       <Hero />
       <Spacer height="4rem" />
-          <ArgumentsCards />
+      <ArgumentsCards />
       <Spacer height="4rem" />
-          <FeaturesList />
+      <FeaturesList />
       <Spacer height="4rem" />
       <YoutubeVideo /* Trailer */ id="jsjkjCQCPno" />
       <Spacer height="4rem" />
@@ -29,6 +29,8 @@ export default function Home() {
       </div>
       <Spacer height="4rem" />
       <GalleryPreview />
+      <Spacer height="4rem" />
+      <YoutubeVideo /* What is Coollab? */ id="nkKj_MTBBRI" />
       <Spacer height="4rem" />
     </Layout>
   )
