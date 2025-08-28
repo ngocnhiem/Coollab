@@ -2,6 +2,7 @@ import React from "react"
 import styles from "./GalleryPreview.module.css"
 import Spacer from "./Spacer"
 
+// TODO(Website) We are only showcasing 3D images, which is not Coollab's main goal. Need to change that
 const images = [
   "/img/lab/1.png",
   "/img/lab/3.png",

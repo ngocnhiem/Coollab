@@ -31,28 +31,6 @@
   flex: 1;
 }
 
-/* Buttons */
-.secondaryBtn {
-  display: inline-block;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  padding: 0.4em 1.5em;
-  background: white;
-  color: var(--coollab-primary-color);
-  border: 2px solid white;
-  border-radius: var(--radius-mid);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 11%;
-  transition: all 0.3s ease;
-}
-
-.secondaryBtn:hover {
-  color: var(--coollab-primary-color);
-  text-decoration: none;
-  border-radius: var(--radius-max);
-}
-
 @media (max-width: 768px) {
   .row {
     flex-direction: column;

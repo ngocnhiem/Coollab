@@ -7,7 +7,7 @@ import GalleryPreview from "../components/GalleryPreview"
 import YoutubeVideo from "../components/YoutubeVideo"
 import ArgumentsCards from "../components/ArgumentsCards"
 import Hero from "../components/Hero"
-import SocialNetworksBigButtons from "../components/SocialNetworksBigButtons"
+import SocialsBigButtons from "../components/SocialsBigButtons"
 import Spacer from "../components/Spacer"
 
 export default function Home() {
@@ -23,9 +23,9 @@ export default function Home() {
       <Spacer height="5rem" />
       <Timeline />
       <Spacer height="5rem" />
-      <div className={style.followSection}>
+      <div style={{ textAlign: "center" }}>
         <h2 className={style.sectionTitle}>Follow us</h2>
-        <SocialNetworksBigButtons />
+        <SocialsBigButtons />
       </div>
       <Spacer height="5rem" />
       <GalleryPreview />

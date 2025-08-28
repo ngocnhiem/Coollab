@@ -535,11 +535,6 @@ aside {
   text-transform: uppercase;
 }
 
-.downloadContent .icon {
-  width: 20px;
-  height: 20px;
-}
-
 /* Tooltip */
 /* TODO(Website) move to a dedicated css file */
 .tooltip {
@@ -602,10 +597,6 @@ aside {
   border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
 }
 
-.mobileAppImageNote {
-  display: none;
-}
-
 /* Contribute / Contributors */
 .contributeContent {
   width: 55%;
@@ -648,10 +639,6 @@ aside {
     min-width: 180px;
     align-self: center;
     justify-content: center;
-  }
-
-  .mobileAppImageNote {
-    display: block;
   }
 
   .navbar {
