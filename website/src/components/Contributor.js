@@ -2,7 +2,7 @@ import React from "react"
 import style from "./Contributor.module.css"
 import ExternalLink from "./ExternalLink"
 
-export default function Contributor({ name, github_name, link, roles }) {
+export default function ({ name, github_name, link, roles }) {
   return (
     <ExternalLink to={link}>
       <div className={style.contributorCard}>

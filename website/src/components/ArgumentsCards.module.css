@@ -1,8 +1,4 @@
 /* ---- Cards ---- */
-.cardSection {
-  margin: 6rem 0;
-}
-
 .cardContainer {
   display: flex;
   gap: 3rem;
