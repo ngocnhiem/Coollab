@@ -20,6 +20,8 @@
 /* -- Features section -- */
 .featuresSection {
   text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .featuresSection .cardList {

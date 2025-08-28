@@ -1,5 +1,6 @@
 import React from "react"
 import styles from "./ContributeCards.module.css"
+import s from "./FeaturesList.module.css"
 import {
   FaExchangeAlt,
   FaVideo,
@@ -13,10 +14,10 @@ const accentColors = ["#F4AD7F", "#8656D7", "#30A7F5"]
 
 const features = [
   {
-    icon: <FaExchangeAlt />, // TODO(Website) use the official Spout logo ? put in white ?
+    icon: <FaMusic />,
     text: (
       <>
-        <span style={{ fontWeight: "bold" }}>Spout</span> IN & OUT
+        <span style={{ fontWeight: "bold" }}>Audio</span> reactive visuals
       </>
     ),
   },
@@ -29,26 +30,18 @@ const features = [
     ),
   },
   {
-    icon: <FaMusic />,
+    icon: <FaKeyboard />,
     text: (
       <>
-        <span style={{ fontWeight: "bold" }}>Audio</span> reactive visuals
+        <span style={{ fontWeight: "bold" }}>Particles</span>
       </>
     ),
   },
   {
-    icon: <FaCode />,
+    icon: <FaExchangeAlt />, // TODO(Website) use the official Spout logo ? put in white ?
     text: (
       <>
-        Custom <span style={{ fontWeight: "bold" }}>Scripting</span>
-      </>
-    ),
-  },
-  {
-    icon: <FaWifi />,
-    text: (
-      <>
-        <span style={{ fontWeight: "bold" }}>OSC</span> support
+        <span style={{ fontWeight: "bold" }}>Spout</span> IN & OUT
       </>
     ),
   },
@@ -61,10 +54,18 @@ const features = [
     ),
   },
   {
-    icon: <FaKeyboard />,
+    icon: <FaWifi />,
     text: (
       <>
-        <span style={{ fontWeight: "bold" }}>Particles</span>
+        <span style={{ fontWeight: "bold" }}>OSC</span> support
+      </>
+    ),
+  },
+  {
+    icon: <FaCode />,
+    text: (
+      <>
+        Custom <span style={{ fontWeight: "bold" }}>Scripting</span>
       </>
     ),
   },
