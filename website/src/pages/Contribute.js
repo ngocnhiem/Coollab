@@ -12,32 +12,25 @@ export default function ContributePage() {
       title="Contribute"
       description="Want to join the adventure? Here is how you can contribute to Coollab"
     >
-      <main className="contributeWrapper">
-        {/* Left: Background video */}
-        <div className="contributeVideo">
-          <img src="/img/demo-vertical.png"></img>
+      <main>
+        <div style={{ padding: "8rem 2rem 4em 2em" }}>
+          <SectionTitle fontSize="3.5rem">How to contribute:</SectionTitle>
+          <Spacer height="2rem"></Spacer>
+          <ContributeCards />
         </div>
-        {/* Right: Contribute Section */}
-        <div className="contributeContent">
-          <div style={{ padding: "8rem 2rem 4em 2em" }}>
-            <SectionTitle fontSize="3.5rem">How to contribute:</SectionTitle>
-            <Spacer height="2rem"></Spacer>
-            <ContributeCards />
-          </div>
+        <div className="contributorsSection">
+          <SectionTitle fontSize="3rem">Contributors</SectionTitle>
+          <Spacer height="2rem"></Spacer>
+          <p>
+            This project was initiated by{" "}
+            <LinkExternal to="https://julesfouchy.github.io/">
+              Jules Fouchy
+            </LinkExternal>{" "}
+            and made possible by all our lovely contributors:
+          </p>
+          <ContributorsList />
         </div>
       </main>
-      <div className="contributorsSection">
-        <SectionTitle fontSize="3rem">Contributors</SectionTitle>
-        <Spacer height="2rem"></Spacer>
-        <p>
-          This project was initiated by{" "}
-          <LinkExternal to="https://julesfouchy.github.io/">
-            Jules Fouchy
-          </LinkExternal>{" "}
-          and made possible by all our lovely contributors:
-        </p>
-        <ContributorsList />
-      </div>
     </Layout>
   )
 }

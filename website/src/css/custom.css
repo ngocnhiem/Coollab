@@ -270,27 +270,6 @@ aside {
   overflow: hidden;
 }
 
-/* Download Right Layout */
-.contributeWrapper {
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.contributeVideo {
-  width: 50%;
-  position: relative;
-  background-color: var(--coollab-secondary-color);
-  border-radius: var(--radius-max);
-}
-
-.contributeVideo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-max);
-}
-
 /* Tooltip */
 /* TODO(Website) move to a dedicated css file */
 .tooltip {
