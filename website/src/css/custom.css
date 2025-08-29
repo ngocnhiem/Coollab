@@ -271,14 +271,12 @@ aside {
 }
 
 /* Download Right Layout */
-.downloadWrapper,
 .contributeWrapper {
   display: flex;
   height: 100vh;
   overflow: hidden;
 }
 
-.downloadVideo,
 .contributeVideo {
   width: 50%;
   position: relative;
@@ -286,41 +284,11 @@ aside {
   border-radius: var(--radius-max);
 }
 
-.downloadVideo img,
 .contributeVideo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius-max);
-}
-
-.downloadContent {
-  width: 50%;
-  background-color: var(--coollab-primary-color);
-  border-radius: var(--max);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem 2rem;
-}
-
-.downloadContent .sectionTitle {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.downloadContent .sectionSubtitle {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 2rem;
-}
-
-.downloadContent .osButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  text-transform: uppercase;
 }
 
 /* Tooltip */

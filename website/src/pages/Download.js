@@ -1,6 +1,9 @@
 import React from "react"
+import style from "./Download.module.css"
 import Layout from "@theme/Layout"
 import DownloadButtons from "../components/DownloadButtons"
+import SectionTitle from "../components/SectionTitle"
+import Spacer from "../components/Spacer"
 
 export default function DownloadPage() {
   return (
@@ -8,16 +11,16 @@ export default function DownloadPage() {
       title="Download"
       description="Install Coollab for Windows, Linux or MacOS"
     >
-      <main className="downloadWrapper">
-        {/* Left: Background video */}
-        <div className="downloadVideo">
+      <main className={style.downloadWrapper}>
+        {/* Left: Background image */}
+        <div className={style.downloadImage}>
           <img src="/img/demo-vertical.png"></img>
         </div>
 
         {/* Right: OS Section */}
-        <div className="downloadContent">
-          <h1 className="sectionTitle">Install Coollab</h1>
-          <p></p>
+        <div className={style.downloadContent}>
+          <SectionTitle fontSize="3.5rem">Install Coollab</SectionTitle>
+          <Spacer height="2.3rem" />
           <DownloadButtons />
         </div>
       </main>
