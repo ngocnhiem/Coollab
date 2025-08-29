@@ -6,6 +6,7 @@ import CodeBlock from "@theme/CodeBlock"
 import BigButton from "./BigButton"
 import LinkExternal from "./LinkExternal"
 import LinkDownload from "./LinkDownload"
+import Tooltip from "./Tooltip"
 
 export default function () {
   return (
@@ -16,23 +17,26 @@ export default function () {
           <BigButton icon={<FaWindows />}>Windows</BigButton>
         </LinkDownload>
         {/* Linux */}
-        <div className="tooltip">
+        <Tooltip
+          text={
+            <>
+              If you need help running the AppImage,
+              <br />
+              check out{" "}
+              <LinkExternal to="https://appimage.org/">
+                the official AppImage website
+              </LinkExternal>
+              <br />
+              <br />
+              Also, you might need to
+              <CodeBlock inline>sudo apt install libegl1-mesa-dev</CodeBlock>
+            </>
+          }
+        >
           <LinkDownload to="/Coollab-Launcher.AppImage" noDecoration>
             <BigButton icon={<FaLinux />}>Linux</BigButton>
           </LinkDownload>
-          <span className="tooltipText">
-            If you need help running the AppImage,
-            <br />
-            check out{" "}
-            <LinkExternal to="https://appimage.org/">
-              the official AppImage website
-            </LinkExternal>
-            <br />
-            <br />
-            Also, you might need to
-            <CodeBlock inline>sudo apt install libegl1-mesa-dev</CodeBlock>
-          </span>
-        </div>
+        </Tooltip>
         {/* MacOS */}
         <LinkDownload to="/Coollab-Launcher-MacOS.zip" noDecoration>
           <BigButton icon={<FaApple />}>MacOS</BigButton>
