@@ -18,7 +18,7 @@ export default function ContributePage() {
           <Spacer height="2rem"></Spacer>
           <ContributeCards />
         </div>
-        <div className="contributorsSection">
+        <div style={{ padding: "4rem 2rem 4em 2em" }}>
           <SectionTitle fontSize="3rem">Contributors</SectionTitle>
           <Spacer height="2rem"></Spacer>
           <p>
