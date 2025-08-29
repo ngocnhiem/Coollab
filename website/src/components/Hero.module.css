@@ -42,10 +42,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/img/demo.png");
+  background-image: url("/img/chromabb-disk.png");
   background-size: cover;
   background-position: center;
-  filter: blur(3px);
+  filter: blur(3px); /* TODO(Website) Remove the blur? but i don't think so */
   transform: scale(1.05);
   z-index: 0;
 }
