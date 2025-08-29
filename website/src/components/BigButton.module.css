@@ -29,3 +29,12 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .button {
+    justify-content: center;
+    width: auto;
+    min-width: 190px;
+  }
+}

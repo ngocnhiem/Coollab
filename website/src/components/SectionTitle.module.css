@@ -3,10 +3,3 @@
   color: white;
   font-family: var(--font-title);
 }
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .sectionTitle {
-    font-size: 1.7rem;
-  }
-}

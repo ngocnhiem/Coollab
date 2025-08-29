@@ -25,7 +25,9 @@ export default function Home() {
         <Timeline />
         <Spacer height="5rem" />
         <div style={{ textAlign: "center" }}>
-          <SectionTitle fontSize="2.5rem">Follow us</SectionTitle>
+          <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
+            Follow us
+          </SectionTitle>
           <Spacer height="2.4rem"></Spacer>
           <SocialsBigButtons />
         </div>

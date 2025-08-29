@@ -19,8 +19,10 @@ export default function DownloadPage() {
 
         {/* Right: OS Section */}
         <main className={style.downloadContent}>
-          <SectionTitle fontSize="3.5rem">Install Coollab</SectionTitle>
-          <Spacer height="2.3rem" />
+          <SectionTitle fontSize="3.5rem" mobileFontSize="2.5rem">
+            Install Coollab
+          </SectionTitle>
+          <Spacer height="2.4rem" />
           <DownloadButtons />
         </main>
       </div>

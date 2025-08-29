@@ -14,12 +14,16 @@ export default function ContributePage() {
     >
       <main>
         <div style={{ padding: "8rem 2rem 4em 2em" }}>
-          <SectionTitle fontSize="3.5rem">How to contribute:</SectionTitle>
+          <SectionTitle fontSize="3.5rem" mobileFontSize="2.5rem">
+            How to contribute:
+          </SectionTitle>
           <Spacer height="2rem"></Spacer>
           <ContributeCards />
         </div>
         <div style={{ padding: "4rem 2rem 4em 2em" }}>
-          <SectionTitle fontSize="3rem">Contributors</SectionTitle>
+          <SectionTitle fontSize="3rem" mobileFontSize="1.7rem">
+            Contributors
+          </SectionTitle>
           <Spacer height="2rem"></Spacer>
           <p>
             This project was initiated by{" "}
