@@ -11,19 +11,19 @@ export default function DownloadPage() {
       title="Download"
       description="Install Coollab for Windows, Linux or MacOS"
     >
-      <main className={style.downloadWrapper}>
+      <div className={style.downloadWrapper}>
         {/* Left: Background image */}
         <div className={style.downloadImage}>
           <img src="/img/demo-vertical.png"></img>
         </div>
 
         {/* Right: OS Section */}
-        <div className={style.downloadContent}>
+        <main className={style.downloadContent}>
           <SectionTitle fontSize="3.5rem">Install Coollab</SectionTitle>
           <Spacer height="2.3rem" />
           <DownloadButtons />
-        </div>
-      </main>
+        </main>
+      </div>
     </Layout>
   )
 }
