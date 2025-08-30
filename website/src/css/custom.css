@@ -179,7 +179,7 @@ To get its classes, inspect or check Docusaurus Documentation.*/
   width: 34px;
   height: 34px;
   border-radius: var(--radius-max);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.18);
   color: white;
   background: rgba(255, 255, 255, 0.06);
   display: inline-flex;
@@ -382,7 +382,7 @@ aside {
     width: 40px;
     height: 40px;
     border-radius: var(--radius-max);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.18);
     background: rgba(255, 255, 255, 0.08);
     color: white;
   }

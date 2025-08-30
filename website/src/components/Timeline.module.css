@@ -53,7 +53,7 @@
   object-fit: cover;
   object-position: center;
   border-radius: var(--radius-max);
-  border: 1px solid;
+  border: 2px solid;
   flex-shrink: 0;
 }
 
