@@ -11,6 +11,7 @@ import {
 
 export default function () {
   return (
+    // TODO(Website) maybe we need images to illustrate these cards
     <div style={{ paddingLeft: "75px", paddingRight: "75px" }}>
       <CardList centered>
         <Card icon={<FaMusic />} internalLink="/Tutorials/Features/Audio">

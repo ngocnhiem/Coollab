@@ -3,10 +3,13 @@ import style from "./ArgumentsCards.module.css"
 
 export default function ArgumentsCards() {
   return (
+    // TODO(Website) make components so that it reads better instead of having a wall of div
+    // TODO(Website) the images should probably just be 3 nice artworks made with coollab. Or for "100s of effects" the picture with many small squares of effects / the nodes menu (the future one with all the thumbnails)
+    // TODO(Website) maybe make these cards a bit bigger?
     <div className={style.cardContainer}>
       <div className={style.card} style={{ borderColor: "#8656D7" }}>
         <div className={style.cardImage}>
-          <img src="/img/demo-horizontal.png"></img>
+          <img src="/img/demo.png"></img>
         </div>
         <p className={style.cardText}>
           DESIGNED TO BE <span style={{ color: "#8656D7" }}>SIMPLE</span> AND{" "}
@@ -15,7 +18,7 @@ export default function ArgumentsCards() {
       </div>
       <div className={style.card} style={{ borderColor: "#F4AD7F" }}>
         <div className={style.cardImage}>
-          <img src="/img/demo-horizontal.png"></img>
+          <img src="/img/vj.jpg"></img>
         </div>
         <p className={style.cardText}>
           <span style={{ color: "#F4AD7F" }}>FREE</span> AND
@@ -25,7 +28,7 @@ export default function ArgumentsCards() {
       </div>
       <div className={style.card} style={{ borderColor: "#30A7F5" }}>
         <div className={style.cardImage}>
-          <img src="/img/vj.jpg"></img>
+          <img src="/img/demo-horizontal.png"></img>
         </div>
         <p className={style.cardText}>
           {/* A powerful tool for <span style={{ color: "#30A7F5" }}>Vjing</span>{" "}

@@ -14,7 +14,7 @@ import {
 
 export default function () {
   return (
-    <CardList compactCards>
+    <CardList /* compactCards */ centered>
       <Card icon={<FaBullhorn />} internalLink="/">
         Tell your friends about <b>Coollab</b>!
       </Card>
