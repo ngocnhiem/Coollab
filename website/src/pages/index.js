@@ -9,6 +9,7 @@ import ArgumentsCards from "../components/ArgumentsCards"
 import Hero from "../components/Hero"
 import SocialsBigButtons from "../components/SocialsBigButtons"
 import SectionTitle from "../components/SectionTitle"
+import CenterH from "../components/CenterH"
 
 export default function Home() {
   return (
@@ -22,15 +23,28 @@ export default function Home() {
         <Spacer height="5rem" />
         <YoutubeVideo /* Trailer */ id="jsjkjCQCPno" />
         <Spacer height="5rem" />
-        <Timeline />
+        <CenterH>
+          <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
+            Unique and Powerful effects
+          </SectionTitle>
+        </CenterH>
+        <Spacer height="2.4rem"></Spacer>
+        <CenterH>
+          <Timeline />
+        </CenterH>
         <Spacer height="5rem" />
-        <div style={{ textAlign: "center" }}>
+        {/* <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
+          Interactivity, Protocols
+        </SectionTitle>
+        <Spacer height="2.4rem"></Spacer>
+        OSC, Midi,Spout */}
+        <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Follow us
           </SectionTitle>
-          <Spacer height="2.4rem"></Spacer>
-          <SocialsBigButtons />
-        </div>
+        </CenterH>
+        <Spacer height="2.4rem"></Spacer>
+        <SocialsBigButtons />
         <Spacer height="5rem" />
         <GalleryPreview />
         <Spacer height="5rem" />
