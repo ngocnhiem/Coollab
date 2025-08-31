@@ -1,18 +1,43 @@
 .timeline {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  column-gap: 30px;
+  row-gap: 8rem;
+
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 900px;
+}
+
+.image {
+  height: 170px;
+  border-radius: var(--radius-max);
+  border: 2px solid;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.number {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.text {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
 }
 
 /* Line connecting the dots */
 .timeline::before {
   content: "";
   position: absolute;
-  left: 50%;
+  left: 54.64%;
   top: 10%;
   bottom: 10%;
   width: 4px;
@@ -21,75 +46,27 @@
   z-index: 0;
 }
 
-.stepDot {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.step {
+.centerInCell {
   display: flex;
   align-items: center;
-  width: 100%;
-  position: relative;
-  z-index: 1;
+  justify-content: center;
 }
 
-.stepImageWrapper {
-  width: 50%;
+.centerVerticallyInCell {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 2rem;
-  flex: 0 0 auto;
-}
-
-.stepImage {
-  display: block;
-  height: 170px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: var(--radius-max);
-  border: 2px solid;
-  flex-shrink: 0;
-}
-
-.stepContent {
-  width: 50%;
-  padding-left: 2rem;
-  display: flex;
+  align-items: center;
   justify-content: flex-start;
-  align-items: center;
-  text-align: left;
-}
-
-.stepNumber {
-  font-size: 4rem;
-  font-weight: bold;
-}
-
-.stepLabel {
-  font-size: 1.5rem;
-  font-family: "Roboto", sans-serif;
-  margin-top: 0.5rem;
-  text-transform: uppercase;
-  color: white;
-  font-weight: bold;
-  padding-left: 0.7em;
 }
 
 @media (max-width: 768px) {
   .timeline {
     padding: 0 2em;
   }
-  .timeline::before {
+  /* .timeline::before {
     height: 65%;
     top: 17%;
     width: 5px;
-  }
+  } */
   .step {
     margin: 2.5rem 0;
   }
