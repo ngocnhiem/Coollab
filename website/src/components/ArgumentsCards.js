@@ -1,5 +1,6 @@
 import React from "react"
 import style from "./ArgumentsCards.module.css"
+import Image from "./Image"
 
 export default function ArgumentsCards() {
   return (
@@ -9,7 +10,7 @@ export default function ArgumentsCards() {
     <div className={style.cardContainer}>
       <div className={style.card} style={{ borderColor: "#8656D7" }}>
         <div className={style.cardImage}>
-          <img src="/img/demo.png"></img>
+          <Image src="/img/demo.png"></Image>
         </div>
         <p className={style.cardText}>
           DESIGNED TO BE <span style={{ color: "#8656D7" }}>SIMPLE</span> AND{" "}
@@ -18,7 +19,7 @@ export default function ArgumentsCards() {
       </div>
       <div className={style.card} style={{ borderColor: "#F4AD7F" }}>
         <div className={style.cardImage}>
-          <img src="/img/vj.jpg"></img>
+          <Image src="/img/vj.jpg"></Image>
         </div>
         <p className={style.cardText}>
           <span style={{ color: "#F4AD7F" }}>FREE</span> AND
@@ -28,7 +29,7 @@ export default function ArgumentsCards() {
       </div>
       <div className={style.card} style={{ borderColor: "#30A7F5" }}>
         <div className={style.cardImage}>
-          <img src="/img/demo-horizontal.png"></img>
+          <Image src="/img/demo-horizontal.png"></Image>
         </div>
         <p className={style.cardText}>
           {/* A powerful tool for <span style={{ color: "#30A7F5" }}>Vjing</span>{" "}

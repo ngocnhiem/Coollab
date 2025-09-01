@@ -1,5 +1,6 @@
 import React from "react"
 import styles from "./Timeline.module.css"
+import Imagee from "./Image"
 
 export default function () {
   return (
@@ -28,7 +29,7 @@ export default function () {
 
 function Image({ src, accentColor }) {
   return (
-    <img
+    <Imagee
       src={src}
       alt={src}
       className={styles.image}
