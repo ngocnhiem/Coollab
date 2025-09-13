@@ -122,7 +122,7 @@ auto Task_PublishImageToGallery::notification_after_execution_completes() const 
         return {
             .type                 = ImGuiNotify::Type::Success,
             .title                = name(),
-            .custom_imgui_content = []() {
+            .custom_imgui_content = [](auto&&) {
                 Cool::ImGuiExtras::markdown("You can now see your image online at [https://coollab-art.com/Gallery](https://coollab-art.com/Gallery)");
             },
         };

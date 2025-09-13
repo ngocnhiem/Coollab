@@ -3,6 +3,7 @@
 ##
 
 - ✨ We now detect if a project crashed and open it in "safe mode" which doesn't render anything to make sure it doesn't crash again. This allow you to undo the last changes you made to your patch to prevent it from crashing again
+- 🤏 After a "Save As", the notification that offers to switch project now closes immediately if you use it
 - 🐛 Fixed: clicking on a color ramp to add a mark did not work anymore
 - 🐛 Fix precision artifacts of Make Displacement Map
 

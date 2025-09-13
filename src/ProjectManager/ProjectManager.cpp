@@ -168,7 +168,7 @@ void ProjectManager::open_project(std::filesystem::path const& file_path, OnProj
             .type                 = ImGuiNotify::Type::Error,
             .title                = "Failed to open project",
             .content              = maybe_project.error(),
-            .custom_imgui_content = [file_path]() {
+            .custom_imgui_content = [file_path](auto&&) {
                 if (ImGui::Button("Try to open in file explorer"))
                     Cool::open_focused_in_explorer(Cool::File::weakly_canonical(file_path));
             },
@@ -350,17 +350,23 @@ auto ProjectManager::save_project_as(std::filesystem::path file_path, SaveThumbn
             .type                 = ImGuiNotify::Type::Success,
             .title                = fmt::format("Saved as"),
             .content              = Cool::File::weakly_canonical(file_path).string(),
-            .custom_imgui_content = [wants_to_switch_to_new_project, file_path, old_file_path = _impl.project_path()]() {
+            .custom_imgui_content = [wants_to_switch_to_new_project, file_path, old_file_path = _impl.project_path()](ImGuiNotify::NotificationId const& this_notification_id) {
                 if (wants_to_switch_to_new_project)
                 {
                     if (ImGui::Button(fmt::format("Switch back to \"{}\"", Cool::File::file_name_without_extension(old_file_path)).c_str()))
+                    {
                         execute_command(Command_OpenProjectOnNextFrame{old_file_path});
+                        ImGuiNotify::close_immediately(this_notification_id);
+                    }
                     Cool::ImGuiExtras::help_marker("If you always want to switch back you can make this the default behaviour by enabling \"Save As behaves as a Save Backup\" in the  " ICOMOON_COG "Settings menu");
                 }
                 else
                 {
                     if (ImGui::Button(fmt::format("Switch to \"{}\"", Cool::File::file_name_without_extension(file_path)).c_str()))
+                    {
                         execute_command(Command_OpenProjectOnNextFrame{file_path});
+                        ImGuiNotify::close_immediately(this_notification_id);
+                    }
                     Cool::ImGuiExtras::help_marker("If you always want to switch you can make this the default behaviour by disabling \"Save As behaves as a Save Backup\" in the  " ICOMOON_COG "Settings menu");
                 }
             },
