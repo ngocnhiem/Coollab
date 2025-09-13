@@ -38,3 +38,7 @@ void do_something();
 Reason: consistency, this is what we do everwhere in the code. Also I like this syntax more, I find it more readable (avoids very long types in front of the function, makes it easier to read a list of methods in a class, all names are nicely alined;
 
 )
+
+## Don't use std::ofstream directly to save a file
+
+Use Cool::File::transactional_save() (or most likely Serialization::save(), AutoSerializer or JsonSerializer)
