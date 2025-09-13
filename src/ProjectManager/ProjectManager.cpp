@@ -8,6 +8,7 @@
 #include "CommandCore/execute_command.hpp"
 #include "Command_OpenProjectOnNextFrame.hpp"
 #include "Cool/CommandLineArgs/CommandLineArgs.h"
+#include "Cool/CrashDetection/CrashDetection.hpp"
 #include "Cool/File/File.h"
 #include "Cool/ImGui/ImGuiExtras.h"
 #include "Cool/ImGui/ImGuiExtrasStyle.h"
@@ -95,6 +96,24 @@ void ProjectManager::process_command_line_args(OnProjectLoaded const& on_project
     }
 }
 
+void ProjectManager::on_shutdown() const
+{
+    remove_crash_marker();
+}
+
+void ProjectManager::create_crash_marker_and_check_for_previous_crash()
+{
+    if (Cool::has_crashed(project_path()))
+        _safe_mode = true;
+    Cool::create_crash_marker(project_path());
+}
+
+void ProjectManager::remove_crash_marker() const
+{
+    if (!_safe_mode) // In safe mode we don't remove the crash marker, so that we know next time we open that we still need to be in safe mode
+        Cool::remove_crash_marker(project_path());
+}
+
 void ProjectManager::create_new_project(OnProjectLoaded const& on_project_loaded, SetWindowTitle const& set_window_title)
 {
     create_new_project_in_folder(Cool::Path::user_data() / "Projects", on_project_loaded, set_window_title);
@@ -118,6 +137,7 @@ void ProjectManager::create_new_project_in_file(std::filesystem::path file_path,
     file_path = Cool::File::find_available_path(file_path, Cool::PathChecks{});
     // Save immediately, so that no one will try to create another project with the same name, thinking the name is not in use
     std::ignore = save_project_impl(file_path, true /*must_absolutely_succeed*/, set_window_title);
+    create_crash_marker_and_check_for_previous_crash();
 }
 
 void ProjectManager::open_project(std::filesystem::path const& file_path, OnProjectLoaded const& on_project_loaded, OnProjectUnloaded const& on_project_unloaded, SetWindowTitle const& set_window_title)
@@ -138,6 +158,7 @@ void ProjectManager::open_project(std::filesystem::path const& file_path, OnProj
             return;
         }
         on_project_unloaded();
+        remove_crash_marker();
     }
 
     auto maybe_project = _impl.load(file_path);
@@ -160,6 +181,7 @@ void ProjectManager::open_project(std::filesystem::path const& file_path, OnProj
     _impl.set_project(std::move(maybe_project.value()), on_project_loaded);
     _impl.set_project_path(file_path, set_window_title);
     _impl.register_last_write_time(file_path);
+    create_crash_marker_and_check_for_previous_crash();
 }
 
 auto ProjectManager::autosave_project(bool must_absolutely_succeed, SetWindowTitle const& set_window_title) -> bool
@@ -392,10 +414,13 @@ auto ProjectManager::rename_project(std::string new_name, SetWindowTitle const& 
     if (!save_project_impl(_impl.project_path(new_name), false, set_window_title))
         return false;
 
+    Cool::create_crash_marker(project_path()); // "Rename" the crash marker (the old one is removed below)
+
     if (!_impl.file_contains_data_that_we_did_not_write_ourselves(old_path))
     {
         Cool::File::remove_file(old_path);
         _impl.remove_info_folder_for_the_launcher(old_path);
+        Cool::remove_crash_marker(old_path);
     }
 
     return true;

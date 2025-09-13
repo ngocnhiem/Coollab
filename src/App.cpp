@@ -13,6 +13,7 @@
 #include "Cool/ImGui/ImGuiExtras.h"
 #include "Cool/ImGui/ImGuiExtrasStyle.h"
 #include "Cool/ImGui/icon_fmt.h"
+#include "Cool/ImGui/markdown.h"
 #include "Cool/Image/SaveImage.h"
 #include "Cool/Input/CTRL_OR_CMD.hpp"
 #include "Cool/Log/message_console.hpp"
@@ -162,6 +163,7 @@ void App::on_shutdown()
     _tips_manager.on_app_shutdown();
     _is_shutting_down = true;
     DebugOptions::save();
+    _project_manager.on_shutdown();
 }
 
 void App::on_project_loaded()
@@ -276,6 +278,9 @@ static void imgui_window_console()
 
 void App::render(img::Size size, Cool::Time time, Cool::Time delta_time)
 {
+    if (_project_manager.is_in_safe_mode())
+        return;
+
     if (_last_time != time)
     {
         _last_time = time;
@@ -333,6 +338,16 @@ void App::imgui_window_cameras()
 
 void App::imgui_window_view()
 {
+    if (_project_manager.is_in_safe_mode())
+    {
+        ImGui::Begin(Cool::icon_fmt("Crash", ICOMOON_LIFEBUOY).c_str());
+        Cool::ImGuiExtras::warning_text("Safe Mode");
+        Cool::ImGuiExtras::markdown("Rendering is disabled because the project crashed last time. Undo your recent changes to the nodes patch, and once you think it shouldn't crash anymore press \"Go!\"");
+        if (ImGui::Button("Go!"))
+            _project_manager.exit_safe_mode();
+        ImGui::End();
+    }
+
     bool const view_in_fullscreen = project().exporter.is_exporting() || _wants_view_in_fullscreen;
     {
         if (!_view_was_in_fullscreen_last_frame && view_in_fullscreen)
