@@ -10,7 +10,7 @@ export default function ArgumentsCards() {
     <div className={style.cardContainer}>
       <div className={style.card} style={{ borderColor: "#8656D7" }}>
         <div className={style.cardImage}>
-          <Image src="/img/demo.png"></Image>
+          <Image src="/img/demo.png" noSmall></Image>
         </div>
         <p className={style.cardText}>
           DESIGNED TO BE <span style={{ color: "#8656D7" }}>SIMPLE</span> AND{" "}
@@ -19,7 +19,7 @@ export default function ArgumentsCards() {
       </div>
       <div className={style.card} style={{ borderColor: "#F4AD7F" }}>
         <div className={style.cardImage}>
-          <Image src="/img/vj.jpg"></Image>
+          <Image src="/img/vj.jpg" noSmall></Image>
         </div>
         <p className={style.cardText}>
           <span style={{ color: "#F4AD7F" }}>FREE</span> AND
@@ -29,7 +29,7 @@ export default function ArgumentsCards() {
       </div>
       <div className={style.card} style={{ borderColor: "#30A7F5" }}>
         <div className={style.cardImage}>
-          <Image src="/img/demo-horizontal.png"></Image>
+          <Image src="/img/demo-horizontal.png" noSmall></Image>
         </div>
         <p className={style.cardText}>
           {/* A powerful tool for <span style={{ color: "#30A7F5" }}>Vjing</span>{" "}

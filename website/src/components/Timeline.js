@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./Timeline.module.css"
-import Imagee from "./Image"
+import Image from "./Image"
 
 export default function () {
   return (
@@ -24,12 +24,11 @@ export default function () {
   )
 }
 // TODO(Website) maybe make the timeline centered? And the line goes under the images, centered too, and each text is above the image
-// TODO(Website) images should go fullscreen when clicked, so we can nicely read the nodes used in the "tutorial"
 // TODO(Website) find a way for the line to automatically start and stop on first and last bullets ? instead of just hardcoding a size
 
-function Image({ src, accentColor }) {
+function StepImage({ src, accentColor }) {
   return (
-    <Imagee
+    <Image
       src={src}
       alt={src}
       className={styles.image}
@@ -78,7 +77,7 @@ function Text({ children, accentColor }) {
 function Step({ img, accentColor, stepNumber, children }) {
   return (
     <>
-      <Image src={img} accentColor={accentColor} />
+      <StepImage src={img} accentColor={accentColor} />
       <Dot accentColor={accentColor} />
       <Number stepNumber={stepNumber} accentColor={accentColor} />
       <Text accentColor={accentColor}>{children}</Text>
