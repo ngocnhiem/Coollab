@@ -1,7 +1,8 @@
 # Changelog
 
-##
+## 1.6.0 Caching
 
+- ✨ Added a "Caching" node that can help the performance a lot in some cases (e.g. when putting it before a Chromatic Aberration, a Glow, or any other node that needs to sample its input several times, i.e. nodes that have a Quality / Count / Iterations parameter). What the Caching node does is render an image of everything that comes before it, and pass it to the next nodes. This can prevent recomputing complex nodes several times, but can also lead to some visual artifacts (i.e. a Translate would need information that is outside of the cached image and will not be able to get it)
 - ✨ We now detect if a project crashed and open it in "safe mode" which doesn't render anything to make sure it doesn't crash again. This allow you to undo the last changes you made to your patch to prevent it from crashing again
 - 🤏 After a "Save As", the notification that offers to switch project now closes immediately if you use it
 - 🤏 In the very rare event that a crash would occur in the middle of a save, we now make sure that your file will not get corrupted
