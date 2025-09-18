@@ -1,5 +1,9 @@
 # Changelog
 
+##
+
+- 🟦 Added a Seed parameter to "Film Grain"
+
 ## 1.6.1 Caching
 
 - 🐛 Fix crash when creating a new project
