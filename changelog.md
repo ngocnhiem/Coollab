@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.1 Caching
+
+- 🐛 Fix crash when creating a new project
+
 ## 1.6.0 Caching
 
 - ✨ Added a "Caching" node that can help the performance a lot in some cases (e.g. when putting it before a Chromatic Aberration, a Glow, or any other node that needs to sample its input several times, i.e. nodes that have a Quality / Count / Iterations parameter). What the Caching node does is render an image of everything that comes before it, and pass it to the next nodes. This can prevent recomputing complex nodes several times, but can also lead to some visual artifacts (i.e. a Translate would need information that is outside of the cached image and will not be able to get it)
