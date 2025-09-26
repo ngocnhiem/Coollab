@@ -12,6 +12,18 @@ function preloadImage(src) {
   img.src = src
 }
 
+function disableScrolling() {
+  const x = window.scrollX
+  const y = window.scrollY
+  window.onscroll = () => {
+    window.scrollTo(x, y)
+  }
+}
+
+function enableScrolling() {
+  window.onscroll = () => {}
+}
+
 export default function ({
   src,
   alt,
@@ -42,12 +54,28 @@ export default function ({
     }
   }, [isOpen])
 
+  useEffect(() => {
+    if (!isOpen) return
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") close()
+    }
+
+    document.addEventListener("keydown", handleKeyDown)
+    disableScrolling()
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown)
+      enableScrolling()
+    }
+  }, [isOpen])
+
   return (
     <>
       <img
         src={smallImageUrl}
         alt={alt}
-        style={{ cursor: "pointer", ...style }}
+        style={{ cursor: "zoom-in", ...style }}
         onClick={open}
         {...props}
       />
@@ -66,7 +94,7 @@ export default function ({
             justifyContent: "center",
             alignItems: "center",
             zIndex: 9999,
-            cursor: "pointer",
+            cursor: visible && "zoom-out",
             opacity: visible ? 1 : 0,
             transition: "opacity 0.3s ease",
           }}
