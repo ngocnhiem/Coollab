@@ -3,6 +3,7 @@
 ##
 
 - 🟦 Added a Seed parameter to "Film Grain"
+- 🐛 Since 1.6.0, trying to open a second instance of Coollab would crash. It is now again possible to open as many instances of Coollab as you want at the same time
 
 ## 1.6.1 Caching
 
