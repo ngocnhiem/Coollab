@@ -20,9 +20,9 @@ export default function () {
         <Card icon={<FaVideo />}>
           <b>Webcam</b> integration
         </Card>
-        <Card icon={<FaKeyboard />}>
+        {/* <Card icon={<FaKeyboard />}>
           <b>Particles</b>
-        </Card>
+        </Card> */}
         <Card
           icon={<FaExchangeAlt />}
           internalLink="/Tutorials/VJing#spout-out"
@@ -36,9 +36,9 @@ export default function () {
         <Card icon={<FaWifi />}>
           <b>OSC</b> support
         </Card>
-        <Card icon={<FaCode />} internalLink="/Tutorials/Writing Nodes/Intro">
+        {/* <Card icon={<FaCode />} internalLink="/Tutorials/Writing Nodes/Intro">
           Custom <b>GLSL</b> nodes
-        </Card>
+        </Card> */}
       </CardList>
     </div>
   )

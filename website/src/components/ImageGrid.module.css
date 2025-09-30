@@ -1,0 +1,36 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  /* make the wrapper size match the image */
+  width: 120px; /* or any default width */
+  height: 120px; /* adjust or use dynamic size if known */
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps aspect ratio */
+  transition: opacity 0.3s ease-in-out, transform 0.2s, z-index 0.2s,
+    border-radius 0.2s, border 0.2s;
+}
+/* .img:hover {
+  transform: scale(1.2);
+  z-index: 99;
+  border-radius: var(--radius-mid);
+  border: 2px solid;
+} */
+
+.fadeOut {
+  opacity: 0%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, max-content);
+  column-gap: 0;
+  row-gap: 0;
+}

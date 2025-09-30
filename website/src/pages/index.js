@@ -10,28 +10,83 @@ import Hero from "../components/Hero"
 import SocialsBigButtons from "../components/SocialsBigButtons"
 import SectionTitle from "../components/SectionTitle"
 import CenterH from "../components/CenterH"
+import ImageGrid from "../components/ImageGrid"
+import Image from "../components/Image"
 
 export default function Home() {
   return (
     <Layout title="" description="Node-based creation for everyone">
       <main>
         <Hero />
-        <Spacer height="5rem" />
-        <ArgumentsCards />
-        <Spacer height="5rem" />
-        <FeaturesList />
-        <Spacer height="5rem" />
-        <YoutubeVideo /* Trailer */ id="jsjkjCQCPno" />
+        {/* <Spacer height="5rem" />
+        <ArgumentsCards /> */}
         <Spacer height="5rem" />
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-            Unique and Powerful effects
+            Intuitive and Easy to learn
           </SectionTitle>
         </CenterH>
         <Spacer height="2.4rem"></Spacer>
         <CenterH>
           <Timeline />
         </CenterH>
+        {/*  */}
+        <Spacer height="5rem" />
+        <CenterH>
+          <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
+            Polished user experience, Modern UI
+          </SectionTitle>
+        </CenterH>
+        <CenterH>
+          We spend (way too much) time on fixing all the small bugs, and making
+          the experience as comfortable and intuitive as possible
+        </CenterH>
+        <Spacer height="2.4rem"></Spacer>
+        <CenterH>
+          {/* TODO(Website) should be another image, don't always show the same Chromatic Aberration trick */}
+          {/* TODO rounded corners */}
+          <Image
+            src="img/UI.png"
+            noSmall
+            style={{ width: "70%", borderRadius: "var(--radius-mid)" }}
+          ></Image>
+        </CenterH>
+        {/*  */}
+        <Spacer height="5rem" />
+        <CenterH>
+          <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
+            Tons of effects
+          </SectionTitle>
+        </CenterH>
+        <CenterH>
+          High-level presets or low-level tools, for you to combine
+        </CenterH>
+        <Spacer height="2.4rem"></Spacer>
+        <CenterH>
+          <ImageGrid />
+        </CenterH>
+        <CenterH>Particles, 3D, etc.</CenterH>
+        {/*  */}
+        <Spacer height="5rem" />{" "}
+        <CenterH>
+          <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
+            Create stunning animations{" "}
+            {/* TODO le texte est cool, mais donne l'impression que toutes les transitions After Effect du trailer ont été faites avec Coollab */}
+          </SectionTitle>
+        </CenterH>
+        <Spacer height="2.4rem"></Spacer>
+        <YoutubeVideo /* Trailer */ id="jsjkjCQCPno" />
+        {/*  */}
+        <Spacer height="5rem" />
+        <CenterH>
+          <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
+            Or live visuals
+          </SectionTitle>
+        </CenterH>
+        {/* <CenterH>Webcam, audio-reaction, midi, osc</CenterH> */}
+        <Spacer height="2.4rem"></Spacer>
+        <FeaturesList />
+        {/*  */}
         <Spacer height="5rem" />
         {/* <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
           Interactivity, Protocols
@@ -40,15 +95,44 @@ export default function Home() {
         OSC, Midi,Spout */}
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
+            Free and open-source
+          </SectionTitle>
+        </CenterH>
+        <Spacer height="2.4rem"></Spacer>
+        <CenterH>
+          {/* TODO(Website) should be another image, don't always show the same Chromatic Aberration trick */}
+          <Image /* TODO rounded corners */
+            src="img/team.jpg"
+            noSmall
+            style={{
+              width: "65%" /* "60%" */,
+              borderRadius: "var(--radius-mid)",
+            }}
+          ></Image>
+        </CenterH>
+        <CenterH>
+          <caption>
+            ⬆ This is a ✨<span class="gradient-text">HAPPY</span>✨ picture of
+            some of the contributors ⬆
+            {/* <br />
+            (none of them were forced I promise!) */}
+          </caption>
+        </CenterH>
+        <Spacer height="5rem" />
+        <CenterH>
+          <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Follow us
           </SectionTitle>
         </CenterH>
         <Spacer height="2.4rem"></Spacer>
         <SocialsBigButtons />
+        {/*  */}
         <Spacer height="5rem" />
         <GalleryPreview />
+        {/*  */}
         <Spacer height="5rem" />
         <YoutubeVideo /* What is Coollab? */ id="nkKj_MTBBRI" />
+        {/*  */}
         <Spacer height="5rem" />
       </main>
     </Layout>

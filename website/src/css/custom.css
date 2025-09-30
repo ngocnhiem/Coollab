@@ -52,6 +52,13 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+.gradient-text {
+  background: linear-gradient(90deg, #f4ad7f 0%, #8656d7 50%, #30a7f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
 
 html,
 body {

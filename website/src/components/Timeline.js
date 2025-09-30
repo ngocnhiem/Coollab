@@ -7,7 +7,7 @@ export default function () {
     <Timeline>
       <Step img="/img/tuto1.png">
         Start with a<br />
-        <b>Shape</b>
+        <b>Shape</b> or an <b>Image</b>
       </Step>
       <Step img="/img/tuto2.png">
         Add some
