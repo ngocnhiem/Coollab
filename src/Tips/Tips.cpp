@@ -10,7 +10,6 @@ auto all_tips() -> Cool::Tips
         "Our [Youtube tutorials](https://youtu.be/FK1sMPgcE4Q?list=PLuMMMaL5kN3mG6fSeSYTqC-sc_OTX3unQ) can help you get started with Coollab.",
         "You can copy your nodes (" CTRL_OR_CMD "+C) and send them as text to a friend, who can then paste them in their instance of Coollab (" CTRL_OR_CMD "+V). You can also paste them in another project of yours.",
         "You can change the color theme in the \" " ICOMOON_COG "Settings\" menu, and even create your own!",
-        "Right-click on a node to replace it with a new node of the same category.",
         "Use " CTRL_OR_CMD "+E to quickly export an image with the current export settings",
         "Use F in the \" " ICOMOON_TREE "Nodes\" window to focus the view on the nodes.",
         CTRL_OR_CMD "+click on a slider to input a value manually. (It also allows you to bypass the bounds of the slider!).",

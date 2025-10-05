@@ -1,5 +1,9 @@
 # Changelog
 
+##
+
+- 🤏 Added a dropdown to replace a node with another node of the same category (e.g. to easily switch between Blend Modes). And we removed this option from the context menu of the node
+
 ## 1.6.2 Caching
 
 - 🟦 Added a Seed parameter to "Film Grain"
