@@ -17,6 +17,7 @@
 .contributorAvatar {
   width: 80px;
   height: 80px;
+  flex-shrink: 0;
   border-radius: var(--radius-max);
   border: 1px solid var(--coollab-light-color);
   object-fit: cover;
