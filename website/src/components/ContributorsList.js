@@ -34,7 +34,6 @@ export default function ContributorsList({ category }) {
         )}
         ✨
       </CenterH>
-      {/* <b>⬇  ⬇</b> */}
       <div className={style.contributorsList}>
         <RandomizedList
           elements={filterByCategory([

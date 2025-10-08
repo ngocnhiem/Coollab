@@ -9,8 +9,8 @@ import ContributorsList from "@site/src/components/ContributorsList"
 
 ## UI / UX design
 
-I'm always happy to hear your opinion on things that need to change! I strongly care about UX and try to do my best, but having other peoples opinions always helps a lot!<Spacer height="8px"/>
-Also if you want to go more in-depth and design the upcoming features with me, please contact me! Right now we need to completely rework the Nodes Menu, and also prepare the Scenes system for Coollab 2.0 (including a Timeline and a Media Grid / Launchpad similar to Resolume)<Spacer height="8px"/>
+I'm always happy to hear your opinion on things that need to change! I strongly care about UX and try to do my best, but having other people's opinions always helps a lot!<Spacer height="8px"/>
+Also if you want to go more in-depth and design the upcoming features with me, please contact me! Right now we need to completely rework the Nodes Menu, and also prepare the Scenes system for Coollab 2.0 (including a Timeline and a Media Grid / Launchpad similar to Resolume).<Spacer height="8px"/>
 You can also take the "**🐱‍🏍 Give your opinion**" role with the buttons [in this Discord channel](https://discord.gg/AyezAvg9y8) if you want to be pinged when I explicitly need your opinion on some specific question.<Spacer height="8px"/>
 Please contact us on [Discord](https://discord.gg/p8DGTZQnmW) or [GitHub](https://github.com/Coollab-Art/Coollab/issues/new)!
 
@@ -25,8 +25,8 @@ Please contact us on [Discord](https://discord.gg/p8DGTZQnmW) or [GitHub](https:
 </span>
 
 It's always good to have illustrations to make parts of the UI prettier and friendlier! We currently need one for the recovery screen after a crash, and in an upcoming future we will need some for the thumbnails of some nodes, and for the scene-creation menu in Coollab 2.0<Spacer height="8px"/>
-It would also be nice to design a mascot that we could reuse in all our illustrations! I had this idea to just take the Coollab logo, and give it small arms and legs and cute eyes, but let's discuss it together!<Spacer height="8px"/>
-If you would be interested in helping (now or maybe in the future), let's discuss this on [Discord](https://discord.gg/p8DGTZQnmW) or [GitHub](https://github.com/Coollab-Art/Coollab/issues/new)
+It would also be nice to design a mascot that we could reuse in all our illustrations! I had this idea to take the Coollab logo and give it small arms and legs and cute eyes, but let's discuss this together!<Spacer height="8px"/>
+If you would be interested in helping (now or maybe in the future), let's discuss this on [Discord](https://discord.gg/p8DGTZQnmW) or [GitHub](https://github.com/Coollab-Art/Coollab/issues/new)!
 
 </TextBlock>
 

@@ -32,7 +32,7 @@ If you don't mind also sharing the project file, this is very cool to serve as e
 
 ## Take pictures
 
-If you make an event using Coollab, take pictures and share them with us! We could definitely use some more footage to showcase Cooollab used in a live environment. On [Discord](https://discord.gg/SBS4fEPHbm) or on [GitHub](https://github.com/Coollab-Art/Coollab/issues/new).
+If you make an event using Coollab, take pictures and share them with us! We could definitely use some more footage to showcase Coollab used in a live environment. On [Discord](https://discord.gg/SBS4fEPHbm) or on [GitHub](https://github.com/Coollab-Art/Coollab/issues/new).
 
 </TextBlock>
 
@@ -55,7 +55,8 @@ Videos are cool, but you can also write a text-based tutorial if you prefer that
 ## Organize workshops
 
 Please feel free to invite me, I love to give workshops to teach Coollab! This is always so nice to have an opportunity to travel and meet new people! ✨<Spacer height="8px"/>
-Or if you know of a space around Paris that would be willing to host some form of a regular meetup, that would be amazing!
+Or if you know of a space around Paris that would be willing to host some form of a regular meetup, that would be amazing!<Spacer height="8px"/>
+Contact us on [Discord](https://discord.gg/p8DGTZQnmW) or [GitHub](https://github.com/Coollab-Art/Coollab/issues/new)!
 
 </TextBlock>
 
