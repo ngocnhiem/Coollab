@@ -186,7 +186,7 @@ To get its classes, inspect or check Docusaurus Documentation.*/
   width: 34px;
   height: 34px;
   border-radius: var(--radius-max);
-  border: 2px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: white;
   background: rgba(255, 255, 255, 0.06);
   display: inline-flex;
@@ -262,12 +262,12 @@ aside {
 
 .pagination-nav__link {
   border-radius: var(--radius-mid);
-  border: 2px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   transition: 0.2s ease-in;
 }
 
 .pagination-nav__link:hover {
-  border: 2px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   background-color: rgba(255, 255, 255, 0.14);
 }
 
@@ -405,7 +405,7 @@ aside {
     width: 40px;
     height: 40px;
     border-radius: var(--radius-max);
-    border: 2px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     background: rgba(255, 255, 255, 0.08);
     color: white;
   }

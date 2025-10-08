@@ -21,7 +21,7 @@
   transform: scale(1.2);
   z-index: 99;
   border-radius: var(--radius-mid);
-  border: 2px solid;
+  border: 1px solid;
 } */
 
 .fadeOut {

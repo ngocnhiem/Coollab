@@ -124,7 +124,7 @@
   max-width: min(90vw, 1400px);
   max-height: 90vh;
   border-radius: var(--radius-max);
-  border: 2px solid var(--coollab-light-color);
+  border: 1px solid var(--coollab-light-color);
 }
 
 .animateScaleUp {
