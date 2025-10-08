@@ -6,12 +6,6 @@ function appendSmall(path) {
   return path.slice(0, dotIndex) + " small" + path.slice(dotIndex)
 }
 
-function preloadImage(src) {
-  const img = new Image()
-  img.loading = "lazy"
-  img.src = src
-}
-
 function disableScrolling() {
   const x = window.scrollX
   const y = window.scrollY
@@ -37,7 +31,12 @@ export default function ({
   const smallImageUrl = noSmall ? src : appendSmall(src)
   const bigImageUrl = src
 
-  preloadImage(bigImageUrl)
+  // Preload image
+  useEffect(() => {
+    const img = new Image()
+    img.loading = "lazy"
+    img.src = bigImageUrl
+  }, [bigImageUrl])
 
   const open = () => setIsOpen(true)
 
