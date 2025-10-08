@@ -85,6 +85,7 @@ export default function Footer() {
             © {year} Coollab. Built with{" "}
             <LinkExternal to="https://docusaurus.io/">Docusaurus</LinkExternal>
           </p>
+          <a href="https://storyset.com/work">Work illustrations by Storyset</a>
         </div>
       </div>
     </footer>

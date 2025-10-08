@@ -4,65 +4,58 @@ import {
   FaBullhorn,
   FaCommentDots,
   FaBug,
+  FaHandSparkles,
   FaUserSecret,
   FaPaintBrush,
-  FaChalkboardTeacher,
+  FaPalette,
   FaCodeBranch,
   FaCode,
+  FaImage,
+  FaImages,
+  FaFileAlt,
+  FaLightbulb,
   FaDonate,
 } from "react-icons/fa"
 
+// TODO(Website) rename this component. Or merge it into the Contribute page? but its a markdown page
+
 export default function () {
   return (
-    <CardList /* compactCards */ centered>
-      <Card icon={<FaBullhorn />} internalLink="/">
-        Tell your friends about <b>Coollab</b>!
+    // TODO(Website) Cleanup wording and icons
+    // TODO(Website) Maybe the wording should just be the name of the category ? "Feedback", "Donations" etc ? ButI like the "Consider donating? Or buy merch!"
+    <CardList centered>
+      <Card icon={<FaLightbulb />} internalLink="/Contribute/Feedback">
+        Feedback
       </Card>
-      <Card
-        icon={<FaCommentDots />}
-        externalLink="https://github.com/Coollab-Art/Coollab/issues/new?labels=enhancement"
-      >
-        Share your <b>feedback</b> and <b>ideas</b>.
+      <Card icon={<FaBullhorn />} internalLink="/Contribute/Outreach">
+        Outreach
       </Card>
-      <Card
-        icon={<FaBug />}
-        externalLink="https://github.com/Coollab-Art/Coollab/issues/new?labels=bug"
-      >
-        Report <b>bugs</b> you encounter.
+      <Card icon={<FaFileAlt />} internalLink="/Contribute/Code">
+        Code
       </Card>
-      <Card icon={<FaUserSecret />}>
-        Help us <b>beta-test</b> new features.
+      <Card icon={<FaImages />} internalLink="/Contribute/Design">
+        Design{/* : graphics, UI, UX, illustrations, etc.! */}
       </Card>
-      <Card icon={<FaCommentDots />}>
-        Give your <b>opinion</b> on design questions.
-      </Card>
-      <Card icon={<FaChalkboardTeacher />}>
-        Make <b>tutorials</b> or <b>quick tip</b> videos.
-      </Card>
-      <Card
-        icon={<FaCodeBranch />}
-        internalLink="/Tutorials/Writing%20Nodes/Intro"
-      >
-        Write and share your own <b>nodes</b>.
-      </Card>
-      <Card
-        icon={<FaPaintBrush />}
-        externalLink="https://www.instagram.com/coollab_art/"
-      >
-        Share your <b>artworks</b> made with Coollab!
-      </Card>
-      <Card
-        icon={<FaCode />}
-        externalLink="https://github.com/Coollab-Art/Coollab/issues?q=label%3A%22good+first+issue%22"
-      >
-        Contribute to Coollab's <b>codebase</b>.
-      </Card>
-      <Card
-        icon={<FaDonate />}
-        externalLink="https://www.etsy.com/shop/CoollabArt"
-      >
-        <b>Support</b> us financially or buy <b>T-shirts</b>.
+      <Card icon={<FaDonate />} internalLink="/Contribute/Donations">
+        Consider donating? Or buy merch!
       </Card>
     </CardList>
+    //     <CardList compactCards centered>
+    //   <Card icon={<FaLightbulb />} internalLink="/Contribute/Feedback">
+    //     Give us feedback!
+    //   </Card>
+    //   <Card icon={<FaBullhorn />} internalLink="/Contribute/Outreach">
+    //     Share your Coollab projects!
+    //   </Card>
+    //   <Card icon={<FaFileAlt />} internalLink="/Contribute/Code">
+    //     Write GLSL or C++ code!
+    //   </Card>
+    //   <Card icon={<FaImages />} internalLink="/Contribute/Design">
+    //     Design{/* : graphics, UI, UX, illustrations, etc.! */}
+    //   </Card>
+    //   <Card icon={<FaDonate />} internalLink="/Contribute/Donations">
+    //     Consider donating? Or buy merch!
+    //   </Card>
+    // </CardList>
   )
 }
