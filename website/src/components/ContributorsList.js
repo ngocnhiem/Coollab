@@ -15,8 +15,6 @@ export default function ContributorsList({ category }) {
     )
   }
 
-  //   TODO(Website) if flickrs when put in a markdown file, but not in js file. (Maybe just use a seed to make sure its the same order in both renders?)
-
   return (
     <>
       <CenterH>
@@ -158,10 +156,9 @@ export default function ContributorsList({ category }) {
               categories={["Code", "Design"]}
             />,
             <Contributor
-              // TODO(Website) fix her logo, don't force to use github for the logo
               name="Amandine Kohlmuller"
-              github_name="akohlmul"
-              link="https://www.instagram.com/idnamaa/"
+              pictureSrc="/img/amandine.png"
+              link="https://idnamaa.fun"
               roles={[
                 "UI / UX Designer",
                 "Helped with Web Design",

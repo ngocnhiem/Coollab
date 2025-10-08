@@ -2,13 +2,15 @@ import React from "react"
 import style from "./Contributor.module.css"
 import LinkExternal from "./LinkExternal"
 
-export default function ({ name, github_name, link, roles }) {
+export default function ({ name, pictureSrc, github_name, link, roles }) {
   return (
     <LinkExternal to={link}>
       <div className={style.contributorCard}>
         <img
           className={style.contributorAvatar}
-          src={`https://avatars.githubusercontent.com/${github_name}`}
+          src={
+            pictureSrc || `https://avatars.githubusercontent.com/${github_name}`
+          }
           alt={name}
         />
         <div>

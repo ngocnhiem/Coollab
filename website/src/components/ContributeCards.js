@@ -21,8 +21,6 @@ import {
 
 export default function () {
   return (
-    // TODO(Website) Cleanup wording and icons
-    // TODO(Website) Maybe the wording should just be the name of the category ? "Feedback", "Donations" etc ? ButI like the "Consider donating? Or buy merch!"
     <CardList centered>
       <Card icon={<FaLightbulb />} internalLink="/Contribute/Feedback">
         Feedback
