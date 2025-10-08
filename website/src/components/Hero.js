@@ -10,7 +10,7 @@ export default function () {
           <h1 className={style.heroTitle}>COOLLAB</h1>
           <p className={style.heroSubtitle}>
             Node-based creation for everyone
-            {/* TODO find a way to put these key words somewhere on the site for SEO */}
+            {/* TODO(Website) find a way to put these key words somewhere on the site for SEO */}
             {/* <br />
             VJs, Coders, Artists, and the like */}
           </p>

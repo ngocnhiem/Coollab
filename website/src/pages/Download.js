@@ -4,6 +4,8 @@ import Layout from "@theme/Layout"
 import DownloadButtons from "../components/DownloadButtons"
 import SectionTitle from "../components/SectionTitle"
 import Spacer from "../components/Spacer"
+import DonateButton from "../components/DonateButton"
+import JoinDiscordButton from "../components/JoinDiscordButton"
 
 export default function DownloadPage() {
   return (
@@ -24,6 +26,12 @@ export default function DownloadPage() {
           </SectionTitle>
           <Spacer height="2.4rem" />
           <DownloadButtons />
+          <Spacer height="0.8rem" />
+          <div style={{ width: "fit-content" }}>
+            <DonateButton />
+            <Spacer height="1.2rem" />
+            <JoinDiscordButton />
+          </div>
         </main>
       </div>
     </Layout>

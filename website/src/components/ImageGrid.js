@@ -59,6 +59,7 @@ function SwitchingImage({ images }) {
   )
 }
 
+// TODO needs to be a bit bigger (match the size of the images on the main page)
 // TODO give black background to transparent images
 // TODO make sure no two same images show up at the same time on a row
 // TODO preload images
