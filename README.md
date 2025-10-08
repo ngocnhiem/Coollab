@@ -4,7 +4,7 @@
 
 **Coollab is a node-based software to create visual effects and generative-art, designed to be simple and intuitive.**
 
-[Download it from our website!](https://coollab-art.com/) (*__Not__ from this GitHub's release page*[^1])
+[Download it from our website!](https://coollab-art.com/) (*__NOT__ from this GitHub's release page*[^1])
 
 [^1]: **NB:** You should use the launcher that you can download from [our website](https://coollab-art.com/Download) (or from the [launcher's GitHub](https://github.com/Coollab-Art/Launcher/releases/latest)). The launcher will then take care of installing the latest versions of Coollab as they get released. Downloading Coollab versions directly from GitHub works (provided you ignore the experimental pre-release ones), but you will not get updates automatically. The launcher also provides a list of recent projects, knows which version to use for which project, automatically upgrades a project to a newer version of Coollab if they are compatible, etc.
 
@@ -16,36 +16,8 @@ Coollab can be used for VJing, exporting videos, creating interactive installati
 
 ## Contributions
 
-Coollab is made possible by the work of all these lovely people.
-If you wanna be part of us, check out the [many vvarious ways you could contriibute](TODO), and then get in touch with us:
+Coollab is made possible by the work of all these lovely people:
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<a href="https://coollab-art.com/Contribute"><img width="1134" height="901" alt="image" src="https://github.com/user-attachments/assets/5f118447-9ab6-4bfd-b56d-2028e5746b93" /></a>
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://julesfouchy.github.io/"><img src="https://avatars.githubusercontent.com/u/45451201?v=4?s=100" width="100px;" alt="Jules Fouchy"/><br /><sub><b>Jules Fouchy</b></sub></a><br /><a href="https://github.com/Coollab-Art/Coollab/commits?author=JulesFouchy" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/TaliaKah"><img src="https://avatars.githubusercontent.com/u/77100260?v=4?s=100" width="100px;" alt="taliakah"/><br /><sub><b>taliakah</b></sub></a><br /><a href="https://github.com/Coollab-Art/Coollab/commits?author=TaliaKah" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MeucheRoume"><img src="https://avatars.githubusercontent.com/u/77018137?v=4?s=100" width="100px;" alt="MeucheRoume"/><br /><sub><b>MeucheRoume</b></sub></a><br /><a href="https://github.com/Coollab-Art/Coollab/commits?author=MeucheRoume" title="Code">💻</a></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td align="center" size="13px" colspan="7">
-        <img src="https://raw.githubusercontent.com/all-contributors/all-contributors-cli/1b8533af435da9854653492b1327a23a4dbd0a10/assets/logo-small.svg">
-          <a href="https://all-contributors.js.org/docs/en/bot/usage">Add your contributions</a>
-        </img>
-      </td>
-    </tr>
-  </tfoot>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+If you would like to give a hand too, check out the [many ways you could contribute](https://coollab-art.com/Contribute)!
