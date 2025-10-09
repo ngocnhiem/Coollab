@@ -83,7 +83,7 @@ export default function ContributorsList({ category }) {
               link="https://taliakah.gitlab.io/portfolio/"
               roles={[
                 "Programmer (Color Ramp)",
-                "Beta-Tester",
+                "Beta-tester",
                 "VJ",
                 "Outreach",
                 "Donation",
@@ -122,7 +122,12 @@ export default function ContributorsList({ category }) {
               name="Wendy Gervais"
               github_name="kaugrv"
               link="https://linktr.ee/commandant.grant"
-              roles={["Programmer (2D Nodes)", "1st Trailer", "Demo projects"]}
+              roles={[
+                "Programmer (2D Nodes)",
+                "1st Trailer",
+                "Demo projects",
+                "Beta-tester",
+              ]}
               categories={["Code", "Feedback", "Design"]}
             />,
             <Contributor
@@ -212,7 +217,7 @@ export default function ContributorsList({ category }) {
               name="Thomas Garnier"
               github_name="TotoShampoin"
               link="https://github.com/TotoShampoin"
-              roles={["Programmer (Particles)"]}
+              roles={["Programmer (Particles)", "Feedback"]}
               categories={["Code", "Feedback"]}
             />,
             <Contributor
@@ -277,6 +282,19 @@ export default function ContributorsList({ category }) {
               link="https://github.com/AnassDoublal"
               roles={["Programmer (Launcher improvements)"]}
               categories={["Code"]}
+            />,
+            <Contributor
+              name="Jari"
+              pictureSrc="https://cdn.discordapp.com/avatars/1004260219058131024/72163e0366d6d0400e3ca8615157e02e?size=256"
+              roles={["Sharing projects", "Feedback"]}
+              categories={["Feedback"]}
+            />,
+            <Contributor
+              name="SpeeQz1"
+              pictureSrc="https://cdn.discordapp.com/avatars/880825377033973780/181ffb92ae6acdf04b56abfff142fa6d?size=256"
+              link="https://github.com/SpeeQz1"
+              roles={["Feedback", "Interesting design discussions"]}
+              categories={["Feedback"]}
             />,
           ])}
         />

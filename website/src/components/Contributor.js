@@ -3,21 +3,20 @@ import style from "./Contributor.module.css"
 import LinkExternal from "./LinkExternal"
 
 export default function ({ name, pictureSrc, github_name, link, roles }) {
-  return (
-    <LinkExternal to={link}>
-      <div className={style.contributorCard}>
-        <img
-          className={style.contributorAvatar}
-          src={
-            pictureSrc || `https://avatars.githubusercontent.com/${github_name}`
-          }
-          alt={name}
-        />
-        <div>
-          <div className={style.contributorName}>{name}</div>
-          <div className={style.contributorRoles}>{roles.join(", ")}</div>
-        </div>
+  const content = (
+    <div className={style.contributorCard}>
+      <img
+        className={style.contributorAvatar}
+        src={
+          pictureSrc || `https://avatars.githubusercontent.com/${github_name}`
+        }
+        alt={name}
+      />
+      <div>
+        <div className={style.contributorName}>{name}</div>
+        <div className={style.contributorRoles}>{roles.join(", ")}</div>
       </div>
-    </LinkExternal>
+    </div>
   )
+  return link ? <LinkExternal to={link}>{content}</LinkExternal> : content
 }
