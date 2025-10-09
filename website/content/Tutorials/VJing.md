@@ -4,7 +4,6 @@
 
 - global time speed
 - audio
-- midi
 
 ## Output window to show on a second screen
 
