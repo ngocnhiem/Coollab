@@ -1,8 +1,10 @@
 # Changelog
 
-##
+## 1.6.3 Caching
 
-- 🤏 Added a dropdown to replace a node with another node of the same category (e.g. to easily switch between Blend Modes). And we removed this option from the context menu of the node
+- 🤏 Added a dropdown in the Inspector to replace a node with another node of the same category (e.g. to easily switch between Blend Modes). And we removed this option from the context menu of the node.
+**NB:** You can also scroll on the dropdown to switch between the options!
+![](https://github.com/user-attachments/assets/eb785090-c211-471c-b84d-c09dd712649d)
 
 ## 1.6.2 Caching
 
