@@ -26,7 +26,7 @@ export default function Home() {
             Intuitive and Easy to learn
           </SectionTitle>
         </CenterH>
-        <Spacer height="2.4rem"></Spacer>
+        <Spacer height="2.4rem" />
         <CenterH>
           <Timeline />
         </CenterH>
@@ -41,12 +41,11 @@ export default function Home() {
           We spend (way too much) time on fixing all the small bugs, and making
           the experience as comfortable and intuitive as possible
         </CenterH>
-        <Spacer height="2.4rem"></Spacer>
+        <Spacer height="2.4rem" />
         <CenterH>
           {/* TODO(Website) should be another image, don't always show the same Chromatic Aberration trick */}
-          {/* TODO rounded corners */}
           <Image
-            src="img/UI.png"
+            src="img/demo3.png"
             noSmall
             style={{ width: "70%", borderRadius: "var(--radius-mid)" }}
           ></Image>
@@ -61,7 +60,7 @@ export default function Home() {
         <CenterH>
           High-level presets or low-level tools, for you to combine
         </CenterH>
-        <Spacer height="2.4rem"></Spacer>
+        <Spacer height="2.4rem" />
         <CenterH>
           <ImageGrid />
         </CenterH>
@@ -84,24 +83,23 @@ export default function Home() {
           </SectionTitle>
         </CenterH>
         {/* <CenterH>Webcam, audio-reaction, midi, osc</CenterH> */}
-        <Spacer height="2.4rem"></Spacer>
+        <Spacer height="2.4rem" />
         <FeaturesList />
         {/*  */}
         <Spacer height="5rem" />
         {/* <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
           Interactivity, Protocols
         </SectionTitle>
-        <Spacer height="2.4rem"></Spacer>
+        <Spacer height="2.4rem"/>
         OSC, Midi,Spout */}
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Free and open-source
           </SectionTitle>
         </CenterH>
-        <Spacer height="2.4rem"></Spacer>
+        <Spacer height="2.4rem" />
         <CenterH>
-          {/* TODO(Website) should be another image, don't always show the same Chromatic Aberration trick */}
-          <Image /* TODO rounded corners */
+          <Image
             src="img/team.jpg"
             noSmall
             style={{
@@ -114,8 +112,6 @@ export default function Home() {
           <caption>
             ⬆ This is a ✨<span class="gradient-text">HAPPY</span>✨ picture of
             some of the contributors ⬆
-            {/* <br />
-            (none of them were forced I promise!) */}
           </caption>
         </CenterH>
         <Spacer height="5rem" />
@@ -124,10 +120,12 @@ export default function Home() {
             Follow us
           </SectionTitle>
         </CenterH>
-        <Spacer height="2.4rem"></Spacer>
+        <Spacer height="2.4rem" />
         <SocialsBigButtons />
         {/*  */}
         <Spacer height="5rem" />
+        {/* TODO(Website) showing only 3D images is bad because this is not our focus */}
+        {/* Maybe do a section "Focused on 2D, but with some 3D effects?" */}
         <GalleryPreview />
         {/*  */}
         <Spacer height="5rem" />
