@@ -80,7 +80,7 @@ export default function ContributorsList({ category }) {
             <Contributor
               name="Anaïs Sarata Gougne"
               github_name="TaliaKah"
-              link="https://taliakah.gitlab.io/portfolio/"
+              link="https://linktr.ee/taliakah"
               roles={[
                 "Programmer (Color Ramp)",
                 "Beta-tester",
