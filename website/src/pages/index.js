@@ -62,9 +62,13 @@ export default function Home() {
         </CenterH>
         <Spacer height="2.4rem" />
         <CenterH>
-          <ImageGrid />
+          <ImageGrid
+            style={{
+              width: "70%",
+              borderRadius: "var(--radius-mid)",
+            }}
+          />
         </CenterH>
-        <CenterH>Particles, 3D, etc.</CenterH>
         {/*  */}
         <Spacer height="5rem" />{" "}
         <CenterH>

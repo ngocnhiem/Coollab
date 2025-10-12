@@ -1,116 +1,112 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styles from "./ImageGrid.module.css"
 
-const loadImages = (req) => req.keys().map((key) => req(key).default)
+const extractImage = (images) => {
+  const image = images[0]
+  images.splice(0, 1)
+  return image
+}
 
-let shape2DImages = loadImages(
-  require.context("./ImageGrid/Shape 2D", false, /\.png$/)
-)
-let shape3DImages = loadImages(
-  require.context("./ImageGrid/Shape 3D", false, /\.png$/)
-)
-let modifierImages = loadImages(
-  require.context("./ImageGrid/2D Transform", false, /\.png$/)
-)
-let postProcessImages = loadImages(
-  require.context("./ImageGrid/Post-Process", false, /\.png$/)
-)
+function SwitchingImage({ images, initialImage }) {
+  const [currentImage, setCurrentImage] = useState(initialImage)
+  const [previousImage, setPreviousImage] = useState(null)
 
-// TODO name of the effect under the image
+  const switchImage = () => {
+    if (images.length === 0) return
 
-function SwitchingImage({ images }) {
-  const [currentIdx, setCurrentIdx] = useState(
-    Math.floor(Math.random() * images.length)
-  )
-  const [prevIdx, setPrevIdx] = useState(null)
+    const newImage = extractImage(images)
+    if (currentImage !== null) {
+      images.push(currentImage) // Must put back after extracting, to make sure we don't extract what we have just put back
+    }
 
-  const handleClick = () => {
-    if (images.length < 2) return
+    setPreviousImage(currentImage)
+    setCurrentImage(newImage)
 
-    let next
-    do {
-      next = Math.floor(Math.random() * images.length)
-    } while (next === currentIdx)
-
-    setPrevIdx(currentIdx)
-    setCurrentIdx(next)
-
-    // cleanup previous image after fade duration
-    setTimeout(() => setPrevIdx(null), 300)
+    // Cleanup previous image after fade duration
+    setTimeout(() => setPreviousImage(null), 300)
   }
 
   return (
-    <div className={styles.wrapper} /* onClick */ onMouseEnter={handleClick}>
-      {prevIdx !== null && (
+    <div
+      className={styles.wrapper}
+      onMouseEnter={switchImage}
+      onClick={switchImage}
+    >
+      {previousImage && (
         <img
-          key={currentIdx}
-          src={images[currentIdx]}
+          key={currentImage}
+          src={currentImage}
           alt=""
           className={`${styles.img}`}
         />
       )}
       <img
-        key={prevIdx !== null ? prevIdx : currentIdx}
-        src={images[prevIdx !== null ? prevIdx : currentIdx]}
+        key={previousImage || currentImage}
+        src={previousImage || currentImage}
         alt=""
-        className={`${styles.img} ${prevIdx !== null && styles.fadeOut}`}
+        className={`${styles.img} ${previousImage && styles.fadeOut}`}
       />
     </div>
   )
 }
 
-// TODO needs to be a bit bigger (match the size of the images on the main page)
-// TODO give black background to transparent images
-// TODO make sure no two same images show up at the same time on a row
-// TODO preload images
-// TODO show name of effect
-// TODO shape 3D with the same color ramp as shape 2D?
-// Images 2D transform avec une grille un peu plus grosse?
-// TODO also switch image on click, for the mobile version where we can't hover
-
-export default function () {
+function Row({ images }) {
+  const initialImages = []
+  for (let i = 0; i < 7; ++i) {
+    initialImages.push(extractImage(images))
+  }
   return (
-    <div className={styles.grid}>
-      {/* Row 1 */}
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      {/* Row 2 */}
-      <SwitchingImage images={shape3DImages} />
-      <SwitchingImage images={shape3DImages} />
-      <SwitchingImage images={shape3DImages} />
-      <SwitchingImage images={shape3DImages} />
-      <SwitchingImage images={shape3DImages} />
-      <SwitchingImage images={shape3DImages} />
-      <SwitchingImage images={shape3DImages} />
-      {/* Row 4 */}
-      <SwitchingImage images={postProcessImages} />
-      <SwitchingImage images={postProcessImages} />
-      <SwitchingImage images={postProcessImages} />
-      <SwitchingImage images={postProcessImages} />
-      <SwitchingImage images={postProcessImages} />
-      <SwitchingImage images={postProcessImages} />
-      <SwitchingImage images={postProcessImages} />
-      {/* Row 3 */}
-      <SwitchingImage images={modifierImages} />
-      <SwitchingImage images={modifierImages} />
-      <SwitchingImage images={modifierImages} />
-      <SwitchingImage images={modifierImages} />
-      <SwitchingImage images={modifierImages} />
-      <SwitchingImage images={modifierImages} />
-      <SwitchingImage images={modifierImages} />
-      {/* Row 5 */}
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
-      <SwitchingImage images={shape2DImages} />
+    <>
+      {initialImages.map((initialImage) => (
+        <SwitchingImage images={images} initialImage={initialImage} />
+      ))}
+    </>
+  )
+}
+
+export default function ({ style }) {
+  const loadImages = (req) => {
+    const shuffle = (array) => {
+      return array
+        .map((a) => [Math.random(), a])
+        .sort((a, b) => a[0] - b[0])
+        .map((a) => a[1])
+    }
+    return shuffle(req.keys().map((key) => req(key).default))
+  }
+
+  const images = {
+    shape2D: loadImages(
+      require.context("./ImageGrid/Shape 2D", false, /\.png$/)
+    ),
+    shape3D: loadImages(
+      require.context("./ImageGrid/Shape 3D", false, /\.png$/)
+    ),
+    modifier: loadImages(
+      require.context("./ImageGrid/2D Transform", false, /\.png$/)
+    ),
+    postProcess: loadImages(
+      require.context("./ImageGrid/Post-Process", false, /\.png$/)
+    ),
+  }
+
+  // Preload images
+  useEffect(() => {
+    for (let category of Object.values(images)) {
+      for (let image of category) {
+        const img = new Image()
+        img.loading = "lazy"
+        img.src = image
+      }
+    }
+  }, [images])
+
+  return (
+    <div className={styles.grid} style={style}>
+      <Row images={images.shape2D} />
+      <Row images={images.postProcess} />
+      <Row images={images.modifier} />
+      <Row images={images.shape3D} />
     </div>
   )
 }
