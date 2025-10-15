@@ -171,7 +171,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "Tutorials/Discovery/Intro",
+            docId: "Tutorials/Getting Started/Intro",
             position: "left",
             label: "Tutorials",
           },
