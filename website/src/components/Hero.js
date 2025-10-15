@@ -9,7 +9,7 @@ export default function () {
         <div className={style.heroContent}>
           <h1 className={style.heroTitle}>COOLLAB</h1>
           <p className={style.heroSubtitle}>
-            Node-based creation for everyone
+            Generative visuals for everyone
             {/* TODO(Website) find a way to put these key words somewhere on the site for SEO */}
             {/* <br />
             VJs, Coders, Artists, and the like */}

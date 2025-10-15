@@ -14,7 +14,7 @@ import Image from "../components/Image"
 
 export default function Home() {
   return (
-    <Layout title="" description="Node-based creation for everyone">
+    <Layout title="" description="Generative visuals for everyone">
       <main>
         <Hero />
         {/* <Spacer height="5rem" />
