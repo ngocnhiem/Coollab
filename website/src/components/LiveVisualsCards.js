@@ -52,7 +52,7 @@ function CardsContainer({ children }) {
 export default function () {
   return (
     <CardsContainer>
-      <Card image="/img/webcam2.jpg" linkInternal="/Tutorials/VJ/Audio">
+      <Card image="/img/audio.jpg" linkInternal="/Tutorials/VJ/Audio">
         <b>AUDIO</b>-reactive
       </Card>
       {/* TODO(Website) nicer / cleaner image of Within the Signal? */}
