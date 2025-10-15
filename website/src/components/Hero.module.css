@@ -46,7 +46,7 @@
   background-size: cover;
   background-position: center;
   /* filter: blur(3px); */
-  transform: scale(1.05);
+  transform: scale(1.05) translateX(-2%) translateY(-2.2%);
   z-index: 0;
 }
 
@@ -67,6 +67,7 @@
   font-size: 7.5rem;
   font-weight: bold;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .heroSubtitle {

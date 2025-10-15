@@ -7,7 +7,7 @@ export default function () {
       <div className={style.heroBackground}></div>
       <div className={style.heroContent2}>
         <div className={style.heroContent}>
-          <h1 className={style.heroTitle}>COOLLAB</h1>
+          <h1 className={style.heroTitle}>Coollab</h1>
           <p className={style.heroSubtitle}>
             Generative visuals for everyone
             {/* TODO(Website) find a way to put these key words somewhere on the site for SEO */}
