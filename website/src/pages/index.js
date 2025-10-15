@@ -77,7 +77,17 @@ export default function Home() {
           </SectionTitle>
         </CenterH>
         <Spacer height="2.4rem"></Spacer>
+        <CenterH>
+          <div
+            style={{
+              width: "70%",
+              borderRadius: "var(--radius-mid)",
+              overflow: "hidden",
+            }}
+          >
         <YoutubeVideo /* Trailer */ id="jsjkjCQCPno" />
+          </div>
+        </CenterH>
         {/*  */}
         <Spacer height="5rem" />
         <CenterH>
@@ -131,8 +141,18 @@ export default function Home() {
         {/* Maybe do a section "Focused on 2D, but with some 3D effects?" */}
         <GalleryPreview />
         {/*  */}
-        <Spacer height="5rem" />
+        <Spacer height="5rem" />{" "}
+        <CenterH>
+          <div
+            style={{
+              width: "70%",
+              borderRadius: "var(--radius-mid)",
+              overflow: "hidden",
+            }}
+          >
         <YoutubeVideo /* What is Coollab? */ id="nkKj_MTBBRI" />
+          </div>
+        </CenterH>
         {/*  */}
         <Spacer height="5rem" />
       </main>
