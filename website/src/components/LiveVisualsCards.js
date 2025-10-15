@@ -1,5 +1,5 @@
 import React from "react"
-import style from "./ArgumentsCards.module.css"
+import style from "./LiveVisualsCards.module.css"
 import Image from "./Image"
 
 function Card({ image, color, children }) {
@@ -38,7 +38,6 @@ function CardsContainer({ children }) {
   )
 }
 
-// TODO(Website) rename as "LiveVisualsCards"
 // TODO(Website) maybe make these cards a bit bigger?
 // TODO(Website) these cards should link to relevant tutorials
 

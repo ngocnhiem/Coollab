@@ -4,7 +4,7 @@ import Spacer from "../components/Spacer"
 import Timeline from "../components/Timeline"
 import GalleryPreview from "../components/GalleryPreview"
 import YoutubeVideo from "../components/YoutubeVideo"
-import ArgumentsCards from "../components/ArgumentsCards"
+import LiveVisualsCards from "../components/LiveVisualsCards"
 import Hero from "../components/Hero"
 import SocialsBigButtons from "../components/SocialsBigButtons"
 import SectionTitle from "../components/SectionTitle"
@@ -17,8 +17,6 @@ export default function Home() {
     <Layout title="" description="Generative visuals for everyone">
       <main>
         <Hero />
-        {/* <Spacer height="5rem" />
-        <ArgumentsCards /> */}
         <Spacer height="5rem" />
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
@@ -97,7 +95,7 @@ export default function Home() {
         </CenterH>
         {/* <CenterH>Webcam, audio-reaction, midi, osc</CenterH> */}
         <Spacer height="2.4rem" />
-        <ArgumentsCards />
+        <LiveVisualsCards />
         {/*  */}
         <Spacer height="5rem" />
         {/* <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
