@@ -11,6 +11,7 @@ import SectionTitle from "../components/SectionTitle"
 import CenterH from "../components/CenterH"
 import ImageGrid from "../components/ImageGrid"
 import Image from "../components/Image"
+import LinkInternal from "../components/LinkInternal"
 
 export default function Home() {
   return (
@@ -122,6 +123,32 @@ export default function Home() {
             ⬆ This is a ✨<span class="gradient-text">HAPPY</span>✨ picture of
             some of the contributors ⬆
           </caption>
+        </CenterH>
+        <Spacer height="5rem" />
+        <CenterH>
+          <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
+            Create custom nodes
+          </SectionTitle>
+        </CenterH>
+        <CenterH>
+          Write just a few lines of GLSL, and enjoy Coollab's implicit
+          conversions and default renderers
+        </CenterH>
+        <CenterH>
+          <LinkInternal to="/Tutorials/Writing%20Nodes/Intro">
+            Here is the complete tutorial
+          </LinkInternal>
+        </CenterH>
+        <Spacer height="2.4rem" />
+        <CenterH>
+          <Image
+            src="img/custom-nodes.png"
+            noSmall
+            style={{
+              width: "65%" /* "60%" */,
+              borderRadius: "var(--radius-mid)",
+            }}
+          ></Image>
         </CenterH>
         <Spacer height="5rem" />
         <CenterH>
