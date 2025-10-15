@@ -2,42 +2,71 @@ import React from "react"
 import style from "./ArgumentsCards.module.css"
 import Image from "./Image"
 
-export default function ArgumentsCards() {
+function Card({ image, color, children }) {
   return (
-    // TODO(Website) make components so that it reads better instead of having a wall of div
-    // TODO(Website) the images should probably just be 3 nice artworks made with coollab. Or for "100s of effects" the picture with many small squares of effects / the nodes menu (the future one with all the thumbnails)
-    // TODO(Website) maybe make these cards a bit bigger?
-    <div className={style.cardContainer}>
-      <div className={style.card} style={{ borderColor: "#8656D7" }}>
-        <div className={style.cardImage}>
-          <Image src="/img/demo.png" noSmall></Image>
-        </div>
-        <p className={style.cardText}>
-          DESIGNED TO BE <span style={{ color: "#8656D7" }}>SIMPLE</span> AND{" "}
-          <span style={{ color: "#8656D7" }}>INTUITIVE</span>
-        </p>
-      </div>
-      <div className={style.card} style={{ borderColor: "#F4AD7F" }}>
-        <div className={style.cardImage}>
-          <Image src="/img/vj.jpg" noSmall></Image>
-        </div>
-        <p className={style.cardText}>
-          <span style={{ color: "#F4AD7F" }}>FREE</span> AND
-          <br /> <span style={{ color: "#F4AD7F" }}>OPEN-SOURCE</span>
-          {/*  FOREVER */}
-        </p>
-      </div>
-      <div className={style.card} style={{ borderColor: "#30A7F5" }}>
-        <div className={style.cardImage}>
-          <Image src="/img/demo-horizontal.png" noSmall></Image>
-        </div>
-        <p className={style.cardText}>
-          {/* A powerful tool for <span style={{ color: "#30A7F5" }}>Vjing</span>{" "}
-          and so much more! */}
-          <span style={{ color: "#30A7F5" }}>100s</span> OF EFFECTS
-          <br /> <span style={{ color: "#30A7F5" }}>∞</span> COMBINATIONS
-        </p>
-      </div>
+    <div className={style.card} style={{ borderColor: color }}>
+      <Image
+        src={image}
+        noSmall
+        style={{ height: "200px", width: "255px" }}
+        className={style.cardImage}
+      ></Image>
+      <p className={style.cardText}>
+        {/* Colorize all <b> tags */}
+        {React.Children.map(children, (child) => {
+          if (child.type === "b") {
+            return React.cloneElement(child, {
+              style: { ...child.props.style, color: color },
+            })
+          }
+          return child
+        })}
+      </p>
     </div>
+  )
+}
+
+function CardsContainer({ children }) {
+  const colors = ["#F4AD7F", "#8656D7", "#30A7F5"]
+  return (
+    <div className={style.cardContainer}>
+      {React.Children.map(children, (child, i) => {
+        const color = child.props.color || colors[i % 3]
+        return React.cloneElement(child, { color })
+      })}
+    </div>
+  )
+}
+
+// TODO(Website) rename as "LiveVisualsCards"
+// TODO(Website) maybe make these cards a bit bigger?
+// TODO(Website) these cards should link to relevant tutorials
+
+export default function () {
+  return (
+    <CardsContainer>
+      <Card image="/img/webcam2.jpg">
+        <b>AUDIO</b>-reactive
+        {/* <br />
+        Volume, Waveform, Spectrum */}
+      </Card>
+      {/* TODO(Website) nicer / cleaner image of Within the Signal? */}
+      <Card image="/img/Webcam.jpg">
+        <b>WEBCAM</b> integration
+      </Card>
+      {/* TODO(Website) use the official Spout logo ? put in white ? */}
+      <Card image="/img/spout.png">
+        <b>SPOUT</b> in & out
+      </Card>
+      <Card image="/img/computer.jpg">
+        <b>MIDI</b> controllers
+      </Card>
+      <Card image="/img/osc2.jpg">
+        <b>OSC</b> protocol
+      </Card>
+      <Card image="/img/vj-fest2.jpg">
+        <b>HTTP</b> requests
+      </Card>
+    </CardsContainer>
   )
 }

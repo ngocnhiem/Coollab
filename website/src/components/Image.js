@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { createPortal } from "react-dom"
 
 function appendSmall(path) {
   const dotIndex = path.lastIndexOf(".")
@@ -22,7 +23,7 @@ export default function ({
   src,
   alt,
   style,
-  noSmall /* TODO remove this noSmall, images should always have small preview*/,
+  noSmall /* TODO(Website) remove this noSmall, images should always have small preview*/,
   ...props
 }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -79,38 +80,40 @@ export default function ({
         {...props}
       />
 
-      {isOpen && (
-        <div
-          onClick={close}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            backgroundColor: "rgba(0,0,0,0.8)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 9999,
-            cursor: visible && "zoom-out",
-            opacity: visible ? 1 : 0,
-            transition: "opacity 0.3s ease",
-          }}
-        >
-          <img
-            src={bigImageUrl}
-            alt={alt}
+      {isOpen &&
+        createPortal(
+          <div
+            onClick={close}
             style={{
-              maxWidth: "90%",
-              maxHeight: "90%",
-              boxShadow: "0 0 20px rgba(0,0,0,0.5)",
-              transform: visible ? "scale(1)" : "scale(0.95)",
-              transition: "transform 0.3s ease, opacity 0.3s ease",
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              backgroundColor: "rgba(0,0,0,0.8)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 9999,
+              cursor: visible && "zoom-out",
+              opacity: visible ? 1 : 0,
+              transition: "opacity 0.3s ease",
             }}
-          />
-        </div>
-      )}
+          >
+            <img
+              src={bigImageUrl}
+              alt={alt}
+              style={{
+                maxWidth: "90%",
+                maxHeight: "90%",
+                boxShadow: "0 0 20px rgba(0,0,0,0.5)",
+                transform: visible ? "scale(1)" : "scale(0.95)",
+                transition: "transform 0.3s ease, opacity 0.3s ease",
+              }}
+            />
+          </div>,
+          document.body
+        )}
     </>
   )
 }

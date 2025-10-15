@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "@theme/Layout"
 import Spacer from "../components/Spacer"
-import FeaturesList from "../components/FeaturesList"
 import Timeline from "../components/Timeline"
 import GalleryPreview from "../components/GalleryPreview"
 import YoutubeVideo from "../components/YoutubeVideo"
@@ -88,7 +87,7 @@ export default function Home() {
         </CenterH>
         {/* <CenterH>Webcam, audio-reaction, midi, osc</CenterH> */}
         <Spacer height="2.4rem" />
-        <FeaturesList />
+        <ArgumentsCards />
         {/*  */}
         <Spacer height="5rem" />
         {/* <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
