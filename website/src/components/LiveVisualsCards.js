@@ -55,19 +55,20 @@ export default function () {
       <Card image="/img/audio.jpg" linkInternal="/Tutorials/VJ/Audio">
         <b>AUDIO</b>-reactive
       </Card>
-      {/* TODO(Website) nicer / cleaner image of Within the Signal? */}
       <Card image="/img/Webcam.jpg" linkInternal="/Tutorials/VJ/Webcam">
         <b>WEBCAM</b> integration
       </Card>
       <Card image="/img/spout.png" linkInternal="/Tutorials/VJ/Spout">
         <b>SPOUT</b> in & out
       </Card>
+      {/* TODO(Website) replace this image */}
       <Card image="/img/computer.jpg" linkInternal="/Tutorials/VJ/MIDI">
         <b>MIDI</b> controllers
       </Card>
       <Card image="/img/osc2.jpg" linkInternal="/Tutorials/VJ/OSC">
         <b>OSC</b> protocol
       </Card>
+      {/* TODO(Website) replace this image */}
       <Card image="/img/vj-fest2.jpg" linkInternal="/Tutorials/VJ/HTTP">
         <b>HTTP</b> requests
       </Card>

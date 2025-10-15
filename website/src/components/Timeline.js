@@ -23,7 +23,6 @@ export default function () {
     </Timeline>
   )
 }
-// TODO(Website) maybe make the timeline centered? And the line goes under the images, centered too, and each text is above the image
 // TODO(Website) find a way for the line to automatically start and stop on first and last bullets ? instead of just hardcoding a size
 
 function StepImage({ src, accentColor }) {

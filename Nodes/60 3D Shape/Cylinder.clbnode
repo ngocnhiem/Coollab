@@ -6,6 +6,9 @@ INPUT float 'Height';
 SignedDistance main(vec3 pos)
 {
     vec2 v = vec2(length(pos.xy) - 'Radius', abs(pos.z) - 'Height');
-    return v.y < 0. ? v.x : v.x < 0. ? v.y
-                                     : length(v);
+    return v.y < 0.
+               ? v.x
+           : v.x < 0.
+               ? v.y
+               : length(v);
 }

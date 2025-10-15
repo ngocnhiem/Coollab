@@ -40,7 +40,6 @@ export default function Home() {
         </CenterH>
         <Spacer height="2.4rem" />
         <CenterH>
-          {/* TODO(Website) should be another image, don't always show the same Chromatic Aberration trick */}
           <Image
             src="img/demo3.png"
             noSmall
@@ -71,7 +70,6 @@ export default function Home() {
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Create stunning animations{" "}
-            {/* TODO le texte est cool, mais donne l'impression que toutes les transitions After Effect du trailer ont été faites avec Coollab */}
           </SectionTitle>
         </CenterH>
         <Spacer height="2.4rem"></Spacer>
