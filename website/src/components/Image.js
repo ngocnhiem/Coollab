@@ -24,6 +24,7 @@ export default function ({
   alt,
   style,
   noSmall /* TODO(Website) remove this noSmall, images should always have small preview*/,
+  onClick,
   ...props
 }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -76,14 +77,20 @@ export default function ({
         src={smallImageUrl}
         alt={alt}
         style={{ cursor: "zoom-in", ...style }}
-        onClick={open}
+        onClick={(e) => {
+          open()
+          onClick && onClick(e)
+        }}
         {...props}
       />
 
       {isOpen &&
         createPortal(
           <div
-            onClick={close}
+            onClick={(e) => {
+              close()
+              onClick && onClick(e)
+            }}
             style={{
               position: "fixed",
               top: 0,

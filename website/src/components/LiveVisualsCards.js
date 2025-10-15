@@ -1,15 +1,21 @@
 import React from "react"
 import style from "./LiveVisualsCards.module.css"
 import Image from "./Image"
+import LinkInternal from "./LinkInternal"
 
-function Card({ image, color, children }) {
-  return (
+function Card({ image, color, linkInternal, children }) {
+  const content = (
     <div className={style.card} style={{ borderColor: color }}>
       <Image
         src={image}
         noSmall
         style={{ height: "200px", width: "255px" }}
         className={style.cardImage}
+        onClick={(e) => {
+          // Prevent clicking on the link when we click on the image
+          e.preventDefault()
+          e.stopPropagation()
+        }}
       ></Image>
       <p className={style.cardText}>
         {/* Colorize all <b> tags */}
@@ -23,6 +29,11 @@ function Card({ image, color, children }) {
         })}
       </p>
     </div>
+  )
+  return linkInternal ? (
+    <LinkInternal to={linkInternal}>{content}</LinkInternal>
+  ) : (
+    content
   )
 }
 
@@ -38,32 +49,26 @@ function CardsContainer({ children }) {
   )
 }
 
-// TODO(Website) maybe make these cards a bit bigger?
-// TODO(Website) these cards should link to relevant tutorials
-
 export default function () {
   return (
     <CardsContainer>
-      <Card image="/img/webcam2.jpg">
+      <Card image="/img/webcam2.jpg" linkInternal="/Tutorials/VJ/Audio">
         <b>AUDIO</b>-reactive
-        {/* <br />
-        Volume, Waveform, Spectrum */}
       </Card>
       {/* TODO(Website) nicer / cleaner image of Within the Signal? */}
-      <Card image="/img/Webcam.jpg">
+      <Card image="/img/Webcam.jpg" linkInternal="/Tutorials/VJ/Webcam">
         <b>WEBCAM</b> integration
       </Card>
-      {/* TODO(Website) use the official Spout logo ? put in white ? */}
-      <Card image="/img/spout.png">
+      <Card image="/img/spout.png" linkInternal="/Tutorials/VJ/Spout">
         <b>SPOUT</b> in & out
       </Card>
-      <Card image="/img/computer.jpg">
+      <Card image="/img/computer.jpg" linkInternal="/Tutorials/VJ/MIDI">
         <b>MIDI</b> controllers
       </Card>
-      <Card image="/img/osc2.jpg">
+      <Card image="/img/osc2.jpg" linkInternal="/Tutorials/VJ/OSC">
         <b>OSC</b> protocol
       </Card>
-      <Card image="/img/vj-fest2.jpg">
+      <Card image="/img/vj-fest2.jpg" linkInternal="/Tutorials/VJ/HTTP">
         <b>HTTP</b> requests
       </Card>
     </CardsContainer>
