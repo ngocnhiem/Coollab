@@ -12,16 +12,12 @@ export default function Footer() {
       <div className={styles.container}>
         {}
         <div className={styles.top}>
-          {}
-          <div className={styles.brand}>
+          <div>
             <img
-              src="/img/logo.png"
+              src="/img/logo-text.png"
               alt="Coollab Logo"
               className={styles.logo}
             />
-            <p className={styles.tagline}>
-              A free, open-source generative-art software
-            </p>
             <div className={styles.socials}>
               <LinkExternal
                 to="https://discord.com/invite/QEjqnEy4aT"
@@ -50,42 +46,45 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Liens */}
+          {/* Links */}
           <nav className={styles.links}>
             <div className={styles.col}>
-              <h4>Explore</h4>
-              <LinkInternal to="/Tutorials/Discovery/Intro">
-                Tutorials
+              <h4>Tutorials</h4>
+              <LinkInternal to="/Tutorials/Getting%20Started/Intro">
+                Getting Started
               </LinkInternal>
-              <LinkInternal to="/Gallery">Gallery</LinkInternal>
-              <LinkInternal to="/Contribute">Contribute</LinkInternal>
+              <LinkInternal to="/Tutorials/VJ/Output%20window">VJ</LinkInternal>
+              <LinkInternal to="/Tutorials/Writing%20Nodes/Intro">
+                Writing nodes
+              </LinkInternal>
             </div>
             <div className={styles.col}>
-              <h4>Community</h4>
-              <LinkExternal to="https://linktr.ee/coollab_art">
-                Linktree
-              </LinkExternal>
-              <LinkExternal to="https://github.com/Coollab-Art/Coollab/issues/new/choose">
-                Report an issue
-              </LinkExternal>
-              <LinkExternal to="https://www.etsy.com/shop/CoollabArt">
-                Merch
-              </LinkExternal>
-              <LinkExternal to="https://utip.io/coollab/">Donate</LinkExternal>
+              <h4>Contribute</h4>
+              <LinkInternal to="/Contribute/Feedback">Feedback</LinkInternal>
+              <LinkInternal to="/Contribute/Outreach">Outreach</LinkInternal>
+              <LinkInternal to="/Contribute/Code">Code</LinkInternal>
+              <LinkInternal to="/Contribute/Design">Design</LinkInternal>
+              <LinkInternal to="/Contribute/Donations">Donations</LinkInternal>
+            </div>
+            <div className={styles.col}>
+              <h4>Install</h4>
+              <LinkInternal to="/Download">Download</LinkInternal>
             </div>
           </nav>
         </div>
 
-        {/* Ligne séparateur */}
+        {/* Separator line */}
         <div className={styles.hr} />
 
-        {/* Bas de page */}
+        {/* Bottom */}
         <div className={styles.bottom}>
           <p className={styles.copy}>
             © {year} Coollab. Built with{" "}
-            <LinkExternal to="https://docusaurus.io/">Docusaurus</LinkExternal>
+            <LinkExternal to="https://docusaurus.io/">Docusaurus</LinkExternal>.{" "}
+            Work illustrations by{" "}
+            <LinkExternal to="https://storyset.com/work">Storyset</LinkExternal>
+            .
           </p>
-          <a href="https://storyset.com/work">Work illustrations by Storyset</a>
         </div>
       </div>
     </footer>
