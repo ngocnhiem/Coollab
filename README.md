@@ -2,7 +2,13 @@
 
 <img alt="logo" src="./logo.png" width = 100px>
 
-**Coollab is a node-based software to create visual effects and generative-art, designed to be simple and intuitive.**
+![](./website/static/img/tuto3%20small.png)
+
+**Generative visuals for everyone**
+
+- Intuitive for artists
+- Customisable for programmers
+- Free and open-source for everyone
 
 [Download it from our website!](https://coollab-art.com/) (*__NOT__ from this GitHub's release page*[^1])
 
@@ -12,12 +18,11 @@ Coollab's main goal is to be as intuitive and easy to use as possible. Effects a
 Start with any image or shape, like your *Webcam*, add any modifier on top of it, like a *Kaleidoscope*, and you already have some cool results. You can then play with the 100s of effects to change the color, distort the image, add particles, react to audio, and much more!<br/>
 Coollab can be used for VJing, exporting videos, creating interactive installations, *etc.*!
 
-[Here are some tutorials to help you get started.](https://youtu.be/swMZGsGje4E?list=PLuMMMaL5kN3mG6fSeSYTqC-sc_OTX3unQ)
+[Here are some tutorials to help you get started.](https://coollab-art.com/Tutorials/Getting%20Started/Intro)
 
 ## Contributions
 
-Coollab is made possible by the work of all these lovely people:
+Coollab is made possible by the work of [all these lovely people](https://coollab-art.com/Contribute)<br/>
+If you would like to give a hand too, check out the [many ways you could contribute](https://coollab-art.com/Contribute)!
 
 <a href="https://coollab-art.com/Contribute"><img width="1134" height="901" alt="image" src="https://github.com/user-attachments/assets/5f118447-9ab6-4bfd-b56d-2028e5746b93" /></a>
-
-If you would like to give a hand too, check out the [many ways you could contribute](https://coollab-art.com/Contribute)!
