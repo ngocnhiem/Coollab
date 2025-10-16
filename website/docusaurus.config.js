@@ -13,12 +13,9 @@ const projectName = "Lab"
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Coollab",
-  tagline: "A free generative-art software",
+  tagline: "Generative visuals for everyone",
   favicon: "img/favicon.ico",
-  // Set the production url of your site here
   url: `https://coollab-art.com/`,
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: `/`,
 
   // GitHub pages deployment config.
@@ -185,13 +182,6 @@ const config = {
             position: "left",
             label: "Contribute",
           },
-          // TODO(Website)
-          //   {
-          //     type: "doc",
-          //     docId: "Articles/Alpaca/Alpaca",
-          //     position: "left",
-          //     label: "Articles",
-          //   },
           {
             type: "html",
             position: "right",

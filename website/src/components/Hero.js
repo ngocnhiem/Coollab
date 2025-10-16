@@ -10,9 +10,9 @@ export default function () {
           <h1 className={style.heroTitle}>Coollab</h1>
           <p className={style.heroSubtitle}>
             Generative visuals for everyone
-            {/* TODO(Website) find a way to put these key words somewhere on the site for SEO */}
-            {/* <br />
-            VJs, Coders, Artists, and the like */}
+            {/* Intuitive for artists
+            Customisable for programmers
+            Free and open-source */}
           </p>
         </div>
       </div>
