@@ -16,7 +16,7 @@ Let’s get started!
 ## Starting from an artwork
 
 
-We will use the artwork from the [previous tutorial](./03-A%20simple%20example.md).
+We will use the artwork from the [previous tutorial](./02-A%20simple%20example.md).
 
 You probably noticed that when you change a parameter it has a direct impact on the image in the view panel. With a slider for example, we can see the image changing as we drag the value.
 
