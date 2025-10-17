@@ -92,6 +92,9 @@ export default function Home() {
             Or live visuals
           </SectionTitle>
         </CenterH>
+        <CenterH>
+          VJ, interactive installations, <i>etc.</i>
+        </CenterH>
         {/* <CenterH>Webcam, audio-reaction, midi, osc</CenterH> */}
         <Spacer height="2.4rem" />
         <LiveVisualsCards />
@@ -132,7 +135,7 @@ export default function Home() {
         </CenterH>
         <CenterH>
           Write just a few lines of GLSL, and enjoy Coollab's implicit
-          conversions and default renderers
+          conversions and default renderers!
         </CenterH>
         <CenterH>
           <LinkInternal to="/Tutorials/Writing%20Nodes/Intro">

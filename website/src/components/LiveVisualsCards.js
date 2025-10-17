@@ -61,15 +61,14 @@ export default function () {
       <Card image="/img/spout.png" linkInternal="/Tutorials/VJ/Spout">
         <b>SPOUT</b> in & out
       </Card>
-      {/* TODO(Website) replace this image */}
-      <Card image="/img/computer.jpg" linkInternal="/Tutorials/VJ/MIDI">
+      <Card image="/img/midi.png" linkInternal="/Tutorials/VJ/MIDI">
         <b>MIDI</b> controllers
       </Card>
-      <Card image="/img/osc2.jpg" linkInternal="/Tutorials/VJ/OSC">
+      {/* TODO(Website) replace this image */}
+      <Card image="/img/osc.jpg" linkInternal="/Tutorials/VJ/OSC">
         <b>OSC</b> protocol
       </Card>
-      {/* TODO(Website) replace this image */}
-      <Card image="/img/vj-fest2.jpg" linkInternal="/Tutorials/VJ/HTTP">
+      <Card image="/img/osc2.jpg" linkInternal="/Tutorials/VJ/HTTP">
         <b>HTTP</b> requests
       </Card>
     </CardsContainer>
