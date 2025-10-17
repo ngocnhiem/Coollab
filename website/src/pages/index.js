@@ -8,7 +8,7 @@ import LiveVisualsCards from "../components/LiveVisualsCards"
 import Hero from "../components/Hero"
 import SocialsBigButtons from "../components/SocialsBigButtons"
 import SectionTitle from "../components/SectionTitle"
-import CenterH from "../components/CenterH"
+import CenterH, { CenterText } from "../components/CenterH"
 import ImageGrid from "../components/ImageGrid"
 import Image from "../components/Image"
 import LinkInternal from "../components/LinkInternal"
@@ -32,7 +32,7 @@ export default function Home() {
         <Spacer height="5rem" />
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-            Polished user experience, Modern UI
+            Polished user experience
           </SectionTitle>
         </CenterH>
         <CenterH>
@@ -82,7 +82,7 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-        <YoutubeVideo /* Trailer */ id="jsjkjCQCPno" />
+            <YoutubeVideo /* Trailer */ id="jsjkjCQCPno" />
           </div>
         </CenterH>
         {/*  */}
@@ -107,26 +107,34 @@ export default function Home() {
         OSC, Midi,Spout */}
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-            Free and open-source
+            Free and open-source!
           </SectionTitle>
         </CenterH>
+        <CenterText style={{ maxWidth: "60%" }}>
+          This is the only real protection against enshittification. You truly
+          own the software and remain in control no matter what happens. And if
+          you want to help the project keep growing, <i>everyone</i> can{" "}
+          <LinkInternal to="/Contribute">find a way to contribute</LinkInternal>
+          😉
+        </CenterText>
         <Spacer height="2.4rem" />
         <CenterH>
           <Image
             src="img/team.jpg"
             noSmall
             style={{
-              width: "65%" /* "60%" */,
+              width: "65%",
               borderRadius: "var(--radius-mid)",
             }}
           ></Image>
         </CenterH>
-        <CenterH>
-          <caption>
-            ⬆ This is a ✨<span class="gradient-text">HAPPY</span>✨ picture of
-            some of the contributors ⬆
-          </caption>
-        </CenterH>
+        <CenterText style={{ maxWidth: "60%" }}>
+          <i>
+            NB: No, the core team isn't that big. There is only one "full-time"
+            developer, the others had punctual missions that lasted a couple of
+            months
+          </i>
+        </CenterText>
         <Spacer height="5rem" />
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
@@ -162,10 +170,10 @@ export default function Home() {
         <Spacer height="2.4rem" />
         <SocialsBigButtons />
         {/*  */}
-        <Spacer height="5rem" />
+        {/* <Spacer height="5rem" /> */}
         {/* TODO(Website) showing only 3D images is bad because this is not our focus */}
         {/* Maybe do a section "Focused on 2D, but with some 3D effects?" */}
-        <GalleryPreview />
+        {/* <GalleryPreview /> */}
         {/*  */}
         <Spacer height="5rem" />{" "}
         <CenterH>
@@ -176,11 +184,11 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-        <YoutubeVideo /* What is Coollab? */ id="nkKj_MTBBRI" />
+            <YoutubeVideo /* What is Coollab? */ id="nkKj_MTBBRI" />
           </div>
         </CenterH>
         {/*  */}
-        <Spacer height="5rem" />
+        <Spacer height="2.4rem" />
       </main>
     </Layout>
   )
