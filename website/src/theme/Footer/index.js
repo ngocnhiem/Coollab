@@ -1,6 +1,12 @@
 import React from "react"
 import styles from "./styles.module.css"
-import { FaDiscord, FaInstagram, FaMastodon, FaGithub } from "react-icons/fa"
+import {
+  FaDiscord,
+  FaInstagram,
+  FaMastodon,
+  FaGithub,
+  FaEnvelope,
+} from "react-icons/fa"
 import LinkExternal from "../../components/LinkExternal"
 import LinkInternal from "../../components/LinkInternal"
 
@@ -42,6 +48,12 @@ export default function Footer() {
                 className={styles.iconBtn}
               >
                 <FaGithub />
+              </LinkExternal>
+              <LinkExternal
+                to="mailto:coollab.lib@gmail.com"
+                className={styles.iconBtn}
+              >
+                <FaEnvelope />
               </LinkExternal>
             </div>
           </div>
