@@ -107,15 +107,11 @@ export default function Home() {
         OSC, Midi,Spout */}
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-            Free and open-source!
+            Free and open-source
           </SectionTitle>
         </CenterH>
         <CenterText style={{ maxWidth: "60%" }}>
-          This is the only real protection against enshittification. You truly
-          own the software and remain in control no matter what happens. And if
-          you want to help the project keep growing, <i>everyone</i> can{" "}
-          <LinkInternal to="/Contribute">find a way to contribute</LinkInternal>
-          😉
+          You own the software, forever
         </CenterText>
         <Spacer height="2.4rem" />
         <CenterH>
@@ -131,7 +127,7 @@ export default function Home() {
         <CenterText style={{ maxWidth: "60%" }}>
           <i>
             NB: No, the core team isn't that big. There is only one "full-time"
-            developer, the others had punctual missions that lasted a couple of
+            developer, the others did punctual missions that lasted a couple of
             months
           </i>
         </CenterText>
@@ -169,11 +165,6 @@ export default function Home() {
         </CenterH>
         <Spacer height="2.4rem" />
         <SocialsBigButtons />
-        {/*  */}
-        {/* <Spacer height="5rem" /> */}
-        {/* TODO(Website) showing only 3D images is bad because this is not our focus */}
-        {/* Maybe do a section "Focused on 2D, but with some 3D effects?" */}
-        {/* <GalleryPreview /> */}
         {/*  */}
         <Spacer height="5rem" />{" "}
         <CenterH>
