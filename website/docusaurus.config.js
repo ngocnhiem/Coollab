@@ -152,7 +152,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "img/pagescreen-hero.png", // TODO(Website) use an actual screen with the navbar and wave included ? (still remove scrollbar on the right with overflow: hidden;)
+      image: "img/pagescreen-hero.png",
       colorMode: {
         defaultMode: "dark",
         disableSwitch: true,

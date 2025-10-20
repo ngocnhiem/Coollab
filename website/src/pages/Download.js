@@ -16,6 +16,7 @@ export default function DownloadPage() {
       <div className={style.downloadWrapper}>
         {/* Left: Background image */}
         <div className={style.downloadImage}>
+          {/* TODO(Website) find a better image? Or make a cleaner version of this one? */}
           <img src="/img/demo-vertical.png"></img>
         </div>
 

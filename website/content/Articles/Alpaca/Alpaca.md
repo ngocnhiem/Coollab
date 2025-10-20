@@ -164,4 +164,4 @@ function main(uv: UV) -> Color
 
 This approach works very well to describe image-generation patterns in shaders, but we are unsure how well it could be applied to other areas. We are planning on implementing a particle system based on the same principles to see how well they can be applied there. Even though we are not convinced the benefits will be as clear, we think this is an avenue worth exploring, and we believe our approach should be considered as a possibility whenever designing any node-based system.
 
-If you want to download Coollab and try it for yourself, the software is free and open-source: https://linktr.ee/coollab_art.
+If you want to download Coollab and try it for yourself, the software is free and open-source: https://coollab-art.com/
