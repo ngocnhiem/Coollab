@@ -62,9 +62,7 @@ export default function Footer() {
           <nav className={styles.links}>
             <div className={styles.col}>
               <h4>Tutorials</h4>
-              <LinkInternal to="/Tutorials/Getting%20Started/Intro">
-                Getting Started
-              </LinkInternal>
+              <LinkInternal to="/Tutorials">Getting Started</LinkInternal>
               <LinkInternal to="/Tutorials/VJ/Output%20window">VJ</LinkInternal>
               <LinkInternal to="/Tutorials/Writing%20Nodes/Intro">
                 Writing nodes

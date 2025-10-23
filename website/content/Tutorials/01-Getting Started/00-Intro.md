@@ -1,5 +1,6 @@
 ---
 title: Video Playlist
+slug: /Tutorials
 ---
 
 import YoutubePlaylist from "@site/src/components/YoutubePlaylist"
