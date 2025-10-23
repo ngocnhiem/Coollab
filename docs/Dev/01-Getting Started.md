@@ -20,6 +20,22 @@ it most likely means you forgot the submodules. To grab them after having cloned
 git submodule update --init --recursive
 ```
 
+## Dependencies
+
+### Linux
+
+There are quite a few dependencies that you might not already have: [check out the `Install Linux dependencies` step to get an up-to-date list of the install commands](../../.github/workflows/build_and_run_tests.yml)
+
+### MacOS
+
+There are a few dependencies that you might not already have: [check out the `Install MacOS dependencies` step to get an up-to-date list of the install commands](../../.github/workflows/build_and_run_tests.yml)
+
+### Windows
+
+The only dependency is OpenSSL (`choco install openssl`) but you most likely don't need it, unless:
+- You are working on the Launcher
+- You are working on the option to share images online
+
 ## Supported compilers
 
 - On Windows: **Clang** and **MSVC**
