@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, max-content);
   column-gap: 30px;
-  row-gap: 8rem;
+  row-gap: 5rem;
 
   position: relative;
 }
@@ -38,8 +38,8 @@
   content: "";
   position: absolute;
   left: 49.9%;
-  top: 10%;
-  bottom: 10%;
+  top: 12%;
+  bottom: 12%;
   width: 4px;
   background: var(--coollab-gradient-vertical);
   transform: translateX(-50%);
