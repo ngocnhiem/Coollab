@@ -9,7 +9,8 @@ import ContributorsList from "@site/src/components/ContributorsList"
 
 ## Share Coollab
 
-Tell your friends or community about Coollab! [Share the website](https://coollab-art.com/)
+Tell your friends or community about Coollab!<br/>
+[Share the website](https://coollab-art.com/)
 
 </TextBlock>
 
@@ -28,7 +29,7 @@ If you don't mind also sharing the project file, this is very cool to serve as e
 
 <Spacer height="2rem"/>
 
-<TextBlock imgSrc="/img/vj thumbnail.jpg">
+<TextBlock imgSrc="/img/vjfest.jpg">
 
 ## Take pictures
 
