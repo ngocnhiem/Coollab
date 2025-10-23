@@ -12,7 +12,8 @@
 
 - Intuitive for artists
 - Customisable for programmers
-- Free and open-source for everyone
+- Free and open-source
+- Cross-platform (Windows, Linux, MacOS)
 
 [Download it from our website!](https://coollab-art.com/) (*__NOT__ from this GitHub's release page*[^1])
 
