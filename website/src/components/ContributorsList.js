@@ -296,6 +296,13 @@ export default function ContributorsList({ category }) {
               roles={["Feedback", "Interesting design discussions"]}
               categories={["Feedback"]}
             />,
+            <Contributor
+              name="Peckham Digital"
+              pictureSrc="/img/peckham-digital.webp"
+              link="https://www.peckhamdigital.org/"
+              roles={["Invited me for a workshop"]}
+              categories={["Outreach"]}
+            />,
           ])}
         />
       </div>
