@@ -42,7 +42,7 @@ export default function Home() {
         <Spacer height="2.4rem" />
         <CenterH>
           <Image
-            src="img/demo3.png"
+            src="img/demo.png"
             noSmall
             style={{ width: "70%", borderRadius: "var(--radius-mid)" }}
           ></Image>

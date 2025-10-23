@@ -52,7 +52,7 @@ Videos are cool, but you can also write a text-based tutorial if you prefer that
 
 <Spacer height="2rem"/>
 
-<TextBlock imgSrc="/img/workshop4.jpg" caption={<>Workshop at Peckham Digital,<br/>Photo © Mati Granica</>}>
+<TextBlock imgSrc="/img/workshop.jpg" caption={<>Workshop at Peckham Digital,<br/>Photo © Mati Granica</>}>
 
 ## Organize workshops
 
