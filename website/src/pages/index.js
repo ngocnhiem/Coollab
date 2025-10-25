@@ -125,7 +125,7 @@ export default function Home() {
           ></Image>
         </CenterH>
         <CenterText style={{ maxWidth: "60%" }}>
-          <i>
+          <i style={{ fontSize: "12px" }}>
             NB: No, the core team isn't that big. There is only one "full-time"
             developer, the others did punctual missions that lasted a couple of
             months

@@ -64,7 +64,7 @@ export default function () {
       <Card image="/img/midi.png" linkInternal="/Tutorials/VJ/MIDI">
         <b>MIDI</b> controllers
       </Card>
-      {/* TODO(Website) replace this image */}
+      {/* TODO(Website2) replace this image */}
       <Card image="/img/osc.jpg" linkInternal="/Tutorials/VJ/OSC">
         <b>OSC</b> protocol
       </Card>

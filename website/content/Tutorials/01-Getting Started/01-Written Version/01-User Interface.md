@@ -1,3 +1,7 @@
+---
+pagination_prev: null
+---
+
 import YoutubeVideo from "@site/src/components/YoutubeVideo"
 
 <YoutubeVideo id="FK1sMPgcE4Q"/>

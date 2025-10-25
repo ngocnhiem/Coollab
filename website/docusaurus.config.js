@@ -168,7 +168,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "Tutorials/Getting Started/Intro",
+            docId: "Tutorials/Getting Started/Video Playlist",
             position: "left",
             label: "Tutorials",
           },
