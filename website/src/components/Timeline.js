@@ -5,16 +5,16 @@ import Image from "./Image"
 export default function () {
   return (
     <Timeline>
-      <Step img="/img/tuto1.png">
+      <Step img="/img/tuto1.webp">
         Start with a<br />
         <b>Shape</b> or an <b>Image</b>
       </Step>
-      <Step img="/img/tuto2.png">
+      <Step img="/img/tuto2.webp">
         Add some
         <br />
         <b>Modifiers</b>
       </Step>
-      <Step img="/img/tuto3.png">
+      <Step img="/img/tuto3.webp">
         {/* <b>Colorize</b>! */}
         <b>Post-Process</b>
         <br />

@@ -20,7 +20,7 @@ export default function Footer() {
         <div className={styles.top}>
           <div>
             <img
-              src="/img/logo-text.png"
+              src="/img/logo-text.webp"
               alt="Coollab Logo"
               className={styles.logo}
             />

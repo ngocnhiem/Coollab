@@ -8,7 +8,6 @@ function Card({ image, color, linkInternal, children }) {
     <div className={style.card} style={{ borderColor: color }}>
       <Image
         src={image}
-        noSmall
         style={{ height: "200px", width: "255px" }}
         className={style.cardImage}
         onClick={(e) => {
@@ -55,13 +54,13 @@ export default function () {
       <Card image="/img/audio.jpg" linkInternal="/Tutorials/VJ/Audio">
         <b>AUDIO</b>-reactive
       </Card>
-      <Card image="/img/Webcam.jpg" linkInternal="/Tutorials/VJ/Webcam">
+      <Card image="/img/webcam.jpg" linkInternal="/Tutorials/VJ/Webcam">
         <b>WEBCAM</b> integration
       </Card>
-      <Card image="/img/spout.png" linkInternal="/Tutorials/VJ/Spout">
+      <Card image="/img/spout.webp" linkInternal="/Tutorials/VJ/Spout">
         <b>SPOUT</b> in & out
       </Card>
-      <Card image="/img/midi.png" linkInternal="/Tutorials/VJ/MIDI">
+      <Card image="/img/midi.webp" linkInternal="/Tutorials/VJ/MIDI">
         <b>MIDI</b> controllers
       </Card>
       {/* TODO(Website2) replace this image */}

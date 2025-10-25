@@ -5,7 +5,7 @@ import TextBlock from "@site/src/components/TextBlock"
 import Spacer from "@site/src/components/Spacer"
 import ContributorsList from "@site/src/components/ContributorsList"
 
-<TextBlock imgSrc="/img/shadertoy.png">
+<TextBlock imgSrc="/img/shadertoy.webp">
 
 ## Write GLSL Shaders
 
@@ -17,7 +17,7 @@ You can share your nodes with the community on [Discord](https://discord.gg/p8DG
 
 <Spacer height="2rem"/>
 
-<TextBlock imgSrc="/img/cpp.png" alignRight>
+<TextBlock imgSrc="/img/cpp.webp" alignRight>
 <span className="move-title-anchor-to-the-left">
 
 ## Contribute to the C++ codebase

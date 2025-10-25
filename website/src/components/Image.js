@@ -19,14 +19,7 @@ function enableScrolling() {
   window.onscroll = () => {}
 }
 
-export default function ({
-  src,
-  alt,
-  style,
-  noSmall /* TODO(Website) remove this noSmall, images should always have small preview*/,
-  onClick,
-  ...props
-}) {
+export default function ({ src, alt, style, noSmall, onClick, ...props }) {
   const [isOpen, setIsOpen] = useState(false)
   const [visible, setVisible] = useState(false)
 

@@ -162,7 +162,7 @@ export default function ContributorsList({ category }) {
             />,
             <Contributor
               name="Amandine Kohlmuller"
-              pictureSrc="/img/amandine.png"
+              pictureSrc="/img/amandine.webp"
               link="https://idnamaa.fun"
               roles={[
                 "UI / UX Designer",

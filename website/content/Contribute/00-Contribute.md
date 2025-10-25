@@ -1,7 +1,7 @@
 ---
 slug: "/Contribute"
 sidebar_label: ✨ Contribute
-image: /img/page-contribute.png
+image: /img/page-contribute.webp
 description: There are many different ways to contribute!
 ---
 import ContributorsList from "@site/src/components/ContributorsList"

@@ -10,7 +10,7 @@ export default function () {
     <Layout
       title="Gallery"
       description="Artworks made by the community"
-      image="/img/page-tutorials.png"
+      image="/img/page-gallery.webp"
     >
       <main>
         <BrowserOnly>{() => <Impl />}</BrowserOnly>

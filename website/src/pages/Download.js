@@ -12,12 +12,12 @@ export default function DownloadPage() {
     <Layout
       title="Download"
       description="Install Coollab for Windows, Linux or MacOS"
-      image="/img/page-download.png"
+      image="/img/page-download.webp"
     >
       <div className={style.downloadWrapper}>
         {/* Left: Background image */}
         <div className={style.downloadImage}>
-          <img src="/img/download.png"></img>
+          <img src="/img/download.jpg"></img>
         </div>
 
         {/* Right: Download Section */}

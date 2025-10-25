@@ -5,7 +5,7 @@ import TextBlock from "@site/src/components/TextBlock"
 import Spacer from "@site/src/components/Spacer"
 import ContributorsList from "@site/src/components/ContributorsList"
 
-<TextBlock imgSrc="/img/website.png">
+<TextBlock imgSrc="/img/website.webp">
 
 ## Share Coollab
 
@@ -16,7 +16,7 @@ Tell your friends or community about Coollab!<br/>
 
 <Spacer height="2rem"/>
 
-<TextBlock imgSrc="/img/share-your-stuff.png" alignRight>
+<TextBlock imgSrc="/img/share-your-stuff.webp" alignRight>
 <span className="move-title-anchor-to-the-left">
 
 ## Share what you do with Coollab
@@ -40,7 +40,7 @@ Via [Discord](https://discord.gg/SBS4fEPHbm), [GitHub](https://github.com/Coolla
 
 <Spacer height="2rem"/>
 
-<TextBlock imgSrc="/img/tutorial.png" alignRight>
+<TextBlock imgSrc="/img/tutorial.webp" alignRight>
 <span className="move-title-anchor-to-the-left">
 
 ## Make tutorials

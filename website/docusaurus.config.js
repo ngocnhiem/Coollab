@@ -79,7 +79,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "img/page-hero.png",
+      image: "img/page-hero.jpg",
       colorMode: {
         defaultMode: "dark",
         disableSwitch: true,
@@ -90,7 +90,7 @@ const config = {
         title: "",
         logo: {
           alt: "Coollab Logo",
-          src: "img/logo.png",
+          src: "img/logo.webp",
         },
         items: [
           {

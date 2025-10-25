@@ -42,9 +42,9 @@ export default function Home() {
         <Spacer height="2.4rem" />
         <CenterH>
           <Image
-            src="img/demo.png"
-            noSmall
+            src="img/demo.webp"
             style={{ width: "70%", borderRadius: "var(--radius-mid)" }}
+            noSmall
           ></Image>
         </CenterH>
         {/*  */}
@@ -117,11 +117,11 @@ export default function Home() {
         <CenterH>
           <Image
             src="img/team.jpg"
-            noSmall
             style={{
               width: "65%",
               borderRadius: "var(--radius-mid)",
             }}
+            noSmall
           ></Image>
         </CenterH>
         <CenterText style={{ maxWidth: "60%" }}>
@@ -149,12 +149,12 @@ export default function Home() {
         <Spacer height="2.4rem" />
         <CenterH>
           <Image
-            src="img/custom-nodes.png"
-            noSmall
+            src="img/custom-nodes.webp"
             style={{
-              width: "65%" /* "60%" */,
+              width: "70%",
               borderRadius: "var(--radius-mid)",
             }}
+            noSmall
           ></Image>
         </CenterH>
         <Spacer height="5rem" />
