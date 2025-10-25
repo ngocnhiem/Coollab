@@ -16,11 +16,10 @@ export default function DownloadPage() {
       <div className={style.downloadWrapper}>
         {/* Left: Background image */}
         <div className={style.downloadImage}>
-          {/* TODO(Website) find a better image? Or make a cleaner version of this one? */}
-          <img src="/img/demo-vertical.png"></img>
+          <img src="/img/download.png"></img>
         </div>
 
-        {/* Right: OS Section */}
+        {/* Right: Download Section */}
         <main className={style.downloadContent}>
           <SectionTitle fontSize="3.5rem" mobileFontSize="2.5rem">
             Install Coollab
