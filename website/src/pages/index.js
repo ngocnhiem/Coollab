@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "@theme/Layout"
+import Head from "@docusaurus/Head"
 import Spacer from "../components/Spacer"
 import Timeline from "../components/Timeline"
 import GalleryPreview from "../components/GalleryPreview"
@@ -16,6 +17,9 @@ import LinkInternal from "../components/LinkInternal"
 export default function Home() {
   return (
     <Layout title="" description="Generative visuals for everyone">
+      <Head>
+        <link rel="preload" as="image" href="/img/hero.jpg" />
+      </Head>
       <main>
         <Hero />
         <Spacer height="5rem" />
