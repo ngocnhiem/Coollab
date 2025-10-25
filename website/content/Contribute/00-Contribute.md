@@ -2,6 +2,7 @@
 slug: "/Contribute"
 sidebar_label: ✨ Contribute
 image: /img/page-contribute.png
+description: There are many different ways to contribute!
 ---
 import ContributorsList from "@site/src/components/ContributorsList"
 import Spacer from "@site/src/components/Spacer"

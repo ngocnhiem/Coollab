@@ -1,9 +1,10 @@
 ---
 title: Video Playlist
 slug: /Tutorials
+image: /img/page-tutorials.png
+description: Beginner tutorials
 pagination_next: null
 pagination_prev: null
-image: /img/page-tutorials.png
 ---
 
 import YoutubePlaylist from "@site/src/components/YoutubePlaylist"
