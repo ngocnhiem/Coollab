@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <Layout title="" description="Generative visuals for everyone">
       <Head>
-        <link rel="preload" as="image" href="/img/hero.webp" />
+        <link rel="preload" as="image" href="/img/hero.jpg" />
       </Head>
       <main>
         <Hero />
