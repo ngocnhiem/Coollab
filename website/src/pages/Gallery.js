@@ -7,7 +7,11 @@ const Impl = loadable(() => import("../components/GalleryImpl"))
 
 export default function () {
   return (
-    <Layout title="Gallery" description="Artworks made by the community">
+    <Layout
+      title="Gallery"
+      description="Artworks made by the community"
+      image="/img/page-tutorials.png"
+    >
       <main>
         <BrowserOnly>{() => <Impl />}</BrowserOnly>
       </main>

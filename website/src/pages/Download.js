@@ -12,6 +12,7 @@ export default function DownloadPage() {
     <Layout
       title="Download"
       description="Install Coollab for Windows, Linux or MacOS"
+      image="/img/page-download.png"
     >
       <div className={style.downloadWrapper}>
         {/* Left: Background image */}
