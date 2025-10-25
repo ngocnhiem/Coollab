@@ -77,16 +77,16 @@ export default function ({ style }) {
 
   const images = {
     shape2D: loadImages(
-      require.context("./ImageGrid/Shape 2D", false, /\.png$/)
+      require.context("./ImageGrid/Shape 2D", false, /\.webp$/)
     ),
     shape3D: loadImages(
-      require.context("./ImageGrid/Shape 3D", false, /\.png$/)
+      require.context("./ImageGrid/Shape 3D", false, /\.webp$/)
     ),
     modifier: loadImages(
-      require.context("./ImageGrid/2D Transform", false, /\.png$/)
+      require.context("./ImageGrid/2D Transform", false, /\.webp$/)
     ),
     postProcess: loadImages(
-      require.context("./ImageGrid/Post-Process", false, /\.png$/)
+      require.context("./ImageGrid/Post-Process", false, /\.webp$/)
     ),
   }
 
