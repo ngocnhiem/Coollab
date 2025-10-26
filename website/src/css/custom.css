@@ -153,6 +153,10 @@ To get its classes, inspect or check Docusaurus Documentation.*/
   border-radius: var(--radius-mid);
 }
 
+.menu__link[href="/Download"] {
+  display: none;
+}
+
 .navbar__link[href="/Download"]:hover {
   border-radius: var(--radius-max);
   filter: brightness(120%);
@@ -204,6 +208,13 @@ To get its classes, inspect or check Docusaurus Documentation.*/
 .navbar-socials .iconBtn svg {
   transform: translateZ(0);
   will-change: transform;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .navbar__brand {
+    margin-right: 0;
+  }
 }
 
 /* Footer */
