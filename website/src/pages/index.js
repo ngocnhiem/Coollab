@@ -13,6 +13,8 @@ import CenterH, { CenterText } from "../components/CenterH"
 import ImageGrid from "../components/ImageGrid"
 import Image from "../components/Image"
 import LinkInternal from "../components/LinkInternal"
+import style from "./index.module.css"
+import { DesktopOnly } from "../components/Responsive"
 
 export default function Home() {
   return (
@@ -39,15 +41,18 @@ export default function Home() {
             Polished user experience
           </SectionTitle>
         </CenterH>
-        <CenterH>
-          We spend (way too much) time on fixing all the small bugs, and making
-          the experience as comfortable and intuitive as possible
-        </CenterH>
+        <DesktopOnly>
+          <CenterText className={style.wideText}>
+            We spend (way too much) time on fixing all the small bugs, and
+            making the experience as comfortable and intuitive as possible
+          </CenterText>
+        </DesktopOnly>
         <Spacer height="2.4rem" />
         <CenterH>
           <Image
             src="img/demo.webp"
-            style={{ width: "70%", borderRadius: "var(--radius-mid)" }}
+            style={{ borderRadius: "var(--radius-mid)" }}
+            className={style.wideImage}
             noSmall
           ></Image>
         </CenterH>
@@ -58,33 +63,35 @@ export default function Home() {
             Tons of effects
           </SectionTitle>
         </CenterH>
-        <CenterH>
-          High-level presets or low-level tools, for you to combine
-        </CenterH>
+        <DesktopOnly>
+          <CenterText className={style.wideText}>
+            High-level presets or low-level tools, for you to combine
+          </CenterText>
+        </DesktopOnly>
         <Spacer height="2.4rem" />
         <CenterH>
           <ImageGrid
             style={{
-              width: "70%",
               borderRadius: "var(--radius-mid)",
             }}
+            className={style.wideImage}
           />
         </CenterH>
         {/*  */}
         <Spacer height="5rem" />{" "}
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-            Create stunning animations{" "}
+            Create stunning animations
           </SectionTitle>
         </CenterH>
         <Spacer height="2.4rem"></Spacer>
         <CenterH>
           <div
             style={{
-              width: "70%",
               borderRadius: "var(--radius-mid)",
               overflow: "hidden",
             }}
+            className={style.wideImage}
           >
             <YoutubeVideo /* Trailer */ id="jsjkjCQCPno" />
           </div>
@@ -96,68 +103,66 @@ export default function Home() {
             Or live visuals
           </SectionTitle>
         </CenterH>
-        <CenterH>
-          VJ, interactive installations, <i>etc.</i>
-        </CenterH>
-        {/* <CenterH>Webcam, audio-reaction, midi, osc</CenterH> */}
+        <DesktopOnly>
+          <CenterText className={style.wideText}>
+            VJ, interactive installations, <i>etc.</i>
+          </CenterText>
+        </DesktopOnly>
         <Spacer height="2.4rem" />
         <LiveVisualsCards />
         {/*  */}
         <Spacer height="5rem" />
-        {/* <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-          Interactivity, Protocols
-        </SectionTitle>
-        <Spacer height="2.4rem"/>
-        OSC, Midi,Spout */}
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Free and open-source
           </SectionTitle>
         </CenterH>
-        <CenterText style={{ maxWidth: "60%" }}>
-          You own the software, forever
-        </CenterText>
+        <DesktopOnly>
+          <CenterText className={style.wideTextSmaller}>
+            You own the software, forever
+          </CenterText>
+        </DesktopOnly>
         <Spacer height="2.4rem" />
         <CenterH>
           <Image
             src="img/team.jpg"
-            style={{
-              width: "65%",
-              borderRadius: "var(--radius-mid)",
-            }}
+            style={{ borderRadius: "var(--radius-mid)" }}
+            className={style.wideImageSmaller}
             noSmall
           ></Image>
         </CenterH>
-        <CenterText style={{ maxWidth: "60%" }}>
-          <i style={{ fontSize: "12px" }}>
-            NB: No, the core team isn't that big. There is only one "full-time"
-            developer, the others did punctual missions that lasted a couple of
-            months
-          </i>
-        </CenterText>
+        <DesktopOnly>
+          <CenterText className={style.wideTextSmaller}>
+            <i style={{ fontSize: "12px" }}>
+              NB: No, the core team isn't that big. There is only one
+              "full-time" developer, the others did punctual missions that
+              lasted a couple of months
+            </i>
+          </CenterText>
+        </DesktopOnly>
         <Spacer height="5rem" />
         <CenterH>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Create custom nodes
           </SectionTitle>
         </CenterH>
-        <CenterH>
-          Write just a few lines of GLSL, and enjoy Coollab's implicit
-          conversions and default renderers!
-        </CenterH>
+        <DesktopOnly>
+          <CenterText className={style.wideText}>
+            Write just a few lines of GLSL, and enjoy Coollab's implicit
+            conversions and default renderers!
+          </CenterText>
+        </DesktopOnly>
         <CenterH>
           <LinkInternal to="/Tutorials/Writing%20Nodes/Intro">
-            Here is the complete tutorial
+            Here is the tutorial
           </LinkInternal>
         </CenterH>
         <Spacer height="2.4rem" />
         <CenterH>
           <Image
             src="img/custom-nodes.webp"
-            style={{
-              width: "70%",
-              borderRadius: "var(--radius-mid)",
-            }}
+            style={{ borderRadius: "var(--radius-mid)" }}
+            className={style.wideImage}
             noSmall
           ></Image>
         </CenterH>
@@ -170,14 +175,14 @@ export default function Home() {
         <Spacer height="2.4rem" />
         <SocialsBigButtons />
         {/*  */}
-        <Spacer height="5rem" />{" "}
+        <Spacer height="5rem" />
         <CenterH>
           <div
             style={{
-              width: "70%",
               borderRadius: "var(--radius-mid)",
               overflow: "hidden",
             }}
+            className={style.wideImage}
           >
             <YoutubeVideo /* What is Coollab? */ id="nkKj_MTBBRI" />
           </div>

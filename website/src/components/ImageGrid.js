@@ -64,7 +64,7 @@ function Row({ images }) {
   )
 }
 
-export default function ({ style }) {
+export default function ({ style, className }) {
   const loadImages = (req) => {
     const shuffle = (array) => {
       return array
@@ -102,7 +102,7 @@ export default function ({ style }) {
   }, [images])
 
   return (
-    <div className={styles.grid} style={style}>
+    <div className={`${styles.grid} ${className}`} style={style}>
       <Row images={images.shape2D} />
       <Row images={images.postProcess} />
       <Row images={images.modifier} />

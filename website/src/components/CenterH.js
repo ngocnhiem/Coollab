@@ -6,7 +6,7 @@ export default function ({ children }) {
   )
 }
 
-export function CenterText({ children, style }) {
+export function CenterText({ children, style, className }) {
   return (
     <div
       style={{
@@ -15,6 +15,7 @@ export function CenterText({ children, style }) {
         textAlign: "center",
         ...style,
       }}
+      className={className}
     >
       {children}
     </div>
