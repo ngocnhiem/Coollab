@@ -1,7 +1,7 @@
 import React from "react"
 import RandomizedList from "./RandomizedList"
 import Contributor from "./Contributor"
-import CenterH from "./CenterH"
+import { CenterText } from "../components/CenterH"
 import style from "./ContributorsList.module.css"
 
 export default function ContributorsList({ category }) {
@@ -17,7 +17,7 @@ export default function ContributorsList({ category }) {
 
   return (
     <>
-      <CenterH>
+      <CenterText>
         ✨
         {category === "Donations" ? (
           <b class="gradient-text">Many thanks to all our generous donors!</b>
@@ -31,7 +31,7 @@ export default function ContributorsList({ category }) {
           </b>
         )}
         ✨
-      </CenterH>
+      </CenterText>
       <div className={style.contributorsList}>
         <RandomizedList
           elements={filterByCategory([
