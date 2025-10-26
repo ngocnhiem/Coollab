@@ -1,6 +1,5 @@
 .downloadWrapper {
   display: flex;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -26,28 +25,42 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 2rem;
+}
+
+.extraButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 /* === Responsive === */
+@media (min-width: 769px) {
+  .downloadWrapper {
+    height: 100vh;
+  }
+  .downloadContent {
+    padding-left: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .downloadWrapper {
     flex-direction: column;
   }
-
-  .downloadImage,
+  .downloadImage {
+    width: 100%;
+  }
   .downloadContent {
     width: 100%;
-    height: 50vh;
     text-align: center;
-  }
-
-  .downloadContent {
-    height: auto;
-    padding: 2rem 1rem;
+    align-items: center;
   }
 
   .downloadContent .sectionTitle {
     font-size: 2.5rem;
+  }
+  .extraButtons {
+    margin-bottom: 2.4rem;
+    justify-content: center;
   }
 }
