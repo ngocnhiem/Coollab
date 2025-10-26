@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styles from "./ImageGrid.module.css"
+import BrowserOnly from "@docusaurus/BrowserOnly"
 
 const extractImage = (images) => {
   const image = images[0]
@@ -102,11 +103,15 @@ export default function ({ style, className }) {
   }, [images])
 
   return (
-    <div className={`${styles.grid} ${className}`} style={style}>
-      <Row images={images.shape2D} />
-      <Row images={images.postProcess} />
-      <Row images={images.modifier} />
-      <Row images={images.shape3D} />
-    </div>
+    <BrowserOnly>
+      {() => (
+        <div className={`${styles.grid} ${className}`} style={style}>
+          <Row images={images.shape2D} />
+          <Row images={images.postProcess} />
+          <Row images={images.modifier} />
+          <Row images={images.shape3D} />
+        </div>
+      )}
+    </BrowserOnly>
   )
 }
