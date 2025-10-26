@@ -288,14 +288,16 @@ aside {
 
 /* move-title-anchor-to-the-left */
 
-.move-title-anchor-to-the-left .anchor {
-  display: flex;
-  flex-direction: row-reverse;
-}
+@media (min-width: 769px) {
+  .move-title-anchor-to-the-left .anchor {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 
-.move-title-anchor-to-the-left .anchor a {
-  padding-right: 8px;
-  padding-left: 0;
+  .move-title-anchor-to-the-left .anchor a {
+    padding-right: 8px;
+    padding-left: 0;
+  }
 }
 
 /* Images in markdown tutorials */

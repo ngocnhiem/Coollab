@@ -1,23 +1,15 @@
 import React from "react"
+import style from "./TextBlock.module.css"
 
 export default function ({ imgSrc, caption, children, alignRight }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: alignRight && "row-reverse",
-        alignItems: "center",
-        // textAlign: alignRight && "right", // NB: actually this looks really bad so we disabled it
-      }}
-    >
+    <div className={`${style.block} ${alignRight && style.alignRight}`}>
       <div
         style={{
           fontStyle: "italic",
           fontSize: "12px",
-          height: "150px",
-          width: "auto",
-          flexShrink: "0",
         }}
+        className={style.imageAndCaption}
       >
         <img
           src={imgSrc}
@@ -27,12 +19,8 @@ export default function ({ imgSrc, caption, children, alignRight }) {
         {caption}
       </div>
       <div
-        style={{
-          marginTop: "5px",
-          marginLeft: !alignRight && "25px",
-          marginRight: alignRight && "15px",
-        }}
-        className="textBlock"
+        style={{ marginTop: "5px" }}
+        className={alignRight ? style.alignTextRight : style.alignTextLeft}
       >
         {children}
       </div>
