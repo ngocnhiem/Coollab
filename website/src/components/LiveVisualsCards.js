@@ -8,7 +8,6 @@ function Card({ image, color, linkInternal, children }) {
     <div className={style.card} style={{ borderColor: color }}>
       <Image
         src={image}
-        style={{ height: "200px", width: "255px" }}
         className={style.cardImage}
         onClick={(e) => {
           // Prevent clicking on the link when we click on the image
