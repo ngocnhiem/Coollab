@@ -59,14 +59,31 @@
 }
 
 @media (max-width: 768px) {
-  .timeline {
-    padding: 0 2em;
+  .image {
+    width: 150px;
   }
-  /* .timeline::before {
-    height: 65%;
-    top: 17%;
-    width: 5px;
-  } */
+  .text {
+    font-size: 0.75rem;
+  }
+  .number {
+    font-size: 2rem;
+  }
+  .timeline {
+    column-gap: 15px;
+    row-gap: 2.5rem;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .timeline::before {
+    width: 3px;
+    left: 50.1%;
+    top: 13%;
+    bottom: 13%;
+  }
   .step {
     margin: 2.5rem 0;
   }
