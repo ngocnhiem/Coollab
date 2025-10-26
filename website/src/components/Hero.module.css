@@ -45,8 +45,6 @@
   background-image: url("/img/hero.jpg");
   background-size: cover;
   background-position: center;
-  /* filter: blur(3px); */
-  transform: scale(1.05) translateX(-2%) translateY(-2.2%);
   z-index: 0;
 }
 
@@ -85,11 +83,10 @@
     height: 95vh;
   }
   .heroContent {
-    padding: 0em 2em;
+    margin-bottom: 15vh;
   }
   .heroTitle {
     font-size: 5em;
-    margin-top: 1em;
   }
   .heroSubtitle {
     font-size: 1.3em;
