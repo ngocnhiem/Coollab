@@ -83,6 +83,8 @@ function Step({ img, accentColor, stepNumber, children }) {
   )
 }
 
+// TODO(Website2) find a way for the line to automatically start and stop on first and last bullets ? instead of just hardcoding a size
+
 function Timeline({ children }) {
   const accentColors = ["#F4AD7F", "#8656D7", "#30A7F5"]
   return (
