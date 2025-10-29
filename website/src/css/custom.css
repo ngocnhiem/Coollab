@@ -215,6 +215,9 @@ To get its classes, inspect or check Docusaurus Documentation.*/
   .navbar__brand {
     margin-right: 0;
   }
+  .navbar__logo {
+    margin-right: 0;
+  }
 }
 
 /* Footer */
