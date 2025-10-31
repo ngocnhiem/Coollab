@@ -3,9 +3,9 @@ INPUT vec2 'Strength';
 UV main(UV uv)
 {
     mat2 skew = mat2(
-        1., -'Strength'.x,
-        -'Strength'.y, 1.
+        1., -'Strength'.y,
+        -'Strength'.x, 1.
     );
 
-    return uv * skew;
+    return skew * uv;
 }
