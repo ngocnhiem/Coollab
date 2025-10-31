@@ -19,11 +19,13 @@ export default function Footer() {
         {}
         <div className={styles.top}>
           <div>
-            <img
-              src="/img/logo-text.webp"
-              alt="Coollab Logo"
-              className={styles.logo}
-            />
+            <LinkInternal to="/">
+              <img
+                src="/img/logo-text.webp"
+                alt="Coollab Logo"
+                className={styles.logo}
+              />
+            </LinkInternal>
             <div className={styles.socials}>
               <LinkExternal
                 to="https://discord.com/invite/QEjqnEy4aT"
