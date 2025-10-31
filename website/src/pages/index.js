@@ -25,22 +25,22 @@ export default function Home() {
       <main>
         <Hero />
         <Spacer height="5rem" />
-        <CenterH>
+        <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Intuitive and Easy to learn
           </SectionTitle>
-        </CenterH>
+        </CenterText>
         <Spacer height="2.4rem" />
         <CenterH>
           <Timeline />
         </CenterH>
         {/*  */}
         <Spacer height="5rem" />
-        <CenterH>
+        <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Polished user experience
           </SectionTitle>
-        </CenterH>
+        </CenterText>
         <DesktopOnly>
           <CenterText className={style.wideText}>
             We spend (way too much) time on fixing all the small bugs, and
@@ -58,11 +58,11 @@ export default function Home() {
         </CenterH>
         {/*  */}
         <Spacer height="5rem" />
-        <CenterH>
+        <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Tons of effects
           </SectionTitle>
-        </CenterH>
+        </CenterText>
         <DesktopOnly>
           <CenterText className={style.wideText}>
             High-level presets or low-level tools, for you to combine
@@ -79,11 +79,11 @@ export default function Home() {
         </CenterH>
         {/*  */}
         <Spacer height="5rem" />{" "}
-        <CenterH>
+        <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Create stunning animations
           </SectionTitle>
-        </CenterH>
+        </CenterText>
         <Spacer height="2.4rem"></Spacer>
         <CenterH>
           <div
@@ -98,11 +98,11 @@ export default function Home() {
         </CenterH>
         {/*  */}
         <Spacer height="5rem" />
-        <CenterH>
+        <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Or live visuals
           </SectionTitle>
-        </CenterH>
+        </CenterText>
         <DesktopOnly>
           <CenterText className={style.wideText}>
             VJ, interactive installations, <i>etc.</i>
@@ -112,11 +112,11 @@ export default function Home() {
         <LiveVisualsCards />
         {/*  */}
         <Spacer height="5rem" />
-        <CenterH>
+        <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Free and open-source
           </SectionTitle>
-        </CenterH>
+        </CenterText>
         <DesktopOnly>
           <CenterText className={style.wideTextSmaller}>
             You own the software, forever
@@ -141,22 +141,22 @@ export default function Home() {
           </CenterText>
         </DesktopOnly>
         <Spacer height="5rem" />
-        <CenterH>
+        <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Create custom nodes
           </SectionTitle>
-        </CenterH>
+        </CenterText>
         <DesktopOnly>
           <CenterText className={style.wideText}>
             Write just a few lines of GLSL, and enjoy Coollab's implicit
             conversions and default renderers!
           </CenterText>
         </DesktopOnly>
-        <CenterH>
+        <CenterText>
           <LinkInternal to="/Tutorials/Writing%20Nodes/Intro">
             Here is the tutorial
           </LinkInternal>
-        </CenterH>
+        </CenterText>
         <Spacer height="2.4rem" />
         <CenterH>
           <Image
@@ -167,11 +167,11 @@ export default function Home() {
           ></Image>
         </CenterH>
         <Spacer height="5rem" />
-        <CenterH>
+        <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
             Follow us
           </SectionTitle>
-        </CenterH>
+        </CenterText>
         <Spacer height="2.4rem" />
         <SocialsBigButtons />
         {/*  */}
