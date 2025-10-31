@@ -4,6 +4,7 @@
 
 - 🟦 Nodes: White Noise's "Seed" is now a float instead of int. Otherwise when plugging Time in Seed, it gets rounded to the nearest integer.
 - 🟦 Added "Rings" node
+- 🟦 Stippling: rename "Density" as "Brightness" (and make param logarithmic) + Add "Seed" param
 
 ## 1.6.3 Caching
 
