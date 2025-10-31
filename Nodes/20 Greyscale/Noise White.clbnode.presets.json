@@ -7,17 +7,17 @@
                     "Name": "Default",
                     "Values": [
                         {
-                            "index": 1,
+                            "index": 2,
                             "data": {
                                 "Name": "Seed",
-                                "Value": 0,
+                                "Value": 0.0,
                                 "Metadata": {
                                     "Bounds": {
                                         "Has min bound": false,
-                                        "Min": 0,
+                                        "Min": 0.0,
                                         "Has max bound": false,
-                                        "Max": 12,
-                                        "Drag speed": 0.20000000298023225,
+                                        "Max": 1.0,
+                                        "Drag speed": 0.009999999776482582,
                                         "Use slider": false,
                                         "Is logarithmic": false
                                     }

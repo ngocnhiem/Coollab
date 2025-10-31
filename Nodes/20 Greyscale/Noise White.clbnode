@@ -1,4 +1,4 @@
-INPUT int 'Seed';
+INPUT float 'Seed';
 
 float main(UV p)
 {

@@ -1,5 +1,9 @@
 # Changelog
 
+##
+
+- 🟦 [Nodes] White Noise's "Seed" is now a float instead of int. Otherwise when plugging Time in Seed, it gets rounded to the nearest integer.
+
 ## 1.6.3 Caching
 
 - 🤏 Added a dropdown in the Inspector to replace a node with another node of the same category (e.g. to easily switch between Blend Modes). And we removed this option from the context menu of the node.
