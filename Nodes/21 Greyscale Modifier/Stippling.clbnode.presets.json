@@ -2,18 +2,36 @@
     "Presets": {
         "Underlying container": [
             {
-                "first": "e9d6a956-be67-4362-8983-600810f9c8c5",
+                "first": "5a5f72a3-f12b-4a9f-ba93-5cd62bc6f4d2",
                 "second": {
                     "Name": "Default",
                     "Values": [
                         {
                             "index": 2,
                             "data": {
-                                "Name": "Density",
+                                "Name": "Brightness",
                                 "Value": 0.3499999940395355,
                                 "Metadata": {
                                     "Bounds": {
                                         "Has min bound": true,
+                                        "Min": 0.0,
+                                        "Has max bound": false,
+                                        "Max": 1.0,
+                                        "Drag speed": 0.009999999776482582,
+                                        "Use slider": false,
+                                        "Is logarithmic": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "index": 2,
+                            "data": {
+                                "Name": "Seed",
+                                "Value": 0.0,
+                                "Metadata": {
+                                    "Bounds": {
+                                        "Has min bound": false,
                                         "Min": 0.0,
                                         "Has max bound": false,
                                         "Max": 1.0,
