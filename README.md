@@ -10,7 +10,7 @@
 
 ✨ _**Generative visuals for everyone**_ ✨
 
-- Intuitive for artists
+- Intuitive for beginners
 - Customisable for programmers
 - Free and open-source
 - Cross-platform (Windows, Linux, MacOS)

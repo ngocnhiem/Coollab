@@ -23,13 +23,20 @@ export default function Home() {
         <link rel="preload" as="image" href="/img/hero.jpg" />
       </Head>
       <main>
+        {/*  */}
         <Hero />
+        {/*  */}
         <Spacer height="5rem" />
         <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-            Intuitive and Easy to learn
+            Beginner-friendly
           </SectionTitle>
         </CenterText>
+        <DesktopOnly>
+          <CenterText className={style.wideText}>
+            Intuitive workflow, easy to learn
+          </CenterText>
+        </DesktopOnly>
         <Spacer height="2.4rem" />
         <CenterH>
           <Timeline />
@@ -140,23 +147,21 @@ export default function Home() {
             </i>
           </CenterText>
         </DesktopOnly>
+        {/*  */}
         <Spacer height="5rem" />
         <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-            Create custom nodes
+            Completely extensible
           </SectionTitle>
         </CenterText>
         <DesktopOnly>
           <CenterText className={style.wideText}>
-            Write just a few lines of GLSL, and enjoy Coollab's implicit
-            conversions and default renderers!
+            Create your own GLSL nodes!{" "}
+            <LinkInternal to="/Tutorials/Writing%20Nodes/Intro">
+              Follow the tutorial
+            </LinkInternal>
           </CenterText>
         </DesktopOnly>
-        <CenterText>
-          <LinkInternal to="/Tutorials/Writing%20Nodes/Intro">
-            Here is the tutorial
-          </LinkInternal>
-        </CenterText>
         <Spacer height="2.4rem" />
         <CenterH>
           <Image
@@ -166,6 +171,7 @@ export default function Home() {
             noSmall
           ></Image>
         </CenterH>
+        {/*  */}
         <Spacer height="5rem" />
         <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
@@ -187,7 +193,6 @@ export default function Home() {
             <YoutubeVideo /* What is Coollab? */ id="nkKj_MTBBRI" />
           </div>
         </CenterH>
-        {/*  */}
         <Spacer height="2.4rem" />
       </main>
     </Layout>
