@@ -1,0 +1,17 @@
+// To learn how to write nodes, see https://coollab-art.com/Tutorials/Writing%20Nodes/Intro
+
+INPUT float 'Spacing';
+INPUT float 'Thickness';
+INPUT float 'Offset';
+
+SignedDistance main(SignedDistance Shape)
+{
+    Shape /= 'Spacing';
+    Shape += 'Offset';
+    float frac = fract(Shape);
+    int   id   = int(floor(Shape));
+    float dist = id % 2 == 0 ? frac : 1. - frac;
+    dist *= 'Spacing';
+    return dist - 'Thickness';
+    // return mod('Shape'(uv) + 'Offset', 'Spacing') - 'Thickness';
+}

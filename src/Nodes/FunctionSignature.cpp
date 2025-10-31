@@ -37,9 +37,18 @@ auto shape_2D_signature() -> FunctionSignature
         .arity = 1,
     };
 }
+static auto sdf_modifier_signature() -> FunctionSignature
+{
+    return FunctionSignature{
+        .from  = PrimitiveType::SignedDistance,
+        .to    = PrimitiveType::SignedDistance,
+        .arity = 1,
+    };
+}
 auto is_shape_2D(FunctionSignature signature) -> bool
 {
-    return signature == shape_2D_signature();
+    return signature == shape_2D_signature()
+           || signature == sdf_modifier_signature(); // TODO(Nodes) This 2nd case can actually be either a Shape2D or a Shape3D. Just like 2D transforms are white but should change color depending on the context, this SDF->SDF signature should also adapt its color
 }
 
 auto shape_3D_signature() -> FunctionSignature
