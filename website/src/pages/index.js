@@ -29,7 +29,7 @@ export default function Home() {
         <Spacer height="5rem" />
         <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-            Beginner-friendly
+            Beginner friendly
           </SectionTitle>
         </CenterText>
         <DesktopOnly>
@@ -151,12 +151,12 @@ export default function Home() {
         <Spacer height="5rem" />
         <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-            Completely extensible
+            Easily extensible
           </SectionTitle>
         </CenterText>
         <DesktopOnly>
           <CenterText className={style.wideText}>
-            Create your own GLSL nodes!{" "}
+            Create your own GLSL nodes in a few lines of code!{" "}
             <LinkInternal to="/Tutorials/Writing%20Nodes/Intro">
               Follow the tutorial
             </LinkInternal>
