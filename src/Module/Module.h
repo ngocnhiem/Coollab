@@ -48,6 +48,7 @@ public:
     [[nodiscard]] virtual auto needs_to_rerender() const -> bool;
     virtual void               before_module_graph_renders() {};
     virtual auto               texture() const -> Cool::TextureRef { return _render_target.texture_ref(); }
+    virtual auto               desired_size(img::Size render_target_size) const -> img::Size { return render_target_size; } // Allows a module to choose at which resolution it renders, with respect to the output render target size
 
     [[nodiscard]] auto needs_to_rerender_flag() const -> Cool::DirtyFlag const& { return _needs_to_rerender_flag; }
     void               update_dependencies_from_nodes_graph(Cool::NodesGraph const& graph) { Lab::update_dependencies_from_nodes_graph(_depends_on, graph, _nodes_that_we_depend_on); }

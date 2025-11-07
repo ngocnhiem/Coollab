@@ -66,8 +66,8 @@ private:
     auto create_particles_module(Cool::NodeId const& node_id, NodeDefinition const&, DataToGenerateShaderCode const&) -> std::shared_ptr<Module>;
     auto create_feedback_loop_module(Cool::NodeId const& node_id, DataToGenerateShaderCode const&) -> std::shared_ptr<Module>;
     auto create_caching_module(Cool::NodeId const& node_id, DataToGenerateShaderCode const&) -> std::shared_ptr<Module>;
+    auto create_jfa_module(Cool::NodeId const& root_node_id, DataToGenerateShaderCode const&) -> std::shared_ptr<Module>;
     auto create_default_module() -> std::shared_ptr<Module>;
-    auto create_jfa_module() -> std::shared_ptr<Module>;
 
     void render_module_ifn(Module&, DataToPassToShader const&);
     void check_for_rerender_and_rebuild(DataToPassToShader const&, DataToGenerateShaderCode const&);

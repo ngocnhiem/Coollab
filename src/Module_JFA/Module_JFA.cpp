@@ -17,8 +17,8 @@ Module_JFA::Module_JFA(std::string texture_name_in_shader, std::shared_ptr<Modul
     : Module{
           fmt::format("Mask to Shape {}", module_id()),
           std::move(texture_name_in_shader),
-          {/* std::move(module_that_we_depend_on) */}, // TODO(JFA)
-          {}                                           // We don't depend on any node
+          {std::move(module_that_we_depend_on)},
+          {} // We don't depend on any node
       }
 
 {
@@ -30,6 +30,11 @@ void Module_JFA::reload_shaders() const
     _init_shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/init.frag"));                 // TODO(JFA) handle error
     _one_flood_step_shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/flood_step.frag")); // TODO(JFA) handle error
     _test_sdf.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/test_sdf.frag"));                // TODO(JFA) handle error
+}
+
+auto Module_JFA::desired_size(img::Size /* render_target_size */) const -> img::Size
+{
+    return {resolution, resolution}; // TODO(JFA) find the biggest power of 2 that can contain the render target size?
 }
 
 // auto Module_JFA::texture() const -> Cool::TextureRef
@@ -54,13 +59,12 @@ void Module_JFA::render(DataToPassToShader const& data)
 {
     render_target().set_size({resolution, resolution});
     _render_target.set_size({resolution, resolution});
-
+    // TODO(JFA) generate interior sdf
+    // TODO(JFA) when JFA is main output node it's interpreted as an image not a shape
+    // TODO(JFA) seems to be a scale difference in the distance when compared to regular shapes (visible when using "Rings" effect)
     render_target().render([&]() {
-        glClearColor(1, 1, 1, 1);     // TODO(JFA) remove
-        glClear(GL_COLOR_BUFFER_BIT); // TODO(JFA) remove
-
         _init_shader.shader()->bind();
-        _init_shader.shader()->set_uniform_texture("input_mask", Cool::TextureLibrary_Image::instance().get("C:/Users/fouch/Downloads/jfa_test.png")->id());
+        _init_shader.shader()->set_uniform_texture("input_mask", modules_that_we_depend_on()[0]->texture().id);
         _init_shader.draw();
         _read_on_default_rt = true;
     });

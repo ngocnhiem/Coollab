@@ -13,6 +13,7 @@
 #include "CodeGen_desired_function_implementation.h"
 #include "Cool/Expected/RETURN_IF_ERROR.h"
 #include "Cool/Nodes/Pin.h"
+#include "Cool/Utils/overloaded.hpp"
 #include "Function.h"
 #include "FunctionSignature.h"
 #include "Node.h"
@@ -31,14 +32,9 @@ static auto base_function_name(
     -> std::string
 {
     using fmt::literals::operator""_a;
-    return valid_glsl(fmt::format(
-        FMT_COMPILE(
-            R"STR({name}{id})STR"
-        ),
-        "name"_a = definition.name(), // NB: We don't have to worry about the uniqueness of that name because we append an ID anyway
-        "id"_a   = to_string(id.underlying_uuid())
-    )
-    );
+    return valid_glsl(fmt::format(FMT_COMPILE(R"STR({name}{id})STR"),
+                                  "name"_a = definition.name(), // NB: We don't have to worry about the uniqueness of that name because we append an ID anyway
+                                  "id"_a   = to_string(id.underlying_uuid())));
 }
 
 static auto desired_function_name(
@@ -48,15 +44,9 @@ static auto desired_function_name(
 ) -> std::string
 {
     using fmt::literals::operator""_a;
-    return valid_glsl(fmt::format(
-        FMT_COMPILE(
-            "{name}{signature}{id}"
-        ),
-        "name"_a      = definition.name(), // NB: We don't have to worry about the uniqueness of that name because we append an ID anyway
-        "signature"_a = to_string(signature),
-        "id"_a        = to_string(id.underlying_uuid())
-    )
-    );
+    return valid_glsl(fmt::format(FMT_COMPILE("{name}{signature}{id}"),
+                                  "name"_a      = definition.name(), // NB: We don't have to worry about the uniqueness of that name because we append an ID anyway
+                                  "signature"_a = to_string(signature), "id"_a = to_string(id.underlying_uuid())));
 }
 
 auto make_valid_output_index_name(Cool::OutputPin const& pin) -> std::string
@@ -455,6 +445,42 @@ static auto make_node_definition_that_reads_module_texture(std::string const& te
         .value(); // We are creating the node definition from scratch, so we know that it is valid.
 }
 
+static auto make_node_definition_that_reads_module_texture_as_shape(std::string const& texture_name) -> NodeDefinition
+{
+    using fmt::literals::operator""_a;
+
+    auto const main_function = MainFunction{
+        .signature_as_string = FunctionSignatureAsString{
+            .return_type    = "/* SignedDistance */ float",
+            .name           = "read_module_texture_as_shape",
+            .arguments_list = "/* UV */ vec2 uv",
+        },
+        .argument_names = {"uv"},
+        .signature      = FunctionSignature{
+                 .from  = PrimitiveType::UV,
+                 .to    = PrimitiveType::SignedDistance,
+                 .arity = 1,
+        },
+        .body = fmt::format(R"glsl(
+                    uv = unnormalize_uv(to_view_space(uv));
+                    return distance(uv, texture({texture_name}, uv).xy);
+                    )glsl",
+                            "texture_name"_a = texture_name),
+    };
+    return NodeDefinition::make(
+               NodeDefinition_Data{
+                   .main_function         = main_function,
+                   .helper_glsl_code      = {},
+                   .names_in_global_scope = {},
+                   .input_functions       = {},
+                   .input_values          = {},
+                   .output_indices        = {},
+               },
+               {}
+    )
+        .value(); // We are creating the node definition from scratch, so we know that it is valid.
+}
+
 auto gen_desired_function(
     FunctionSignature                  desired_signature,
     std::reference_wrapper<Node const> node,
@@ -465,29 +491,34 @@ auto gen_desired_function(
 {
     auto const* node_definition = context.get_node_definition(node.get().id_names()); // NOLINT(readability-qualified-auto)
     if (!node_definition)
-        return tl::make_unexpected(fmt::format(
-            "Node definition \"{}\" was not found. Are you missing a file in your nodes folder?",
-            node.get().definition_name()
-        ));
+        return tl::make_unexpected(fmt::format("Node definition \"{}\" was not found. Are you missing a file in your nodes folder?", node.get().definition_name()));
 
     auto const maybe_module_texture_name = maybe_generate_module(id, *node_definition);
 
     auto new_node            = Node{};
     auto new_node_definition = NodeDefinition{};
-    if (maybe_module_texture_name.has_value()) // We need to replace the current node with a fake node that reads an image from the given texture
-    {
-        new_node            = make_node_that_reads_module_texture();
-        new_node_definition = make_node_definition_that_reads_module_texture(maybe_module_texture_name.value());
-        node_definition     = &new_node_definition;
-        node                = new_node; // Make the reference wrapper point to our new node
-    }
+    std::visit(
+        Cool::overloaded{
+            [&](ImageTextureName const& name) { // We need to replace the current node with a fake node that reads an image from the given texture
+                new_node            = make_node_that_reads_module_texture();
+                new_node_definition = make_node_definition_that_reads_module_texture(name.name);
+                node_definition     = &new_node_definition;
+                node                = new_node; // Make the reference wrapper point to our new node
+            },
+            [&](ShapeTextureName const& name) { // We need to replace the current node with a fake node that reads an image from the given texture
+                new_node            = make_node_that_reads_module_texture();
+                new_node_definition = make_node_definition_that_reads_module_texture_as_shape(name.name);
+                node_definition     = &new_node_definition;
+                node                = new_node; // Make the reference wrapper point to our new node
+            },
+            [&](None) {},
+        },
+        maybe_module_texture_name
+    );
 
     auto const base_function_name = gen_base_function(node, *node_definition, id, context, maybe_generate_module);
     if (!base_function_name)
-        return tl::make_unexpected(fmt::format(
-            "Failed to generate code for node \"{}\":\n{}",
-            node_definition->name(), base_function_name.error()
-        ));
+        return tl::make_unexpected(fmt::format("Failed to generate code for node \"{}\":\n{}", node_definition->name(), base_function_name.error()));
 
     auto const func_body = gen_desired_function_implementation(
         node_definition->signature(),
@@ -499,10 +530,7 @@ auto gen_desired_function(
         maybe_generate_module
     );
     if (!func_body)
-        return tl::make_unexpected(fmt::format(
-            "Failed to generate conversion code for node \"{}\":\n{}",
-            node_definition->name(), func_body.error()
-        ));
+        return tl::make_unexpected(fmt::format("Failed to generate conversion code for node \"{}\":\n{}", node_definition->name(), func_body.error()));
 
     auto const func_name       = desired_function_name(*node_definition, id, desired_signature);
     auto const func_definition = gen_function_definition({

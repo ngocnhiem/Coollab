@@ -9,13 +9,9 @@ public:
     Module_JFA() = default;
     Module_JFA(std::string texture_name_in_shader, std::shared_ptr<Module> module_that_we_depend_on);
 
-    // void               on_time_reset() override;
-    // auto               texture() const -> Cool::TextureRef override;
-    // [[nodiscard]] auto needs_to_rerender() const -> bool override;
-    // void               before_module_graph_renders() override;
-
     void imgui_windows(Ui_Ref) const override;
     auto texture() const -> Cool::TextureRef override;
+    auto desired_size(img::Size render_target_size) const -> img::Size override;
 
 private:
     void render(DataToPassToShader const&) override;
