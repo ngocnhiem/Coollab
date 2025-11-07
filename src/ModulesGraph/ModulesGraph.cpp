@@ -1,5 +1,6 @@
 #include "ModulesGraph.h"
 #include <algorithm>
+#include <memory>
 #include "CommandCore/CommandExecutor.h"
 #include "Cool/Audio/AudioManager.h"
 #include "Cool/Nodes/NodesLibrary.h"
@@ -11,6 +12,7 @@
 #include "Module_Compositing/generate_compositing_shader_code.h"
 #include "Module_Default/Module_Default.hpp"
 #include "Module_FeedbackLoop/Module_FeedbackLoop.hpp"
+#include "Module_JFA/Module_JFA.hpp"
 #include "Module_Particles/Module_Particles.h"
 #include "Module_Particles/generate_simulation_shader_code.h"
 #include "Nodes/FunctionSignature.h"
@@ -158,26 +160,27 @@ void ModulesGraph::recreate_all_modules(Cool::NodeId const& root_node_id, DataTo
 
 auto ModulesGraph::create_module(Cool::NodeId const& root_node_id, DataToGenerateShaderCode const& data) -> std::shared_ptr<Module>
 {
-    auto const* node = data.nodes_graph.try_get_node<Node>(root_node_id);
-    if (!node)
-        return create_default_module(); // TODO(Module) Return an error message? Probably not because this is legit, eg when a feedback loop has nothing in its input pin
-    auto const* node_def = data.get_node_definition(node->id_names());
-    if (!node_def)
-        return create_default_module(); // TODO(Module) Return an error message, this shouldn't happen
+    return create_jfa_module();
+    // auto const* node = data.nodes_graph.try_get_node<Node>(root_node_id);
+    // if (!node)
+    //     return create_default_module(); // TODO(Module) Return an error message? Probably not because this is legit, eg when a feedback loop has nothing in its input pin
+    // auto const* node_def = data.get_node_definition(node->id_names());
+    // if (!node_def)
+    //     return create_default_module(); // TODO(Module) Return an error message, this shouldn't happen
 
-    switch (node_moduleness(*node_def))
-    {
-    case NodeModuleness::Generic:
-        return create_compositing_module(root_node_id, data);
-    case NodeModuleness::Particle:
-        return create_particles_module(root_node_id, *node_def, data);
-    case NodeModuleness::FeedbackLoop:
-        return create_feedback_loop_module(root_node_id, data);
-    case NodeModuleness::Caching:
-        return create_caching_module(root_node_id, data);
-    }
-    assert(false);
-    return create_default_module();
+    // switch (node_moduleness(*node_def))
+    // {
+    // case NodeModuleness::Generic:
+    //     return create_compositing_module(root_node_id, data);
+    // case NodeModuleness::Particle:
+    //     return create_particles_module(root_node_id, *node_def, data);
+    // case NodeModuleness::FeedbackLoop:
+    //     return create_feedback_loop_module(root_node_id, data);
+    // case NodeModuleness::Caching:
+    //     return create_caching_module(root_node_id, data);
+    // }
+    // assert(false);
+    // return create_default_module();
 }
 
 auto ModulesGraph::create_module_impl(std::string const& texture_name_in_shader, std::function<std::shared_ptr<Module>()> const& make_module) -> std::shared_ptr<Module>
@@ -347,6 +350,14 @@ auto ModulesGraph::create_default_module() -> std::shared_ptr<Module>
     auto const texture_name_in_shader = "texture_of_the_default_module"s;
     return create_module_impl(texture_name_in_shader, [&]() -> std::shared_ptr<Module> {
         return std::make_shared<Module_Default>(texture_name_in_shader);
+    });
+}
+
+auto ModulesGraph::create_jfa_module() -> std::shared_ptr<Module>
+{
+    auto const texture_name_in_shader = "jfa_test_texture"s;
+    return create_module_impl(texture_name_in_shader, [&]() -> std::shared_ptr<Module> {
+        return std::make_shared<Module_JFA>(texture_name_in_shader, nullptr); // TODO(JFA) don't pass nullptr
     });
 }
 
