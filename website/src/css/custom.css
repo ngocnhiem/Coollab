@@ -153,10 +153,6 @@ To get its classes, inspect or check Docusaurus Documentation.*/
   border-radius: var(--radius-mid);
 }
 
-.menu__link[href="/Download"] {
-  display: none;
-}
-
 .navbar__link[href="/Download"]:hover {
   border-radius: var(--radius-max);
   filter: brightness(120%);
@@ -389,7 +385,14 @@ aside {
   }
 
   .menu__list {
-    gap: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Make sure the Socials section is after the Download link in the mobile menu */
+  div.menu__list-item:has(div.navbar-socials) {
+    order: 1;
   }
 
   .menu__list-item {
@@ -414,7 +417,7 @@ aside {
     gap: 0.7rem;
     padding: 1rem 1.25rem 1.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.14);
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
   }
 
   .navbar-sidebar .iconBtn {
