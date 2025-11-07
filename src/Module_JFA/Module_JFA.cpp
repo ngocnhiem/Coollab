@@ -69,9 +69,10 @@ void Module_JFA::render(DataToPassToShader const& data)
         _read_on_default_rt = true;
     });
     // TODO(JFA) export an "offset from right number of steps" param, because it's fun to see the duplicated images
+    // TODO(JFA) expose params on the node, and rerender when they change
     int   jump_size       = resolution / 2;
     float jump_size_float = 0.5f;
-    // while (jump_size > 0)
+    // while (jump_size > 0) //TODO(JFA)
     for (int i = 0; i < steps_count; ++i)
     {
         auto& read_rt  = _read_on_default_rt ? render_target() : _render_target;
@@ -79,7 +80,7 @@ void Module_JFA::render(DataToPassToShader const& data)
 
         write_rt.render([&]() {
             _one_flood_step_shader.shader()->bind();
-            _one_flood_step_shader.shader()->set_uniform_texture("prev_step", read_rt.texture_ref().id, Cool::TextureSamplerDescriptor{.interpolation_mode = glpp::Interpolation::NearestNeighbour});
+            _one_flood_step_shader.shader()->set_uniform_texture("prev_step", read_rt.texture_ref().id, Cool::TextureSamplerDescriptor{.repeat_mode = Cool::TextureRepeatMode::Clamp, .interpolation_mode = glpp::Interpolation::NearestNeighbour});
             _one_flood_step_shader.shader()->set_uniform("resolution", (int)resolution);
             _one_flood_step_shader.shader()->set_uniform("jump_size", jump_size);
             // _one_flood_step_shader.shader()->set_uniform("jump_size_float", jump_size_float);

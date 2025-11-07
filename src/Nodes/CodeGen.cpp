@@ -463,7 +463,17 @@ static auto make_node_definition_that_reads_module_texture_as_shape(std::string 
         },
         .body = fmt::format(R"glsl(
                     uv = unnormalize_uv(to_view_space(uv));
-                    return distance(uv, texture({texture_name}, uv).xy);
+                    vec4 tex = texture({texture_name}, uv);
+                    float dist1 = distance(uv, /* normalize_uv */(tex.xy));
+                    float dist2 = distance(uv, /* normalize_uv */(tex.zw));
+                    // One of either dist1 or dist2 is 0
+                    // return (dist1 - dist2) ; // Add the two to reduce aliasing on the border of the shape
+                    // return smooth_max_polynomial(dist1, dist2, 0.1) * ((dist1 < dist2) ? -1 : 1) * 2.;
+                    return (dist1 < dist2
+                        ? -dist2
+                        : dist1) 
+                         * 2; // Because JFA used UVs from [0, 1], but we use [-1, 1];
+                            // TODO(JFA) or maybe just dont unormalize uvs ?
                     )glsl",
                             "texture_name"_a = texture_name),
     };
