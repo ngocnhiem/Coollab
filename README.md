@@ -3,7 +3,7 @@
 <table>
   <tr>
     <td><img alt="logo" src="./logo.png" height = 100px/></td>
-    <td><img alt="logo" src="./website/static/img/page-hero.jpg" height = 200px/></td>
+    <td><img alt="banner" src="./website/static/img/page-hero.jpg" height = 200px/></td>
   </tr>
 </table>
 
