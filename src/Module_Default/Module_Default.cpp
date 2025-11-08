@@ -11,6 +11,7 @@ static auto module_id()
 Module_Default::Module_Default(std::string texture_name_in_shader)
     : Module{
           fmt::format("Default {}", module_id()),
+          Cool::TextureFormat{.num_components = 4, .type = Cool::PixelType::UInt8},
           std::move(texture_name_in_shader),
           {}, // We don't depend on any module
           {}  // We don't depend on any node

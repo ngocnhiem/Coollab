@@ -24,8 +24,9 @@ public:
     auto operator=(Module&&) noexcept -> Module& = delete;
     virtual ~Module()                            = default;
 
-    explicit Module(std::string_view name, std::string texture_name_in_shader, std::vector<std::shared_ptr<Module>> modules_that_we_depend_on, std::vector<Cool::NodeId> nodes_that_we_depend_on)
+    explicit Module(std::string_view name, Cool::TextureFormat rt_format, std::string texture_name_in_shader, std::vector<std::shared_ptr<Module>> modules_that_we_depend_on, std::vector<Cool::NodeId> nodes_that_we_depend_on)
         : _name{name}
+        , _render_target{rt_format}
         , _texture_name_in_shader{std::move(texture_name_in_shader)}
         , _modules_that_we_depend_on{std::move(modules_that_we_depend_on)}
         , _nodes_that_we_depend_on{std::move(nodes_that_we_depend_on)}
@@ -66,7 +67,7 @@ private:
 private:
     std::string        _name;
     Cool::DirtyFlag    _needs_to_rerender_flag;
-    Cool::RenderTarget _render_target{};
+    Cool::RenderTarget _render_target{{}}; // NB: this format is not used anyways, it's only for the default constructor for serialization, but it will be overwritten by the proper constructor
 
     std::string                          _texture_name_in_shader{};
     std::vector<std::shared_ptr<Module>> _modules_that_we_depend_on{};

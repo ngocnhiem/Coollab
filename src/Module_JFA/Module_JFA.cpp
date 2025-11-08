@@ -13,13 +13,17 @@ static auto module_id()
     return i++;
 }
 
+static constexpr auto texture_format = Cool::TextureFormat{.num_components = 4, .type = Cool::PixelType::Float16};
+
 Module_JFA::Module_JFA(std::string texture_name_in_shader, std::shared_ptr<Module> module_that_we_depend_on)
     : Module{
           fmt::format("Mask to Shape {}", module_id()),
+          texture_format,
           std::move(texture_name_in_shader),
           {std::move(module_that_we_depend_on)},
           {} // We don't depend on any node
       }
+    , _render_target{texture_format}
 
 {
     reload_shaders();
@@ -59,7 +63,6 @@ void Module_JFA::render(DataToPassToShader const& data)
 {
     render_target().set_size({resolution, resolution});
     _render_target.set_size({resolution, resolution});
-    // TODO(JFA) generate interior sdf
     // TODO(JFA) when JFA is main output node it's interpreted as an image not a shape
     // TODO(JFA) seems to be a scale difference in the distance when compared to regular shapes (visible when using "Rings" effect)
     render_target().render([&]() {

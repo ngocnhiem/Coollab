@@ -17,7 +17,7 @@ private:
     void render(DataToPassToShader const&) override;
 
 private:
-    Cool::RenderTarget _render_target{};
+    Cool::RenderTarget _render_target{{}}; // NB: this format is not used anyways, it's only for the default constructor for serialization, but it will be overwritten by the proper constructor
     bool               _render_target_ping_pong{false};
     int                _renders_count{0};
     bool               _rerender_next_frame{false};

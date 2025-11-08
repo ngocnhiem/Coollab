@@ -15,6 +15,7 @@ static auto module_id()
 Module_Compositing::Module_Compositing(std::string texture_name_in_shader, std::vector<std::shared_ptr<Module>> modules_that_we_depend_on, std::vector<Cool::NodeId> nodes_that_we_depend_on)
     : Module{
           fmt::format("Compositing {}", module_id()),
+          Cool::TextureFormat{.num_components = 4, .type = Cool::PixelType::UInt8},
           std::move(texture_name_in_shader),
           std::move(modules_that_we_depend_on),
           std::move(nodes_that_we_depend_on)

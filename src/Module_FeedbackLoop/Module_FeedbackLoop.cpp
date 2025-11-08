@@ -9,13 +9,17 @@ static auto module_id()
     return i++;
 }
 
+static constexpr auto texture_format = Cool::TextureFormat{.num_components = 4, .type = Cool::PixelType::UInt8};
+
 Module_FeedbackLoop::Module_FeedbackLoop(std::string texture_name_in_shader, std::shared_ptr<Module> module_that_we_depend_on)
     : Module{
           fmt::format("Feedback Loop {}", module_id()),
+          texture_format,
           std::move(texture_name_in_shader),
           {std::move(module_that_we_depend_on)},
           {} // We don't depend on any node
       }
+    , _render_target{texture_format}
 {}
 
 void Module_FeedbackLoop::on_time_reset()

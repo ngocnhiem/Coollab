@@ -15,6 +15,7 @@ static auto module_id()
 Module_Particles::Module_Particles(Cool::NodeId const& id_of_node_storing_particles_count, std::string texture_name_in_shader, std::vector<std::shared_ptr<Module>> modules_that_we_depend_on, std::vector<Cool::NodeId> nodes_that_we_depend_on)
     : Module{
           fmt::format("Particles {}", module_id()),
+          Cool::TextureFormat{.num_components = 4, .type = Cool::PixelType::UInt8},
           std::move(texture_name_in_shader),
           std::move(modules_that_we_depend_on),
           std::move(nodes_that_we_depend_on)

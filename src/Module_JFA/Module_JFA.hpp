@@ -28,7 +28,7 @@ private:
     mutable Cool::FullscreenPipeline _init_shader;
     mutable Cool::FullscreenPipeline _one_flood_step_shader;
     mutable Cool::FullscreenPipeline _test_sdf;
-    Cool::RenderTarget               _render_target{};
+    Cool::RenderTarget               _render_target{{}}; // NB: this format is not used anyways, it's only for the default constructor for serialization, but it will be overwritten by the proper constructor
     bool                             _read_on_default_rt{false};
 
     mutable uint32_t resolution{1024};
