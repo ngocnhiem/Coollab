@@ -1,0 +1,30 @@
+{
+    "Presets": {
+        "Underlying container": [
+            {
+                "first": "5c4bb390-983c-4091-9272-c2ac7167ae85",
+                "second": {
+                    "Name": "Default",
+                    "Values": [
+                        {
+                            "index": 7,
+                            "data": {
+                                "Name": "Background Color",
+                                "Value": {
+                                    "sRGB": {
+                                        "x": 0.028152234852313997,
+                                        "y": 0.5382691621780396,
+                                        "z": 0.0
+                                    }
+                                },
+                                "Metadata": {
+                                    "Is HDR": false
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

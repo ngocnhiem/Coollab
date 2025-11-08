@@ -1,12 +1,10 @@
 INPUT float 'Amount';
-INPUT float 'Shape radius';
+INPUT float 'Shape radius'; /// This is important to configure in order to prevent your shape from inflating. For the effect to only apply to the corners we need to know the size of your shape so that we can preserve it.
 
 INPUT UV->SignedDistance 'Shape';
 
 SignedDistance main(UV uv)
 {
     float zoom = ('Shape radius' + 'Amount') / 'Shape radius';
-
-    float d = 'Shape'(uv * zoom) - 'Amount';
-    return d;
+    return 'Shape'(uv * zoom) - 'Amount';
 }

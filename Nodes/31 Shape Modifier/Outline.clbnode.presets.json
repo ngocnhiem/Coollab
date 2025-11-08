@@ -17,8 +17,26 @@
                                         "Min": 0.0,
                                         "Has max bound": false,
                                         "Max": 1.0,
-                                        "Drag speed": 0.00009999999747378752,
+                                        "Drag speed": 0.003000000026077032,
                                         "Use slider": false,
+                                        "Is logarithmic": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "index": 1,
+                            "data": {
+                                "Name": "Offset",
+                                "Value": 0,
+                                "Metadata": {
+                                    "Bounds": {
+                                        "Has min bound": true,
+                                        "Min": -1,
+                                        "Has max bound": true,
+                                        "Max": 1,
+                                        "Drag speed": 0.019999999552965165,
+                                        "Use slider": true,
                                         "Is logarithmic": false
                                     }
                                 }

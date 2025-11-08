@@ -1,0 +1,7 @@
+INPUT float 'Threshold';
+INPUT float 'Transition Size';
+
+float main(float Image)
+{
+    return smoothstep('Threshold' - 'Transition Size', 'Threshold' + 'Transition Size', Image);
+}

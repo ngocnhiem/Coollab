@@ -2,24 +2,24 @@
     "Presets": {
         "Underlying container": [
             {
-                "first": "858c76c8-f14f-4dd8-a5b4-a385f7879b90",
+                "first": "c53fa2e8-2b93-4fb7-8951-e4c4d9c1f2bc",
                 "second": {
                     "Name": "Default",
                     "Values": [
                         {
                             "index": 2,
                             "data": {
-                                "Name": "Amount",
-                                "Value": 0.05000000074505806,
+                                "Name": "Threshold",
+                                "Value": 0.5,
                                 "Metadata": {
                                     "Bounds": {
-                                        "Has min bound": true,
+                                        "Has min bound": false,
                                         "Min": 0.0,
                                         "Has max bound": false,
                                         "Max": 1.0,
                                         "Drag speed": 0.009999999776482582,
-                                        "Use slider": false,
-                                        "Is logarithmic": true
+                                        "Use slider": true,
+                                        "Is logarithmic": false
                                     }
                                 }
                             }
@@ -27,12 +27,12 @@
                         {
                             "index": 2,
                             "data": {
-                                "Name": "Shape radius",
-                                "Value": 0.5,
+                                "Name": "Transition Size",
+                                "Value": 0.03835376352071762,
                                 "Metadata": {
                                     "Bounds": {
                                         "Has min bound": true,
-                                        "Min": 0.0,
+                                        "Min": 0.0005000000237487257,
                                         "Has max bound": false,
                                         "Max": 1.0,
                                         "Drag speed": 0.004999999888241291,

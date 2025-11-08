@@ -1,0 +1,8 @@
+INPUT float 'Amount';
+
+INPUT UV->SignedDistance 'Shape';
+
+SignedDistance main(UV uv)
+{
+    return 'Shape'(uv) - 'Amount';
+}

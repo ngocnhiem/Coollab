@@ -3,8 +3,9 @@
 INPUT UV->SignedDistance 'Shape';
 
 INPUT float 'Thickness';
+INPUT int 'Offset'; /// -1 puts the outline inside the shape, 0 on the boundary, and 1 on the outside
 
 SignedDistance main(UV pos)
 {
-    return abs('Shape'(pos)) - 'Thickness';
+    return abs('Shape'(pos) - 'Offset' * 'Thickness') - 'Thickness';
 }
