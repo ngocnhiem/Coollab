@@ -280,6 +280,8 @@ void App::render(img::Size size, Cool::Time time, Cool::Time delta_time)
 {
     if (_project_manager.is_in_safe_mode())
         return;
+    if (size.width() < 5 && size.height() < 5)
+        return; // HACK to prevent the useless rendering when starting Coollab
 
     if (_last_time != time)
     {
