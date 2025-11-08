@@ -2,7 +2,7 @@
 
 INPUT float 'Thickness';
 
-float main(SignedDistance Shape)
+Float_PremultipliedA main(SignedDistance Shape)
 {
-    return smoothstep('Thickness', 0., Shape);
+    return vec2(smoothstep('Thickness', 0., Shape));
 }
