@@ -1,5 +1,6 @@
 #include "Module_JFA.hpp"
 #include <imgui.h>
+#include <cstdint>
 #include "Cool/File/File.h"
 #include "Cool/Gpu/OpenGL/copy_tex_pipeline.hpp"
 #include "Cool/TextureSource/TextureLibrary_Image.h"
@@ -33,12 +34,27 @@ void Module_JFA::reload_shaders() const
 {
     _init_shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/init.frag"));                 // TODO(JFA) handle error
     _one_flood_step_shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/flood_step.frag")); // TODO(JFA) handle error
-    _test_sdf.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/test_sdf.frag"));                // TODO(JFA) handle error
 }
 
-auto Module_JFA::desired_size(img::Size /* render_target_size */) const -> img::Size
+static auto find_smallest_power_of_2_greater_or_equal_to(uint32_t n) -> uint32_t
 {
-    return {resolution, resolution}; // TODO(JFA) find the biggest power of 2 that can contain the render target size?
+    if (n == 0)
+        return 1;
+    n--;
+    n |= n >> 1;
+    n |= n >> 2;
+    n |= n >> 4;
+    n |= n >> 8;
+    n |= n >> 16;
+    return n + 1;
+}
+
+auto Module_JFA::desired_size(img::Size render_target_size) const -> img::Size
+{
+    // TODO(JFA) let user tell us if they want a smaller resolution (how many powers of 2 below the optimal one? to optimize perf)
+    // JFA needs a square texture with a size that is a power of 2
+    auto const size = find_smallest_power_of_2_greater_or_equal_to(std::max(render_target_size.width(), render_target_size.height()));
+    return {size, size};
 }
 
 // auto Module_JFA::texture() const -> Cool::TextureRef
@@ -52,17 +68,14 @@ void Module_JFA::imgui_windows(Ui_Ref) const
     ImGui::Begin("JFA");
     if (ImGui::Button("Reload shaders"))
         reload_shaders();
-
-    ImGui::InputScalar("Resolution", ImGuiDataType_U32, &resolution);
-    ImGui::InputInt("steps_count", &steps_count);
-    ImGui::Checkbox("Apply sdf", &apply_test_sdf);
     ImGui::End();
 }
 
 void Module_JFA::render(DataToPassToShader const& data)
 {
-    render_target().set_size({resolution, resolution});
-    _render_target.set_size({resolution, resolution});
+    auto const size = desired_size(data.system_values.render_target_size);
+    render_target().set_size(size);
+    _render_target.set_size(size);
     // TODO(JFA) when JFA is main output node it's interpreted as an image not a shape
     // TODO(JFA) seems to be a scale difference in the distance when compared to regular shapes (visible when using "Rings" effect)
     render_target().render([&]() {
@@ -73,10 +86,9 @@ void Module_JFA::render(DataToPassToShader const& data)
     });
     // TODO(JFA) export an "offset from right number of steps" param, because it's fun to see the duplicated images
     // TODO(JFA) expose params on the node, and rerender when they change
-    int   jump_size       = resolution / 2;
-    float jump_size_float = 0.5f;
-    // while (jump_size > 0) //TODO(JFA)
-    for (int i = 0; i < steps_count; ++i)
+    int jump_size = size.width() / 2;
+    while (jump_size > 0)
+    // for (int i = 0; i < steps_count; ++i)
     {
         auto& read_rt  = _read_on_default_rt ? render_target() : _render_target;
         auto& write_rt = _read_on_default_rt ? _render_target : render_target();
@@ -84,29 +96,13 @@ void Module_JFA::render(DataToPassToShader const& data)
         write_rt.render([&]() {
             _one_flood_step_shader.shader()->bind();
             _one_flood_step_shader.shader()->set_uniform_texture("prev_step", read_rt.texture_ref().id, Cool::TextureSamplerDescriptor{.repeat_mode = Cool::TextureRepeatMode::Clamp, .interpolation_mode = glpp::Interpolation::NearestNeighbour});
-            _one_flood_step_shader.shader()->set_uniform("resolution", (int)resolution);
+            _one_flood_step_shader.shader()->set_uniform("resolution", size.width());
             _one_flood_step_shader.shader()->set_uniform("jump_size", jump_size);
             // _one_flood_step_shader.shader()->set_uniform("jump_size_float", jump_size_float);
             _one_flood_step_shader.draw();
         });
 
         jump_size /= 2;
-        jump_size_float /= 2.f;
-        _read_on_default_rt = !_read_on_default_rt;
-    }
-
-    // Test
-    if (apply_test_sdf)
-    {
-        auto& read_rt  = _read_on_default_rt ? render_target() : _render_target;
-        auto& write_rt = _read_on_default_rt ? _render_target : render_target();
-
-        write_rt.render([&]() {
-            _test_sdf.shader()->bind();
-            _test_sdf.shader()->set_uniform_texture("prev_step", read_rt.texture_ref().id, Cool::TextureSamplerDescriptor{.interpolation_mode = glpp::Interpolation::NearestNeighbour});
-            _test_sdf.draw();
-        });
-
         _read_on_default_rt = !_read_on_default_rt;
     }
 }

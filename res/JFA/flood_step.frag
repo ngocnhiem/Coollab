@@ -2,8 +2,8 @@
 
 uniform sampler2D prev_step;
 
-uniform int jump_size;
-uniform int resolution;
+uniform int  jump_size;
+uniform uint resolution;
 
 out vec4 out_Color;
 layout(location = 0) in vec2 _uv;
