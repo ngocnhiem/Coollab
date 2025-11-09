@@ -12,7 +12,7 @@ public:
         std::string               texture_name_in_shader,
         std::shared_ptr<Module>   module_that_we_depend_on,
         Cool::SharedVariable<int> glitch,
-        Cool::SharedVariable<int> reduce_resolution
+        Cool::SharedVariable<int> custom_resolution
     );
 
     void imgui_windows(Ui_Ref) const override;
@@ -36,7 +36,7 @@ private:
     Cool::RenderTarget               _render_target{{}}; // NB: this format is not used anyways, it's only for the default constructor for serialization, but it will be overwritten by the proper constructor
     bool                             _read_on_default_rt{false};
     Cool::SharedVariable<int>        _glitch;
-    Cool::SharedVariable<int>        _reduce_resolution;
+    Cool::SharedVariable<int>        _custom_resolution;
 
 private:
     // Serialization

@@ -21,7 +21,7 @@ Module_JFA::Module_JFA(
     std::string               texture_name_in_shader,
     std::shared_ptr<Module>   module_that_we_depend_on,
     Cool::SharedVariable<int> glitch,
-    Cool::SharedVariable<int> reduce_resolution
+    Cool::SharedVariable<int> custom_resolution
 )
     : Module{
           fmt::format("Mask to Shape {}", module_id()),
@@ -32,7 +32,7 @@ Module_JFA::Module_JFA(
       }
     , _render_target{texture_format}
     , _glitch{std::move(glitch)}
-    , _reduce_resolution{std::move(reduce_resolution)}
+    , _custom_resolution{std::move(custom_resolution)}
 
 {
     reload_shaders(); // TODO(JFA) only load shader in constructor (and make them static to share between instances of JFA?)
@@ -57,19 +57,14 @@ static auto find_smallest_power_of_2_greater_or_equal_to(uint32_t n) -> uint32_t
     return n + 1;
 }
 
-static auto div2(uint32_t x, uint32_t n) -> uint32_t
-{
-    if (n >= 32)
-        return 0; // safe guard
-    return x >> n;
-}
-
 auto Module_JFA::desired_size(img::Size render_target_size) const -> img::Size
 {
     // JFA needs a square texture with a size that is a power of 2
-    auto size = find_smallest_power_of_2_greater_or_equal_to(std::max(render_target_size.width(), render_target_size.height()));
-    size      = div2(size, _reduce_resolution.value());
-    size      = smart::keep_above(1u, size);
+    auto size = _custom_resolution.value() != -1
+                    ? static_cast<uint32_t>(_custom_resolution.value())
+                    : find_smallest_power_of_2_greater_or_equal_to(std::max(render_target_size.width(), render_target_size.height()));
+
+    size = smart::keep_above(1u, size);
     return {size, size};
 }
 

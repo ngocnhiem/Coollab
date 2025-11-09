@@ -2,7 +2,7 @@
 
 INPUT UV->float 'Mask';
 INPUT int 'Glitch';
-INPUT int 'Reduce resolution';
+INPUT int 'Custom resolution'; /// This should be a power of 2 if you want to avoid small artifacts. Leave it at -1 for automatic resolution.
 
 SignedDistance main(UV uv)
 {

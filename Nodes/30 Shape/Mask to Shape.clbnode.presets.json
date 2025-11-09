@@ -28,13 +28,13 @@
                             "index": 1,
                             "data": {
                                 "Name": "Reduce resolution",
-                                "Value": 0,
+                                "Value": -1,
                                 "Metadata": {
                                     "Bounds": {
                                         "Has min bound": false,
-                                        "Min": 0,
+                                        "Min": -1,
                                         "Has max bound": false,
-                                        "Max": 12,
+                                        "Max": 2048,
                                         "Drag speed": 0.019999999552965165,
                                         "Use slider": true,
                                         "Is logarithmic": false
