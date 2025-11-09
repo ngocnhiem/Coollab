@@ -1,4 +1,5 @@
 #pragma once
+#include "Cool/Dependencies/SharedVariable.h"
 #include "Cool/Gpu/FullscreenPipeline.h"
 #include "Module/Module.h"
 #include "Module/ModuleDependencies.h"
@@ -7,7 +8,12 @@ namespace Lab {
 class Module_JFA : public Module {
 public:
     Module_JFA() = default;
-    Module_JFA(std::string texture_name_in_shader, std::shared_ptr<Module> module_that_we_depend_on);
+    Module_JFA(
+        std::string               texture_name_in_shader,
+        std::shared_ptr<Module>   module_that_we_depend_on,
+        Cool::SharedVariable<int> glitch,
+        Cool::SharedVariable<int> reduce_resolution
+    );
 
     void imgui_windows(Ui_Ref) const override;
     auto texture() const -> Cool::TextureRef override;
@@ -29,6 +35,8 @@ private:
     mutable Cool::FullscreenPipeline _one_flood_step_shader;
     Cool::RenderTarget               _render_target{{}}; // NB: this format is not used anyways, it's only for the default constructor for serialization, but it will be overwritten by the proper constructor
     bool                             _read_on_default_rt{false};
+    Cool::SharedVariable<int>        _glitch;
+    Cool::SharedVariable<int>        _reduce_resolution;
 
 private:
     // Serialization

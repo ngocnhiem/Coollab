@@ -1,6 +1,7 @@
 #include "Module_JFA.hpp"
 #include <imgui.h>
 #include <cstdint>
+#include <smart/smart.hpp>
 #include "Cool/File/File.h"
 #include "Cool/Gpu/OpenGL/copy_tex_pipeline.hpp"
 #include "Cool/TextureSource/TextureLibrary_Image.h"
@@ -16,7 +17,12 @@ static auto module_id()
 
 static constexpr auto texture_format = Cool::TextureFormat{.num_components = 4, .type = Cool::PixelType::Float16};
 
-Module_JFA::Module_JFA(std::string texture_name_in_shader, std::shared_ptr<Module> module_that_we_depend_on)
+Module_JFA::Module_JFA(
+    std::string               texture_name_in_shader,
+    std::shared_ptr<Module>   module_that_we_depend_on,
+    Cool::SharedVariable<int> glitch,
+    Cool::SharedVariable<int> reduce_resolution
+)
     : Module{
           fmt::format("Mask to Shape {}", module_id()),
           texture_format,
@@ -25,15 +31,17 @@ Module_JFA::Module_JFA(std::string texture_name_in_shader, std::shared_ptr<Modul
           {} // We don't depend on any node
       }
     , _render_target{texture_format}
+    , _glitch{std::move(glitch)}
+    , _reduce_resolution{std::move(reduce_resolution)}
 
 {
-    reload_shaders();
+    reload_shaders(); // TODO(JFA) only load shader in constructor (and make them static to share between instances of JFA?)
 }
 
 void Module_JFA::reload_shaders() const
 {
-    _init_shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/init.frag"));                 // TODO(JFA) handle error
-    _one_flood_step_shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/flood_step.frag")); // TODO(JFA) handle error
+    _init_shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/init.frag"));
+    _one_flood_step_shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/flood_step.frag"));
 }
 
 static auto find_smallest_power_of_2_greater_or_equal_to(uint32_t n) -> uint32_t
@@ -49,19 +57,21 @@ static auto find_smallest_power_of_2_greater_or_equal_to(uint32_t n) -> uint32_t
     return n + 1;
 }
 
-auto Module_JFA::desired_size(img::Size render_target_size) const -> img::Size
+static auto div2(uint32_t x, uint32_t n) -> uint32_t
 {
-    // TODO(JFA) let user tell us if they want a smaller resolution (how many powers of 2 below the optimal one? to optimize perf)
-    // JFA needs a square texture with a size that is a power of 2
-    auto const size = find_smallest_power_of_2_greater_or_equal_to(std::max(render_target_size.width(), render_target_size.height()));
-    return {size, size};
+    if (n >= 32)
+        return 0; // safe guard
+    return x >> n;
 }
 
-// auto Module_JFA::texture() const -> Cool::TextureRef
-// {
-//     auto const b = _renders_count < 2 ? !_render_target_ping_pong : _render_target_ping_pong; // During the first frame, the previous frame texture is not init, so use the current frame texture instead
-//     return (b ? _render_target : render_target()).texture_ref();
-// }
+auto Module_JFA::desired_size(img::Size render_target_size) const -> img::Size
+{
+    // JFA needs a square texture with a size that is a power of 2
+    auto size = find_smallest_power_of_2_greater_or_equal_to(std::max(render_target_size.width(), render_target_size.height()));
+    size      = div2(size, _reduce_resolution.value());
+    size      = smart::keep_above(1u, size);
+    return {size, size};
+}
 
 void Module_JFA::imgui_windows(Ui_Ref) const
 {
@@ -69,6 +79,13 @@ void Module_JFA::imgui_windows(Ui_Ref) const
     if (ImGui::Button("Reload shaders"))
         reload_shaders();
     ImGui::End();
+}
+
+static auto pow2(int n) -> int
+{
+    if (n < 0)
+        return 1;
+    return 1 << n;
 }
 
 void Module_JFA::render(DataToPassToShader const& data)
@@ -84,11 +101,8 @@ void Module_JFA::render(DataToPassToShader const& data)
         _init_shader.draw();
         _read_on_default_rt = true;
     });
-    // TODO(JFA) export an "offset from right number of steps" param, because it's fun to see the duplicated images
-    // TODO(JFA) expose params on the node, and rerender when they change
     int jump_size = size.width() / 2;
-    while (jump_size > 0)
-    // for (int i = 0; i < steps_count; ++i)
+    while (jump_size >= pow2(_glitch.value()))
     {
         auto& read_rt  = _read_on_default_rt ? render_target() : _render_target;
         auto& write_rt = _read_on_default_rt ? _render_target : render_target();
@@ -98,7 +112,6 @@ void Module_JFA::render(DataToPassToShader const& data)
             _one_flood_step_shader.shader()->set_uniform_texture("prev_step", read_rt.texture_ref().id, Cool::TextureSamplerDescriptor{.repeat_mode = Cool::TextureRepeatMode::Clamp, .interpolation_mode = glpp::Interpolation::NearestNeighbour});
             _one_flood_step_shader.shader()->set_uniform("resolution", size.width());
             _one_flood_step_shader.shader()->set_uniform("jump_size", jump_size);
-            // _one_flood_step_shader.shader()->set_uniform("jump_size_float", jump_size_float);
             _one_flood_step_shader.draw();
         });
 
@@ -111,16 +124,5 @@ auto Module_JFA::texture() const -> Cool::TextureRef
 {
     return (_read_on_default_rt ? render_target() : _render_target).texture_ref();
 }
-
-// void Module_JFA::before_module_graph_renders()
-// {
-//     _rerender_this_frame = _rerender_next_frame;
-//     _rerender_next_frame = Module::needs_to_rerender(); // Make sure we will also render one frame after our dependencies rendered
-// }
-
-// auto Module_JFA::needs_to_rerender() const -> bool
-// {
-// return Module::needs_to_rerender() || _rerender_this_frame;
-// }
 
 } // namespace Lab

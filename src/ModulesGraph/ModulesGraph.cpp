@@ -390,13 +390,14 @@ auto ModulesGraph::create_jfa_module(Cool::NodeId const& root_node_id, DataToGen
         if (!node)
             return create_default_module(); // TODO(Module) Return an error message? This should never happen
 
-        assert(node->input_pins().size() == 1);
         auto const predecessor_node_id = data.nodes_graph.find_node_connected_to_input_pin(node->input_pins()[0].id());
         auto       dependency          = create_module(predecessor_node_id, data);
 
         return std::make_shared<Module_JFA>(
             texture_name_in_shader, // Don't move it because it might still be used by create_module_impl()
-            std::move(dependency)
+            std::move(dependency),
+            std::get<Cool::SharedVariable<int>>(node->value_inputs()[0]),
+            std::get<Cool::SharedVariable<int>>(node->value_inputs()[1])
         );
     });
 }
