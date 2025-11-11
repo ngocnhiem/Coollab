@@ -2,7 +2,7 @@
     "Presets": {
         "Underlying container": [
             {
-                "first": "69f63986-eff5-454a-8e2e-a989cf857fd5",
+                "first": "be36444f-b7e1-4ec2-848b-7ce024959267",
                 "second": {
                     "Name": "Default",
                     "Values": [
@@ -27,7 +27,7 @@
                         {
                             "index": 1,
                             "data": {
-                                "Name": "Reduce resolution",
+                                "Name": "Custom resolution",
                                 "Value": -1,
                                 "Metadata": {
                                     "Bounds": {

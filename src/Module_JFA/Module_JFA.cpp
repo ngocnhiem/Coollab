@@ -40,6 +40,18 @@ static auto flood_step_shader() -> Cool::FullscreenPipeline&
     return instance;
 }
 
+static auto make_convert_to_image_shader() -> Cool::FullscreenPipeline
+{
+    auto shader = Cool::FullscreenPipeline{};
+    shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/convert_to_image.frag"));
+    return shader;
+}
+static auto convert_to_image_shader() -> Cool::FullscreenPipeline&
+{
+    static auto instance = make_convert_to_image_shader();
+    return instance;
+}
+
 Module_JFA::Module_JFA(
     std::string               texture_name_in_shader,
     std::shared_ptr<Module>   module_that_we_depend_on,
@@ -74,6 +86,13 @@ static auto find_smallest_power_of_2_greater_or_equal_to(uint32_t n) -> uint32_t
 
 auto Module_JFA::desired_size(img::Size render_target_size) const -> img::Size
 {
+    if (_is_main_module)
+        return render_target_size;
+    return desired_intermediate_size(render_target_size);
+}
+
+auto Module_JFA::desired_intermediate_size(img::Size render_target_size) const -> img::Size
+{
     if (_custom_resolution.value() < 0)
     {
         // JFA needs a square texture with a size that is a power of 2
@@ -96,7 +115,7 @@ static auto pow2(int n) -> int
 
 void Module_JFA::render(DataToPassToShader const& data)
 {
-    auto const size = desired_size(data.system_values.render_target_size);
+    auto const size = desired_intermediate_size(data.system_values.render_target_size);
     render_target().set_size(size);
     _render_target.set_size(size);
     render_target().render([&]() {
@@ -125,6 +144,23 @@ void Module_JFA::render(DataToPassToShader const& data)
         });
 
         jump_size /= 2;
+        _read_on_default_rt = !_read_on_default_rt;
+    }
+
+    if (_is_main_module)
+    {
+        auto& read_rt  = _read_on_default_rt ? render_target() : _render_target;
+        auto& write_rt = _read_on_default_rt ? _render_target : render_target();
+        write_rt.set_size(data.system_values.render_target_size);
+
+        write_rt.render([&]() {
+            convert_to_image_shader().shader()->bind();
+            convert_to_image_shader().shader()->set_uniform_texture("closest_uv_tex", read_rt.texture_ref().id, Cool::TextureSamplerDescriptor{.repeat_mode = Cool::TextureRepeatMode::Clamp, .interpolation_mode = glpp::Interpolation::NearestNeighbour});
+            convert_to_image_shader().shader()->set_uniform("_aspect_ratio", data.system_values.aspect_ratio());
+            convert_to_image_shader().shader()->set_uniform("_camera2D_transform", data.system_values.camera_2D.transform_matrix());
+            convert_to_image_shader().draw();
+        });
+
         _read_on_default_rt = !_read_on_default_rt;
     }
 }

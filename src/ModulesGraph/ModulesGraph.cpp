@@ -167,6 +167,8 @@ void ModulesGraph::recreate_all_modules(Cool::NodeId const& root_node_id, DataTo
     _modules.clear();
     clear_error_messages();
     _root_module = create_module(root_node_id, data_to_generate_shader_code);
+    if (auto* jfa = dynamic_cast<Module_JFA*>(_root_module.get()))
+        jfa->set_is_main_module();
     request_rerender_all();
 }
 
