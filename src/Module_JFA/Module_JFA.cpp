@@ -126,7 +126,7 @@ void Module_JFA::render(DataToPassToShader const& data)
         init_shader().draw();
         _read_on_default_rt = true;
     });
-    uint32_t const resolution = static_cast<int>(std::max(size.width(), size.height())); // In case width != height (although this should not happen because it messes up JFA)
+    uint32_t const resolution = std::max(size.width(), size.height()); // In case width != height (although this should not happen because it messes up JFA)
     int            jump_size  = static_cast<int>(resolution) / 2;
     while (jump_size >= pow2(_glitch.value())) // We are supposed to go until jump_size == 0, but we might stop N steps earlier to create some glitch (N = _glitch.value())
     {
