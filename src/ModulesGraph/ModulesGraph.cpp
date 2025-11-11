@@ -89,7 +89,10 @@ void ModulesGraph::render_module_ifn(Module& module, DataToPassToShader const& d
     module.needs_to_rerender_flag().set_clean();
 
     if (DebugOptions::log_when_rendering())
-        Cool::Log::info(module.name(), fmt::format("Rendered ({}x{})", data.system_values.render_target_size.width(), data.system_values.render_target_size.height()));
+    {
+        auto const sz = module.desired_size(data.system_values.render_target_size);
+        Cool::Log::info(module.name(), fmt::format("Rendered ({}x{})", sz.width(), sz.height()));
+    }
 }
 
 void ModulesGraph::request_rerender_all()
