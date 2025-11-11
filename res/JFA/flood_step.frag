@@ -8,6 +8,27 @@ uniform uint resolution;
 out vec4 out_Color;
 layout(location = 0) in vec2 _uv;
 
+uniform mat3  _camera2D_transform;
+uniform float _aspect_ratio;
+
+vec2 normalize_uv_with_aspect_ratio(vec2 uv, float aspect_ratio)
+{
+    uv -= 0.5;
+    uv.x *= aspect_ratio;
+    return uv * 2.;
+}
+
+vec2 normalize_uv(vec2 uv)
+{
+    return normalize_uv_with_aspect_ratio(uv, _aspect_ratio);
+}
+
+vec2 apply_cam2D(vec2 uv)
+{
+    vec3 p = _camera2D_transform * vec3(uv, 1.);
+    return p.xy / p.z;
+}
+
 // xy stores the wip distance to the inside of the shape
 // and zw for the outside of the shape (so we also compute the interior distance)
 
@@ -15,6 +36,8 @@ void main()
 {
     vec2 min_pos1 = vec2(-9999, -9999);
     vec2 min_pos2 = vec2(-9999, -9999);
+
+    vec2 uv_normalized = apply_cam2D(normalize_uv(_uv));
     {
         float min_dist1 = -9999;
         float min_dist2 = -9999;
@@ -30,7 +53,7 @@ void main()
                 vec4 val = texelFetch(prev_step, pos, 0);
                 if (val.x != -9999)
                 {
-                    float closest_pos_dist = distance(val.xy, _uv);
+                    float closest_pos_dist = distance(val.xy, uv_normalized);
                     if (min_dist1 == -9999 || min_dist1 > closest_pos_dist)
                     {
                         min_dist1 = closest_pos_dist;
@@ -39,7 +62,7 @@ void main()
                 }
                 if (val.z != -9999)
                 {
-                    float closest_pos_dist = distance(val.zw, _uv);
+                    float closest_pos_dist = distance(val.zw, uv_normalized);
                     if (min_dist2 == -9999 || min_dist2 > closest_pos_dist)
                     {
                         min_dist2 = closest_pos_dist;

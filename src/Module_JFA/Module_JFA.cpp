@@ -92,6 +92,8 @@ void Module_JFA::render(DataToPassToShader const& data)
     // TODO(JFA) seems to be a scale difference in the distance when compared to regular shapes (visible when using "Rings" effect)
     render_target().render([&]() {
         _init_shader.shader()->bind();
+        _init_shader.shader()->set_uniform("_aspect_ratio", data.system_values.aspect_ratio());
+        _init_shader.shader()->set_uniform("_camera2D_transform", data.system_values.camera_2D.transform_matrix());
         _init_shader.shader()->set_uniform_texture("input_mask", modules_that_we_depend_on()[0]->texture().id);
         _init_shader.draw();
         _read_on_default_rt = true;
@@ -107,6 +109,8 @@ void Module_JFA::render(DataToPassToShader const& data)
             _one_flood_step_shader.shader()->set_uniform_texture("prev_step", read_rt.texture_ref().id, Cool::TextureSamplerDescriptor{.repeat_mode = Cool::TextureRepeatMode::Clamp, .interpolation_mode = glpp::Interpolation::NearestNeighbour});
             _one_flood_step_shader.shader()->set_uniform("resolution", size.width());
             _one_flood_step_shader.shader()->set_uniform("jump_size", jump_size);
+            _one_flood_step_shader.shader()->set_uniform("_aspect_ratio", data.system_values.aspect_ratio());
+            _one_flood_step_shader.shader()->set_uniform("_camera2D_transform", data.system_values.camera_2D.transform_matrix());
             _one_flood_step_shader.draw();
         });
 
