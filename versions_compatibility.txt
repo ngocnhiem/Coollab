@@ -1,3 +1,5 @@
+1.7.0 Mask to Shape
+--- Shapes are now on a transparent background, instead of black
 1.6.3 Caching
 1.6.2 Caching
 1.6.1 Caching

@@ -1,10 +1,22 @@
 # Changelog
 
-##
+## 1.7.0 Mask to Shape
 
-- 🟦 Nodes: White Noise's "Seed" is now a float instead of int. Otherwise when plugging Time in Seed, it gets rounded to the nearest integer.
-- 🟦 Added "Rings" node
-- 🟦 Stippling: rename "Density" as "Brightness" (and make param logarithmic) + Add "Seed" param
+- ✨ Added the "Mask to Shape" node, which can convert any black and white mask into a Shape, allowing you to use all of the Shape effects! (Glow, Rings, colliding with particles, etc.)
+![](https://cdn.discordapp.com/attachments/1346788148998569994/1436791168737476658/img13.png?ex=69142f4c&is=6912ddcc&hm=2ad9357624a82d4049e36a953b05d13a64f5de2ad1710bb0e4297a2e37dd03d4)
+![](https://media.discordapp.net/attachments/1346788148998569994/1436363713555992636/gif.gif?ex=69149b73&is=691349f3&hm=fa10d0af86c7611e74874f318aeba89be618c86bb13d147442757aec325c7d1b&=&width=1058&height=660)
+![](https://media.discordapp.net/attachments/1346788148998569994/1436366260005900340/gif.gif?ex=69149dd2&is=69134c52&hm=411b9caa94987f0e90a4965c09b35dc2c31a38ab8543bff3db5872ce5a6c75d9&=&width=869&height=628)
+- 💥 Shapes now have a transparent background instead of a black one (This allows to more easily composite them on top of other images)
+- 🟦 Added "Rings" shape modifier
+![](https://github.com/user-attachments/assets/7a6c5336-aca0-4bda-9680-49bf855eae1c)
+- 🟦 Added a "Chroma Keying (Green Screen)" node
+- 🟦 Added a "Threshold Smooth" node
+- 🟦 Added "Get Hue", "Get Saturation" and "Get Lightness"
+- 🟦 Added "Inflate" shape modifier
+- 🟦 Added a parameter on the Outline node to control if the outline should be outside of the shape, inside, or on the boundary
+- 🟦 "White Noise"'s "Seed" is now a float instead of an int. Otherwise when plugging Time in Seed, it gets rounded to the nearest integer
+- 🟦 "Stippling" node: rename "Density" as "Brightness" (and make param logarithmic) + Add "Seed" param
+- 🐛 Fixed a rare crash when opening a project of some very specific computers 
 
 ## 1.6.3 Caching
 
