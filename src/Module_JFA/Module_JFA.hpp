@@ -15,28 +15,17 @@ public:
         Cool::SharedVariable<int> custom_resolution
     );
 
-    void imgui_windows(Ui_Ref) const override;
     auto texture() const -> Cool::TextureRef override;
     auto desired_size(img::Size render_target_size) const -> img::Size override;
 
 private:
     void render(DataToPassToShader const&) override;
 
-    void reload_shaders() const;
-
 private:
-    // Cool::RenderTarget _render_target{};
-    // bool               _render_target_ping_pong{false};
-    // int                _renders_count{0};
-    // bool               _rerender_next_frame{false};
-    // bool               _rerender_this_frame{false};
-
-    mutable Cool::FullscreenPipeline _init_shader;
-    mutable Cool::FullscreenPipeline _one_flood_step_shader;
-    Cool::RenderTarget               _render_target{{}}; // NB: this format is not used anyways, it's only for the default constructor for serialization, but it will be overwritten by the proper constructor
-    bool                             _read_on_default_rt{false};
-    Cool::SharedVariable<int>        _glitch;
-    Cool::SharedVariable<int>        _custom_resolution;
+    Cool::RenderTarget        _render_target{{}}; // NB: this format is not used anyways, it's only for the default constructor for serialization, but it will be overwritten by the proper constructor
+    bool                      _read_on_default_rt{false};
+    Cool::SharedVariable<int> _glitch;
+    Cool::SharedVariable<int> _custom_resolution;
 
 private:
     // Serialization

@@ -3,8 +3,7 @@
 #include <cstdint>
 #include <smart/smart.hpp>
 #include "Cool/File/File.h"
-#include "Cool/Gpu/OpenGL/copy_tex_pipeline.hpp"
-#include "Cool/TextureSource/TextureLibrary_Image.h"
+#include "Cool/Gpu/FullscreenPipeline.h"
 #include "Cool/TextureSource/TextureSamplerDescriptor.h"
 
 namespace Lab {
@@ -16,6 +15,30 @@ static auto module_id()
 }
 
 static constexpr auto texture_format = Cool::TextureFormat{.num_components = 4, .type = Cool::PixelType::Float16};
+
+static auto make_init_shader() -> Cool::FullscreenPipeline
+{
+    auto shader = Cool::FullscreenPipeline{};
+    shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/init.frag"));
+    return shader;
+}
+static auto init_shader() -> Cool::FullscreenPipeline&
+{
+    static auto instance = make_init_shader();
+    return instance;
+}
+
+static auto make_flood_step_shader() -> Cool::FullscreenPipeline
+{
+    auto shader = Cool::FullscreenPipeline{};
+    shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/flood_step.frag"));
+    return shader;
+}
+static auto flood_step_shader() -> Cool::FullscreenPipeline&
+{
+    static auto instance = make_flood_step_shader();
+    return instance;
+}
 
 Module_JFA::Module_JFA(
     std::string               texture_name_in_shader,
@@ -34,15 +57,7 @@ Module_JFA::Module_JFA(
     , _glitch{std::move(glitch)}
     , _custom_resolution{std::move(custom_resolution)}
 
-{
-    reload_shaders(); // TODO(JFA) only load shader in constructor (and make them static to share between instances of JFA?)
-}
-
-void Module_JFA::reload_shaders() const
-{
-    _init_shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/init.frag"));
-    _one_flood_step_shader.compile(*Cool::File::to_string(Cool::Path::root() / "res/JFA/flood_step.frag"));
-}
+{}
 
 static auto find_smallest_power_of_2_greater_or_equal_to(uint32_t n) -> uint32_t
 {
@@ -72,14 +87,6 @@ auto Module_JFA::desired_size(img::Size render_target_size) const -> img::Size
     }
 }
 
-void Module_JFA::imgui_windows(Ui_Ref) const
-{
-    ImGui::Begin("JFA");
-    if (ImGui::Button("Reload shaders"))
-        reload_shaders();
-    ImGui::End();
-}
-
 static auto pow2(int n) -> int
 {
     if (n < 0)
@@ -92,14 +99,12 @@ void Module_JFA::render(DataToPassToShader const& data)
     auto const size = desired_size(data.system_values.render_target_size);
     render_target().set_size(size);
     _render_target.set_size(size);
-    // TODO(JFA) when JFA is main output node it's interpreted as an image not a shape
-    // TODO(JFA) seems to be a scale difference in the distance when compared to regular shapes (visible when using "Rings" effect)
     render_target().render([&]() {
-        _init_shader.shader()->bind();
-        _init_shader.shader()->set_uniform("_aspect_ratio", data.system_values.aspect_ratio());
-        _init_shader.shader()->set_uniform("_camera2D_transform", data.system_values.camera_2D.transform_matrix());
-        _init_shader.shader()->set_uniform_texture("input_mask", modules_that_we_depend_on()[0]->texture().id);
-        _init_shader.draw();
+        init_shader().shader()->bind();
+        init_shader().shader()->set_uniform("_aspect_ratio", data.system_values.aspect_ratio());
+        init_shader().shader()->set_uniform("_camera2D_transform", data.system_values.camera_2D.transform_matrix());
+        init_shader().shader()->set_uniform_texture("input_mask", modules_that_we_depend_on()[0]->texture().id);
+        init_shader().draw();
         _read_on_default_rt = true;
     });
     uint32_t const resolution = static_cast<int>(std::max(size.width(), size.height())); // In case width != height (although this should not happen because it messes up JFA)
@@ -110,13 +115,13 @@ void Module_JFA::render(DataToPassToShader const& data)
         auto& write_rt = _read_on_default_rt ? _render_target : render_target();
 
         write_rt.render([&]() {
-            _one_flood_step_shader.shader()->bind();
-            _one_flood_step_shader.shader()->set_uniform_texture("prev_step", read_rt.texture_ref().id, Cool::TextureSamplerDescriptor{.repeat_mode = Cool::TextureRepeatMode::Clamp, .interpolation_mode = glpp::Interpolation::NearestNeighbour});
-            _one_flood_step_shader.shader()->set_uniform("resolution", resolution);
-            _one_flood_step_shader.shader()->set_uniform("jump_size", jump_size);
-            _one_flood_step_shader.shader()->set_uniform("_aspect_ratio", data.system_values.aspect_ratio());
-            _one_flood_step_shader.shader()->set_uniform("_camera2D_transform", data.system_values.camera_2D.transform_matrix());
-            _one_flood_step_shader.draw();
+            flood_step_shader().shader()->bind();
+            flood_step_shader().shader()->set_uniform_texture("prev_step", read_rt.texture_ref().id, Cool::TextureSamplerDescriptor{.repeat_mode = Cool::TextureRepeatMode::Clamp, .interpolation_mode = glpp::Interpolation::NearestNeighbour});
+            flood_step_shader().shader()->set_uniform("resolution", resolution);
+            flood_step_shader().shader()->set_uniform("jump_size", jump_size);
+            flood_step_shader().shader()->set_uniform("_aspect_ratio", data.system_values.aspect_ratio());
+            flood_step_shader().shader()->set_uniform("_camera2D_transform", data.system_values.camera_2D.transform_matrix());
+            flood_step_shader().draw();
         });
 
         jump_size /= 2;
