@@ -1,5 +1,6 @@
 #include "ModulesGraph.h"
 #include <algorithm>
+#include <memory>
 #include "CommandCore/CommandExecutor.h"
 #include "Cool/Audio/AudioManager.h"
 #include "Cool/Nodes/NodesLibrary.h"
@@ -11,9 +12,11 @@
 #include "Module_Compositing/generate_compositing_shader_code.h"
 #include "Module_Default/Module_Default.hpp"
 #include "Module_FeedbackLoop/Module_FeedbackLoop.hpp"
+#include "Module_JFA/Module_JFA.hpp"
 #include "Module_Particles/Module_Particles.h"
 #include "Module_Particles/generate_simulation_shader_code.h"
 #include "Nodes/FunctionSignature.h"
+#include "Nodes/MaybeGenerateModule.h"
 #include "Nodes/valid_glsl.h"
 #include "UI/imgui_show.h"
 #include "imgui.h"
@@ -52,7 +55,7 @@ void ModulesGraph::check_for_rerender_and_rebuild(DataToPassToShader const& data
             module->needs_to_rerender_flag().set_dirty();
 
         // Rerender when render size changes
-        if (data_to_pass_to_shader.system_values.render_target_size != module->texture().size)
+        if (module->desired_size(data_to_pass_to_shader.system_values.render_target_size) != module->texture().size)
             module->needs_to_rerender_flag().set_dirty();
 
         if (module->depends_on().always_rerender)
@@ -86,7 +89,10 @@ void ModulesGraph::render_module_ifn(Module& module, DataToPassToShader const& d
     module.needs_to_rerender_flag().set_clean();
 
     if (DebugOptions::log_when_rendering())
-        Cool::Log::info(module.name(), fmt::format("Rendered ({}x{})", data.system_values.render_target_size.width(), data.system_values.render_target_size.height()));
+    {
+        auto const sz = module.desired_size(data.system_values.render_target_size);
+        Cool::Log::info(module.name(), fmt::format("Rendered ({}x{})", sz.width(), sz.height()));
+    }
 }
 
 void ModulesGraph::request_rerender_all()
@@ -111,6 +117,7 @@ enum class NodeModuleness {
     Particle,
     FeedbackLoop,
     Caching,
+    JFA,
 };
 
 static auto is_feedback_loop(NodeDefinition const& node_definition)
@@ -123,6 +130,11 @@ static auto is_caching(NodeDefinition const& node_definition)
     return node_definition.name() == "Caching";
 }
 
+static auto is_jfa(NodeDefinition const& node_definition)
+{
+    return node_definition.name() == "Mask to Shape";
+}
+
 static auto node_moduleness(NodeDefinition const& node_definition)
 {
     if (is_particle(node_definition.signature()))
@@ -131,6 +143,8 @@ static auto node_moduleness(NodeDefinition const& node_definition)
         return NodeModuleness::FeedbackLoop;
     if (is_caching(node_definition))
         return NodeModuleness::Caching;
+    if (is_jfa(node_definition))
+        return NodeModuleness::JFA;
     return NodeModuleness::Generic;
 }
 
@@ -153,6 +167,8 @@ void ModulesGraph::recreate_all_modules(Cool::NodeId const& root_node_id, DataTo
     _modules.clear();
     clear_error_messages();
     _root_module = create_module(root_node_id, data_to_generate_shader_code);
+    if (auto* jfa = dynamic_cast<Module_JFA*>(_root_module.get()))
+        jfa->set_is_main_module();
     request_rerender_all();
 }
 
@@ -175,6 +191,8 @@ auto ModulesGraph::create_module(Cool::NodeId const& root_node_id, DataToGenerat
         return create_feedback_loop_module(root_node_id, data);
     case NodeModuleness::Caching:
         return create_caching_module(root_node_id, data);
+    case NodeModuleness::JFA:
+        return create_jfa_module(root_node_id, data);
     }
     assert(false);
     return create_default_module();
@@ -204,32 +222,37 @@ auto ModulesGraph::create_compositing_module(Cool::NodeId const& root_node_id, D
 
         auto const shader_code = generate_compositing_shader_code(
             root_node_id,
-            [&](Cool::NodeId const& node_id, NodeDefinition const& node_definition) -> std::optional<std::string> {
+            [&](Cool::NodeId const& node_id, NodeDefinition const& node_definition) -> MaybeTextureName {
                 switch (node_moduleness(node_definition))
                 {
                 case NodeModuleness::Generic:
                 {
                     nodes_that_we_depend_on.push_back(node_id);
-                    return std::nullopt;
+                    return None{};
                 }
                 case NodeModuleness::Particle:
                 {
                     modules_that_we_depend_on.push_back(create_particles_module(node_id, node_definition, data));
-                    return modules_that_we_depend_on.back()->texture_name_in_shader();
+                    return ImageTextureName{modules_that_we_depend_on.back()->texture_name_in_shader()};
                 }
                 case NodeModuleness::FeedbackLoop:
                 {
                     modules_that_we_depend_on.push_back(create_feedback_loop_module(node_id, data));
-                    return modules_that_we_depend_on.back()->texture_name_in_shader();
+                    return ImageTextureName{modules_that_we_depend_on.back()->texture_name_in_shader()};
                 }
                 case NodeModuleness::Caching:
                 {
                     modules_that_we_depend_on.push_back(create_caching_module(node_id, data));
-                    return modules_that_we_depend_on.back()->texture_name_in_shader();
+                    return ImageTextureName{modules_that_we_depend_on.back()->texture_name_in_shader()};
+                }
+                case NodeModuleness::JFA:
+                {
+                    modules_that_we_depend_on.push_back(create_jfa_module(node_id, data));
+                    return ShapeTextureName{modules_that_we_depend_on.back()->texture_name_in_shader()};
                 }
                 }
                 assert(false);
-                return std::nullopt;
+                return None{};
             },
             [&]() {
                 std::vector<std::string> tex_names;
@@ -268,28 +291,42 @@ auto ModulesGraph::create_particles_module(Cool::NodeId const& root_node_id, Nod
             id_of_node_storing_particles_count,
             dimension,
             data,
-            [&](Cool::NodeId const& node_id, NodeDefinition const& node_definition) -> std::optional<std::string> {
+            [&](Cool::NodeId const& node_id, NodeDefinition const& node_definition) -> MaybeTextureName {
                 switch (node_moduleness(node_definition))
                 {
                 case NodeModuleness::Generic:
                 case NodeModuleness::Particle: // TODO(Particles) This is not quite right, a particle system might depend on the image generated by another particles module
                 {
                     nodes_that_we_depend_on.push_back(node_id);
-                    return std::nullopt;
+                    return None{};
                 }
                 case NodeModuleness::FeedbackLoop:
                 {
                     modules_that_we_depend_on.push_back(create_feedback_loop_module(node_id, data));
-                    return modules_that_we_depend_on.back()->texture_name_in_shader();
+                    return ImageTextureName{modules_that_we_depend_on.back()->texture_name_in_shader()};
                 }
                 case NodeModuleness::Caching:
                 {
                     modules_that_we_depend_on.push_back(create_caching_module(node_id, data));
-                    return modules_that_we_depend_on.back()->texture_name_in_shader();
+                    return ImageTextureName{modules_that_we_depend_on.back()->texture_name_in_shader()};
+                }
+                case NodeModuleness::JFA:
+                {
+                    modules_that_we_depend_on.push_back(create_jfa_module(node_id, data));
+                    return ShapeTextureName{modules_that_we_depend_on.back()->texture_name_in_shader()};
                 }
                 }
                 assert(false);
-                return std::nullopt;
+                return None{};
+            },
+            [&]() {
+                std::vector<std::string> tex_names;
+                tex_names.reserve(_modules.size());
+                for (auto const& module : _modules)
+                {
+                    tex_names.push_back(module->texture_name_in_shader());
+                }
+                return tex_names;
             }
         );
 
@@ -347,6 +384,26 @@ auto ModulesGraph::create_default_module() -> std::shared_ptr<Module>
     auto const texture_name_in_shader = "texture_of_the_default_module"s;
     return create_module_impl(texture_name_in_shader, [&]() -> std::shared_ptr<Module> {
         return std::make_shared<Module_Default>(texture_name_in_shader);
+    });
+}
+
+auto ModulesGraph::create_jfa_module(Cool::NodeId const& root_node_id, DataToGenerateShaderCode const& data) -> std::shared_ptr<Module>
+{
+    auto const texture_name_in_shader = texture_name_for_module(root_node_id);
+    return create_module_impl(texture_name_in_shader, [&]() -> std::shared_ptr<Module> {
+        auto const* node = data.nodes_graph.try_get_node<Node>(root_node_id);
+        if (!node)
+            return create_default_module(); // TODO(Module) Return an error message? This should never happen
+
+        auto const predecessor_node_id = data.nodes_graph.find_node_connected_to_input_pin(node->input_pins()[0].id());
+        auto       dependency          = create_module(predecessor_node_id, data);
+
+        return std::make_shared<Module_JFA>(
+            texture_name_in_shader, // Don't move it because it might still be used by create_module_impl()
+            std::move(dependency),
+            std::get<Cool::SharedVariable<int>>(node->value_inputs()[0]),
+            std::get<Cool::SharedVariable<int>>(node->value_inputs()[1])
+        );
     });
 }
 

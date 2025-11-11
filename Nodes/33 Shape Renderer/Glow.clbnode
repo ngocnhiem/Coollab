@@ -4,7 +4,7 @@
 INPUT float 'Strength';
 INPUT float 'Stretch';
 
-float main(SignedDistance Shape)
+Float_PremultipliedA main(SignedDistance Shape)
 {
-    return pow(max(Shape / 'Stretch', 0.) + 1., -1. / 'Strength');
+    return vec2(pow(max(Shape / 'Stretch', 0.) + 1., -1. / 'Strength'));
 }

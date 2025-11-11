@@ -102,32 +102,32 @@ auto gen_default_function(FunctionSignature signature, CodeGenContext& context)
 {
     using fmt::literals::operator""_a;
     static constexpr std::string_view signed_to_float = "antialiased_step(sd)";
-    {
-        auto const func = maybe_generate_default(
-            FunctionSignature{PrimitiveType::SignedDistance, PrimitiveType::Float},
-            "default_signed_distance_to_float", fmt::format(R"STR(
-    float default_signed_distance_to_float(float sd)
-    {{
-        return {};
-    }}
-    )STR",
-                                                            signed_to_float),
-            signature, context
-        );
-        if (func)
-            return *func;
-    }
+    // {
+    //     auto const func = maybe_generate_default(
+    //         FunctionSignature{PrimitiveType::SignedDistance, PrimitiveType::Float},
+    //         "default_signed_distance_to_float", fmt::format(R"STR(
+    // float default_signed_distance_to_float(float sd)
+    // {{
+    //     return {};
+    // }}
+    // )STR",
+    //                                                         signed_to_float),
+    //         signature, context
+    //     );
+    //     if (func)
+    //         return *func;
+    // }
 
     {
         auto const func = maybe_generate_default(
-            FunctionSignature{PrimitiveType::SignedDistance, PrimitiveType::sRGB},
-            "default_signed_distance_to_sRGB", fmt::format(R"STR(
-    vec3 default_signed_distance_to_sRGB(float sd)
+            FunctionSignature{PrimitiveType::SignedDistance, PrimitiveType::sRGB_PremultipliedA},
+            "default_signed_distance_to_sRGB_PremultipliedA", fmt::format(R"STR(
+    vec4 default_signed_distance_to_sRGB_PremultipliedA(float sd)
     {{
-        return vec3({});
+        return vec4({});
     }}
     )STR",
-                                                           signed_to_float),
+                                                                          signed_to_float),
             signature, context
         );
         if (func)
@@ -328,10 +328,12 @@ Particle3D default_particle_3D/*needs_coollab_context*/()
         });
     }
 
-    return tl::make_unexpected(fmt::format(
-        "Could not generate a default function from {} to {}.",
-        comma_separated(cpp_type_as_string(signature.from), signature.arity), cpp_type_as_string(signature.to)
-    ));
+    return tl::make_unexpected(
+        fmt::format(
+            "Could not generate a default function from {} to {}.",
+            comma_separated(cpp_type_as_string(signature.from), signature.arity), cpp_type_as_string(signature.to)
+        )
+    );
 }
 
 } // namespace Lab

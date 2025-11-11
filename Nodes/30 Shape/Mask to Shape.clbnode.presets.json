@@ -2,24 +2,24 @@
     "Presets": {
         "Underlying container": [
             {
-                "first": "afb3bbe9-c7f7-4c6d-889e-08273e268a94",
+                "first": "be36444f-b7e1-4ec2-848b-7ce024959267",
                 "second": {
                     "Name": "Default",
                     "Values": [
                         {
-                            "index": 2,
+                            "index": 1,
                             "data": {
-                                "Name": "Thickness",
-                                "Value": 0.008999999612569809,
+                                "Name": "Glitch",
+                                "Value": 0,
                                 "Metadata": {
                                     "Bounds": {
-                                        "Has min bound": true,
-                                        "Min": 0.0,
+                                        "Has min bound": false,
+                                        "Min": 0,
                                         "Has max bound": false,
-                                        "Max": 1.0,
-                                        "Drag speed": 0.003000000026077032,
-                                        "Use slider": false,
-                                        "Is logarithmic": true
+                                        "Max": 12,
+                                        "Drag speed": 0.019999999552965165,
+                                        "Use slider": true,
+                                        "Is logarithmic": false
                                     }
                                 }
                             }
@@ -27,14 +27,14 @@
                         {
                             "index": 1,
                             "data": {
-                                "Name": "Offset",
-                                "Value": 0,
+                                "Name": "Custom resolution",
+                                "Value": -1,
                                 "Metadata": {
                                     "Bounds": {
-                                        "Has min bound": true,
+                                        "Has min bound": false,
                                         "Min": -1,
-                                        "Has max bound": true,
-                                        "Max": 1,
+                                        "Has max bound": false,
+                                        "Max": 2048,
                                         "Drag speed": 0.019999999552965165,
                                         "Use slider": true,
                                         "Is logarithmic": false

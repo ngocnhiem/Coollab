@@ -35,9 +35,9 @@
                                         "Min": 0.0,
                                         "Has max bound": false,
                                         "Max": 1.0,
-                                        "Drag speed": 0.0010000000474974514,
+                                        "Drag speed": 0.009999999776482582,
                                         "Use slider": false,
-                                        "Is logarithmic": false
+                                        "Is logarithmic": true
                                     }
                                 }
                             }

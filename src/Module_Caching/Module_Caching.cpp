@@ -11,6 +11,7 @@ static auto module_id()
 Module_Caching::Module_Caching(std::string texture_name_in_shader, std::shared_ptr<Module> module_that_we_depend_on)
     : Module{
           fmt::format("Caching {}", module_id()),
+          Cool::TextureFormat{.num_components = 4, .type = Cool::PixelType::UInt8},
           std::move(texture_name_in_shader),
           {std::move(module_that_we_depend_on)},
           {} // We don't depend on any node

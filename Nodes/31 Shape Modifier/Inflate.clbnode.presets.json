@@ -2,7 +2,7 @@
     "Presets": {
         "Underlying container": [
             {
-                "first": "858c76c8-f14f-4dd8-a5b4-a385f7879b90",
+                "first": "4d4daa7f-7fb2-4256-97b9-03f288159976",
                 "second": {
                     "Name": "Default",
                     "Values": [
@@ -18,24 +18,6 @@
                                         "Has max bound": false,
                                         "Max": 1.0,
                                         "Drag speed": 0.009999999776482582,
-                                        "Use slider": false,
-                                        "Is logarithmic": true
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "index": 2,
-                            "data": {
-                                "Name": "Shape radius",
-                                "Value": 0.5,
-                                "Metadata": {
-                                    "Bounds": {
-                                        "Has min bound": true,
-                                        "Min": 0.0,
-                                        "Has max bound": false,
-                                        "Max": 1.0,
-                                        "Drag speed": 0.004999999888241291,
                                         "Use slider": false,
                                         "Is logarithmic": true
                                     }

@@ -73,7 +73,7 @@ void cool_main()
 
     return generate_shader_code(
         root_node_id,
-        [](auto&&, auto&&) -> std::optional<std::string> { return std::nullopt; },
+        [](auto&&, auto&&) -> MaybeTextureName { return None{}; },
         main_function_signature,
         content,
         []() {
