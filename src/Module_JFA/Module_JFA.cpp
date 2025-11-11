@@ -59,13 +59,17 @@ static auto find_smallest_power_of_2_greater_or_equal_to(uint32_t n) -> uint32_t
 
 auto Module_JFA::desired_size(img::Size render_target_size) const -> img::Size
 {
-    // JFA needs a square texture with a size that is a power of 2
-    auto size = _custom_resolution.value() != -1
-                    ? static_cast<uint32_t>(_custom_resolution.value())
-                    : find_smallest_power_of_2_greater_or_equal_to(std::max(render_target_size.width(), render_target_size.height()));
-
-    size = smart::keep_above(1u, size);
-    return {size, size};
+    if (_custom_resolution.value() < 0)
+    {
+        // JFA needs a square texture with a size that is a power of 2
+        auto const size = find_smallest_power_of_2_greater_or_equal_to(std::max(render_target_size.width(), render_target_size.height()));
+        return {size, size};
+    }
+    else // NOLINT(*else-after-return)
+    {
+        auto const size = smart::keep_above(1u, static_cast<uint32_t>(_custom_resolution.value()));
+        return {size, size};
+    }
 }
 
 void Module_JFA::imgui_windows(Ui_Ref) const
@@ -98,8 +102,9 @@ void Module_JFA::render(DataToPassToShader const& data)
         _init_shader.draw();
         _read_on_default_rt = true;
     });
-    int jump_size = size.width() / 2;
-    while (jump_size >= pow2(_glitch.value()))
+    uint32_t const resolution = static_cast<int>(std::max(size.width(), size.height())); // In case width != height (although this should not happen because it messes up JFA)
+    int            jump_size  = static_cast<int>(resolution) / 2;
+    while (jump_size >= pow2(_glitch.value())) // We are supposed to go until jump_size == 0, but we might stop N steps earlier to create some glitch (N = _glitch.value())
     {
         auto& read_rt  = _read_on_default_rt ? render_target() : _render_target;
         auto& write_rt = _read_on_default_rt ? _render_target : render_target();
@@ -107,7 +112,7 @@ void Module_JFA::render(DataToPassToShader const& data)
         write_rt.render([&]() {
             _one_flood_step_shader.shader()->bind();
             _one_flood_step_shader.shader()->set_uniform_texture("prev_step", read_rt.texture_ref().id, Cool::TextureSamplerDescriptor{.repeat_mode = Cool::TextureRepeatMode::Clamp, .interpolation_mode = glpp::Interpolation::NearestNeighbour});
-            _one_flood_step_shader.shader()->set_uniform("resolution", size.width());
+            _one_flood_step_shader.shader()->set_uniform("resolution", resolution);
             _one_flood_step_shader.shader()->set_uniform("jump_size", jump_size);
             _one_flood_step_shader.shader()->set_uniform("_aspect_ratio", data.system_values.aspect_ratio());
             _one_flood_step_shader.shader()->set_uniform("_camera2D_transform", data.system_values.camera_2D.transform_matrix());
