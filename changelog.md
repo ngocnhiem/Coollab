@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.1 Mask to Shape
+
+- 🐛 Fix "Math Expression" node not working on MacOS
+
 ## 1.7.0 Mask to Shape
 
 - ✨ Added the "Mask to Shape" node, which can convert any black and white mask into a Shape, allowing you to use all of the Shape effects! (Glow, Rings, colliding with particles, etc.)
