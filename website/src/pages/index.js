@@ -151,17 +151,18 @@ export default function Home() {
         <Spacer height="5rem" />
         <CenterText>
           <SectionTitle fontSize="2.5rem" mobileFontSize="1.7rem">
-            Easily extensible
+            Customizable
           </SectionTitle>
         </CenterText>
-        <DesktopOnly>
-          <CenterText className={style.wideText}>
-            Create your own GLSL nodes in a few lines of code!{" "}
+        <CenterText className={style.wideText}>
+          Create your own GLSL nodes in a few lines of code!
+          <DesktopOnly>
             <LinkInternal to="/Tutorials/Writing%20Nodes/Intro">
+              {" "}
               Follow the tutorial
             </LinkInternal>
-          </CenterText>
-        </DesktopOnly>
+          </DesktopOnly>
+        </CenterText>
         <Spacer height="2.4rem" />
         <CenterH>
           <Image
