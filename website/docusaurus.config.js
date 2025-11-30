@@ -79,7 +79,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "img/page-hero2.jpg",
+      image: "img/page-hero3.png",
       colorMode: {
         defaultMode: "dark",
         disableSwitch: true,
