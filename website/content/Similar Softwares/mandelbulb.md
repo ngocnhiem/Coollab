@@ -1,1 +1,0 @@
-https://www.mandelbulb.com/2014/mandelbulb-3d-mb3d-fractal-rendering-software/
