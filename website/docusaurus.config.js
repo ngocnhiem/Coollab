@@ -110,6 +110,11 @@ const config = {
             label: "Contribute",
           },
           {
+            to: "https://github.com/Coollab-Art/Coollab/wiki",
+            position: "left",
+            label: "Wiki",
+          },
+          {
             type: "html",
             position: "right",
             value: `
